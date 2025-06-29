@@ -1,0 +1,22 @@
+{
+  "endpoints": {
+    "health_check": "/",
+    "token_list": "/token/list",
+    "token_meta": "/token/meta/",
+    "token_data": "/token/data/",
+    "token_price": "/token/price/",
+    "token_prices": "/token/prices/",
+    "token_prices_multi": "/token/prices/multi",
+    "token_holders": "/token/holders/",
+    "trade_ohlcv": "/trade/ohlcv/",
+    "trade_list": "/trade/list/"
+  },
+  "headers": {
+    "content_type": "application/json",
+    "accept": "application/json"
+  },
+  "timeouts": {
+    "connect_timeout": 30000,
+    "read_timeout": 30000
+  }
+} 

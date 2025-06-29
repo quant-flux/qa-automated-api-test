@@ -1,0 +1,26 @@
+{
+  "trading_pairs": [
+    {
+      "base_token": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+      "quote_token": "So11111111111111111111111111111111111111112",
+      "pair_name": "TT1/SOL"
+    },
+    {
+      "base_token": "CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump",
+      "quote_token": "So11111111111111111111111111111111111111112",
+      "pair_name": "TT2/SOL"
+    }
+  ],
+  "invalid_pairs": [
+    {
+      "base_token": "invalid_token_1",
+      "quote_token": "invalid_token_2",
+      "expected_error": "Invalid trading pair"
+    }
+  ],
+  "addresses": [
+    "Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP",
+    "CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump",
+    "7EYnhQoR9YM3N7UoaKRoA44Uy8JeaZV3qyouov87awMs"
+  ]
+} 

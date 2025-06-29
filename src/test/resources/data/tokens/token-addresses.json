@@ -1,0 +1,39 @@
+{
+  "valid_tokens": [
+    {
+      "address": "Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP",
+      "name": "Test Token 1",
+      "symbol": "TT1",
+      "expected_decimals": 9
+    },
+    {
+      "address": "CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump",
+      "name": "Test Token 2", 
+      "symbol": "TT2",
+      "expected_decimals": 6
+    },
+    {
+      "address": "7EYnhQoR9YM3N7UoaKRoA44Uy8JeaZV3qyouov87awMs",
+      "name": "Test Token 3",
+      "symbol": "TT3", 
+      "expected_decimals": 9
+    }
+  ],
+  "invalid_tokens": [
+    {
+      "address": "invalid_address_123",
+      "type": "invalid_format",
+      "expected_error": "Invalid token address format"
+    },
+    {
+      "address": "",
+      "type": "empty",
+      "expected_error": "Token address is required"
+    },
+    {
+      "address": "11111111111111111111111111111111",
+      "type": "non_existent",
+      "expected_error": "Token not found"
+    }
+  ]
+} 

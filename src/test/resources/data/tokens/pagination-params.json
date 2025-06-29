@@ -1,0 +1,26 @@
+{
+  "valid_pages": [
+    1,
+    2,
+    5,
+    10
+  ],
+  "invalid_pages": [
+    0,
+    -1,
+    "invalid",
+    null
+  ],
+  "valid_limits": [
+    10,
+    25,
+    50,
+    100
+  ],
+  "invalid_limits": [
+    0,
+    -1,
+    1001,
+    "invalid"
+  ]
+} 

@@ -1,0 +1,6 @@
+target/
+.vscode/
+.idea/
+build/
+.DS_Store
+.env

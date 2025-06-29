@@ -1,0 +1,12 @@
+interval,price_format,chart_format,expected_status
+1h,USD,price,200
+5m,USD,price,200
+15m,USD,price,200
+30m,USD,price,200
+1h,USD,volume,200
+1h,USD,market_cap,200
+1h,SOL,price,200
+5m,SOL,price,200
+invalid_interval,USD,price,400
+1h,invalid_format,price,400
+1h,USD,invalid_chart,400 

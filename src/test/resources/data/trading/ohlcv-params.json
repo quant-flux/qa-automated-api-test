@@ -1,0 +1,13 @@
+[
+  {"interval": "1h", "price_format": "USD", "chart_format": "price", "expected_status": 200},
+  {"interval": "5m", "price_format": "USD", "chart_format": "price", "expected_status": 200},
+  {"interval": "15m", "price_format": "USD", "chart_format": "price", "expected_status": 200},
+  {"interval": "30m", "price_format": "USD", "chart_format": "price", "expected_status": 200},
+  {"interval": "1h", "price_format": "USD", "chart_format": "volume", "expected_status": 200},
+  {"interval": "1h", "price_format": "USD", "chart_format": "market_cap", "expected_status": 200},
+  {"interval": "1h", "price_format": "SOL", "chart_format": "price", "expected_status": 200},
+  {"interval": "5m", "price_format": "SOL", "chart_format": "price", "expected_status": 200},
+  {"interval": "invalid_interval", "price_format": "USD", "chart_format": "price", "expected_status": 400},
+  {"interval": "1h", "price_format": "invalid_format", "chart_format": "price", "expected_status": 400},
+  {"interval": "1h", "price_format": "USD", "chart_format": "invalid_chart", "expected_status": 400}
+] 

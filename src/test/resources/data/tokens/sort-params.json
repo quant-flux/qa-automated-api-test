@@ -1,0 +1,24 @@
+{
+  "valid_sort_by": [
+    "created_time"
+  ],
+  "invalid_sort_by": [
+    "invalid_field",
+    "non_existent",
+    "wrong_column",
+    "name",
+    "symbol",
+    "price",
+    "volume_24h",
+    "market_cap"
+  ],
+  "valid_order": [
+    "asc",
+    "desc"
+  ],
+  "invalid_order": [
+    "invalid",
+    "wrong",
+    "random"
+  ]
+} 

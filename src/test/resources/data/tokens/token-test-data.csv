@@ -1,0 +1,7 @@
+address,name,symbol,decimals,expected_status,test_type
+Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP,Test Token 1,TT1,9,200,valid
+CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump,Test Token 2,TT2,6,200,valid
+7EYnhQoR9YM3N7UoaKRoA44Uy8JeaZV3qyouov87awMs,Test Token 3,TT3,9,200,valid
+invalid_address_123,Invalid Token,INV,0,400,invalid
+,Empty Token,EMP,0,400,invalid
+123456789,Invalid Format,INF,0,400,invalid 

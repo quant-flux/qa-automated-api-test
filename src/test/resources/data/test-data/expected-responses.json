@@ -1,0 +1,35 @@
+{
+  "success_response": {
+    "status": "success",
+    "data": "#present"
+  },
+  "error_response": {
+    "status": "error",
+    "message": "#string"
+  },
+  "token_list_response": {
+    "status": "success",
+    "data": {
+      "elements": "#array",
+      "total": "#number",
+      "page": "#number",
+      "limit": "#number"
+    }
+  },
+  "token_meta_response": {
+    "status": "success",
+    "data": {
+      "address": "#string",
+      "name": "#string",
+      "symbol": "#string",
+      "image": "#string",
+      "decimals": "#number",
+      "creator": "#string",
+      "created_time": "#number"
+    }
+  },
+  "ohlcv_response": {
+    "status": "success",
+    "data": "#array"
+  }
+} 
