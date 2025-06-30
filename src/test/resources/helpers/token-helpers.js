@@ -200,50 +200,168 @@ function validatePriceVariationsFields(responseData) {
 }
 
 function validateBasicTokenFields(responseData) {
-  var requiredFields = [
-    'address',
-    'name',
-    'symbol',
-    'decimals'
-  ];
-  
-  for (var i = 0; i < requiredFields.length; i++) {
-    var field = requiredFields[i];
-    if (responseData[field] === undefined) {
-      throw new Error('Required field missing: ' + field);
-    }
-  }
-  
-  return true;
+  console.warn('validateBasicTokenFields is deprecated. Use validateTokenDataComplete(data, "basic") instead.');
+  return validateTokenDataComplete(responseData, 'basic');
 }
 
 function validateTokenDataFields(responseData) {
-  var requiredFields = [
-    'address',
-    'name',
-    'symbol',
-    'image',
-    'decimals',
-    'creator',
-    'create_tx',
-    'created_time',
-    'total_supply',
-    'supply',
-    'holders',
-    'price',
-    'volume_24h',
-    'market_cap',
-    'price_change_24h'
-  ];
-  
-  for (var i = 0; i < requiredFields.length; i++) {
-    var field = requiredFields[i];
-    if (responseData[field] === undefined) {
-      throw new Error('Required field missing: ' + field);
+  console.warn('validateTokenDataFields is deprecated. Use validateTokenDataComplete(data, "extended") instead.');
+  return validateTokenDataComplete(responseData, 'extended');
+}
+
+function validateTokenDataComplete(data, validationLevel = 'strict') {
+    const errors = [];
+    
+    // Level 1: Basic validation (existing validateBasicTokenFields)
+    if (validationLevel === 'basic' || validationLevel === 'strict') {
+        const basicFields = ['address', 'name', 'symbol'];
+        basicFields.forEach(field => {
+            if (data[field] === undefined) {
+                errors.push(`Required field missing: ${field}`);
+            }
+        });
     }
-  }
-  
-  return true;
+    
+    // Level 2: Extended validation (existing validateTokenDataFields)
+    if (validationLevel === 'extended' || validationLevel === 'strict') {
+        const extendedFields = ['decimals', 'creator', 'create_tx', 'created_time', 'supply'];
+        extendedFields.forEach(field => {
+            if (data[field] === undefined) {
+                errors.push(`Required field missing: ${field}`);
+            }
+        });
+    }
+    
+    // Level 3: Strict validation (new constraints)
+    if (validationLevel === 'strict') {
+        // Required fields with format validation
+        if (!data.address || !isValidBase58(data.address, 32, 44)) {
+            errors.push("address must be base58 string with 32-44 characters, not empty");
+        }
+        
+        if (!data.name || typeof data.name !== 'string' || data.name.trim() === '') {
+            errors.push("name must be non-empty string");
+        }
+        
+        if (!data.symbol || typeof data.symbol !== 'string' || data.symbol.trim() === '') {
+            errors.push("symbol must be non-empty string");
+        }
+        
+        if (!data.creator || !isValidBase58(data.creator, 32, 44)) {
+            errors.push("creator must be base58 string with 32-44 characters, not empty");
+        }
+        
+        if (!data.create_tx || !isValidBase58(data.create_tx, 88, 88)) {
+            errors.push("create_tx must be base58 string with exactly 88 characters, not empty");
+        }
+        
+        if (!data.created_time || !isValidInteger(data.created_time, 10)) {
+            errors.push("created_time must be integer with 10 digits");
+        }
+        
+        // Optional fields validation
+        if (data.image && data.image !== '') {
+            if (!data.image.startsWith('https://static.cloud-service-app.com')) {
+                errors.push("image URL must be from https://static.cloud-service-app.com");
+            }
+        }
+        
+        if (data.decimals !== undefined && ![6, 9].includes(data.decimals)) {
+            errors.push("decimals should typically be 6 or 9");
+        }
+        
+        if (data.supply !== undefined && data.supply > 1000000000) {
+            errors.push("supply should be less than or equal to 1,000,000,000");
+        }
+        
+        if (data.created_on && !['pumpfun', 'moonshot', 'boop', 'raydium_launchpad', 'bonk', 'dynamic_bonding_curve', 'unknown'].includes(data.created_on)) {
+            errors.push("created_on must be one of: pumpfun, moonshot, boop, raydium_launchpad, bonk, dynamic_bonding_curve, unknown");
+        }
+        
+        if (data.metadata_uri && data.metadata_uri !== '') {
+            if (data.metadata_uri.includes('/ipfs/') && !data.metadata_uri.startsWith('https://ipfs.io/ipfs/')) {
+                errors.push("metadata_uri with /ipfs/ must start with https://ipfs.io/ipfs/");
+            }
+        }
+        
+        if (data.mint_authority !== null && data.mint_authority !== undefined) {
+            if (!isValidBase58(data.mint_authority, 32, 44)) {
+                errors.push("mint_authority must be null or base58 string with 32-44 characters");
+            }
+        }
+        
+        if (data.freeze_authority !== null && data.freeze_authority !== undefined) {
+            if (!isValidBase58(data.freeze_authority, 32, 44)) {
+                errors.push("freeze_authority must be null or base58 string with 32-44 characters");
+            }
+        }
+        
+        if (data.bonding_curve !== undefined && data.bonding_curve !== null) {
+            if (!isValidBase58(data.bonding_curve, 32, 44)) {
+                errors.push("bonding_curve must be base58 string with 32-44 characters or not exist");
+            }
+        }
+        
+        if (data.associated_bonding_curve !== undefined && data.associated_bonding_curve !== null) {
+            if (!isValidBase58(data.associated_bonding_curve, 32, 44)) {
+                errors.push("associated_bonding_curve must be base58 string with 32-44 characters or not exist");
+            }
+        }
+        
+        // Metadata validation
+        if (data.metadata) {
+            const metadataErrors = validateMetadataConstraints(data.metadata, data);
+            errors.push(...metadataErrors);
+        }
+    }
+    
+    if (errors.length > 0) {
+        throw new Error("Token data validation failed: " + errors.join("; "));
+    }
+    
+    return true;
+}
+
+function validateMetadataConstraints(metadata, parentData) {
+    const errors = [];
+    
+    if (metadata.name !== parentData.name) {
+        errors.push("metadata.name must match parent name");
+    }
+    
+    if (metadata.symbol !== parentData.symbol) {
+        errors.push("metadata.symbol must match parent symbol");
+    }
+    
+    if (metadata.image && metadata.image !== '') {
+        if (metadata.image.includes('/ipfs/') && !metadata.image.startsWith('https://ipfs.io/ipfs/')) {
+            errors.push("metadata.image with /ipfs/ must start with https://ipfs.io/ipfs/");
+        }
+    }
+    
+    // Optional fields should not exist if empty
+    const optionalFields = ['description', 'twitter', 'website', 'telegram', 'uri'];
+    optionalFields.forEach(field => {
+        if (metadata[field] !== undefined && metadata[field] === '') {
+            errors.push(`metadata.${field} should not exist if empty`);
+        }
+    });
+    
+    return errors;
+}
+
+function isValidBase58(str, minLength, maxLength) {
+    if (typeof str !== 'string') return false;
+    if (str.length < minLength || str.length > maxLength) return false;
+    
+    // Base58 characters: 1-9, A-H, J-N, P-Z, a-k, m-z (excluding 0, O, I, l)
+    const base58Regex = /^[1-9A-HJ-NP-Za-km-z]+$/;
+    return base58Regex.test(str);
+}
+
+function isValidInteger(num, expectedLength) {
+    if (!Number.isInteger(num)) return false;
+    return num.toString().length === expectedLength;
 }
 
 function validateMarketFields(responseData) {
@@ -420,6 +538,11 @@ function getPriceFormatString(type) {
   return getCommonString('price_formats', type);
 }
 
+// Alias for the new strict validation
+function validateTokenDataConstraints(data) {
+    return validateTokenDataComplete(data, 'strict');
+}
+
 // Export functions for use in karate-config.js
 return {
   getSortParams: getSortParams,
@@ -429,8 +552,6 @@ return {
   validateNoUnwantedFields: validateNoUnwantedFields,
   validateNoUnwantedFieldsInArray: validateNoUnwantedFieldsInArray,
   validatePriceVariationsFields: validatePriceVariationsFields,
-  validateBasicTokenFields: validateBasicTokenFields,
-  validateTokenDataFields: validateTokenDataFields,
   validateMarketFields: validateMarketFields,
   validateTokenListElements: validateTokenListElements
 }; 

@@ -9,6 +9,9 @@ Feature: Token Metadata Endpoint
     When method get
     Then status 200
     And match response.status == 'success'
+    And match response.data == '#object'
+    * def tokenData = response.data
+    * validateTokenDataConstraints(tokenData)
     And match response.data.address == getValidTokenAddress(0)
     And def validationResult = validateBasicTokenFields(response.data)
     And match validationResult == true

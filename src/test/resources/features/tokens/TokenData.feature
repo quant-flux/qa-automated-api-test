@@ -49,4 +49,14 @@ Feature: Token Data Endpoint
   Scenario: Get token data for non-existent address
     * url baseUrl + getEndpoint('token_data') + getInvalidTokenAddress(2)
     When method get
-    Then status 404 
+    Then status 404
+
+  @positive
+  Scenario: Get token data for valid address
+    * url baseUrl + getEndpoint('token_data') + getValidTokenAddress(0)
+    When method get
+    Then status 200
+    And match response.status == 'success'
+    And match response.data == '#object'
+    * def tokenData = response.data
+    * validateTokenDataConstraints(tokenData) 
