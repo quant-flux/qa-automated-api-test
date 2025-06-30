@@ -5,7 +5,7 @@ Feature: Token Holders Endpoint
 
   @smoke @positive
   Scenario: Get token holders for valid address
-    * url baseUrl + getEndpoint('token_holders') + getValidToken(0).address
+    * url baseUrl + getEndpoint('token_holders') + getValidTokenAddress(0)
     When method get
     Then status 200
     And match response.status == 'success'
@@ -15,7 +15,7 @@ Feature: Token Holders Endpoint
 
   @positive
   Scenario: Get token holders for another valid address
-    * url baseUrl + getEndpoint('token_holders') + getValidToken(1).address
+    * url baseUrl + getEndpoint('token_holders') + getValidTokenAddress(1)
     When method get
     Then status 200
     And match response.status == 'success'
@@ -23,18 +23,28 @@ Feature: Token Holders Endpoint
 
   @negative
   Scenario: Get token holders for invalid address format
-    * url baseUrl + getEndpoint('token_holders') + getInvalidToken(0).address
+    * url baseUrl + getEndpoint('token_holders') + getInvalidTokenAddress(0)
     When method get
     Then status 400
 
   @negative
   Scenario: Get token holders for empty address
-    * url baseUrl + getEndpoint('token_holders') + getInvalidToken(1).address
+    * url baseUrl + getEndpoint('token_holders') + getInvalidTokenAddress(1)
     When method get
     Then status 400
 
   @negative
   Scenario: Get token holders for non-existent address
-    * url baseUrl + getEndpoint('token_holders') + getInvalidToken(2).address
+    * url baseUrl + getEndpoint('token_holders') + getInvalidTokenAddress(2)
     When method get
-    Then status 404 
+    Then status 404
+
+  @validation @cleanup
+  Scenario: Validate no unwanted fields are present in token holders
+    * url baseUrl + getEndpoint('token_holders') + getValidTokenAddress(0)
+    When method get
+    Then status 200
+    And match response.status == 'success'
+    And match response.data == '#array'
+    And def validationResult = validateNoUnwantedFieldsInArray(response.data)
+    And match validationResult == true 

@@ -1,11 +1,6 @@
 {
   "valid_sort_by": [
-    "created_time"
-  ],
-  "invalid_sort_by": [
-    "invalid_field",
-    "non_existent",
-    "wrong_column",
+    "created_time",
     "name",
     "symbol",
     "price",
@@ -16,9 +11,17 @@
     "asc",
     "desc"
   ],
+  "invalid_sort_by": [
+    "invalid_field",
+    "non_existent_field",
+    "random_field",
+    "test_field"
+  ],
   "invalid_order": [
     "invalid",
-    "wrong",
-    "random"
+    "random",
+    "test",
+    "up",
+    "down"
   ]
 } 

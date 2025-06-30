@@ -7,7 +7,9 @@ public class TokensEndpointsRunner {
     @Karate.Test
     Karate testAllFeatures() {
         return Karate.run("classpath:features")
-                .relativeTo(getClass());
+                .relativeTo(getClass())
+                .outputCucumberJson(true)
+                .outputHtmlReport(true);
     }
     
     @Karate.Test

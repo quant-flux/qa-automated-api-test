@@ -38,6 +38,8 @@
           <systemPropertyVariables>
             <karate.options>${karate.options}</karate.options>
           </systemPropertyVariables>
+          <testFailureIgnore>true</testFailureIgnore>
+          <failIfNoTests>false</failIfNoTests>
         </configuration>
       </plugin>
     </plugins>

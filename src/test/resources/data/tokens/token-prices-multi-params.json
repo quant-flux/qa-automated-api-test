@@ -1,0 +1,55 @@
+{
+  "test_scenarios": {
+    "multiple_tokens": {
+      "description": "Get price variations for multiple tokens",
+      "addresses_count": 2,
+      "expected_status": 200
+    },
+    "single_token": {
+      "description": "Get price variations for single token",
+      "addresses_count": 1,
+      "expected_status": 200
+    },
+    "maximum_tokens": {
+      "description": "Get price variations for maximum tokens (10)",
+      "addresses_count": 10,
+      "expected_status": 200,
+      "test_addresses": [
+        "11111111111111111111111111111111",
+        "22222222222222222222222222222222",
+        "33333333333333333333333333333333",
+        "44444444444444444444444444444444",
+        "55555555555555555555555555555555",
+        "66666666666666666666666666666666",
+        "77777777777777777777777777777777"
+      ]
+    },
+    "too_many_tokens": {
+      "description": "Get price variations with more than 10 addresses",
+      "addresses_count": 11,
+      "expected_status": 400,
+      "extra_addresses": [
+        "88888888888888888888888888888888"
+      ]
+    }
+  },
+  "validation_fields": [
+    "address",
+    "price",
+    "price_5m",
+    "percent_5m",
+    "volume_5m",
+    "price_30m",
+    "percent_30m",
+    "volume_30m",
+    "price_1h",
+    "percent_1h",
+    "volume_1h",
+    "price_6h",
+    "percent_6h",
+    "volume_6h",
+    "price_24h",
+    "percent_24h",
+    "volume_24h"
+  ]
+} 

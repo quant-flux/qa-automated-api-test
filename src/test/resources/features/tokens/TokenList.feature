@@ -9,62 +9,110 @@ Feature: Token List Endpoint
     Then status 200
     And match response.status == 'success'
     And match response.data.elements == '#array'
+    And def validationResult = validateTokenListElements(response.data.elements)
+    And match validationResult == true
 
   @positive
   Scenario: Get token list sorted by created_time descending
-    And param sort_by = 'created_time'
-    And param order = 'desc'
-    And param page = 1
-    And param limit = 10
+    And param sort_by = getValidSortBy(0)
+    And param order = getValidOrder(1)
+    And param page = getValidPage(0)
+    And param limit = getValidLimit(0)
     When method get
     Then status 200
     And match response.status == 'success'
     And match response.data.elements == '#array'
+    And def validationResult = validateTokenListElements(response.data.elements)
+    And match validationResult == true
 
   @positive
   Scenario: Get token list with pagination
-    And param page = 2
-    And param limit = 10
+    And param page = getValidPage(1)
+    And param limit = getValidLimit(0)
     When method get
     Then status 200
     And match response.status == 'success'
     And match response.data.elements == '#array'
+    And def validationResult = validateTokenListElements(response.data.elements)
+    And match validationResult == true
 
   @positive
   Scenario: Get token list with different sort options
-    And param sort_by = 'created_time'
-    And param order = 'asc'
+    And param sort_by = getValidSortBy(0)
+    And param order = getValidOrder(0)
     When method get
     Then status 200
     And match response.status == 'success'
+    And match response.data.elements == '#array'
+    And def validationResult = validateTokenListElements(response.data.elements)
+    And match validationResult == true
 
   @positive
   Scenario: Get token list with maximum limit
-    And param limit = 100
+    And param limit = getValidLimit(3)
     When method get
     Then status 200
     And match response.status == 'success'
+    And match response.data.elements == '#array'
+    And def validationResult = validateTokenListElements(response.data.elements)
+    And match validationResult == true
+
+  @positive
+  Scenario: Get token list with valid sort parameters
+    And param sort_by = getValidSortBy(1)
+    And param order = getValidOrder(0)
+    When method get
+    Then status 200
+    And match response.status == 'success'
+    And match response.data.elements == '#array'
+    And def validationResult = validateTokenListElements(response.data.elements)
+    And match validationResult == true
+
+  @positive
+  Scenario: Get token list with valid pagination parameters
+    And param page = getValidPage(2)
+    And param limit = getValidLimit(1)
+    When method get
+    Then status 200
+    And match response.status == 'success'
+    And match response.data.elements == '#array'
+    And def validationResult = validateTokenListElements(response.data.elements)
+    And match validationResult == true
 
   @negative
   Scenario: Get token list with invalid page number
-    And param page = 0
+    And param page = getInvalidPage(0)
     When method get
     Then status 400
 
   @negative
   Scenario: Get token list with invalid limit
-    And param limit = 0
+    And param limit = getInvalidLimit(0)
     When method get
     Then status 400
 
   @negative
   Scenario: Get token list with invalid sort field
-    And param sort_by = 'invalid_field'
+    And param sort_by = getInvalidSortBy(0)
     When method get
     Then status 400
 
   @negative
   Scenario: Get token list with invalid order
-    And param order = 'invalid'
+    And param order = getInvalidOrder(0)
+    When method get
+    Then status 400
+
+  @negative
+  Scenario: Get token list with invalid sort parameters from helper
+    And param sort_by = getInvalidSortBy(1)
+    And param order = getInvalidOrder(1)
+    When method get
+    Then status 400
+
+  @negative
+  Scenario: Get token list with invalid pagination parameters from helper
+    And param page = getInvalidPage(1)
+    And param limit = getInvalidLimit(1)
     When method get
     Then status 400
