@@ -123,9 +123,15 @@ Feature: Token New Listing Endpoint
     
   @negative
   Scenario: Get new listings with empty page number
+    And param page = getInvalidNewListingPage(3)
+    When method get
+    Then status 400  
+
+  @negative
+  Scenario: Get new listings with non-existent page number
     And param page = getInvalidNewListingPage(4)
     When method get
-    Then status 400
+    Then status 404
 
   @negative
   Scenario: Get new listings with invalid limit

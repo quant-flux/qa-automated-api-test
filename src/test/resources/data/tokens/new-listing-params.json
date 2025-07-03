@@ -6,7 +6,7 @@
   },
   "invalid_parameters": {
     "limit": [-1, 0, 1001, 9999, "abc", ""],
-    "page": [-1, 0, "abc", "", 999999],
+    "page": [-1, 0, "abc", "", 99999999],
     "created_on": ["123", "random", "unknown_platform111"]
   },
   "test_scenarios": {
