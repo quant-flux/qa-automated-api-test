@@ -80,3 +80,45 @@ jobs:
             repo: context.repo.repo,
             body: summary
           });
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Download Karate Reports
+      uses: actions/download-artifact@v4
+      with:
+        name: karate-html-report
+        path: ./karate-reports
+    
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+    
+    - name: Create index.html
+      run: |
+        mkdir -p public
+        if [ -d "./karate-reports" ]; then
+          cp -r ./karate-reports/* ./public/
+          echo "<html><head><title>API Test Reports</title><meta http-equiv='refresh' content='0;url=karate-summary.html'></head><body><p>Redirecting to <a href='karate-summary.html'>test reports</a>...</p></body></html>" > ./public/index.html
+        else
+          echo "<html><body><h1>API Test Reports</h1><p>No test reports available at the moment.</p><p>Reports will appear here after successful test runs.</p></body></html>" > ./public/index.html
+        fi
+    
+    - name: Upload site
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: './public'
+    
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
