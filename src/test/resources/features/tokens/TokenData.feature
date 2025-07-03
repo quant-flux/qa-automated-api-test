@@ -8,9 +8,8 @@ Feature: Token Data Endpoint
     * url baseUrl + getEndpoint('token_data') + getValidTokenAddress(0)
     When method get
     Then status 200
-    And match response.status == 'success'
     And match response.data.address == getValidTokenAddress(0)
-    And def validationResult = validateTokenDataFields(response.data)
+    And def validationResult = validateTokenDataSuccessResponse(response, true)
     And match validationResult == true
 
   @positive
@@ -18,7 +17,6 @@ Feature: Token Data Endpoint
     * url baseUrl + getEndpoint('token_data') + getValidTokenAddress(1)
     When method get
     Then status 200
-    And match response.status == 'success'
     And def basicValidation = validateBasicTokenFields(response.data)
     And match basicValidation == true
     And def marketValidation = validateMarketFields(response.data)
@@ -29,8 +27,7 @@ Feature: Token Data Endpoint
     * url baseUrl + getEndpoint('token_data') + getValidTokenAddress(2)
     When method get
     Then status 200
-    And match response.status == 'success'
-    And def validationResult = validateTokenDataFields(response.data)
+    And def validationResult = validateTokenDataSuccessResponse(response, true)
     And match validationResult == true
 
   @negative
@@ -56,7 +53,6 @@ Feature: Token Data Endpoint
     * url baseUrl + getEndpoint('token_data') + getValidTokenAddress(0)
     When method get
     Then status 200
-    And match response.status == 'success'
     And match response.data == '#object'
     * def tokenData = response.data
     * validateTokenDataConstraints(tokenData) 

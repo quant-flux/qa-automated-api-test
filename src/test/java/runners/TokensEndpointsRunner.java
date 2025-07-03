@@ -31,6 +31,12 @@ public class TokensEndpointsRunner {
     }
     
     @Karate.Test
+    Karate testTokenDataValidation() {
+        return Karate.run("classpath:features/tokens/TokenDataValidation.feature")
+                .relativeTo(getClass());
+    }
+    
+    @Karate.Test
     Karate testTokenPrice() {
         return Karate.run("classpath:features/tokens/TokenPrice.feature")
                 .relativeTo(getClass());
@@ -51,6 +57,12 @@ public class TokensEndpointsRunner {
     @Karate.Test
     Karate testTokenHolders() {
         return Karate.run("classpath:features/tokens/TokenHolders.feature")
+                .relativeTo(getClass());
+    }
+    
+    @Karate.Test
+    Karate testTokenNewListing() {
+        return Karate.run("classpath:features/tokens/TokenNewListing.feature")
                 .relativeTo(getClass());
     }
     

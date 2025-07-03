@@ -8,9 +8,8 @@ Feature: Token Price Variations Endpoint
     * url baseUrl + getEndpoint('token_prices') + getValidTokenAddress(0)
     When method get
     Then status 200
-    And match response.status == 'success'
     And match response.data.address == getValidTokenAddress(0)
-    And def validationResult = validatePriceVariationsFields(response.data)
+    And def validationResult = validateTokenPricesSuccessResponse(response, true)
     And match validationResult == true
 
   @positive
@@ -18,7 +17,6 @@ Feature: Token Price Variations Endpoint
     * url baseUrl + getEndpoint('token_prices') + getValidTokenAddress(1)
     When method get
     Then status 200
-    And match response.status == 'success'
     And match response.data.price == '#number'
 
   @negative

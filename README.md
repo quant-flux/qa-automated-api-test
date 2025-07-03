@@ -15,7 +15,8 @@ src/test/resources/features/
 │   ├── TokenPrice.feature          # Precio actual de tokens
 │   ├── TokenPrices.feature         # Variaciones de precios de un token
 │   ├── TokenPricesMulti.feature    # Precios múltiples de tokens
-│   └── TokenHolders.feature        # Holders de tokens
+│   ├── TokenHolders.feature        # Holders de tokens
+│   └── TokenNewListing.feature     # Nuevos listados de tokens
 ├── trade/
 │   ├── TradeOHLCV.feature          # Datos OHLCV para trading
 │   └── TradeList.feature           # Lista de trades recientes
@@ -173,6 +174,9 @@ mvn test -Dtest=TokensEndpointsRunner#testTokenPrices
 
 # Solo tests de holders
 mvn test -Dtest=TokensEndpointsRunner#testTokenHolders
+
+# Solo tests de nuevos listados
+mvn test -Dtest=TokensEndpointsRunner#testTokenNewListing
 
 # Solo tests de OHLCV
 mvn test -Dtest=TokensEndpointsRunner#testTradeOHLCV

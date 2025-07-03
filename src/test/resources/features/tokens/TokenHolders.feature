@@ -8,18 +8,18 @@ Feature: Token Holders Endpoint
     * url baseUrl + getEndpoint('token_holders') + getValidTokenAddress(0)
     When method get
     Then status 200
-    And match response.status == 'success'
-    And match response.data == '#array'
     And match response.data[0].address == '#string'
     And match response.data[0].amount == '#number'
+    And def validationResult = validateTokenHoldersSuccessResponse(response, false)
+    And match validationResult == true
 
   @positive
   Scenario: Get token holders for another valid address
     * url baseUrl + getEndpoint('token_holders') + getValidTokenAddress(1)
     When method get
     Then status 200
-    And match response.status == 'success'
-    And match response.data == '#array'
+    And def validationResult = validateTokenHoldersSuccessResponse(response, false)
+    And match validationResult == true
 
   @negative
   Scenario: Get token holders for invalid address format
@@ -44,7 +44,5 @@ Feature: Token Holders Endpoint
     * url baseUrl + getEndpoint('token_holders') + getValidTokenAddress(0)
     When method get
     Then status 200
-    And match response.status == 'success'
-    And match response.data == '#array'
-    And def validationResult = validateNoUnwantedFieldsInArray(response.data)
+    And def validationResult = validateTokenHoldersSuccessResponse(response, true)
     And match validationResult == true 

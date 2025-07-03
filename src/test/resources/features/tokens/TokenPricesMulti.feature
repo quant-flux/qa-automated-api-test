@@ -10,7 +10,7 @@ Feature: Token Multi-Price Endpoint
     When method get
     Then status 200
     And match response.status == 'success'
-    And match response.data.elements == '#array'
+    And match response.data == '#array'
     And def validationResult = validateTokenPricesMultiFields(response.data[0])
     And match validationResult == true
 
@@ -22,7 +22,7 @@ Feature: Token Multi-Price Endpoint
     Then status 200
     And match response.status == 'success'
     And match response.data == '#array'
-    And match response.data[0].address == singleAddress[0]
+    And match response.data[0].address == singleAddress
 
   @boundary
   Scenario: Get price variations for maximum tokens (10)
@@ -52,14 +52,14 @@ Feature: Token Multi-Price Endpoint
 
   @negative
   Scenario: Get price variations with invalid addresses format
-    * def invalidAddress = [getInvalidTokenAddress(0)]
+    * def invalidAddress = getInvalidTokenAddress(0)
     And param addresses = invalidAddress
     When method get
     Then status 400
 
   @negative
   Scenario: Get price variations for non-existent addresses
-    * def nonExistentAddress = [getInvalidTokenAddress(2)]
+    * def nonExistentAddress = getInvalidTokenAddress(2)
     And param addresses = nonExistentAddress
     When method get
     Then status 404

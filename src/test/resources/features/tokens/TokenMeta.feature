@@ -8,7 +8,6 @@ Feature: Token Metadata Endpoint
     * url baseUrl + getEndpoint('token_meta') + getValidTokenAddress(0)
     When method get
     Then status 200
-    And match response.status == 'success'
     And match response.data == '#object'
     * def tokenData = response.data
     * validateTokenDataConstraints(tokenData)
@@ -21,16 +20,18 @@ Feature: Token Metadata Endpoint
     * url baseUrl + getEndpoint('token_meta') + getValidTokenAddress(1)
     When method get
     Then status 200
-    And match response.status == 'success'
     And match response.data.address == getValidTokenAddress(1)
+    And def validationResult = validateTokenMetaSuccessResponse(response, false)
+    And match validationResult == true
 
   @positive
   Scenario: Get token metadata for third valid address
     * url baseUrl + getEndpoint('token_meta') + getValidTokenAddress(2)
     When method get
     Then status 200
-    And match response.status == 'success'
     And match response.data.address == getValidTokenAddress(2)
+    And def validationResult = validateTokenMetaSuccessResponse(response, false)
+    And match validationResult == true
 
   @negative
   Scenario: Get token metadata for invalid address format
@@ -55,7 +56,6 @@ Feature: Token Metadata Endpoint
     * url baseUrl + getEndpoint('token_meta') + getValidTokenAddress(0)
     When method get
     Then status 200
-    And match response.status == 'success'
     And match response.data contains { address: '#string' }
-    And def validationResult = validateNoUnwantedFields(response.data)
+    And def validationResult = validateTokenMetaSuccessResponse(response, true)
     And match validationResult == true

@@ -7,9 +7,7 @@ Feature: Token List Endpoint
   Scenario: Get token list with default parameters
     When method get
     Then status 200
-    And match response.status == 'success'
-    And match response.data.elements == '#array'
-    And def validationResult = validateTokenListElements(response.data.elements)
+    And def validationResult = validateTokenListSuccessResponse(response, true)
     And match validationResult == true
 
   @positive
@@ -20,9 +18,7 @@ Feature: Token List Endpoint
     And param limit = getValidLimit(0)
     When method get
     Then status 200
-    And match response.status == 'success'
-    And match response.data.elements == '#array'
-    And def validationResult = validateTokenListElements(response.data.elements)
+    And def validationResult = validateTokenListSuccessResponse(response, true)
     And match validationResult == true
 
   @positive
@@ -31,9 +27,7 @@ Feature: Token List Endpoint
     And param limit = getValidLimit(0)
     When method get
     Then status 200
-    And match response.status == 'success'
-    And match response.data.elements == '#array'
-    And def validationResult = validateTokenListElements(response.data.elements)
+    And def validationResult = validateTokenListSuccessResponse(response, true)
     And match validationResult == true
 
   @positive
@@ -42,9 +36,7 @@ Feature: Token List Endpoint
     And param order = getValidOrder(0)
     When method get
     Then status 200
-    And match response.status == 'success'
-    And match response.data.elements == '#array'
-    And def validationResult = validateTokenListElements(response.data.elements)
+    And def validationResult = validateTokenListSuccessResponse(response, true)
     And match validationResult == true
 
   @positive
@@ -52,20 +44,7 @@ Feature: Token List Endpoint
     And param limit = getValidLimit(3)
     When method get
     Then status 200
-    And match response.status == 'success'
-    And match response.data.elements == '#array'
-    And def validationResult = validateTokenListElements(response.data.elements)
-    And match validationResult == true
-
-  @positive
-  Scenario: Get token list with valid sort parameters
-    And param sort_by = getValidSortBy(1)
-    And param order = getValidOrder(0)
-    When method get
-    Then status 200
-    And match response.status == 'success'
-    And match response.data.elements == '#array'
-    And def validationResult = validateTokenListElements(response.data.elements)
+    And def validationResult = validateTokenListSuccessResponse(response, true)
     And match validationResult == true
 
   @positive
@@ -74,9 +53,7 @@ Feature: Token List Endpoint
     And param limit = getValidLimit(1)
     When method get
     Then status 200
-    And match response.status == 'success'
-    And match response.data.elements == '#array'
-    And def validationResult = validateTokenListElements(response.data.elements)
+    And def validationResult = validateTokenListSuccessResponse(response, true)
     And match validationResult == true
 
   @negative

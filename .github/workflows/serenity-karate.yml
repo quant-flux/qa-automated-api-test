@@ -23,6 +23,16 @@ jobs:
       run: mvn test -Dtest=CompleteReportRunner
       continue-on-error: true
 
+    - name: Generate Test Summary
+      if: always()
+      run: |
+        echo "## Test Execution Summary" >> $GITHUB_STEP_SUMMARY
+        echo "**Tests executed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
+        echo "**Tests failed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
+        echo "**Tests passed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}') - $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "📊 **Download the Karate HTML Report from the Artifacts section below to view detailed results**" >> $GITHUB_STEP_SUMMARY
+
     - name: Upload Karate HTML Report
       if: always()
       uses: actions/upload-artifact@v4
@@ -38,3 +48,35 @@ jobs:
         name: test-results
         path: target/surefire-reports/
         retention-days: 30
+
+    - name: Comment on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const path = require('path');
+          
+          let summary = '## 🧪 API Tests Results\n\n';
+          
+          try {
+            const reportPath = 'target/karate-reports/karate-summary.html';
+            if (fs.existsSync(reportPath)) {
+              summary += '✅ **Tests completed successfully!**\n\n';
+              summary += '📊 **Download the detailed HTML report from the Actions artifacts**\n\n';
+              summary += '🔗 [View Test Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})';
+            } else {
+              summary += '❌ **Tests failed or report not generated**\n\n';
+              summary += '🔗 [View Test Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})';
+            }
+          } catch (error) {
+            summary += '❌ **Error generating report**\n\n';
+            summary += '🔗 [View Test Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})';
+          }
+          
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: summary
+          });

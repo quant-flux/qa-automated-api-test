@@ -1,0 +1,52 @@
+{
+  "valid_parameters": {
+    "limit": [10, 20, 50, 100],
+    "page": [1, 2, 3, 5],
+    "created_on": ["pumpfun", "boopfun", "letsbonk", "believe", "moonshot", "raydium_launchpad", ""]
+  },
+  "invalid_parameters": {
+    "limit": [-1, 0, 1001, 9999, "abc", ""],
+    "page": [-1, 0, "abc", "", 999999],
+    "created_on": ["123", "random", "unknown_platform111"]
+  },
+  "test_scenarios": {
+    "default_params": {
+      "description": "Parámetros por defecto para el endpoint"
+    },
+    "pagination_test": {
+      "description": "Pruebas de paginación con diferentes combinaciones"
+    },
+    "created_on_filter": {
+      "description": "Filtros por plataforma de creación específica"
+    },
+    "combined_filters": {
+      "description": "Combinación de paginación y filtro de plataforma de creación"
+    }
+  },
+  "expected_response_structure": {
+    "status": "success",
+    "data": {
+      "elements": "#array",
+      "pagination": {
+        "page": "#number",
+        "limit": "#number",
+        "total": "#number",
+        "pages": "#number"
+      }
+    }
+  },
+  "token_fields_validation": {
+    "required_fields": ["address", "name", "symbol", "created_time", "created_on"],
+    "optional_fields": ["price", "volume_24h", "market_cap", "image", "description"],
+    "field_types": {
+      "address": "string",
+      "name": "string", 
+      "symbol": "string",
+      "created_time": "number",
+      "created_on": "string",
+      "price": "number",
+      "volume_24h": "number",
+      "market_cap": "number"
+    }
+  }
+} 
