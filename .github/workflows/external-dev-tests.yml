@@ -1,0 +1,105 @@
+name: External Development Tests
+
+on:
+  repository_dispatch:
+    types: [dev-commit-trigger]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Display development commit information
+      run: |
+        echo "## Development Commit Information" >> $GITHUB_STEP_SUMMARY
+        echo "**Source Repository:** ${{ github.event.client_payload.source_repo }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Source Commit:** ${{ github.event.client_payload.source_sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Source Branch:** ${{ github.event.client_payload.source_branch }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Developer:** ${{ github.event.client_payload.author }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Commit Message:** ${{ github.event.client_payload.commit_message }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Trigger Time:** ${{ github.event.client_payload.trigger_time }}" >> $GITHUB_STEP_SUMMARY
+
+    - name: Run API tests
+      run: mvn test -Dtest=CompleteReportRunner
+      continue-on-error: true
+
+    - name: Generate Test Summary
+      if: always()
+      run: |
+        echo "## Test Execution Results" >> $GITHUB_STEP_SUMMARY
+        echo "**Tests executed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
+        echo "**Tests failed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
+        echo "**Tests passed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}') - $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
+
+    - name: Upload Test Results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: dev-tests-${{ github.event.client_payload.source_sha }}
+        path: |
+          target/surefire-reports/
+          target/karate-reports/
+        retention-days: 7
+
+    - name: Comment on development repository
+      if: always()
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const sourceRepo = '${{ github.event.client_payload.source_repo }}'.split('/');
+          const owner = sourceRepo[0];
+          const repo = sourceRepo[1];
+          
+          let summary = '## 🧪 API Tests Results\n\n';
+          summary += `**Tests executed for commit:** ${'${{ github.event.client_payload.source_sha }}'}\n`;
+          summary += `**Developer:** ${'${{ github.event.client_payload.author }}'}\n`;
+          summary += `**Branch:** ${'${{ github.event.client_payload.source_branch }}'}\n\n`;
+          
+          try {
+            const reportPath = 'target/karate-reports/karate-summary.html';
+            if (fs.existsSync(reportPath)) {
+              summary += '✅ **Tests completed!**\n\n';
+              summary += '📊 **Download the detailed HTML report from the Actions artifacts**\n\n';
+            } else {
+              summary += '❌ **Tests failed or report not generated**\n\n';
+            }
+          } catch (error) {
+            summary += '❌ **Error generating report**\n\n';
+          }
+          
+          summary += `🔗 [View Test Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`;
+          
+          // Comentar en el repositorio de desarrollo
+          const octokit = github.getOctokit(process.env.DEV_REPO_TOKEN);
+          
+          // Si es un PR, comentar en el PR, sino crear un issue
+          const prNumber = '${{ github.event.client_payload.pull_request_number }}';
+          
+          if (prNumber && prNumber !== 'null') {
+            await octokit.rest.issues.createComment({
+              owner: owner,
+              repo: repo,
+              issue_number: parseInt(prNumber),
+              body: summary
+            });
+          } else {
+            // Crear un issue con los resultados
+            await octokit.rest.issues.create({
+              owner: owner,
+              repo: repo,
+              title: `API Tests Results - Commit ${'${{ github.event.client_payload.source_sha }}'.substring(0, 7)}`,
+              body: summary,
+              labels: ['api-tests', 'automated']
+            });
+          }
+      env:
+        DEV_REPO_TOKEN: ${{ secrets.DEV_REPO_TOKEN }} 
