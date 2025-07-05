@@ -59,42 +59,9 @@ jobs:
         path: target/surefire-reports/
         retention-days: 30
 
-    - name: Comment on PR
-      if: github.event_name == 'pull_request'
-      uses: actions/github-script@v7
-      with:
-        script: |
-          const fs = require('fs');
-          const path = require('path');
-          
-          let summary = '## 🧪 API Tests Results\n\n';
-          
-          try {
-            const reportPath = 'target/karate-reports/karate-summary.html';
-            if (fs.existsSync(reportPath)) {
-              summary += '✅ **Tests completed successfully!**\n\n';
-              summary += '📊 **Download the detailed HTML report from the Actions artifacts**\n\n';
-              summary += '🔗 [View Test Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})';
-            } else {
-              summary += '❌ **Tests failed or report not generated**\n\n';
-              summary += '🔗 [View Test Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})';
-            }
-          } catch (error) {
-            summary += '❌ **Error generating report**\n\n';
-            summary += '🔗 [View Test Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})';
-          }
-          
-          github.rest.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: summary
-          });
-
   deploy:
     needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     
     environment:
       name: github-pages
