@@ -9,6 +9,7 @@ function loadConfig() {
   config.tokenAddresses = read('classpath:data/tokens/token-addresses.json');
   config.sortParams = read('classpath:data/tokens/sort-params.json');
   config.paginationParams = read('classpath:data/tokens/pagination-params.json');
+  config.trendingParams = read('classpath:data/tokens/trending-params.json');
   config.ohlcvParams = read('classpath:data/trading/ohlcv-params.json');
   config.tradeAddresses = read('classpath:data/trading/trade-addresses.json');
   return config;

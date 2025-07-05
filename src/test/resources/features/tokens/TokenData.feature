@@ -55,4 +55,6 @@ Feature: Token Data Endpoint
     Then status 200
     And match response.data == '#object'
     * def tokenData = response.data
-    * validateTokenDataConstraints(tokenData) 
+    * validateTokenDataConstraints(tokenData)
+
+ 

@@ -1,0 +1,137 @@
+{
+  "performance_thresholds": {
+    "FAST": 1000,
+    "NORMAL": 2000,
+    "SLOW": 5000,
+    "TIMEOUT": 10000
+  },
+  "load_configs": {
+    "LIGHT": {
+      "concurrent": 10,
+      "duration": 30,
+      "rampUp": 5
+    },
+    "MEDIUM": {
+      "concurrent": 50,
+      "duration": 60,
+      "rampUp": 10
+    },
+    "HEAVY": {
+      "concurrent": 100,
+      "duration": 120,
+      "rampUp": 20
+    }
+  },
+  "stress_configs": {
+    "MODERATE": {
+      "concurrent": 200,
+      "duration": 300,
+      "rampUp": 30
+    },
+    "HIGH": {
+      "concurrent": 500,
+      "duration": 600,
+      "rampUp": 60
+    }
+  },
+  "test_scenarios": {
+    "token_data": {
+      "baseline": {
+        "threshold": "NORMAL",
+        "expected_status": 200,
+        "description": "Baseline performance test for token data endpoint"
+      },
+      "load_light": {
+        "threshold": "SLOW",
+        "expected_status": 200,
+        "description": "Light load test for token data endpoint"
+      },
+      "load_medium": {
+        "threshold": "SLOW",
+        "expected_status": 200,
+        "description": "Medium load test for token data endpoint"
+      },
+      "stress": {
+        "threshold": "TIMEOUT",
+        "expected_status": 200,
+        "description": "Stress test for token data endpoint"
+      }
+    },
+    "token_price": {
+      "baseline": {
+        "threshold": "FAST",
+        "expected_status": 200,
+        "description": "Baseline performance test for token price endpoint"
+      },
+      "light_load": {
+        "threshold": "NORMAL",
+        "expected_status": 200,
+        "description": "Light load test for token price endpoint"
+      },
+      "stress": {
+        "threshold": "SLOW",
+        "expected_status": 200,
+        "description": "Stress test for token price endpoint"
+      }
+    },
+    "token_list": {
+      "baseline": {
+        "threshold": "NORMAL",
+        "expected_status": 200,
+        "description": "Baseline performance test for token list endpoint"
+      },
+      "medium_load": {
+        "threshold": "SLOW",
+        "expected_status": 200,
+        "description": "Medium load test for token list endpoint"
+      },
+      "pagination": {
+        "threshold": "NORMAL",
+        "expected_status": 200,
+        "description": "Performance test with pagination parameters"
+      }
+    },
+    "trade_list": {
+      "baseline": {
+        "threshold": "NORMAL",
+        "expected_status": 200,
+        "description": "Baseline performance test for trade list endpoint"
+      },
+      "heavy_load": {
+        "threshold": "SLOW",
+        "expected_status": 200,
+        "description": "Heavy load test for trade list endpoint"
+      },
+      "filtering": {
+        "threshold": "NORMAL",
+        "expected_status": 200,
+        "description": "Performance test with filtering parameters"
+      }
+    }
+  },
+  "test_data": {
+    "token_addresses": {
+      "primary": "Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP",
+      "secondary": "CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump",
+      "tertiary": "7EYnhQoR9YM3N7UoaKRoA44Uy8JeaZV3qyouov87awMs"
+    },
+    "endpoints": {
+      "token_data": "token_data",
+      "token_price": "token_price",
+      "token_list": "token_list",
+      "trade_list": "trade_list"
+    },
+    "validation_rules": {
+      "min_response_size": 100,
+      "max_response_size": 10000,
+      "required_fields": ["address", "name", "symbol"]
+    },
+    "pagination_params": {
+      "limit": 10,
+      "page": 1
+    },
+    "trade_filter_params": {
+      "token_address": "Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP"
+    }
+  }
+}

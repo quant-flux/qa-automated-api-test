@@ -36,3 +36,4 @@ Feature: Trade List Endpoint
     * url baseUrl + getEndpoint('trade_list') + getInvalidTokenAddress(2)
     When method get
     Then status 404
+

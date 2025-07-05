@@ -1,0 +1,74 @@
+name: Trigger API Tests
+
+on:
+  push:
+    branches: [main, develop, feature/*]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  trigger-api-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Get commit information
+      id: commit-info
+      run: |
+        echo "sha=${{ github.sha }}" >> $GITHUB_OUTPUT
+        echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+        echo "author=${{ github.actor }}" >> $GITHUB_OUTPUT
+        echo "message=$(git log -1 --pretty=format:'%s')" >> $GITHUB_OUTPUT
+        echo "pr_number=${{ github.event.pull_request.number || 'null' }}" >> $GITHUB_OUTPUT
+
+    - name: Trigger API tests in external repository
+      uses: actions/github-script@v7
+      with:
+        script: |
+          // Configuración del repositorio donde se ejecutarán los tests
+          const testRepo = {
+            owner: '${{ secrets.TEST_REPO_OWNER }}',
+            repo: '${{ secrets.TEST_REPO_NAME }}'
+          };
+          
+          // Información del commit
+          const commitInfo = {
+            sha: '${{ steps.commit-info.outputs.sha }}',
+            branch: '${{ steps.commit-info.outputs.branch }}',
+            author: '${{ steps.commit-info.outputs.author }}',
+            message: '${{ steps.commit-info.outputs.message }}',
+            pr_number: '${{ steps.commit-info.outputs.pr_number }}',
+            repository: context.repo.full_name,
+            event: context.eventName
+          };
+          
+          console.log(`🚀 Disparando tests en ${testRepo.owner}/${testRepo.repo}`);
+          console.log(`📝 Commit: ${commitInfo.sha}`);
+          console.log(`👤 Developer: ${commitInfo.author}`);
+          console.log(`🌿 Branch: ${commitInfo.branch}`);
+          
+          try {
+            // Disparar workflow en el repositorio de tests
+            await github.rest.repos.createDispatchEvent({
+              owner: testRepo.owner,
+              repo: testRepo.repo,
+              event_type: 'dev-commit-trigger',
+              client_payload: {
+                source_repo: commitInfo.repository,
+                source_sha: commitInfo.sha,
+                source_branch: commitInfo.branch,
+                author: commitInfo.author,
+                commit_message: commitInfo.message,
+                pull_request_number: commitInfo.pr_number,
+                source_event: commitInfo.event,
+                trigger_time: new Date().toISOString()
+              }
+            });
+            
+            console.log('✅ Tests disparados exitosamente');
+          } catch (error) {
+            console.error('❌ Error disparando tests:', error.message);
+            // No fallar el workflow si no se pueden disparar los tests
+          }
+      
+      env:
+        GITHUB_TOKEN: ${{ secrets.TEST_REPO_TOKEN }} 

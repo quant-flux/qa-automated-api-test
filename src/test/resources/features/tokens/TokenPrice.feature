@@ -46,3 +46,4 @@ Feature: Token Price Endpoints
     And match response.data contains { address: '#string' }
     And def validationResult = validateTokenPriceSuccessResponse(response, true)
     And match validationResult == true
+

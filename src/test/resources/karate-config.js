@@ -12,6 +12,7 @@ function fn() {
   config.sortParams = read('classpath:data/tokens/sort-params.json');
   config.paginationParams = read('classpath:data/tokens/pagination-params.json');
   config.newListingParams = read('classpath:data/tokens/new-listing-params.json');
+  config.trendingParams = read('classpath:data/tokens/trending-params.json');
   config.ohlcvParams = read('classpath:data/trading/ohlcv-params.json');
   config.tradeAddresses = read('classpath:data/trading/trade-addresses.json');
 
@@ -19,16 +20,19 @@ function fn() {
   var tokenHelpersFn = read('classpath:helpers/token-helpers.js');
   var tradingHelpersFn = read('classpath:helpers/trading-helpers.js');
   var validationHelpersFn = read('classpath:helpers/validation-helpers.js');
+  var performanceConfigFn = read('classpath:helpers/performance-config.js');
 
   // Ejecutar funciones para obtener los helpers
   var tokenHelpers = tokenHelpersFn();
   var tradingHelpers = tradingHelpersFn();
   var validationHelpers = validationHelpersFn();
+  var performanceConfig = performanceConfigFn();
 
   // Exponer helpers en config
   config.tokenHelpers = tokenHelpers;
   config.tradingHelpers = tradingHelpers;
   config.validationHelpers = validationHelpers;
+  config.performanceConfig = performanceConfig;
 
   // Funciones compatibles con el código existente
   config.getValidToken = function(index) {
@@ -87,6 +91,26 @@ function fn() {
 
   config.validateNoUnwantedFieldsInArray = function(responseArray) {
     return validationHelpers.validateNoUnwantedFieldsInArray(responseArray);
+  };
+
+  config.validateTrendingTokensResponse = function(response, strictValidation) {
+    return validationHelpers.validateTrendingTokensResponse(response, strictValidation);
+  };
+
+  config.validateTrendingTokensBasic = function(response, expectedLimit) {
+    return validationHelpers.validateTrendingTokensBasic(response, expectedLimit);
+  };
+
+  config.validateSuccessResponse = function(response) {
+    return validationHelpers.validateSuccessResponse(response);
+  };
+
+  config.validateArrayResponse = function(response, maxLength) {
+    return validationHelpers.validateArrayResponse(response, maxLength);
+  };
+
+  config.validateArrayLengthRange = function(response, minLength, maxLength) {
+    return validationHelpers.validateArrayLengthRange(response, minLength, maxLength);
   };
 
   // Funciones de parámetros de tokens
@@ -358,6 +382,65 @@ function fn() {
     }
     // Validación básica de campos de mercado
     return true;
+  };
+
+  // Funciones de trending tokens
+  config.validateTrendingTokensResponse = function(response, strictValidation) {
+    return validationHelpers.validateTrendingTokensResponse(response, strictValidation);
+  };
+
+  config.validateTrendingTokensSorting = function(tokens) {
+    return validationHelpers.validateTrendingTokensSorting(tokens);
+  };
+
+  config.validateTrendingTokensLimit = function(tokens, expectedLimit) {
+    return validationHelpers.validateTrendingTokensLimit(tokens, expectedLimit);
+  };
+
+  // Funciones helper para trending tokens
+  config.getValidTrendingMinutes = function(index) {
+    return tokenHelpers.getValidTrendingMinutes(config.trendingParams, index);
+  };
+
+  config.getInvalidTrendingMinutes = function(index) {
+    return tokenHelpers.getInvalidTrendingMinutes(config.trendingParams, index);
+  };
+
+  config.getValidTrendingOrder = function(index) {
+    return tokenHelpers.getValidTrendingOrder(config.trendingParams, index);
+  };
+
+  config.getInvalidTrendingOrder = function(index) {
+    return tokenHelpers.getInvalidTrendingOrder(config.trendingParams, index);
+  };
+
+  config.getValidTrendingOrderField = function(index) {
+    return tokenHelpers.getValidTrendingOrderField(config.trendingParams, index);
+  };
+
+  config.getInvalidTrendingOrderField = function(index) {
+    return tokenHelpers.getInvalidTrendingOrderField(config.trendingParams, index);
+  };
+
+  // Funciones de performance helpers
+  config.getPerformanceThreshold = function(thresholdType) {
+    return performanceConfig.PERFORMANCE_THRESHOLDS[thresholdType];
+  };
+
+  config.getLoadConfig = function(configType) {
+    return performanceConfig.LOAD_CONFIGS[configType];
+  };
+
+  config.getStressConfig = function(configType) {
+    return performanceConfig.STRESS_CONFIGS[configType];
+  };
+
+  config.validateResponseTime = function(response, threshold) {
+    return performanceConfig.validateResponseTime(response, threshold);
+  };
+
+  config.validateThroughput = function(requests, duration, minThroughput) {
+    return performanceConfig.validateThroughput(requests, duration, minThroughput);
   };
 
   return config;

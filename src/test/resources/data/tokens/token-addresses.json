@@ -133,7 +133,7 @@
       "expected_error": "Token address is required"
     },
     {
-      "address": "11111111111111111111111111111111",
+      "address": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
       "type": "non_existent",
       "expected_error": "Token not found"
     }

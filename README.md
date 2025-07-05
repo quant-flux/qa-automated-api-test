@@ -1,6 +1,6 @@
 # 🚀 API Testing Project - Karate Framework
 
-Este proyecto contiene tests automatizados para la API de tokens utilizando el framework Karate.
+Este proyecto contiene tests automatizados para la API de tokens utilizando el framework Karate, con una arquitectura moderna que separa tests funcionales y de performance.
 
 ## 📁 Estructura del Proyecto
 
@@ -20,239 +20,168 @@ src/test/resources/features/
 ├── trade/
 │   ├── TradeOHLCV.feature          # Datos OHLCV para trading
 │   └── TradeList.feature           # Lista de trades recientes
+├── performance/                     # Tests de performance
+│   ├── TokenDataPerformance.feature
+│   ├── TokenListPerformance.feature
+│   ├── TokenPricePerformance.feature
+│   ├── TradeListPerformance.feature
+│   └── GlobalLoadTest.feature
 └── karate-config.js                # Configuración global de Karate
 ```
+
+## 🏗️ Arquitectura de Testing
+
+El proyecto utiliza una **arquitectura moderna y simplificada** con dos runners principales:
+
+### **🎯 FunctionalTestRunner**
+- **Propósito**: Tests funcionales (rápidos, se ejecutan en cada commit)
+- **Ubicación**: `src/test/java/runners/FunctionalTestRunner.java`
+- **Reportes**: `target/karate-reports/functional/`
+
+### **⚡ PerformanceTestRunner**
+- **Propósito**: Tests de performance (lentos, se ejecutan bajo demanda)
+- **Ubicación**: `src/test/java/runners/PerformanceTestRunner.java`
+- **Reportes**: `target/karate-reports/performance/`
 
 ## 🏷️ Tags de Organización
 
 Los escenarios están organizados con tags para facilitar la ejecución selectiva:
 
+### **Tests Funcionales:**
 - **@smoke**: Tests críticos para verificar funcionalidad básica
 - **@positive**: Tests de casos exitosos
 - **@negative**: Tests de casos de error
 - **@boundary**: Tests de valores límite
+- **@validation**: Tests de validación de estructura de datos
+- **@cleanup**: Tests de limpieza de datos
+
+### **Tests de Performance:**
+- **@performance**: Todos los tests de performance
+- **@baseline**: Tests de línea base
+- **@load**: Tests de carga
+- **@stress**: Tests de estrés
+- **@endurance**: Tests de resistencia
+- **@light**: Carga ligera
+- **@medium**: Carga media
+- **@heavy**: Carga pesada
 
 ## 🚀 Ejecución de Tests
 
-### 📋 Comandos Generales
+### **📋 Tests Funcionales**
 
-#### Ejecutar todos los tests:
+#### Ejecutar todos los tests funcionales:
 ```bash
-mvn clean test
+mvn test -Dtest=FunctionalTestRunner#testAllFunctional
 ```
 
-#### Ejecutar tests con reportes completos:
+#### Ejecutar tests específicos:
 ```bash
-mvn clean verify
+# Solo smoke tests (más rápido)
+mvn test -Dtest=FunctionalTestRunner#testSmokeTests
+
+# Solo tests positivos
+mvn test -Dtest=FunctionalTestRunner#testPositiveScenarios
+
+# Solo tests negativos
+mvn test -Dtest=FunctionalTestRunner#testNegativeScenarios
+
+# Tests por módulo
+mvn test -Dtest=FunctionalTestRunner#testTokenFeatures
+mvn test -Dtest=FunctionalTestRunner#testTradeFeatures
+mvn test -Dtest=FunctionalTestRunner#testAppFeatures
+
+# Tests por feature específico
+mvn test -Dtest=FunctionalTestRunner#testTokenData
+mvn test -Dtest=FunctionalTestRunner#testTokenList
+mvn test -Dtest=FunctionalTestRunner#testTokenPrice
+mvn test -Dtest=FunctionalTestRunner#testTradeList
 ```
 
-#### Ejecutar tests con paralelización:
+### **⚡ Tests de Performance**
+
+#### Ejecutar todos los tests de performance:
 ```bash
-mvn test -Dkarate.options="--threads 4"
+mvn test -Dtest=PerformanceTestRunner#testAllPerformance
 ```
 
-### ✅ Tests Positivos (@positive)
-
-#### Ejecutar solo tests positivos:
+#### Ejecutar tests específicos de performance:
 ```bash
-mvn test -Dkarate.options="--tags @positive"
+# Tests por intensidad
+mvn test -Dtest=PerformanceTestRunner#testLightPerformance
+mvn test -Dtest=PerformanceTestRunner#testMediumPerformance
+mvn test -Dtest=PerformanceTestRunner#testHeavyPerformance
+
+# Tests por endpoint
+mvn test -Dtest=PerformanceTestRunner#testTokenDataPerformance
+mvn test -Dtest=PerformanceTestRunner#testTokenListPerformance
+mvn test -Dtest=PerformanceTestRunner#testTokenPricePerformance
+mvn test -Dtest=PerformanceTestRunner#testTradeListPerformance
+
+# Tests agrupados
+mvn test -Dtest=PerformanceTestRunner#generateBaselinePerformanceReport
+mvn test -Dtest=PerformanceTestRunner#generateLoadPerformanceReport
+mvn test -Dtest=PerformanceTestRunner#generateStressPerformanceReport
 ```
 
-#### Ejecutar tests positivos excluyendo negativos:
+### **📊 Scripts de Conveniencia**
+
+#### Generar reportes funcionales:
 ```bash
-mvn test -Dkarate.options="--tags ~@negative"
+scripts/generate-functional-reports.bat
 ```
 
-#### Ejecutar tests positivos específicos por funcionalidad:
+#### Generar reportes de performance:
 ```bash
-# Solo tests positivos de tokens
-mvn test -Dkarate.options="--tags @positive --tags @tokens"
-
-# Solo tests positivos de trading
-mvn test -Dkarate.options="--tags @positive --tags @trading"
-
-# Solo tests positivos de health check
-mvn test -Dkarate.options="--tags @positive --tags @health"
+scripts/generate-performance-reports.bat
 ```
 
-### ❌ Tests Negativos (@negative)
-
-#### Ejecutar solo tests negativos:
-```bash
-mvn test -Dkarate.options="--tags @negative"
-```
-
-#### Ejecutar tests negativos específicos:
-```bash
-# Tests negativos de tokens
-mvn test -Dkarate.options="--tags @negative --tags @tokens"
-
-# Tests negativos de trading
-mvn test -Dkarate.options="--tags @negative --tags @trading"
-```
-
-#### Ejecutar tests negativos con detalle:
-```bash
-mvn test -Dkarate.options="--tags @negative --verbose"
-```
-
-### 🔥 Tests de Smoke (@smoke)
-
-#### Ejecutar solo tests de smoke:
-```bash
-mvn test -Dkarate.options="--tags @smoke"
-```
-
-#### Ejecutar tests de smoke y positivos:
-```bash
-mvn test -Dkarate.options="--tags @smoke --tags @positive"
-```
-
-### 5. **Tests de Validación (@validation)**
-- Validan estructura y calidad de datos
-- Verifican ausencia de campos no deseados
-- Comprueban integridad de respuestas
-
-### 6. **Tests de Limpieza (@cleanup)**
-- Detectan campos no deseados en respuestas
-- Validan que no se incluyan campos internos
-- Aseguran limpieza de datos expuestos
-
-### 🎯 Tests por Categoría
-
-#### Tests de Tokens:
-```bash
-# Todos los tests de tokens
-mvn test -Dkarate.options="--tags @tokens"
-
-# Solo tests positivos de tokens
-mvn test -Dkarate.options="--tags @tokens --tags @positive"
-
-# Solo tests negativos de tokens
-mvn test -Dkarate.options="--tags @tokens --tags @negative"
-```
-
-#### Tests de Trading:
-```bash
-# Todos los tests de trading
-mvn test -Dkarate.options="--tags @trading"
-
-# Solo tests positivos de trading
-mvn test -Dkarate.options="--tags @trading --tags @positive"
-
-# Solo tests negativos de trading
-mvn test -Dkarate.options="--tags @trading --tags @negative"
-```
-
-#### Tests de Health Check:
-```bash
-# Tests de health check
-mvn test -Dkarate.options="--tags @health"
-```
-
-### 📁 Tests por Archivo Específico
-
-#### Ejecutar tests específicos por archivo:
-```bash
-# Solo tests de lista de tokens
-mvn test -Dtest=TokensEndpointsRunner#testTokenList
-
-# Solo tests de metadata
-mvn test -Dtest=TokensEndpointsRunner#testTokenMeta
-
-# Solo tests de datos de token
-mvn test -Dtest=TokensEndpointsRunner#testTokenData
-
-# Solo tests de precio
-mvn test -Dtest=TokensEndpointsRunner#testTokenPrice
-
-# Solo tests de precios múltiples
-mvn test -Dtest=TokensEndpointsRunner#testTokenPricesMulti
-
-# Solo tests de variaciones de precios
-mvn test -Dtest=TokensEndpointsRunner#testTokenPrices
-
-# Solo tests de holders
-mvn test -Dtest=TokensEndpointsRunner#testTokenHolders
-
-# Solo tests de nuevos listados
-mvn test -Dtest=TokensEndpointsRunner#testTokenNewListing
-
-# Solo tests de OHLCV
-mvn test -Dtest=TokensEndpointsRunner#testTradeOHLCV
-
-# Solo tests de lista de trades
-mvn test -Dtest=TokensEndpointsRunner#testTradeList
-
-# Solo tests de health check
-mvn test -Dtest=TokensEndpointsRunner#testHealthCheck
-```
-
-### 🔧 Comandos Avanzados
+### **🔧 Comandos Avanzados**
 
 #### Ejecutar tests con configuración personalizada:
 ```bash
+# Tests con paralelización
+mvn test -Dtest=FunctionalTestRunner#testAllFunctional -Dkarate.options="--threads 4"
+
 # Tests con timeout personalizado
-mvn test -Dkarate.options="--tags @positive --timeout 30000"
+mvn test -Dtest=FunctionalTestRunner#testAllFunctional -Dkarate.options="--timeout 30000"
 
-# Tests con reportes detallados
-mvn test -Dkarate.options="--tags @positive --output html"
-
-# Tests con filtro de nombre
-mvn test -Dkarate.options="--tags @positive --name 'Token List'"
-```
-
-#### Ejecutar tests de validación de limpieza de datos:
-```bash
-# Validar que no hay campos no deseados en las respuestas
-mvn test -Dkarate.options="--tags @validation --tags @cleanup"
-
-# Validar limpieza de datos en todos los endpoints
-mvn test -Dtest=TokensEndpointsRunner -Dkarate.options="--tags @cleanup"
-```
-
-#### Ejecutar tests en modo debug:
-```bash
-mvn test -Dkarate.options="--tags @positive --debug"
-```
-
-#### Ejecutar tests con configuración de entorno:
-```bash
-# Tests para entorno de desarrollo
-mvn test -Dkarate.options="--tags @positive" -Dspring.profiles.active=dev
-
-# Tests para entorno de staging
-mvn test -Dkarate.options="--tags @positive" -Dspring.profiles.active=staging
-```
-
-### 📊 Combinaciones Útiles
-
-#### Ejecutar tests críticos (smoke + positivos):
-```bash
-mvn test -Dkarate.options="--tags @smoke --tags @positive"
-```
-
-#### Ejecutar tests completos excluyendo negativos:
-```bash
-mvn test -Dkarate.options="--tags ~@negative"
-```
-
-#### Ejecutar tests de validación completa:
-```bash
-mvn test -Dkarate.options="--tags @positive --tags @boundary"
-```
-
-#### Ejecutar tests de rendimiento:
-```bash
-mvn test -Dkarate.options="--tags @performance --threads 8"
+# Tests en modo debug
+mvn test -Dtest=FunctionalTestRunner#testAllFunctional -Dkarate.options="--debug"
 ```
 
 ## 📊 Reportes
 
-Después de la ejecución, los reportes se generan en:
-- **Reporte HTML principal**: `target/karate-reports/karate-summary.html`
-- **Reportes individuales**: `target/karate-reports/features.*.html`
-- **Reportes Maven**: `target/surefire-reports/`
+### **Estructura de Reportes:**
+```
+target/karate-reports/
+├── index.html                     # Reporte principal general
+├── functional/                    # Tests funcionales
+│   ├── index.html                # Reporte principal consolidado
+│   ├── complete/                 # Reporte completo
+│   ├── smoke/                    # Smoke tests
+│   ├── positive/                 # Casos positivos
+│   ├── negative/                 # Casos negativos
+│   ├── tokens/                   # Features de tokens
+│   ├── trade/                    # Features de trading
+│   └── app/                      # Features de aplicación
+└── performance/                   # Tests de performance
+    ├── index.html                # Reporte principal consolidado
+    ├── baseline/                 # Tests de baseline
+    ├── load/                     # Tests de carga
+    ├── stress/                   # Tests de estrés
+    ├── endurance/                # Tests de resistencia
+    ├── advanced/                 # Tests avanzados
+    ├── token-data/               # Performance de token data
+    ├── token-list/               # Performance de token list
+    ├── token-price/              # Performance de token price
+    ├── trade-list/               # Performance de trade list
+    └── global-load/              # Tests de carga global
+```
+
+### **Acceso a Reportes:**
+- **Reporte Principal**: `target/karate-reports/index.html`
+- **Tests Funcionales**: `target/karate-reports/functional/complete/index.html`
+- **Tests de Performance**: `target/karate-reports/performance/index.html`
 
 ## 🔧 Configuración
 
@@ -288,35 +217,20 @@ Basado en la [documentación de la API](https://full-api.cloud-service-app.com/a
 
 ## 🧪 Tipos de Tests
 
-### 1. **Tests Positivos (@positive)**
-- Verifican funcionalidad normal
-- Validan respuestas exitosas
-- Comprueban estructura de datos
+### **Tests Funcionales**
+1. **Tests Positivos (@positive)**: Verifican funcionalidad normal
+2. **Tests Negativos (@negative)**: Verifican manejo de errores
+3. **Tests de Límites (@boundary)**: Prueban valores mínimos y máximos
+4. **Tests de Smoke (@smoke)**: Tests críticos para verificación rápida
+5. **Tests de Validación (@validation)**: Validan estructura y calidad de datos
+6. **Tests de Limpieza (@cleanup)**: Detectan campos no deseados
 
-### 2. **Tests Negativos (@negative)**
-- Verifican manejo de errores
-- Validan códigos de error apropiados
-- Prueban parámetros inválidos
-
-### 3. **Tests de Límites (@boundary)**
-- Prueban valores mínimos y máximos
-- Verifican comportamiento en extremos
-- Validan restricciones de parámetros
-
-### 4. **Tests de Smoke (@smoke)**
-- Tests críticos para verificación rápida
-- Funcionalidad básica esencial
-- Ejecución prioritaria
-
-### 5. **Tests de Validación (@validation)**
-- Validan estructura y calidad de datos
-- Verifican ausencia de campos no deseados
-- Comprueban integridad de respuestas
-
-### 6. **Tests de Limpieza (@cleanup)**
-- Detectan campos no deseados en respuestas
-- Validan que no se incluyan campos internos
-- Aseguran limpieza de datos expuestos
+### **Tests de Performance**
+1. **Tests de Baseline (@baseline)**: Tiempos de respuesta normales
+2. **Tests de Carga (@load)**: Diferentes niveles de carga
+3. **Tests de Estrés (@stress)**: Carga máxima del sistema
+4. **Tests de Resistencia (@endurance)**: Carga prolongada
+5. **Tests Avanzados (@advanced)**: Validaciones complejas
 
 ## 📋 Casos de Uso Cubiertos
 
@@ -351,6 +265,7 @@ Basado en la [documentación de la API](https://full-api.cloud-service-app.com/a
 - ✅ Manejo de errores apropiado
 - ✅ Validación de parámetros
 - ✅ Ausencia de campos no deseados
+- ✅ Tiempos de respuesta (performance)
 
 ## 🧹 Validaciones de Limpieza de Datos
 
@@ -412,13 +327,13 @@ Scenario: Get price variations for single token
 ### Comandos para Ejecutar Validaciones:
 ```bash
 # Solo validaciones de limpieza
-mvn test -Dkarate.options="--tags @cleanup"
+mvn test -Dtest=FunctionalTestRunner#testAllFunctional -Dkarate.options="--tags @cleanup"
 
 # Validaciones de limpieza y estructura
-mvn test -Dkarate.options="--tags @validation"
+mvn test -Dtest=FunctionalTestRunner#testAllFunctional -Dkarate.options="--tags @validation"
 
 # Validaciones específicas de tokens
-mvn test -Dkarate.options="--tags @cleanup --tags @tokens"
+mvn test -Dtest=FunctionalTestRunner#testTokenFeatures -Dkarate.options="--tags @cleanup"
 ```
 
 ## 🛠️ Tecnologías Utilizadas
@@ -434,11 +349,20 @@ mvn test -Dkarate.options="--tags @cleanup --tags @tokens"
 2. **Datos Dinámicos**: Algunos valores pueden variar entre ejecuciones
 3. **Rate Limiting**: Considerar límites de la API en ejecuciones masivas
 4. **Configuración**: Verificar URL base antes de ejecutar tests
+5. **Separación de Tests**: Los tests funcionales y de performance están completamente separados
+6. **Reportes Organizados**: Cada tipo de test tiene su propia estructura de reportes
 
 ## 🤝 Contribución
 
 Para agregar nuevos tests:
-1. Crear archivo `.feature` en la carpeta apropiada
+1. Crear archivo `.feature` en la carpeta apropiada (`tokens/`, `trade/`, `app/`, o `performance/`)
 2. Usar tags para categorización
 3. Seguir convenciones de nomenclatura
-4. Actualizar este README si es necesario 
+4. Actualizar este README si es necesario
+5. Usar los runners apropiados (`FunctionalTestRunner` o `PerformanceTestRunner`)
+
+## 📚 Documentación Adicional
+
+- **Runners**: Ver `src/test/java/runners/README.md` para detalles de los runners
+- **Datos de Prueba**: Ver `src/test/resources/data/README.md` para estructura de datos
+- **Performance**: Ver `src/test/resources/features/performance/README.md` para tests de performance 

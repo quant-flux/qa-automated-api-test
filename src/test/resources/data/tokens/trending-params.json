@@ -1,0 +1,198 @@
+{
+  "test_scenarios": {
+    "default_parameters": {
+      "description": "Get trending tokens with default parameters",
+      "minutes": 5,
+      "order": "DESC",
+      "orderField": "volume",
+      "limit": 10,
+      "expected_status": 200,
+      "expected_min_tokens": 1
+    },
+    "small_limit": {
+      "description": "Get trending tokens with small limit",
+      "minutes": 5,
+      "order": "DESC",
+      "orderField": "volume",
+      "limit": 5,
+      "expected_status": 200,
+      "expected_max_tokens": 5
+    },
+    "medium_limit": {
+      "description": "Get trending tokens with medium limit",
+      "minutes": 10,
+      "order": "DESC",
+      "orderField": "volume",
+      "limit": 10,
+      "expected_status": 200,
+      "expected_max_tokens": 10
+    },
+    "large_limit": {
+      "description": "Get trending tokens with large limit",
+      "minutes": 15,
+      "order": "DESC",
+      "orderField": "volume",
+      "limit": 20,
+      "expected_status": 200,
+      "expected_max_tokens": 20
+    },
+    "minimum_limit": {
+      "description": "Get trending tokens with minimum limit",
+      "minutes": 1,
+      "order": "DESC",
+      "orderField": "volume",
+      "limit": 1,
+      "expected_status": 200,
+      "expected_max_tokens": 1
+    },
+    "maximum_limit": {
+      "description": "Get trending tokens with maximum limit",
+      "minutes": 20,
+      "order": "DESC",
+      "orderField": "volume",
+      "limit": 100,
+      "expected_status": 200,
+      "expected_max_tokens": 100
+    },
+    "asc_order": {
+      "description": "Get trending tokens with ascending order",
+      "minutes": 5,
+      "order": "ASC",
+      "orderField": "volume",
+      "limit": 10,
+      "expected_status": 200,
+      "expected_min_tokens": 1
+    },
+    "count_order_field": {
+      "description": "Get trending tokens ordered by count",
+      "minutes": 5,
+      "order": "DESC",
+      "orderField": "count",
+      "limit": 10,
+      "expected_status": 200,
+      "expected_min_tokens": 1
+    },
+    "combined_parameters": {
+      "description": "Get trending tokens with combined parameters",
+      "minutes": 10,
+      "order": "ASC",
+      "orderField": "count",
+      "limit": 15,
+      "expected_status": 200,
+      "expected_max_tokens": 15
+    },
+    "boundary_minutes": {
+      "description": "Get trending tokens with boundary minutes",
+      "minutes": 1,
+      "order": "DESC",
+      "orderField": "volume",
+      "limit": 10,
+      "expected_status": 200,
+      "expected_min_tokens": 1
+    },
+    "boundary_max_minutes": {
+      "description": "Get trending tokens with maximum minutes",
+      "minutes": 20,
+      "order": "DESC",
+      "orderField": "volume",
+      "limit": 10,
+      "expected_status": 200,
+      "expected_min_tokens": 1
+    }
+  },
+  "valid_minutes": [
+    1,
+    5,
+    10,
+    15,
+    20
+  ],
+  "valid_orders": [
+    "ASC",
+    "DESC"
+  ],
+  "valid_order_fields": [
+    "count",
+    "volume"
+  ],
+  "valid_limits": [
+    1,
+    5,
+    10,
+    15,
+    20,
+    25,
+    50,
+    100
+  ],
+  "invalid_minutes": [
+    0,
+    -1,
+    -5,
+    21,
+    30,
+    "invalid",
+    "abc",
+    "",
+    null
+  ],
+  "invalid_orders": [
+    "asc",
+    "desc",
+    "Asc",
+    "Desc",
+    "INVALID",
+    "random",
+    "",
+    null
+  ],
+  "invalid_order_fields": [
+    "price",
+    "name",
+    "symbol",
+    "market_cap",
+    "invalid",
+    "random",
+    "",
+    null
+  ],
+  "invalid_limits": [
+    0,
+    -1,
+    -5,
+    101,
+    200,
+    "invalid",
+    "abc",
+    "",
+    null
+  ],
+  "validation_fields": [
+    "address",
+    "name",
+    "symbol",
+    "price",
+    "volume_24h",
+    "percent_change_24h",
+    "market_cap",
+    "image",
+    "created_time"
+  ],
+  "required_fields": [
+    "address",
+    "name",
+    "symbol",
+    "price",
+    "volume_24h",
+    "percent_change_24h",
+    "created_time"
+  ],
+  "optional_fields": [
+    "market_cap",
+    "image"
+  ],
+  "performance_thresholds": {
+    "max_response_time_ms": 5000,
+    "max_response_time_with_params_ms": 5000
+  }
+} 
