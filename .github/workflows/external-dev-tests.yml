@@ -4,10 +4,21 @@ on:
   repository_dispatch:
     types: [full-api-commit-trigger]
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  run-tests:
+  test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -18,88 +29,105 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Display development commit information
-      run: |
-        echo "## Development Commit Information" >> $GITHUB_STEP_SUMMARY
-        echo "**Source Repository:** ${{ github.event.client_payload.source_repo }}" >> $GITHUB_STEP_SUMMARY
-        echo "**Source Commit:** ${{ github.event.client_payload.source_sha }}" >> $GITHUB_STEP_SUMMARY
-        echo "**Source Branch:** ${{ github.event.client_payload.source_branch }}" >> $GITHUB_STEP_SUMMARY
-        echo "**Developer:** ${{ github.event.client_payload.author }}" >> $GITHUB_STEP_SUMMARY
-        echo "**Commit Message:** ${{ github.event.client_payload.commit_message }}" >> $GITHUB_STEP_SUMMARY
-        echo "**Trigger Time:** ${{ github.event.client_payload.trigger_time }}" >> $GITHUB_STEP_SUMMARY
-
-    - name: Run API tests
+    - name: Run API tests with CompleteReportRunner
       run: mvn test -Dtest=CompleteReportRunner
       continue-on-error: true
 
     - name: Generate Test Summary
       if: always()
       run: |
-        echo "## Test Execution Results" >> $GITHUB_STEP_SUMMARY
+        echo "## Test Execution Summary" >> $GITHUB_STEP_SUMMARY
         echo "**Tests executed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
         echo "**Tests failed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
         echo "**Tests passed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}') - $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "📊 **Download the Karate HTML Report from the Artifacts section below to view detailed results**" >> $GITHUB_STEP_SUMMARY
+
+    - name: Upload Karate HTML Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: karate-html-report
+        path: target/karate-reports/
+        retention-days: 30
 
     - name: Upload Test Results
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: dev-tests-${{ github.event.client_payload.source_sha }}
-        path: |
-          target/surefire-reports/
-          target/karate-reports/
-        retention-days: 7
+        name: test-results
+        path: target/surefire-reports/
+        retention-days: 30
 
-    - name: Comment on development repository
-      if: always()
+    - name: Comment on PR
+      if: github.event_name == 'pull_request'
       uses: actions/github-script@v7
       with:
         script: |
-          const sourceRepo = '${{ github.event.client_payload.source_repo }}'.split('/');
-          const owner = sourceRepo[0];
-          const repo = sourceRepo[1];
+          const fs = require('fs');
+          const path = require('path');
           
           let summary = '## 🧪 API Tests Results\n\n';
-          summary += `**Tests executed for commit:** ${'${{ github.event.client_payload.source_sha }}'}\n`;
-          summary += `**Developer:** ${'${{ github.event.client_payload.author }}'}\n`;
-          summary += `**Branch:** ${'${{ github.event.client_payload.source_branch }}'}\n\n`;
           
           try {
             const reportPath = 'target/karate-reports/karate-summary.html';
             if (fs.existsSync(reportPath)) {
-              summary += '✅ **Tests completed!**\n\n';
+              summary += '✅ **Tests completed successfully!**\n\n';
               summary += '📊 **Download the detailed HTML report from the Actions artifacts**\n\n';
+              summary += '🔗 [View Test Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})';
             } else {
               summary += '❌ **Tests failed or report not generated**\n\n';
+              summary += '🔗 [View Test Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})';
             }
           } catch (error) {
             summary += '❌ **Error generating report**\n\n';
+            summary += '🔗 [View Test Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})';
           }
           
-          summary += `🔗 [View Test Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})`;
-          
-          // Comentar en el repositorio de desarrollo
-          const octokit = github.getOctokit(process.env.DEV_REPO_TOKEN);
-          
-          // Si es un PR, comentar en el PR, sino crear un issue
-          const prNumber = '${{ github.event.client_payload.pull_request_number }}';
-          
-          if (prNumber && prNumber !== 'null') {
-            await octokit.rest.issues.createComment({
-              owner: owner,
-              repo: repo,
-              issue_number: parseInt(prNumber),
-              body: summary
-            });
-          } else {
-            // Crear un issue con los resultados
-            await octokit.rest.issues.create({
-              owner: owner,
-              repo: repo,
-              title: `API Tests Results - Commit ${'${{ github.event.client_payload.source_sha }}'.substring(0, 7)}`,
-              body: summary,
-              labels: ['api-tests', 'automated']
-            });
-          }
-      env:
-        DEV_REPO_TOKEN: ${{ secrets.DEV_REPO_TOKEN }} 
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: summary
+          });
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Download Karate Reports
+      uses: actions/download-artifact@v4
+      with:
+        name: karate-html-report
+        path: ./karate-reports
+    
+    - name: Setup Pages
+      uses: actions/configure-pages@v5
+    
+    - name: Create index.html
+      run: |
+        mkdir -p public
+        if [ -d "./karate-reports" ]; then
+          cp -r ./karate-reports/* ./public/
+          echo "<html><head><title>API Test Reports</title><meta http-equiv='refresh' content='0;url=karate-summary.html'></head><body><p>Redirecting to <a href='karate-summary.html'>test reports</a>...</p></body></html>" > ./public/index.html
+        else
+          echo "<html><body><h1>API Test Reports</h1><p>No test reports available at the moment.</p><p>Reports will appear here after successful test runs.</p></body></html>" > ./public/index.html
+        fi
+    
+    - name: Upload site
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: './public'
+    
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
