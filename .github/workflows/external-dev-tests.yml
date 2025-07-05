@@ -2,7 +2,7 @@ name: External Development Tests
 
 on:
   repository_dispatch:
-    types: [dev-commit-trigger]
+    types: [full-api-commit-trigger]
 
 jobs:
   run-tests:
