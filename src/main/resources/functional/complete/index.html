@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Consolidado - Tests Funcionales</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .success { color: #28a745; }
+        .warning { color: #ffc107; }
+        .danger { color: #dc3545; }
+        .info { color: #17a2b8; }
+        .content {
+            padding: 30px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            color: #495057;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .report-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .report-link {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 20px;
+            text-decoration: none;
+            color: #495057;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .report-link:hover {
+            background: #e9ecef;
+            border-color: #adb5bd;
+            transform: translateX(5px);
+            text-decoration: none;
+            color: #495057;
+        }
+        .report-link .icon {
+            font-size: 1.5em;
+            opacity: 0.7;
+        }
+        .navigation {
+            background: #343a40;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            color: white;
+        }
+        .timestamp {
+            color: #6c757d;
+            font-size: 0.9em;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Reporte Consolidado</h1>
+            <p>Tests Funcionales - API de Tokens y Trading</p>
+        </div>
+        
+        <div class="navigation">
+            <a href="../../index.html" class="nav-link">🏠 Inicio</a>
+            <a href="index.html" class="nav-link">📋 Tests Funcionales</a>
+            <a href="../../performance/index.html" class="nav-link">⚡ Tests Performance</a>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number success" id="totalTests">0</div>
+                <div class="stat-label">Total Tests</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number success" id="passedTests">0</div>
+                <div class="stat-label">Tests Exitosos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number danger" id="failedTests">0</div>
+                <div class="stat-label">Tests Fallidos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number info" id="successRate">0%</div>
+                <div class="stat-label">Tasa de Éxito</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>📊 Reportes Generales</h2>
+                <div class="report-links">
+                    <a href="karate-summary.html" class="report-link">
+                        <div>
+                            <strong>📊 Resumen General</strong>
+                            <br><small>Vista general de todos los tests</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                    <a href="karate-tags.html" class="report-link">
+                        <div>
+                            <strong>🏷️ Tags</strong>
+                            <br><small>Análisis por tags</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🔧 Tests de Tokens</h2>
+                <div class="report-links">
+                    <a href="features.tokens.TokenData.html" class="report-link">
+                        <div>
+                            <strong>📊 Token Data</strong>
+                            <br><small>Datos completos de tokens</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                    <a href="features.tokens.TokenDataValidation.html" class="report-link">
+                        <div>
+                            <strong>✅ Token Data Validation</strong>
+                            <br><small>Validaciones de datos de tokens</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                    <a href="features.tokens.TokenList.html" class="report-link">
+                        <div>
+                            <strong>📋 Token List</strong>
+                            <br><small>Listado de tokens</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                    <a href="features.tokens.TokenPrice.html" class="report-link">
+                        <div>
+                            <strong>💰 Token Price</strong>
+                            <br><small>Precios de tokens</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                    <a href="features.tokens.TokenPrices.html" class="report-link">
+                        <div>
+                            <strong>💰💰 Token Prices</strong>
+                            <br><small>Múltiples precios de tokens</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                    <a href="features.tokens.TokenPricesMulti.html" class="report-link">
+                        <div>
+                            <strong>💰💰💰 Token Prices Multi</strong>
+                            <br><small>Precios múltiples avanzados</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                    <a href="features.tokens.TokenMeta.html" class="report-link">
+                        <div>
+                            <strong>📝 Token Meta</strong>
+                            <br><small>Metadatos de tokens</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                    <a href="features.tokens.TokenHolders.html" class="report-link">
+                        <div>
+                            <strong>👥 Token Holders</strong>
+                            <br><small>Holders de tokens</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                    <a href="features.tokens.TokenNewListing.html" class="report-link">
+                        <div>
+                            <strong>🆕 Token New Listing</strong>
+                            <br><small>Nuevos listados de tokens</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                    <a href="features.tokens.TokenTrending.html" class="report-link">
+                        <div>
+                            <strong>📈 Token Trending</strong>
+                            <br><small>Tokens en tendencia</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>📈 Tests de Trading</h2>
+                <div class="report-links">
+                    <a href="features.trade.TradeList.html" class="report-link">
+                        <div>
+                            <strong>📊 Trade List</strong>
+                            <br><small>Listado de trades</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                    <a href="features.trade.TradeOHLCV.html" class="report-link">
+                        <div>
+                            <strong>📈 Trade OHLCV</strong>
+                            <br><small>Datos OHLCV de trading</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>🏥 Tests de Aplicación</h2>
+                <div class="report-links">
+                    <a href="features.app.HealthCheck.html" class="report-link">
+                        <div>
+                            <strong>❤️ Health Check</strong>
+                            <br><small>Verificación de salud de la API</small>
+                        </div>
+                        <div class="icon">→</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="timestamp">
+            <p>Reporte generado el: <span id="timestamp"></span></p>
+        </div>
+    </div>
+
+    <script>
+        // Actualizar timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('es-ES');
+        
+        // Simular estadísticas (en un caso real, estas vendrían de los reportes JSON)
+        function updateStats() {
+            // Estas estadísticas se actualizarían con datos reales de los reportes
+            const totalTests = 45; // Ejemplo
+            const passedTests = 42; // Ejemplo
+            const failedTests = 3; // Ejemplo
+            const successRate = Math.round((passedTests / totalTests) * 100);
+            
+            document.getElementById('totalTests').textContent = totalTests;
+            document.getElementById('passedTests').textContent = passedTests;
+            document.getElementById('failedTests').textContent = failedTests;
+            document.getElementById('successRate').textContent = successRate + '%';
+            
+            // Actualizar colores según el éxito
+            const successRateElement = document.getElementById('successRate');
+            if (successRate >= 90) {
+                successRateElement.className = 'stat-number success';
+            } else if (successRate >= 70) {
+                successRateElement.className = 'stat-number warning';
+            } else {
+                successRateElement.className = 'stat-number danger';
+            }
+        }
+        
+        updateStats();
+    </script>
+</body>
+</html> 
