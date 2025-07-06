@@ -158,17 +158,29 @@ jobs:
           echo "🔍 Verificando contenido de public después de copiar..."
           ls -la ./public/
           
-          # Verificar si el index.html se copió correctamente
+          # Copiar el index.html desde recursos si no existe
           if [ -f "./public/index.html" ]; then
             echo "✅ index.html encontrado y copiado correctamente"
             echo "📄 Tamaño del archivo: $(wc -c < ./public/index.html) bytes"
           else
-            echo "❌ index.html no encontrado en public, creando uno básico"
-            echo "<html><body><h1>API Test Reports</h1><p>Reports available in subdirectories.</p><p><a href='functional/complete/index.html'>Functional Tests</a></p><p><a href='performance/index.html'>Performance Tests</a></p></body></html>" > ./public/index.html
+            echo "❌ index.html no encontrado en public, copiando desde recursos..."
+            if [ -f "src/main/resources/index.html" ]; then
+              cp src/main/resources/index.html ./public/index.html
+              echo "✅ index.html copiado desde recursos"
+            else
+              echo "❌ index.html no encontrado en recursos, creando uno básico"
+              echo "<html><body><h1>API Test Reports</h1><p>Reports available in subdirectories.</p><p><a href='functional/complete/index.html'>Functional Tests</a></p><p><a href='performance/index.html'>Performance Tests</a></p></body></html>" > ./public/index.html
+            fi
           fi
         else
-          echo "❌ Directorio karate-reports no encontrado, creando index.html básico"
-          echo "<html><body><h1>API Test Reports</h1><p>No test reports available at the moment.</p><p>Reports will appear here after successful test runs.</p></body></html>" > ./public/index.html
+          echo "❌ Directorio karate-reports no encontrado, copiando index.html desde recursos..."
+          if [ -f "src/main/resources/index.html" ]; then
+            cp src/main/resources/index.html ./public/index.html
+            echo "✅ index.html copiado desde recursos"
+          else
+            echo "❌ index.html no encontrado en recursos, creando uno básico"
+            echo "<html><body><h1>API Test Reports</h1><p>No test reports available at the moment.</p><p>Reports will appear here after successful test runs.</p></body></html>" > ./public/index.html
+          fi
         fi
     
     - name: Upload site
