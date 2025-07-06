@@ -130,16 +130,26 @@ jobs:
     - name: Create index.html
       run: |
         mkdir -p public
+        echo "🔍 Verificando contenido de karate-reports..."
+        ls -la ./karate-reports/ || echo "❌ Directorio karate-reports no existe"
+        
         if [ -d "./karate-reports" ]; then
+          echo "📁 Copiando contenido de karate-reports a public..."
           cp -r ./karate-reports/* ./public/
-          # Asegurar que el index.html esté en la raíz
+          
+          echo "🔍 Verificando contenido de public después de copiar..."
+          ls -la ./public/
+          
+          # Verificar si el index.html se copió correctamente
           if [ -f "./public/index.html" ]; then
-            echo "✅ index.html encontrado en karate-reports"
+            echo "✅ index.html encontrado y copiado correctamente"
+            echo "📄 Tamaño del archivo: $(wc -c < ./public/index.html) bytes"
           else
-            echo "❌ index.html no encontrado, creando uno básico"
+            echo "❌ index.html no encontrado en public, creando uno básico"
             echo "<html><body><h1>API Test Reports</h1><p>Reports available in subdirectories.</p><p><a href='functional/complete/index.html'>Functional Tests</a></p><p><a href='performance/index.html'>Performance Tests</a></p></body></html>" > ./public/index.html
           fi
         else
+          echo "❌ Directorio karate-reports no encontrado, creando index.html básico"
           echo "<html><body><h1>API Test Reports</h1><p>No test reports available at the moment.</p><p>Reports will appear here after successful test runs.</p></body></html>" > ./public/index.html
         fi
     
