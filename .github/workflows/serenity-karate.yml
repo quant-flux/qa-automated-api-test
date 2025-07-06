@@ -49,6 +49,24 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "📊 **Download the Karate HTML Reports from the Artifacts section below to view detailed results**" >> $GITHUB_STEP_SUMMARY
 
+    - name: Verify Reports Generated
+      if: always()
+      run: |
+        echo "🔍 Verificando si los reportes se generaron..."
+        if [ -d "target/karate-reports" ]; then
+          echo "✅ Directorio target/karate-reports existe"
+          ls -la target/karate-reports/
+          
+          if [ -f "target/karate-reports/index.html" ]; then
+            echo "✅ index.html encontrado en target/karate-reports/"
+            echo "📄 Tamaño: $(wc -c < target/karate-reports/index.html) bytes"
+          else
+            echo "❌ index.html NO encontrado en target/karate-reports/"
+          fi
+        else
+          echo "❌ Directorio target/karate-reports NO existe"
+        fi
+
     - name: Upload Karate HTML Report
       if: always()
       uses: actions/upload-artifact@v4
