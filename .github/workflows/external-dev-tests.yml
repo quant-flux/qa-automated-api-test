@@ -29,19 +29,24 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Run API tests with CompleteReportRunner
-      run: mvn test -Dtest=CompleteReportRunner
+    - name: Run Functional Tests
+      run: mvn test -Dtest=FunctionalTestRunner#testCompleteReport
+      continue-on-error: true
+
+    - name: Run Performance Tests
+      run: mvn test -Dtest=PerformanceTestRunner#testAllPerformance
       continue-on-error: true
 
     - name: Generate Test Summary
       if: always()
       run: |
         echo "## Test Execution Summary" >> $GITHUB_STEP_SUMMARY
-        echo "**Tests executed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
-        echo "**Tests failed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
-        echo "**Tests passed:** $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}') - $(find target/surefire-reports -name "*.xml" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum}')" >> $GITHUB_STEP_SUMMARY
+        echo "**Functional Tests executed:** $(find target/surefire-reports -name "*FunctionalTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')" >> $GITHUB_STEP_SUMMARY
+        echo "**Functional Tests failed:** $(find target/surefire-reports -name "*FunctionalTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')" >> $GITHUB_STEP_SUMMARY
+        echo "**Performance Tests executed:** $(find target/surefire-reports -name "*PerformanceTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')" >> $GITHUB_STEP_SUMMARY
+        echo "**Performance Tests failed:** $(find target/surefire-reports -name "*PerformanceTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "📊 **Download the Karate HTML Report from the Artifacts section below to view detailed results**" >> $GITHUB_STEP_SUMMARY
+        echo "📊 **Download the Karate HTML Reports from the Artifacts section below to view detailed results**" >> $GITHUB_STEP_SUMMARY
 
     - name: Upload Karate HTML Report
       if: always()
@@ -83,11 +88,67 @@ jobs:
     - name: Create index.html
       run: |
         mkdir -p public
+        echo "🔍 Verificando contenido de karate-reports..."
+        ls -la ./karate-reports/ || echo "❌ Directorio karate-reports no existe"
+        
         if [ -d "./karate-reports" ]; then
+          echo "📁 Copiando contenido de karate-reports a public..."
           cp -r ./karate-reports/* ./public/
-          echo "<html><head><title>API Test Reports</title><meta http-equiv='refresh' content='0;url=karate-summary.html'></head><body><p>Redirecting to <a href='karate-summary.html'>test reports</a>...</p></body></html>" > ./public/index.html
+          
+          echo "🔍 Verificando contenido de public después de copiar..."
+          ls -la ./public/
+          
+          # Copiar el index.html principal desde recursos si no existe
+          if [ -f "./public/index.html" ]; then
+            echo "✅ index.html principal encontrado y copiado correctamente"
+            echo "📄 Tamaño del archivo: $(wc -c < ./public/index.html) bytes"
+          else
+            echo "❌ index.html principal no encontrado en public, copiando desde recursos..."
+            if [ -f "src/main/resources/index.html" ]; then
+              cp src/main/resources/index.html ./public/index.html
+              echo "✅ index.html principal copiado desde recursos"
+            else
+              echo "❌ index.html principal no encontrado en recursos, creando uno básico"
+              echo "<html><body><h1>API Test Reports</h1><p>Reports available in subdirectories.</p><p><a href='functional/complete/index.html'>Functional Tests</a></p><p><a href='performance/index.html'>Performance Tests</a></p></body></html>" > ./public/index.html
+            fi
+          fi
+          
+          # Copiar index.html funcional si no existe
+          if [ -f "./public/functional/complete/index.html" ]; then
+            echo "✅ functional/complete/index.html encontrado"
+          else
+            echo "❌ functional/complete/index.html no encontrado, copiando desde recursos..."
+            if [ -f "src/main/resources/functional/complete/index.html" ]; then
+              mkdir -p ./public/functional/complete
+              cp src/main/resources/functional/complete/index.html ./public/functional/complete/index.html
+              echo "✅ functional/complete/index.html copiado desde recursos"
+            else
+              echo "❌ functional/complete/index.html no encontrado en recursos"
+            fi
+          fi
+          
+          # Copiar index.html de performance si no existe
+          if [ -f "./public/performance/index.html" ]; then
+            echo "✅ performance/index.html encontrado"
+          else
+            echo "❌ performance/index.html no encontrado, copiando desde recursos..."
+            if [ -f "src/main/resources/performance/index.html" ]; then
+              mkdir -p ./public/performance
+              cp src/main/resources/performance/index.html ./public/performance/index.html
+              echo "✅ performance/index.html copiado desde recursos"
+            else
+              echo "❌ performance/index.html no encontrado en recursos"
+            fi
+          fi
         else
-          echo "<html><body><h1>API Test Reports</h1><p>No test reports available at the moment.</p><p>Reports will appear here after successful test runs.</p></body></html>" > ./public/index.html
+          echo "❌ Directorio karate-reports no encontrado, copiando index.html desde recursos..."
+          if [ -f "src/main/resources/index.html" ]; then
+            cp src/main/resources/index.html ./public/index.html
+            echo "✅ index.html copiado desde recursos"
+          else
+            echo "❌ index.html no encontrado en recursos, creando uno básico"
+            echo "<html><body><h1>API Test Reports</h1><p>No test reports available at the moment.</p><p>Reports will appear here after successful test runs.</p></body></html>" > ./public/index.html
+          fi
         fi
     
     - name: Upload site
