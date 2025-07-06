@@ -31,7 +31,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Run Functional Tests
-      run: mvn test -Dtest=FunctionalTestRunner#testAllFunctional
+      run: mvn test -Dtest=FunctionalTestRunner#testCompleteReport
       continue-on-error: true
 
     - name: Run Performance Tests
