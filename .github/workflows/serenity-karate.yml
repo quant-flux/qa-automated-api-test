@@ -132,7 +132,7 @@ jobs:
         mkdir -p public
         if [ -d "./karate-reports" ]; then
           cp -r ./karate-reports/* ./public/
-          echo "<html><head><title>API Test Reports</title><meta http-equiv='refresh' content='0;url=karate-summary.html'></head><body><p>Redirecting to <a href='karate-summary.html'>test reports</a>...</p></body></html>" > ./public/index.html
+          echo "<html><head><title>API Test Reports</title><meta http-equiv='refresh' content='0;url=index.html'></head><body><p>Redirecting to <a href='index.html'>test reports</a>...</p></body></html>" > ./public/index.html
         else
           echo "<html><body><h1>API Test Reports</h1><p>No test reports available at the moment.</p><p>Reports will appear here after successful test runs.</p></body></html>" > ./public/index.html
         fi
