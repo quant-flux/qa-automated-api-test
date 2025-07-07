@@ -71,6 +71,15 @@ jobs:
         echo "Archivo karate-summary-json.txt generado con estadísticas:"
         echo "Funcionales: $FUNCTIONAL_TOTAL total, $FUNCTIONAL_PASSED exitosos, $FUNCTIONAL_FAILED fallidos"
         echo "Performance: $PERFORMANCE_TOTAL total, $PERFORMANCE_PASSED exitosos, $PERFORMANCE_FAILED fallidos"
+        
+        # Verificar que el archivo se creó correctamente
+        if [ -f "target/karate-reports/functional/complete/karate-summary-json.txt" ]; then
+          echo "✅ Archivo karate-summary-json.txt creado exitosamente"
+          echo "Contenido del archivo:"
+          cat target/karate-reports/functional/complete/karate-summary-json.txt
+        else
+          echo "❌ Error: No se pudo crear el archivo karate-summary-json.txt"
+        fi
 
     - name: Upload Karate HTML Report
       if: always()
@@ -142,6 +151,15 @@ jobs:
           echo "✅ functional/complete/index.html copiado desde recursos"
         else
           echo "❌ functional/complete/index.html no encontrado en recursos"
+        fi
+        
+        # Copiar archivo de estadísticas si existe
+        if [ -f "karate-reports/functional/complete/karate-summary-json.txt" ]; then
+          cp karate-reports/functional/complete/karate-summary-json.txt ./public/functional/complete/karate-summary-json.txt
+          echo "✅ karate-summary-json.txt copiado al directorio público"
+        else
+          echo "❌ karate-summary-json.txt no encontrado, creando uno con valores por defecto"
+          echo '{"functional":{"totalTests":0,"passedTests":0,"failedTests":0,"successRate":0},"performance":{"totalTests":0,"passedTests":0,"failedTests":0,"successRate":0}}' > ./public/functional/complete/karate-summary-json.txt
         fi
         
         # Copiar index.html de performance desde recursos
