@@ -106,6 +106,69 @@ jobs:
         path: target/surefire-reports/
         retention-days: 30
 
+    - name: Verify Reports Generated
+      if: always()
+      run: |
+        echo "🔍 Verificando si los reportes se generaron..."
+        if [ -d "target/karate-reports" ]; then
+          echo "✅ Directorio target/karate-reports existe"
+          ls -la target/karate-reports/
+          
+          if [ -f "target/karate-reports/index.html" ]; then
+            echo "✅ index.html encontrado en target/karate-reports/"
+            echo "📄 Tamaño: $(wc -c < target/karate-reports/index.html) bytes"
+          else
+            echo "❌ index.html NO encontrado en target/karate-reports/"
+          fi
+          
+          # Verificar reportes funcionales
+          if [ -d "target/karate-reports/functional" ]; then
+            echo "✅ Directorio functional existe"
+            ls -la target/karate-reports/functional/
+            
+            if [ -d "target/karate-reports/functional/complete" ]; then
+              echo "✅ Directorio functional/complete existe"
+              ls -la target/karate-reports/functional/complete/
+              
+              if [ -f "target/karate-reports/functional/complete/index.html" ]; then
+                echo "✅ functional/complete/index.html encontrado"
+                echo "📄 Tamaño: $(wc -c < target/karate-reports/functional/complete/index.html) bytes"
+              else
+                echo "❌ functional/complete/index.html NO encontrado"
+              fi
+            else
+              echo "❌ Directorio functional/complete NO existe"
+            fi
+          else
+            echo "❌ Directorio functional NO existe"
+          fi
+          
+          # Verificar reportes de performance
+          if [ -d "target/karate-reports/performance" ]; then
+            echo "✅ Directorio performance existe"
+            ls -la target/karate-reports/performance/
+            
+            if [ -f "target/karate-reports/performance/index.html" ]; then
+              echo "✅ performance/index.html encontrado"
+              echo "📄 Tamaño: $(wc -c < target/karate-reports/performance/index.html) bytes"
+            else
+              echo "❌ performance/index.html NO encontrado"
+            fi
+            
+            # Listar subdirectorios de performance
+            echo "📁 Subdirectorios de performance:"
+            find target/karate-reports/performance -type d -name "*" | head -10
+            
+            # Listar archivos HTML en performance
+            echo "📄 Archivos HTML en performance:"
+            find target/karate-reports/performance -name "*.html" | head -10
+          else
+            echo "❌ Directorio performance NO existe"
+          fi
+        else
+          echo "❌ Directorio target/karate-reports NO existe"
+        fi
+
   deploy:
     needs: test
     runs-on: ubuntu-latest
