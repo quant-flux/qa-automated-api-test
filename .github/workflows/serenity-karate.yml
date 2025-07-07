@@ -301,6 +301,27 @@ jobs:
             fi
           fi
           
+          # Copiar archivo de estadísticas al directorio de performance también
+          if [ -f "karate-reports/functional/complete/karate-summary-json.txt" ]; then
+            cp karate-reports/functional/complete/karate-summary-json.txt ./public/performance/karate-summary-json.txt
+            echo "✅ karate-summary-json.txt copiado al directorio de performance"
+          elif [ -f "src/main/resources/functional/complete/karate-summary-json.txt" ]; then
+            cp src/main/resources/functional/complete/karate-summary-json.txt ./public/performance/karate-summary-json.txt
+            echo "✅ karate-summary-json.txt copiado desde recursos al directorio de performance"
+          else
+            echo "❌ karate-summary-json.txt no encontrado para performance, creando uno con valores por defecto"
+            echo '{"functional":{"totalTests":0,"passedTests":0,"failedTests":0,"successRate":0},"performance":{"totalTests":0,"passedTests":0,"failedTests":0,"successRate":0}}' > ./public/performance/karate-summary-json.txt
+          fi
+          
+          # Verificar que el archivo se copió correctamente en performance
+          if [ -f "./public/performance/karate-summary-json.txt" ]; then
+            echo "✅ Archivo karate-summary-json.txt disponible en el directorio de performance"
+            echo "Contenido del archivo en performance:"
+            cat ./public/performance/karate-summary-json.txt
+          else
+            echo "❌ Error: No se pudo copiar el archivo al directorio de performance"
+          fi
+          
           # Copiar directorio js desde recursos
           if [ -d "src/main/resources/js" ]; then
             mkdir -p ./public/js
