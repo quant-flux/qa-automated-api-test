@@ -51,6 +51,9 @@ jobs:
     - name: Generate Karate Summary JSON
       if: always()
       run: |
+        echo "🚀 INICIANDO GENERACIÓN DE ARCHIVO DE RESUMEN..."
+        echo "📁 Verificando directorio target/karate-reports/functional/complete..."
+        mkdir -p target/karate-reports/functional/complete
         echo "Generando archivo de resumen de estadísticas..."
         
         # Calcular estadísticas funcionales
@@ -80,6 +83,12 @@ jobs:
         else
           echo "❌ Error: No se pudo crear el archivo karate-summary-json.txt"
         fi
+        
+        echo "🏁 FINALIZADA GENERACIÓN DE ARCHIVO DE RESUMEN"
+        echo "📊 Resumen final:"
+        echo "   - Archivo generado: target/karate-reports/functional/complete/karate-summary-json.txt"
+        echo "   - Funcionales: $FUNCTIONAL_TOTAL total, $FUNCTIONAL_PASSED exitosos, $FUNCTIONAL_FAILED fallidos"
+        echo "   - Performance: $PERFORMANCE_TOTAL total, $PERFORMANCE_PASSED exitosos, $PERFORMANCE_FAILED fallidos"
 
     - name: Upload Karate HTML Report
       if: always()
@@ -157,9 +166,21 @@ jobs:
         if [ -f "karate-reports/functional/complete/karate-summary-json.txt" ]; then
           cp karate-reports/functional/complete/karate-summary-json.txt ./public/functional/complete/karate-summary-json.txt
           echo "✅ karate-summary-json.txt copiado al directorio público"
+        elif [ -f "src/main/resources/functional/complete/karate-summary-json.txt" ]; then
+          cp src/main/resources/functional/complete/karate-summary-json.txt ./public/functional/complete/karate-summary-json.txt
+          echo "✅ karate-summary-json.txt copiado desde recursos (archivo de prueba)"
         else
           echo "❌ karate-summary-json.txt no encontrado, creando uno con valores por defecto"
           echo '{"functional":{"totalTests":0,"passedTests":0,"failedTests":0,"successRate":0},"performance":{"totalTests":0,"passedTests":0,"failedTests":0,"successRate":0}}' > ./public/functional/complete/karate-summary-json.txt
+        fi
+        
+        # Verificar que el archivo se copió correctamente
+        if [ -f "./public/functional/complete/karate-summary-json.txt" ]; then
+          echo "✅ Archivo karate-summary-json.txt disponible en el directorio público"
+          echo "Contenido del archivo en public:"
+          cat ./public/functional/complete/karate-summary-json.txt
+        else
+          echo "❌ Error: No se pudo copiar el archivo al directorio público"
         fi
         
         # Copiar index.html de performance desde recursos
