@@ -20,6 +20,23 @@ class StatsCalculator {
 
     async calculateFunctionalStats() {
         try {
+            // Intentar leer el archivo de resumen generado por el workflow
+            const response = await fetch('karate-summary-json.txt');
+            if (response.ok) {
+                const data = await response.json();
+                return {
+                    totalTests: data.functional.totalTests || 0,
+                    passedTests: data.functional.passedTests || 0,
+                    failedTests: data.functional.failedTests || 0,
+                    successRate: data.functional.successRate || 0
+                };
+            }
+        } catch (error) {
+            console.warn('No se pudo leer karate-summary-json.txt, intentando método alternativo:', error);
+        }
+
+        // Método alternativo: intentar leer archivos JSON individuales
+        try {
             let totalTests = 0;
             let passedTests = 0;
             let failedTests = 0;
@@ -81,6 +98,23 @@ class StatsCalculator {
     }
 
     async calculatePerformanceStats() {
+        try {
+            // Intentar leer el archivo de resumen generado por el workflow
+            const response = await fetch('karate-summary-json.txt');
+            if (response.ok) {
+                const data = await response.json();
+                return {
+                    totalTests: data.performance.totalTests || 0,
+                    passedTests: data.performance.passedTests || 0,
+                    failedTests: data.performance.failedTests || 0,
+                    successRate: data.performance.successRate || 0
+                };
+            }
+        } catch (error) {
+            console.warn('No se pudo leer karate-summary-json.txt, intentando método alternativo:', error);
+        }
+
+        // Método alternativo: intentar leer archivos JSON individuales
         try {
             let totalTests = 0;
             let passedTests = 0;
