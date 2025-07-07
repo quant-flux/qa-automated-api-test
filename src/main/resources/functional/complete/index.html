@@ -305,35 +305,19 @@
         </div>
     </div>
 
+    <script src="../../js/stats-calculator.js?v=1"></script>
     <script>
         // Actualizar timestamp
         document.getElementById('timestamp').textContent = new Date().toLocaleString('es-ES');
         
-        // Simular estadísticas (en un caso real, estas vendrían de los reportes JSON)
-        function updateStats() {
-            // Estas estadísticas se actualizarían con datos reales de los reportes
-            const totalTests = 45; // Ejemplo
-            const passedTests = 42; // Ejemplo
-            const failedTests = 3; // Ejemplo
-            const successRate = Math.round((passedTests / totalTests) * 100);
-            
-            document.getElementById('totalTests').textContent = totalTests;
-            document.getElementById('passedTests').textContent = passedTests;
-            document.getElementById('failedTests').textContent = failedTests;
-            document.getElementById('successRate').textContent = successRate + '%';
-            
-            // Actualizar colores según el éxito
-            const successRateElement = document.getElementById('successRate');
-            if (successRate >= 90) {
-                successRateElement.className = 'stat-number success';
-            } else if (successRate >= 70) {
-                successRateElement.className = 'stat-number warning';
-            } else {
-                successRateElement.className = 'stat-number danger';
-            }
-        }
+        console.log('Script cargado, ejecutando updateFunctionalStats...');
         
-        updateStats();
+        // Ejecutar cuando se carga la página
+        updateFunctionalStats().then(stats => {
+            console.log('Estadísticas actualizadas:', stats);
+        }).catch(error => {
+            console.error('Error al actualizar estadísticas:', error);
+        });
     </script>
 </body>
 </html> 

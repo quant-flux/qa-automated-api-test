@@ -170,15 +170,15 @@
                         </div>
                         <div class="report-stats">
                             <div class="stat-item">
-                                <div class="stat-number success">119</div>
+                                <div class="stat-number success" id="functionalTotalTests">119</div>
                                 <div class="stat-label">Total Tests</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-number success">91</div>
+                                <div class="stat-number success" id="functionalPassedTests">91</div>
                                 <div class="stat-label">Exitosos</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-number info">76.5%</div>
+                                <div class="stat-number info" id="functionalSuccessRate">76.5%</div>
                                 <div class="stat-label">Tasa Éxito</div>
                             </div>
                         </div>
@@ -193,15 +193,15 @@
                         </div>
                         <div class="report-stats">
                             <div class="stat-item">
-                                <div class="stat-number info">4</div>
+                                <div class="stat-number info" id="performanceTotalTests">4</div>
                                 <div class="stat-label">Total Tests</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-number success">3</div>
+                                <div class="stat-number success" id="performancePassedTests">3</div>
                                 <div class="stat-label">Exitosos</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-number warning">75%</div>
+                                <div class="stat-number warning" id="performanceSuccessRate">75%</div>
                                 <div class="stat-label">Tasa Éxito</div>
                             </div>
                         </div>
@@ -241,9 +241,67 @@
         </div>
     </div>
 
+    <script src="js/stats-calculator.js"></script>
     <script>
         // Actualizar timestamp
         document.getElementById('timestamp').textContent = new Date().toLocaleString('es-ES');
+        
+        // Función para actualizar estadísticas en la página principal
+        async function updateMainPageStats() {
+            try {
+                // Calcular estadísticas funcionales
+                const functionalStats = await updateFunctionalStats();
+                
+                // Actualizar elementos específicos de la página principal
+                const functionalTotalElement = document.getElementById('functionalTotalTests');
+                const functionalPassedElement = document.getElementById('functionalPassedTests');
+                const functionalSuccessRateElement = document.getElementById('functionalSuccessRate');
+                
+                if (functionalTotalElement) functionalTotalElement.textContent = functionalStats.totalTests;
+                if (functionalPassedElement) functionalPassedElement.textContent = functionalStats.passedTests;
+                if (functionalSuccessRateElement) {
+                    functionalSuccessRateElement.textContent = functionalStats.successRate + '%';
+                    // Actualizar color según el éxito
+                    if (functionalStats.successRate >= 90) {
+                        functionalSuccessRateElement.className = 'stat-number success';
+                    } else if (functionalStats.successRate >= 70) {
+                        functionalSuccessRateElement.className = 'stat-number warning';
+                    } else {
+                        functionalSuccessRateElement.className = 'stat-number danger';
+                    }
+                }
+                
+                // Calcular estadísticas de performance
+                const performanceStats = await updatePerformanceStats();
+                
+                // Actualizar elementos específicos de performance
+                const performanceTotalElement = document.getElementById('performanceTotalTests');
+                const performancePassedElement = document.getElementById('performancePassedTests');
+                const performanceSuccessRateElement = document.getElementById('performanceSuccessRate');
+                
+                if (performanceTotalElement) performanceTotalElement.textContent = performanceStats.totalTests;
+                if (performancePassedElement) performancePassedElement.textContent = performanceStats.passedTests;
+                if (performanceSuccessRateElement) {
+                    performanceSuccessRateElement.textContent = performanceStats.successRate + '%';
+                    // Actualizar color según el éxito
+                    if (performanceStats.successRate >= 90) {
+                        performanceSuccessRateElement.className = 'stat-number success';
+                    } else if (performanceStats.successRate >= 70) {
+                        performanceSuccessRateElement.className = 'stat-number warning';
+                    } else {
+                        performanceSuccessRateElement.className = 'stat-number danger';
+                    }
+                }
+                
+                console.log('Estadísticas de la página principal actualizadas');
+                
+            } catch (error) {
+                console.error('Error al actualizar estadísticas de la página principal:', error);
+            }
+        }
+        
+        // Ejecutar cuando se carga la página
+        updateMainPageStats();
     </script>
 </body>
 </html> 
