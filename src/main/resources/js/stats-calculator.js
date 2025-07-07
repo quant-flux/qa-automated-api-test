@@ -103,25 +103,36 @@ class StatsCalculator {
     }
 
     async calculatePerformanceStats() {
+        console.log('🔍 Iniciando cálculo de estadísticas de performance...');
         try {
             // Intentar leer el archivo de resumen generado por el workflow
             // Primero intentar desde el directorio actual (performance)
+            console.log('📁 Intentando leer karate-summary-json.txt desde directorio actual...');
             let response = await fetch('karate-summary-json.txt');
+            console.log('📊 Respuesta del directorio actual:', response.ok ? 'OK' : 'FAILED');
+            
             if (!response.ok) {
                 // Si no está en el directorio actual, intentar desde functional/complete
+                console.log('📁 Intentando leer desde ../functional/complete/karate-summary-json.txt...');
                 response = await fetch('../functional/complete/karate-summary-json.txt');
+                console.log('📊 Respuesta del directorio functional:', response.ok ? 'OK' : 'FAILED');
             }
+            
             if (response.ok) {
                 const data = await response.json();
+                console.log('✅ Datos leídos correctamente:', data);
+                console.log('📊 Estadísticas de performance encontradas:', data.performance);
                 return {
                     totalTests: data.performance.totalTests || 0,
                     passedTests: data.performance.passedTests || 0,
                     failedTests: data.performance.failedTests || 0,
                     successRate: data.performance.successRate || 0
                 };
+            } else {
+                console.warn('❌ No se pudo leer el archivo desde ninguna ubicación');
             }
         } catch (error) {
-            console.warn('No se pudo leer karate-summary-json.txt, intentando método alternativo:', error);
+            console.warn('❌ Error al leer karate-summary-json.txt, intentando método alternativo:', error);
         }
 
         // Método alternativo: intentar leer archivos JSON individuales
@@ -237,8 +248,11 @@ async function updateFunctionalStats() {
 
 // Función global para actualizar estadísticas de performance
 async function updatePerformanceStats() {
+    console.log('🚀 Iniciando updatePerformanceStats...');
     const calculator = new StatsCalculator();
     const stats = await calculator.calculatePerformanceStats();
+    
+    console.log('📊 Estadísticas obtenidas:', stats);
     
     // Actualizar elementos del DOM
     const totalElement = document.getElementById('totalTests');
@@ -246,15 +260,31 @@ async function updatePerformanceStats() {
     const failedElement = document.getElementById('failedTests');
     const successRateElement = document.getElementById('successRate');
     
-    if (totalElement) totalElement.textContent = stats.totalTests;
-    if (passedElement) passedElement.textContent = stats.passedTests;
-    if (failedElement) failedElement.textContent = stats.failedTests;
+    console.log('🔍 Elementos del DOM encontrados:');
+    console.log('  - totalTests:', totalElement ? 'SÍ' : 'NO');
+    console.log('  - passedTests:', passedElement ? 'SÍ' : 'NO');
+    console.log('  - failedTests:', failedElement ? 'SÍ' : 'NO');
+    console.log('  - successRate:', successRateElement ? 'SÍ' : 'NO');
+    
+    if (totalElement) {
+        totalElement.textContent = stats.totalTests;
+        console.log('✅ totalTests actualizado a:', stats.totalTests);
+    }
+    if (passedElement) {
+        passedElement.textContent = stats.passedTests;
+        console.log('✅ passedTests actualizado a:', stats.passedTests);
+    }
+    if (failedElement) {
+        failedElement.textContent = stats.failedTests;
+        console.log('✅ failedTests actualizado a:', stats.failedTests);
+    }
     if (successRateElement) {
         successRateElement.textContent = stats.successRate + '%';
         calculator.updateElementColor(successRateElement, stats.successRate);
+        console.log('✅ successRate actualizado a:', stats.successRate + '%');
     }
     
-    console.log(`Estadísticas de performance calculadas: ${stats.totalTests} total, ${stats.passedTests} exitosos, ${stats.failedTests} fallidos, ${stats.successRate}% éxito`);
+    console.log(`🏁 Estadísticas de performance calculadas: ${stats.totalTests} total, ${stats.passedTests} exitosos, ${stats.failedTests} fallidos, ${stats.successRate}% éxito`);
     
     return stats;
 } 
