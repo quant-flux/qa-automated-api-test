@@ -139,6 +139,14 @@ jobs:
             else
               echo "❌ performance/index.html NO encontrado"
             fi
+            
+            # Listar subdirectorios de performance
+            echo "📁 Subdirectorios de performance:"
+            find target/karate-reports/performance -type d -name "*" | head -10
+            
+            # Listar archivos HTML en performance
+            echo "📄 Archivos HTML en performance:"
+            find target/karate-reports/performance -name "*.html" | head -10
           else
             echo "❌ Directorio performance NO existe"
           fi
