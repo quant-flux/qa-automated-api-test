@@ -97,58 +97,45 @@ jobs:
           
           echo "🔍 Verificando contenido de public después de copiar..."
           ls -la ./public/
-          
-          # Copiar el index.html principal desde recursos si no existe
-          if [ -f "./public/index.html" ]; then
-            echo "✅ index.html principal encontrado y copiado correctamente"
-            echo "📄 Tamaño del archivo: $(wc -c < ./public/index.html) bytes"
-          else
-            echo "❌ index.html principal no encontrado en public, copiando desde recursos..."
-            if [ -f "src/main/resources/index.html" ]; then
-              cp src/main/resources/index.html ./public/index.html
-              echo "✅ index.html principal copiado desde recursos"
-            else
-              echo "❌ index.html principal no encontrado en recursos, creando uno básico"
-              echo "<html><body><h1>API Test Reports</h1><p>Reports available in subdirectories.</p><p><a href='functional/complete/index.html'>Functional Tests</a></p><p><a href='performance/index.html'>Performance Tests</a></p></body></html>" > ./public/index.html
-            fi
-          fi
-          
-          # Copiar index.html funcional si no existe
-          if [ -f "./public/functional/complete/index.html" ]; then
-            echo "✅ functional/complete/index.html encontrado"
-          else
-            echo "❌ functional/complete/index.html no encontrado, copiando desde recursos..."
-            if [ -f "src/main/resources/functional/complete/index.html" ]; then
-              mkdir -p ./public/functional/complete
-              cp src/main/resources/functional/complete/index.html ./public/functional/complete/index.html
-              echo "✅ functional/complete/index.html copiado desde recursos"
-            else
-              echo "❌ functional/complete/index.html no encontrado en recursos"
-            fi
-          fi
-          
-          # Copiar index.html de performance si no existe
-          if [ -f "./public/performance/index.html" ]; then
-            echo "✅ performance/index.html encontrado"
-          else
-            echo "❌ performance/index.html no encontrado, copiando desde recursos..."
-            if [ -f "src/main/resources/performance/index.html" ]; then
-              mkdir -p ./public/performance
-              cp src/main/resources/performance/index.html ./public/performance/index.html
-              echo "✅ performance/index.html copiado desde recursos"
-            else
-              echo "❌ performance/index.html no encontrado en recursos"
-            fi
-          fi
+        fi
+        
+        # Siempre copiar los archivos actualizados desde recursos
+        echo "📁 Copiando archivos actualizados desde recursos..."
+        
+        # Copiar el index.html principal desde recursos
+        if [ -f "src/main/resources/index.html" ]; then
+          cp src/main/resources/index.html ./public/index.html
+          echo "✅ index.html principal copiado desde recursos"
         else
-          echo "❌ Directorio karate-reports no encontrado, copiando index.html desde recursos..."
-          if [ -f "src/main/resources/index.html" ]; then
-            cp src/main/resources/index.html ./public/index.html
-            echo "✅ index.html copiado desde recursos"
-          else
-            echo "❌ index.html no encontrado en recursos, creando uno básico"
-            echo "<html><body><h1>API Test Reports</h1><p>No test reports available at the moment.</p><p>Reports will appear here after successful test runs.</p></body></html>" > ./public/index.html
-          fi
+          echo "❌ index.html principal no encontrado en recursos, creando uno básico"
+          echo "<html><body><h1>API Test Reports</h1><p>Reports available in subdirectories.</p><p><a href='functional/complete/index.html'>Functional Tests</a></p><p><a href='performance/index.html'>Performance Tests</a></p></body></html>" > ./public/index.html
+        fi
+        
+        # Copiar index.html funcional desde recursos
+        if [ -f "src/main/resources/functional/complete/index.html" ]; then
+          mkdir -p ./public/functional/complete
+          cp src/main/resources/functional/complete/index.html ./public/functional/complete/index.html
+          echo "✅ functional/complete/index.html copiado desde recursos"
+        else
+          echo "❌ functional/complete/index.html no encontrado en recursos"
+        fi
+        
+        # Copiar index.html de performance desde recursos
+        if [ -f "src/main/resources/performance/index.html" ]; then
+          mkdir -p ./public/performance
+          cp src/main/resources/performance/index.html ./public/performance/index.html
+          echo "✅ performance/index.html copiado desde recursos"
+        else
+          echo "❌ performance/index.html no encontrado en recursos"
+        fi
+        
+        # Copiar directorio js desde recursos
+        if [ -d "src/main/resources/js" ]; then
+          mkdir -p ./public/js
+          cp -r src/main/resources/js/* ./public/js/
+          echo "✅ directorio js copiado desde recursos"
+        else
+          echo "❌ directorio js no encontrado en recursos"
         fi
     
     - name: Upload site
