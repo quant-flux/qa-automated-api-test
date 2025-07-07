@@ -49,6 +49,48 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "📊 **Download the Karate HTML Reports from the Artifacts section below to view detailed results**" >> $GITHUB_STEP_SUMMARY
 
+    - name: Generate Karate Summary JSON
+      if: always()
+      run: |
+        echo "🚀 INICIANDO GENERACIÓN DE ARCHIVO DE RESUMEN..."
+        echo "📁 Verificando directorio target/karate-reports/functional/complete..."
+        mkdir -p target/karate-reports/functional/complete
+        echo "Generando archivo de resumen de estadísticas..."
+        
+        # Calcular estadísticas funcionales
+        FUNCTIONAL_TOTAL=$(find target/surefire-reports -name "*FunctionalTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')
+        FUNCTIONAL_FAILED=$(find target/surefire-reports -name "*FunctionalTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')
+        FUNCTIONAL_PASSED=$((FUNCTIONAL_TOTAL - FUNCTIONAL_FAILED))
+        FUNCTIONAL_SUCCESS_RATE=$((FUNCTIONAL_TOTAL > 0 ? FUNCTIONAL_PASSED * 100 / FUNCTIONAL_TOTAL : 0))
+        
+        # Calcular estadísticas de performance
+        PERFORMANCE_TOTAL=$(find target/surefire-reports -name "*PerformanceTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')
+        PERFORMANCE_FAILED=$(find target/surefire-reports -name "*PerformanceTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')
+        PERFORMANCE_PASSED=$((PERFORMANCE_TOTAL - PERFORMANCE_FAILED))
+        PERFORMANCE_SUCCESS_RATE=$((PERFORMANCE_TOTAL > 0 ? PERFORMANCE_PASSED * 100 / PERFORMANCE_TOTAL : 0))
+        
+        # Crear archivo JSON con las estadísticas
+        echo '{"functional":{"totalTests":'$FUNCTIONAL_TOTAL',"passedTests":'$FUNCTIONAL_PASSED',"failedTests":'$FUNCTIONAL_FAILED',"successRate":'$FUNCTIONAL_SUCCESS_RATE'},"performance":{"totalTests":'$PERFORMANCE_TOTAL',"passedTests":'$PERFORMANCE_PASSED',"failedTests":'$PERFORMANCE_FAILED',"successRate":'$PERFORMANCE_SUCCESS_RATE'}}' > target/karate-reports/functional/complete/karate-summary-json.txt
+        
+        echo "Archivo karate-summary-json.txt generado con estadísticas:"
+        echo "Funcionales: $FUNCTIONAL_TOTAL total, $FUNCTIONAL_PASSED exitosos, $FUNCTIONAL_FAILED fallidos"
+        echo "Performance: $PERFORMANCE_TOTAL total, $PERFORMANCE_PASSED exitosos, $PERFORMANCE_FAILED fallidos"
+        
+        # Verificar que el archivo se creó correctamente
+        if [ -f "target/karate-reports/functional/complete/karate-summary-json.txt" ]; then
+          echo "✅ Archivo karate-summary-json.txt creado exitosamente"
+          echo "Contenido del archivo:"
+          cat target/karate-reports/functional/complete/karate-summary-json.txt
+        else
+          echo "❌ Error: No se pudo crear el archivo karate-summary-json.txt"
+        fi
+        
+        echo "🏁 FINALIZADA GENERACIÓN DE ARCHIVO DE RESUMEN"
+        echo "📊 Resumen final:"
+        echo "   - Archivo generado: target/karate-reports/functional/complete/karate-summary-json.txt"
+        echo "   - Funcionales: $FUNCTIONAL_TOTAL total, $FUNCTIONAL_PASSED exitosos, $FUNCTIONAL_FAILED fallidos"
+        echo "   - Performance: $PERFORMANCE_TOTAL total, $PERFORMANCE_PASSED exitosos, $PERFORMANCE_FAILED fallidos"
+
     - name: Verify Reports Generated
       if: always()
       run: |
@@ -224,6 +266,27 @@ jobs:
             fi
           fi
           
+          # Copiar archivo de estadísticas si existe
+          if [ -f "karate-reports/functional/complete/karate-summary-json.txt" ]; then
+            cp karate-reports/functional/complete/karate-summary-json.txt ./public/functional/complete/karate-summary-json.txt
+            echo "✅ karate-summary-json.txt copiado al directorio público"
+          elif [ -f "src/main/resources/functional/complete/karate-summary-json.txt" ]; then
+            cp src/main/resources/functional/complete/karate-summary-json.txt ./public/functional/complete/karate-summary-json.txt
+            echo "✅ karate-summary-json.txt copiado desde recursos (archivo de prueba)"
+          else
+            echo "❌ karate-summary-json.txt no encontrado, creando uno con valores por defecto"
+            echo '{"functional":{"totalTests":0,"passedTests":0,"failedTests":0,"successRate":0},"performance":{"totalTests":0,"passedTests":0,"failedTests":0,"successRate":0}}' > ./public/functional/complete/karate-summary-json.txt
+          fi
+          
+          # Verificar que el archivo se copió correctamente
+          if [ -f "./public/functional/complete/karate-summary-json.txt" ]; then
+            echo "✅ Archivo karate-summary-json.txt disponible en el directorio público"
+            echo "Contenido del archivo en public:"
+            cat ./public/functional/complete/karate-summary-json.txt
+          else
+            echo "❌ Error: No se pudo copiar el archivo al directorio público"
+          fi
+          
           # Copiar index.html de performance si no existe
           if [ -f "./public/performance/index.html" ]; then
             echo "✅ performance/index.html encontrado"
@@ -236,6 +299,15 @@ jobs:
             else
               echo "❌ performance/index.html no encontrado en recursos"
             fi
+          fi
+          
+          # Copiar directorio js desde recursos
+          if [ -d "src/main/resources/js" ]; then
+            mkdir -p ./public/js
+            cp -r src/main/resources/js/* ./public/js/
+            echo "✅ directorio js copiado desde recursos"
+          else
+            echo "❌ directorio js no encontrado en recursos"
           fi
         else
           echo "❌ Directorio karate-reports no encontrado, copiando index.html desde recursos..."
