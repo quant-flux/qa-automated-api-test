@@ -21,7 +21,12 @@ class StatsCalculator {
     async calculateFunctionalStats() {
         try {
             // Intentar leer el archivo de resumen generado por el workflow
-            const response = await fetch('karate-summary-json.txt');
+            // Primero intentar desde el directorio actual (functional/complete)
+            let response = await fetch('karate-summary-json.txt');
+            if (!response.ok) {
+                // Si no está en el directorio actual, intentar desde la raíz
+                response = await fetch('../karate-summary-json.txt');
+            }
             if (response.ok) {
                 const data = await response.json();
                 return {
@@ -100,7 +105,12 @@ class StatsCalculator {
     async calculatePerformanceStats() {
         try {
             // Intentar leer el archivo de resumen generado por el workflow
-            const response = await fetch('karate-summary-json.txt');
+            // Primero intentar desde el directorio actual (performance)
+            let response = await fetch('karate-summary-json.txt');
+            if (!response.ok) {
+                // Si no está en el directorio actual, intentar desde functional/complete
+                response = await fetch('../functional/complete/karate-summary-json.txt');
+            }
             if (response.ok) {
                 const data = await response.json();
                 return {
