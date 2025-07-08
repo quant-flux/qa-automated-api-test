@@ -1,0 +1,44 @@
+{
+  "test_scenarios": {
+    "multiple_tokens": {
+      "description": "Get price data for multiple tokens",
+      "addresses_count": 3,
+      "expected_status": 200
+    },
+    "single_token": {
+      "description": "Get price data for single token",
+      "addresses_count": 1,
+      "expected_status": 200
+    },
+    "maximum_tokens": {
+      "description": "Get price data for maximum tokens (10)",
+      "addresses_count": 10,
+      "expected_status": 200
+    },
+    "too_many_tokens": {
+      "description": "Get price data with more than 10 addresses",
+      "addresses_count": 11,
+      "expected_status": 400
+    }
+  },
+  "validation_fields": [
+    "address",
+    "price",
+    "price_change_24h",
+    "price_change_percent_24h",
+    "volume_24h",
+    "market_cap",
+    "fully_diluted_valuation",
+    "circulating_supply",
+    "total_supply",
+    "max_supply",
+    "ath",
+    "ath_change_percent",
+    "ath_date",
+    "atl",
+    "atl_change_percent",
+    "atl_date",
+    "roi",
+    "last_updated"
+  ]
+} 
