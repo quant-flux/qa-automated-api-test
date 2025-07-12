@@ -69,4 +69,40 @@ Feature: Global Performance Load Tests
     Then status 200
     * def time = responseTime
     * print 'Endurance Test - Token List Response Time:', time, 'ms'
-    * assert time < performanceConfig.getThreshold('SLOW') 
+    * assert time < performanceConfig.getThreshold('SLOW')
+
+  @boundary
+  Scenario: Get token list with minimum page (1)
+    And param page = 1
+    And param limit = 10
+    When method get
+    Then status 200
+
+  @boundary
+  Scenario: Get token list with maximum limit (500)
+    And param limit = 500
+    When method get
+    Then status 200
+
+  @boundary
+  Scenario: Get token list with minimum limit (10)
+    And param limit = 10
+    When method get
+    Then status 200
+
+  @edge
+  Scenario: Get token list with all parameters at boundary values
+    And param page = 1
+    And param limit = 500
+    And param sort_by = 'created_time'
+    And param order = 'desc'
+    When method get
+    Then status 200
+
+  @edge
+  Scenario: Get token list with empty response (high page number)
+    And param page = 1000
+    And param limit = 10
+    When method get
+    Then status 200
+    And match response.data == '#array' 

@@ -1,111 +1,202 @@
 {
   "performance_thresholds": {
+    "ULTRA_FAST": 500,
     "FAST": 1000,
     "NORMAL": 2000,
     "SLOW": 5000,
     "TIMEOUT": 10000
   },
+  "endpoint_specific_thresholds": {
+    "token_price": {
+      "baseline": "ULTRA_FAST",
+      "load": "FAST",
+      "stress": "NORMAL"
+    },
+    "token_data": {
+      "baseline": "FAST",
+      "load": "NORMAL",
+      "stress": "SLOW"
+    },
+    "token_list": {
+      "baseline": "NORMAL",
+      "load": "SLOW",
+      "stress": "TIMEOUT"
+    },
+    "trade_list": {
+      "baseline": "NORMAL",
+      "load": "SLOW",
+      "stress": "TIMEOUT"
+    }
+  },
+  "percentile_thresholds": {
+    "p50": 1000,
+    "p90": 2000,
+    "p95": 3000,
+    "p99": 5000
+  },
+  "throughput_targets": {
+    "token_price": 1000,
+    "token_data": 500,
+    "token_list": 200,
+    "trade_list": 300
+  },
+  "error_rate_thresholds": {
+    "baseline": 0.1,
+    "load": 1.0,
+    "stress": 5.0
+  },
   "load_configs": {
     "LIGHT": {
       "concurrent": 10,
       "duration": 30,
-      "rampUp": 5
+      "rampUp": 5,
+      "description": "Light load for baseline validation"
     },
     "MEDIUM": {
       "concurrent": 50,
       "duration": 60,
-      "rampUp": 10
+      "rampUp": 10,
+      "description": "Medium load for normal usage simulation"
     },
     "HEAVY": {
       "concurrent": 100,
       "duration": 120,
-      "rampUp": 20
+      "rampUp": 20,
+      "description": "Heavy load for peak usage simulation"
     }
   },
   "stress_configs": {
     "MODERATE": {
       "concurrent": 200,
       "duration": 300,
-      "rampUp": 30
+      "rampUp": 30,
+      "description": "Moderate stress test"
     },
     "HIGH": {
       "concurrent": 500,
       "duration": 600,
-      "rampUp": 60
+      "rampUp": 60,
+      "description": "High stress test"
+    },
+    "EXTREME": {
+      "concurrent": 1000,
+      "duration": 900,
+      "rampUp": 120,
+      "description": "Extreme stress test"
     }
   },
   "test_scenarios": {
     "token_data": {
       "baseline": {
-        "threshold": "NORMAL",
+        "threshold": "FAST",
         "expected_status": 200,
-        "description": "Baseline performance test for token data endpoint"
+        "description": "Baseline performance test for token data endpoint",
+        "percentile_target": "p90",
+        "throughput_target": 500
       },
       "load_light": {
-        "threshold": "SLOW",
+        "threshold": "NORMAL",
         "expected_status": 200,
-        "description": "Light load test for token data endpoint"
+        "description": "Light load test for token data endpoint",
+        "percentile_target": "p95",
+        "throughput_target": 400
       },
       "load_medium": {
         "threshold": "SLOW",
         "expected_status": 200,
-        "description": "Medium load test for token data endpoint"
+        "description": "Medium load test for token data endpoint",
+        "percentile_target": "p99",
+        "throughput_target": 300
       },
       "stress": {
         "threshold": "TIMEOUT",
         "expected_status": 200,
-        "description": "Stress test for token data endpoint"
+        "description": "Stress test for token data endpoint",
+        "percentile_target": "p99",
+        "throughput_target": 200
       }
     },
     "token_price": {
       "baseline": {
-        "threshold": "FAST",
+        "threshold": "ULTRA_FAST",
         "expected_status": 200,
-        "description": "Baseline performance test for token price endpoint"
+        "description": "Baseline performance test for token price endpoint",
+        "percentile_target": "p90",
+        "throughput_target": 1000
       },
       "light_load": {
-        "threshold": "NORMAL",
+        "threshold": "FAST",
         "expected_status": 200,
-        "description": "Light load test for token price endpoint"
+        "description": "Light load test for token price endpoint",
+        "percentile_target": "p95",
+        "throughput_target": 800
       },
       "stress": {
-        "threshold": "SLOW",
+        "threshold": "NORMAL",
         "expected_status": 200,
-        "description": "Stress test for token price endpoint"
+        "description": "Stress test for token price endpoint",
+        "percentile_target": "p99",
+        "throughput_target": 500
       }
     },
     "token_list": {
       "baseline": {
         "threshold": "NORMAL",
         "expected_status": 200,
-        "description": "Baseline performance test for token list endpoint"
+        "description": "Baseline performance test for token list endpoint",
+        "percentile_target": "p90",
+        "throughput_target": 200
       },
       "medium_load": {
         "threshold": "SLOW",
         "expected_status": 200,
-        "description": "Medium load test for token list endpoint"
+        "description": "Medium load test for token list endpoint",
+        "percentile_target": "p95",
+        "throughput_target": 150
       },
       "pagination": {
         "threshold": "NORMAL",
         "expected_status": 200,
-        "description": "Performance test with pagination parameters"
+        "description": "Performance test with pagination parameters",
+        "percentile_target": "p90",
+        "throughput_target": 200
+      },
+      "large_page": {
+        "threshold": "SLOW",
+        "expected_status": 200,
+        "description": "Performance test with large page size",
+        "percentile_target": "p95",
+        "throughput_target": 100
       }
     },
     "trade_list": {
       "baseline": {
         "threshold": "NORMAL",
         "expected_status": 200,
-        "description": "Baseline performance test for trade list endpoint"
+        "description": "Baseline performance test for trade list endpoint",
+        "percentile_target": "p90",
+        "throughput_target": 300
       },
       "heavy_load": {
         "threshold": "SLOW",
         "expected_status": 200,
-        "description": "Heavy load test for trade list endpoint"
+        "description": "Heavy load test for trade list endpoint",
+        "percentile_target": "p95",
+        "throughput_target": 200
       },
       "filtering": {
         "threshold": "NORMAL",
         "expected_status": 200,
-        "description": "Performance test with filtering parameters"
+        "description": "Performance test with filtering parameters",
+        "percentile_target": "p90",
+        "throughput_target": 250
+      },
+      "complex_filtering": {
+        "threshold": "SLOW",
+        "expected_status": 200,
+        "description": "Performance test with complex filtering",
+        "percentile_target": "p95",
+        "throughput_target": 150
       }
     }
   },
@@ -113,7 +204,9 @@
     "token_addresses": {
       "primary": "Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP",
       "secondary": "CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump",
-      "tertiary": "7EYnhQoR9YM3N7UoaKRoA44Uy8JeaZV3qyouov87awMs"
+      "tertiary": "7EYnhQoR9YM3N7UoaKRoA44Uy8JeaZV3qyouov87awMs",
+      "high_volume": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "low_volume": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263"
     },
     "endpoints": {
       "token_data": "token_data",
@@ -124,14 +217,38 @@
     "validation_rules": {
       "min_response_size": 100,
       "max_response_size": 10000,
-      "required_fields": ["address", "name", "symbol"]
+      "required_fields": ["address", "name", "symbol"],
+      "performance_fields": ["response_time", "status_code", "response_size"]
     },
     "pagination_params": {
-      "limit": 10,
-      "page": 1
+      "small": {
+        "limit": 10,
+        "page": 1
+      },
+      "medium": {
+        "limit": 50,
+        "page": 1
+      },
+      "large": {
+        "limit": 100,
+        "page": 1
+      }
     },
     "trade_filter_params": {
-      "token_address": "Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP"
+      "basic": {
+        "token_address": "Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP"
+      },
+      "complex": {
+        "token_address": "Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP",
+        "timeframe": "24h",
+        "min_amount": 1000
+      }
+    },
+    "performance_monitoring": {
+      "enable_memory_tracking": true,
+      "enable_cpu_tracking": true,
+      "enable_network_latency": true,
+      "sampling_rate": 0.1
     }
   }
 }

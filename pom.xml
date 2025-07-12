@@ -18,6 +18,13 @@
       <version>${karate.version}</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- Jackson para procesamiento JSON -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.15.2</version>
+    </dependency>
   </dependencies>
   
   <build>
@@ -42,6 +49,36 @@
           <failIfNoTests>false</failIfNoTests>
         </configuration>
       </plugin>
+      
+      <!-- Plugin para copiar archivos de recursos después de las pruebas -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>3.3.1</version>
+        <executions>
+          <execution>
+            <id>copy-dashboard-files</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/karate-reports/functional/complete</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/main/resources</directory>
+                  <includes>
+                    <include>index.html</include>
+                    <include>js/**</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      
+
     </plugins>
   </build>
 </project>

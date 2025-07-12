@@ -175,4 +175,64 @@ Feature: Token New Listing Endpoint
     And def validationResult = validateNewListingSuccessResponse(response, false, false)
     And match validationResult == true
     And def unwantedFieldsResult = validateNoUnwantedFieldsInArray(response.data.elements)
-    And match unwantedFieldsResult == true 
+    And match unwantedFieldsResult == true
+
+  @boundary
+  Scenario: Get new listings with minimum page (1)
+    And param page = 1
+    And param limit = 10
+    When method get
+    Then status 200
+    And def validationResult = validateNewListingSuccessResponse(response, false, true)
+    And match validationResult == true
+
+  @boundary
+  Scenario: Get new listings with maximum limit
+    And param limit = 500
+    When method get
+    Then status 200
+    And def validationResult = validateNewListingSuccessResponse(response, false, true)
+    And match validationResult == true
+
+  @boundary
+  Scenario: Get new listings with minimum limit (10)
+    And param limit = 10
+    When method get
+    Then status 200
+    And def validationResult = validateNewListingSuccessResponse(response, false, true)
+    And match validationResult == true
+
+  @boundary
+  Scenario: Get new listings with maximum page number
+    And param page = 100
+    And param limit = 10
+    When method get
+    Then status 200
+    And def validationResult = validateNewListingSuccessResponse(response, false, true)
+    And match validationResult == true
+
+  @edge
+  Scenario: Get new listings with all parameters at boundary values
+    And param page = 1
+    And param limit = 500
+    And param created_on = 'pumpfun'
+    When method get
+    Then status 200
+    And def validationResult = validateNewListingSuccessResponse(response, true, true)
+    And match validationResult == true
+
+  @edge
+  Scenario: Get new listings with empty response (high page number)
+    And param page = 1000
+    And param limit = 10
+    When method get
+    Then status 200
+    And match response.data.elements == '#array'
+
+  @edge
+  Scenario: Get new listings with mixed valid and invalid parameters
+    And param page = 1
+    And param limit = 500
+    And param created_on = 'invalid_platform'
+    When method get
+    Then status 400 

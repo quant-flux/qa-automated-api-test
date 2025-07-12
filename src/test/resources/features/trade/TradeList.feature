@@ -37,3 +37,27 @@ Feature: Trade List Endpoint
     When method get
     Then status 404
 
+  @edge
+  Scenario: Get recent trades with very long address
+    * url baseUrl + getEndpoint('trade_list') + 'a'.repeat(1000)
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get recent trades with special characters in address
+    * url baseUrl + getEndpoint('trade_list') + '!@#$%^&*()'
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get recent trades with numeric address
+    * url baseUrl + getEndpoint('trade_list') + '1234567890123456789012345678901234567890'
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get recent trades with mixed case address
+    * url baseUrl + getEndpoint('trade_list') + 'AbCdEfGhIjKlMnOpQrStUvWxYz1234567890'
+    When method get
+    Then status 400
+

@@ -35,4 +35,28 @@ Feature: Token Price Variations Endpoint
   Scenario: Get price variations for non-existent address
     * url baseUrl + getEndpoint('token_prices') + getInvalidTokenAddress(2)
     When method get
-    Then status 404 
+    Then status 404
+
+  @edge
+  Scenario: Get price variations with very long address
+    * url baseUrl + getEndpoint('token_prices') + 'a'.repeat(1000)
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get price variations with special characters in address
+    * url baseUrl + getEndpoint('token_prices') + '!@#$%^&*()'
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get price variations with numeric address
+    * url baseUrl + getEndpoint('token_prices') + '1234567890123456789012345678901234567890'
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get price variations with mixed case address
+    * url baseUrl + getEndpoint('token_prices') + 'AbCdEfGhIjKlMnOpQrStUvWxYz1234567890'
+    When method get
+    Then status 400 

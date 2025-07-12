@@ -1,1 +1,0 @@
-{"functional":{"totalTests":45,"passedTests":42,"failedTests":3,"successRate":93},"performance":{"totalTests":12,"passedTests":11,"failedTests":1,"successRate":92}} 
