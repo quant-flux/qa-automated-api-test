@@ -45,7 +45,12 @@ jobs:
         
     - name: Copy Functional Reports
       run: |
-        cp -r target/karate-reports/functional/complete/* reports/functional/
+        if [ -d "target/karate-reports/functional/complete" ]; then
+          cp -r target/karate-reports/functional/complete/* reports/functional/
+        else
+          echo "No functional reports found, creating placeholder"
+          echo "<html><body><h1>Functional Reports</h1><p>Reports will be available after tests are executed.</p></body></html>" > reports/functional/placeholder.html
+        fi
         
     - name: Copy Existing Performance Reports (if any)
       run: |
@@ -53,9 +58,15 @@ jobs:
           cp -r target/karate-reports/performance/* reports/performance/
         else
           echo "No performance reports found, creating placeholder"
-          mkdir -p reports/performance
           echo "<html><body><h1>Performance Reports</h1><p>Reports will be available after performance tests are executed.</p></body></html>" > reports/performance/placeholder.html
         fi
+        
+    - name: Upload reports as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: reports
+        path: reports/
+        retention-days: 1
         
     - name: Create Navigation Index
       run: |
@@ -215,6 +226,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Download reports artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: reports
+          path: reports
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
