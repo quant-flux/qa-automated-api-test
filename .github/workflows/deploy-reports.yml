@@ -52,34 +52,10 @@ jobs:
         if [ -d "target/karate-reports/functional/complete" ]; then
           cp -r target/karate-reports/functional/complete/* reports/functional/
         elif [ -d "target/karate-reports" ]; then
-          # Buscar archivos karate-summary.html en cualquier subdirectorio
           find target/karate-reports -name "karate-summary.html" -exec cp {} reports/functional/ \;
         else
           echo "No functional reports found, creating placeholder"
-          cat > reports/functional/karate-summary.html << 'EOF'
-          <!DOCTYPE html>
-          <html>
-          <head>
-              <title>Functional Tests Report - QuantFlux</title>
-              <style>
-                  body { font-family: Arial, sans-serif; margin: 40px; }
-                  .header { background: #28a745; color: white; padding: 20px; border-radius: 8px; }
-                  .content { margin-top: 20px; }
-              </style>
-          </head>
-          <body>
-              <div class="header">
-                  <h1>🧪 Tests Funcionales - QuantFlux</h1>
-                  <p>Reporte de tests funcionales de la API</p>
-              </div>
-              <div class="content">
-                  <h2>Estado: En ejecución</h2>
-                  <p>Los tests funcionales se están ejecutando. Este reporte se actualizará automáticamente cuando se completen.</p>
-                  <p><strong>Última actualización:</strong> $(date)</p>
-              </div>
-          </body>
-          </html>
-          EOF
+          echo '<!DOCTYPE html><html><head><title>Functional Tests Report - QuantFlux</title><style>body{font-family:Arial,sans-serif;margin:40px}.header{background:#28a745;color:white;padding:20px;border-radius:8px}.content{margin-top:20px}</style></head><body><div class="header"><h1>🧪 Tests Funcionales - QuantFlux</h1><p>Reporte de tests funcionales de la API</p></div><div class="content"><h2>Estado: En ejecución</h2><p>Los tests funcionales se están ejecutando. Este reporte se actualizará automáticamente cuando se completen.</p><p><strong>Última actualización:</strong> '$(date)'</p></div></body></html>' > reports/functional/karate-summary.html
         fi
         
     - name: Copy Existing Performance Reports (if any)
@@ -88,36 +64,7 @@ jobs:
           cp -r target/karate-reports/performance/* reports/performance/
         else
           echo "No performance reports found, creating placeholder"
-          cat > reports/performance/karate-summary.html << 'EOF'
-          <!DOCTYPE html>
-          <html>
-          <head>
-              <title>Performance Tests Report - QuantFlux</title>
-              <style>
-                  body { font-family: Arial, sans-serif; margin: 40px; }
-                  .header { background: #dc3545; color: white; padding: 20px; border-radius: 8px; }
-                  .content { margin-top: 20px; }
-              </style>
-          </head>
-          <body>
-              <div class="header">
-                  <h1>⚡ Tests de Performance - QuantFlux</h1>
-                  <p>Reporte de tests de performance de la API</p>
-              </div>
-              <div class="content">
-                  <h2>Estado: Programado</h2>
-                  <p>Los tests de performance se ejecutan bajo demanda o en horarios programados.</p>
-                  <p><strong>Para ejecutar tests de performance:</strong></p>
-                  <ul>
-                      <li>Ve a GitHub Actions en el repositorio</li>
-                      <li>Ejecuta el workflow "Performance Tests On Demand"</li>
-                      <li>O espera a la ejecución programada</li>
-                  </ul>
-                  <p><strong>Última actualización:</strong> $(date)</p>
-              </div>
-          </body>
-          </html>
-          EOF
+          echo '<!DOCTYPE html><html><head><title>Performance Tests Report - QuantFlux</title><style>body{font-family:Arial,sans-serif;margin:40px}.header{background:#dc3545;color:white;padding:20px;border-radius:8px}.content{margin-top:20px}</style></head><body><div class="header"><h1>⚡ Tests de Performance - QuantFlux</h1><p>Reporte de tests de performance de la API</p></div><div class="content"><h2>Estado: Programado</h2><p>Los tests de performance se ejecutan bajo demanda o en horarios programados.</p><p><strong>Para ejecutar tests de performance:</strong></p><ul><li>Ve a GitHub Actions en el repositorio</li><li>Ejecuta el workflow "Performance Tests On Demand"</li><li>O espera a la ejecución programada</li></ul><p><strong>Última actualización:</strong> '$(date)'</p></div></body></html>' > reports/performance/karate-summary.html
         fi
         
     - name: Upload reports as artifact
