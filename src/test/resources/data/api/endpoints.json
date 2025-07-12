@@ -7,6 +7,7 @@
     "token_price": "/token/price/",
     "token_prices": "/token/prices/",
     "token_prices_multi": "/token/prices/multi",
+    "token_price_multi": "/token/price/multi",
     "token_holders": "/token/holders/",
     "token_new_listing": "/token/new_listing",
     "token_trending": "/token/trending",

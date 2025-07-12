@@ -45,4 +45,28 @@ Feature: Token Holders Endpoint
     When method get
     Then status 200
     And def validationResult = validateTokenHoldersSuccessResponse(response, true)
-    And match validationResult == true 
+    And match validationResult == true
+
+  @edge
+  Scenario: Get token holders with very long address
+    * url baseUrl + getEndpoint('token_holders') + 'a'.repeat(1000)
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get token holders with special characters in address
+    * url baseUrl + getEndpoint('token_holders') + '!@#$%^&*()'
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get token holders with numeric address
+    * url baseUrl + getEndpoint('token_holders') + '1234567890123456789012345678901234567890'
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get token holders with mixed case address
+    * url baseUrl + getEndpoint('token_holders') + 'AbCdEfGhIjKlMnOpQrStUvWxYz1234567890'
+    When method get
+    Then status 400 

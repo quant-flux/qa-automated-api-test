@@ -122,4 +122,28 @@ Scenario: Validate token metadata field constraints
   And match tokenData.metadata.twitter == '#? _ == null || _ == "" || _ != ""'
   And match tokenData.metadata.website == '#? _ == null || _ == "" || _ != ""'
   And match tokenData.metadata.telegram == '#? _ == null || _ == "" || _ != ""'
-  And match tokenData.metadata.uri == '#? _ == null || _ == "" || _ != ""' 
+  And match tokenData.metadata.uri == '#? _ == null || _ == "" || _ != ""'
+
+@edge
+Scenario: Validate token data with very long address
+  * url baseUrl + getEndpoint('token_data') + 'a'.repeat(1000)
+  When method get
+  Then status 400
+
+@edge
+Scenario: Validate token data with special characters in address
+  * url baseUrl + getEndpoint('token_data') + '!@#$%^&*()'
+  When method get
+  Then status 400
+
+@edge
+Scenario: Validate token data with numeric address
+  * url baseUrl + getEndpoint('token_data') + '1234567890123456789012345678901234567890'
+  When method get
+  Then status 400
+
+@edge
+Scenario: Validate token data with mixed case address
+  * url baseUrl + getEndpoint('token_data') + 'AbCdEfGhIjKlMnOpQrStUvWxYz1234567890'
+  When method get
+  Then status 400 

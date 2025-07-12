@@ -131,4 +131,6 @@ public class FunctionalTestRunner {
                 .outputHtmlReport(true)
                 .reportDir("target/karate-reports/functional/trade-list");
     }
+    
+
 } 
