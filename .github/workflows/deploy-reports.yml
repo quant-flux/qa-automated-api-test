@@ -43,6 +43,10 @@ jobs:
         mkdir -p reports/functional
         mkdir -p reports/performance
         
+    - name: Copy main index.html
+      run: |
+        cp index.html reports/
+        
     - name: Copy Functional Reports
       run: |
         if [ -d "target/karate-reports/functional/complete" ]; then
