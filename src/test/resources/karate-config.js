@@ -2,8 +2,8 @@ function fn() {
   var env = karate.env || 'dev';
   var config = {
     baseUrl: 'https://full-api.cloud-service-app.com',
-    connectTimeout: 60000,
-    readTimeout: 60000
+    connectTimeout: 5000,
+    readTimeout: 5000
   };
 
   // Cargar datos

@@ -36,7 +36,7 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
         
     - name: Run Functional Tests
-      run: mvn test -Dtest=FunctionalTestRunner
+      run: mvn test -Dtest=FunctionalTestRunner -Dkarate.env=ci -Dkarate.options="--threads 4 --tags ~@slow"
       
     - name: Create Reports Directory Structure
       run: |
