@@ -40,6 +40,22 @@
         .back-link:hover {
             background: #0056b3;
         }
+        .report-link {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 15px 25px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .report-link:hover {
+            background: #218838;
+        }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -50,17 +66,27 @@
         <p>Reporte de tests funcionales de la API</p>
     </div>
     <div class="content">
-        <h2>Estado: En ejecución</h2>
-        <p>Los tests funcionales se están ejecutando. Este reporte se actualizará automáticamente cuando se completen.</p>
+        <h2>Estado: <span id="status">Verificando...</span></h2>
         
-        <div class="status">
-            <strong>Información:</strong>
-            <ul>
-                <li>Los tests se ejecutan automáticamente en cada commit</li>
-                <li>Se excluyen tests de performance y tests lentos</li>
-                <li>Configuración optimizada para CI/CD</li>
-                <li>Tiempo de ejecución optimizado: ~2 minutos</li>
-            </ul>
+        <div id="placeholder-content">
+            <p>Los tests funcionales se están ejecutando. Este reporte se actualizará automáticamente cuando se completen.</p>
+            
+            <div class="status">
+                <strong>Información:</strong>
+                <ul>
+                    <li>Los tests se ejecutan automáticamente en cada commit</li>
+                    <li>Se excluyen tests de performance y tests lentos</li>
+                    <li>Configuración optimizada para CI/CD</li>
+                    <li>Tiempo de ejecución optimizado: ~2 minutos</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="real-report-content" class="hidden">
+            <p>✅ <strong>Tests completados!</strong> Los reportes reales están disponibles.</p>
+            <a href="functional/karate-summary.html" class="report-link" target="_blank">
+                📊 Ver Reporte Completo de Karate
+            </a>
         </div>
         
         <p><strong>Última actualización:</strong> <span id="timestamp"></span></p>
@@ -68,6 +94,21 @@
     
     <script>
         document.getElementById('timestamp').textContent = new Date().toLocaleString('es-ES');
+        
+        // Verificar si hay reportes reales disponibles
+        fetch('functional/karate-summary.html')
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('status').textContent = 'Completado';
+                    document.getElementById('placeholder-content').classList.add('hidden');
+                    document.getElementById('real-report-content').classList.remove('hidden');
+                } else {
+                    document.getElementById('status').textContent = 'En ejecución';
+                }
+            })
+            .catch(() => {
+                document.getElementById('status').textContent = 'En ejecución';
+            });
     </script>
 </body>
 </html> 

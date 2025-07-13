@@ -47,6 +47,22 @@
         .back-link:hover {
             background: #0056b3;
         }
+        .report-link {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 15px 25px;
+            background: #dc3545;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .report-link:hover {
+            background: #c82333;
+        }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -57,26 +73,36 @@
         <p>Reporte de tests de performance de la API</p>
     </div>
     <div class="content">
-        <h2>Estado: Programado</h2>
-        <p>Los tests de performance se ejecutan bajo demanda o en horarios programados.</p>
+        <h2>Estado: <span id="status">Verificando...</span></h2>
         
-        <div class="status">
-            <strong>Información:</strong>
-            <ul>
-                <li>Tests de carga y estrés</li>
-                <li>Métricas de rendimiento</li>
-                <li>Análisis de escalabilidad</li>
-                <li>Configuración optimizada para CI/CD</li>
-            </ul>
+        <div id="placeholder-content">
+            <p>Los tests de performance se ejecutan bajo demanda o en horarios programados.</p>
+            
+            <div class="status">
+                <strong>Información:</strong>
+                <ul>
+                    <li>Tests de carga y estrés</li>
+                    <li>Métricas de rendimiento</li>
+                    <li>Análisis de escalabilidad</li>
+                    <li>Configuración optimizada para CI/CD</li>
+                </ul>
+            </div>
+            
+            <div class="instructions">
+                <strong>Para ejecutar tests de performance:</strong>
+                <ol>
+                    <li>Ve a GitHub Actions en el repositorio</li>
+                    <li>Ejecuta el workflow "Performance Tests On Demand"</li>
+                    <li>O espera a la ejecución programada</li>
+                </ol>
+            </div>
         </div>
         
-        <div class="instructions">
-            <strong>Para ejecutar tests de performance:</strong>
-            <ol>
-                <li>Ve a GitHub Actions en el repositorio</li>
-                <li>Ejecuta el workflow "Performance Tests On Demand"</li>
-                <li>O espera a la ejecución programada</li>
-            </ol>
+        <div id="real-report-content" class="hidden">
+            <p>✅ <strong>Tests completados!</strong> Los reportes reales están disponibles.</p>
+            <a href="performance/karate-summary.html" class="report-link" target="_blank">
+                📊 Ver Reporte Completo de Karate
+            </a>
         </div>
         
         <p><strong>Última actualización:</strong> <span id="timestamp"></span></p>
@@ -84,6 +110,21 @@
     
     <script>
         document.getElementById('timestamp').textContent = new Date().toLocaleString('es-ES');
+        
+        // Verificar si hay reportes reales disponibles
+        fetch('performance/karate-summary.html')
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('status').textContent = 'Completado';
+                    document.getElementById('placeholder-content').classList.add('hidden');
+                    document.getElementById('real-report-content').classList.remove('hidden');
+                } else {
+                    document.getElementById('status').textContent = 'Programado';
+                }
+            })
+            .catch(() => {
+                document.getElementById('status').textContent = 'Programado';
+            });
     </script>
 </body>
 </html> 
