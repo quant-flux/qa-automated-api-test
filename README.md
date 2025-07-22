@@ -1,6 +1,6 @@
 # 🚀 API Testing Project - Karate Framework
 
-Este proyecto contiene tests automatizados para la API de tokens utilizando el framework Karate, con una arquitectura moderna que separa tests funcionales y de performance.
+Este proyecto contiene tests automatizados para la API de tokens utilizando el framework Karate, con una arquitectura moderna que separa tests funcionales y de performance
 
 ## 📁 Estructura del Proyecto
 
@@ -434,5 +434,6 @@ Para agregar nuevos tests:
 
 - **Runners**: Ver `src/test/java/runners/README.md` para detalles de los runners
 - **Datos de Prueba**: Ver `src/test/resources/data/README.md` para estructura de datos
-- **Performance**: Ver `src/test/resources/features/performance/README.md` para tests de performance #   T e s t   t r i g g e r   f o r   d e p l o y   w o r k f l o w   -   0 7 / 2 1 / 2 0 2 5   2 2 : 1 3 : 4 4  
+- **Performance**: Ver `src/test/resources/features/performance/README.md` para tests de performance #   T e s t   t r i g g e r   f o r   d e p l o y   w o r k f l o w   -   0 7 / 2 1 / 2 0 2 5   2 2 : 1 3 : 4 4 
+ 
  
