@@ -52,7 +52,7 @@
           <threadCount>4</threadCount>
           <forkCount>1</forkCount>
           <reuseForks>true</reuseForks>
-          <argLine>-Xmx512m -XX:MaxPermSize=128m</argLine>
+          <argLine>-Xmx512m</argLine>
         </configuration>
       </plugin>
       
