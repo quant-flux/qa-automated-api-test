@@ -94,4 +94,65 @@ Feature: Token List Endpoint
     When method get
     Then status 400
 
+  @boundary
+  Scenario: Get token list with minimum page (1)
+    And param page = 1
+    And param limit = 10
+    When method get
+    Then status 200
+    And def validationResult = validateTokenListSuccessResponse(response, true)
+    And match validationResult == true
+
+  @boundary
+  Scenario: Get token list with maximum limit (500)
+    And param limit = 500
+    When method get
+    Then status 200
+    And def validationResult = validateTokenListSuccessResponse(response, true)
+    And match validationResult == true
+
+  @boundary
+  Scenario: Get token list with minimum limit (10)
+    And param limit = 10
+    When method get
+    Then status 200
+    And def validationResult = validateTokenListSuccessResponse(response, true)
+    And match validationResult == true
+
+  @boundary
+  Scenario: Get token list with maximum page number
+    And param page = 100
+    And param limit = 10
+    When method get
+    Then status 200
+    And def validationResult = validateTokenListSuccessResponse(response, true)
+    And match validationResult == true
+
+  @edge
+  Scenario: Get token list with all parameters at boundary values
+    And param page = 1
+    And param limit = 500
+    And param sort_by = 'created_time'
+    And param order = 'desc'
+    When method get
+    Then status 200
+    And def validationResult = validateTokenListSuccessResponse(response, true)
+    And match validationResult == true
+
+  @edge
+  Scenario: Get token list with empty response (high page number)
+    And param page = 1000
+    And param limit = 10
+    When method get
+    Then status 200
+    And match response.data == '#array'
+
+  @edge
+  Scenario: Get token list with mixed valid and invalid parameters
+    And param page = 1
+    And param limit = 500
+    And param sort_by = 'invalid_field'
+    When method get
+    Then status 400
+
 

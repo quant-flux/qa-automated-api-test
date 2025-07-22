@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Functional Tests Report - QuantFlux</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            background: #f8f9fa;
+        }
+        .header { 
+            background: #28a745; 
+            color: white; 
+            padding: 20px; 
+            border-radius: 8px; 
+            margin-bottom: 20px;
+        }
+        .content { 
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background: #0056b3;
+        }
+        .report-link {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 15px 25px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .report-link:hover {
+            background: #218838;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Volver al inicio</a>
+    
+    <div class="header">
+        <h1>🧪 Tests Funcionales - QuantFlux</h1>
+        <p>Reporte de tests funcionales de la API</p>
+    </div>
+    <div class="content">
+        <h2>Estado: <span id="status">Verificando...</span></h2>
+        
+        <div id="placeholder-content">
+            <p>Los tests funcionales se están ejecutando. Este reporte se actualizará automáticamente cuando se completen.</p>
+            
+            <div class="status">
+                <strong>Información:</strong>
+                <ul>
+                    <li>Los tests se ejecutan automáticamente en cada commit</li>
+                    <li>Se excluyen tests de performance y tests lentos</li>
+                    <li>Configuración optimizada para CI/CD</li>
+                    <li>Tiempo de ejecución optimizado: ~2 minutos</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="real-report-content" class="hidden">
+            <p>✅ <strong>Tests completados!</strong> Los reportes reales están disponibles.</p>
+            <a href="functional/karate-summary.html" class="report-link" target="_blank">
+                📊 Ver Reporte Completo de Karate
+            </a>
+        </div>
+        
+        <p><strong>Última actualización:</strong> <span id="timestamp"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('es-ES');
+        
+        // Verificar si hay reportes reales disponibles
+        fetch('functional/karate-summary.html')
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('status').textContent = 'Completado';
+                    document.getElementById('placeholder-content').classList.add('hidden');
+                    document.getElementById('real-report-content').classList.remove('hidden');
+                } else {
+                    document.getElementById('status').textContent = 'En ejecución';
+                }
+            })
+            .catch(() => {
+                document.getElementById('status').textContent = 'En ejecución';
+            });
+    </script>
+</body>
+</html> 

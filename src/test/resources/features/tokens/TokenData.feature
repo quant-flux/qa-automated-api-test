@@ -57,4 +57,28 @@ Feature: Token Data Endpoint
     * def tokenData = response.data
     * validateTokenDataConstraints(tokenData)
 
+  @edge
+  Scenario: Get token data with very long address
+    * url baseUrl + getEndpoint('token_data') + 'a'.repeat(1000)
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get token data with special characters in address
+    * url baseUrl + getEndpoint('token_data') + '!@#$%^&*()'
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get token data with numeric address
+    * url baseUrl + getEndpoint('token_data') + '1234567890123456789012345678901234567890'
+    When method get
+    Then status 400
+
+  @edge
+  Scenario: Get token data with mixed case address
+    * url baseUrl + getEndpoint('token_data') + 'AbCdEfGhIjKlMnOpQrStUvWxYz1234567890'
+    When method get
+    Then status 400
+
  

@@ -2,8 +2,8 @@ function fn() {
   var env = karate.env || 'dev';
   var config = {
     baseUrl: 'https://full-api.cloud-service-app.com',
-    connectTimeout: 60000,
-    readTimeout: 60000
+    connectTimeout: 5000,
+    readTimeout: 5000
   };
 
   // Cargar datos
@@ -13,6 +13,7 @@ function fn() {
   config.paginationParams = read('classpath:data/tokens/pagination-params.json');
   config.newListingParams = read('classpath:data/tokens/new-listing-params.json');
   config.trendingParams = read('classpath:data/tokens/trending-params.json');
+  config.tokenPriceMultiParams = read('classpath:data/tokens/token-price-multi-params.json');
   config.ohlcvParams = read('classpath:data/trading/ohlcv-params.json');
   config.tradeAddresses = read('classpath:data/trading/trade-addresses.json');
 
@@ -245,6 +246,34 @@ function fn() {
     return addresses.join(',');
   };
 
+  // Funciones de token price multi
+  config.getTokenPriceMultiAddresses = function(type) {
+    var addresses = [];
+    switch(type) {
+      case 'single_token':
+        addresses = [config.getValidTokenAddress(0)];
+        break;
+      case 'multiple_tokens':
+        addresses = [config.getValidTokenAddress(0), config.getValidTokenAddress(1), config.getValidTokenAddress(2)];
+        break;
+      case 'maximum_tokens':
+        // Obtener hasta 10 tokens válidos
+        for (var i = 0; i < Math.min(10, config.getValidTokenCount()); i++) {
+          addresses.push(config.getValidTokenAddress(i));
+        }
+        break;
+      case 'too_many_tokens':
+        // Obtener más de 10 tokens para probar el límite
+        for (var i = 0; i < Math.min(15, config.getValidTokenCount()); i++) {
+          addresses.push(config.getValidTokenAddress(i));
+        }
+        break;
+      default:
+        throw new Error('Unknown token price multi type: ' + type);
+    }
+    return addresses.join(',');
+  };
+
   // Funciones de validación de respuestas (placeholders - necesitarán implementación específica)
   config.validateTokenDataSuccessResponse = function(response, expectData) {
     // La API devuelve status: "success" en lugar de status code 200
@@ -364,6 +393,14 @@ function fn() {
       throw new Error('Token price data should be an object');
     }
     // Validación de campos de precios múltiples
+    return true;
+  };
+
+  config.validateTokenPriceMultiFields = function(tokenPriceData) {
+    if (!tokenPriceData || typeof tokenPriceData !== 'object') {
+      throw new Error('Token price multi data should be an object');
+    }
+    // Validación de campos de precio multi
     return true;
   };
 

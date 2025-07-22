@@ -89,6 +89,15 @@ public class PerformanceTestRunner {
     }
     
     @Karate.Test
+    Karate testTokenPriceMultiPerformance() {
+        return Karate.run("classpath:features/performance/TokenPriceMultiPerformance.feature")
+                .relativeTo(getClass())
+                .outputCucumberJson(true)
+                .outputHtmlReport(true)
+                .reportDir("target/karate-reports/performance/token-price-multi");
+    }
+    
+    @Karate.Test
     Karate testTradeListPerformance() {
         return Karate.run("classpath:features/performance/TradeListPerformance.feature")
                 .relativeTo(getClass())
@@ -104,6 +113,15 @@ public class PerformanceTestRunner {
                 .outputCucumberJson(true)
                 .outputHtmlReport(true)
                 .reportDir("target/karate-reports/performance/global-load");
+    }
+    
+    @Karate.Test
+    Karate testAdvancedPerformanceValidation() {
+        return Karate.run("classpath:features/performance/AdvancedPerformanceValidation.feature")
+                .relativeTo(getClass())
+                .outputCucumberJson(true)
+                .outputHtmlReport(true)
+                .reportDir("target/karate-reports/performance/advanced-validation");
     }
     
     // ========================================
