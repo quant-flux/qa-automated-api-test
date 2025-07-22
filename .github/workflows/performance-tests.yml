@@ -1,13 +1,15 @@
-name: Performance Tests
+name: Performance Tests - Scheduled & On-Demand
 
 on:
+  # Ejecución programada: Lunes, Miércoles y Viernes a las 8:00 AM UTC
   schedule:
-    # Ejecutar performance tests diariamente a las 2:00 AM UTC
-    - cron: '0 2 * * *'
-  workflow_dispatch: # Permite ejecución manual
+    - cron: '0 8 * * 1,3,5'
+  
+  # Ejecución bajo demanda
+  workflow_dispatch:
     inputs:
       test_type:
-        description: 'Tipo de test de performance'
+        description: 'Tipo de test de performance a ejecutar'
         required: true
         default: 'all'
         type: choice
@@ -17,6 +19,7 @@ on:
         - load
         - stress
         - endurance
+        - advanced
       environment:
         description: 'Ambiente de testing'
         required: true
@@ -25,126 +28,170 @@ on:
         options:
         - staging
         - production
+        - development
+
+  # Ejecución manual desde Issues
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  performance-tests:
-    name: ⚡ Performance Tests
+  performance-test:
     runs-on: ubuntu-latest
     
+    # Solo ejecutar si es un issue con label "performance-test" o es programado/despachado
+    if: |
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'performance-test'))
+    
     steps:
-    - name: 📥 Checkout code
+    - name: Checkout
       uses: actions/checkout@v4
-
-    - name: ☕ Set up Java 17
+      
+    - name: Set up JDK 17
       uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
-
-    - name: 🔧 Cache Maven dependencies
+        
+    - name: Cache Maven packages
       uses: actions/cache@v3
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
-
-    - name: 🚀 Run Baseline Performance Tests
-      id: baseline-tests
-      if: github.event.inputs.test_type == 'baseline' || github.event.inputs.test_type == 'all' || github.event_name == 'schedule'
-      run: |
-        echo "⚡ Ejecutando Baseline Performance Tests..."
-        echo "Environment: ${{ github.event.inputs.environment || 'staging' }}"
-        mvn test -Dtest=PerformanceTestRunner#testBaselinePerformance -q
-        echo "✅ Baseline Performance Tests completados"
-
-    - name: 🔥 Run Load Tests
-      id: load-tests
-      if: github.event.inputs.test_type == 'load' || github.event.inputs.test_type == 'all'
-      run: |
-        echo "🔥 Ejecutando Load Tests..."
-        echo "Environment: ${{ github.event.inputs.environment || 'staging' }}"
-        mvn test -Dtest=PerformanceTestRunner#testLoadPerformance -q
-        echo "✅ Load Tests completados"
-
-    - name: 💪 Run Stress Tests
-      id: stress-tests
-      if: github.event.inputs.test_type == 'stress' || github.event.inputs.test_type == 'all'
-      run: |
-        echo "💪 Ejecutando Stress Tests..."
-        echo "Environment: ${{ github.event.inputs.environment || 'staging' }}"
-        mvn test -Dtest=PerformanceTestRunner#testStressPerformance -q
-        echo "✅ Stress Tests completados"
-
-    - name: 🏃 Run Endurance Tests
-      id: endurance-tests
-      if: github.event.inputs.test_type == 'endurance' || github.event.inputs.test_type == 'all'
-      run: |
-        echo "🏃 Ejecutando Endurance Tests..."
-        echo "Environment: ${{ github.event.inputs.environment || 'staging' }}"
-        mvn test -Dtest=PerformanceTestRunner#testEndurancePerformance -q
-        echo "✅ Endurance Tests completados"
-
-    - name: 📊 Run All Performance Tests
-      id: all-performance-tests
-      if: github.event.inputs.test_type == 'all' || github.event_name == 'schedule'
-      run: |
-        echo "📊 Ejecutando Todos los Performance Tests..."
-        echo "Environment: ${{ github.event.inputs.environment || 'staging' }}"
-        mvn test -Dtest=PerformanceTestRunner#testAllPerformance -q
-        echo "✅ Todos los Performance Tests completados"
-
-    - name: 📈 Generate Performance Summary
-      if: always()
-      run: |
-        echo "## ⚡ Performance Tests Summary" >> $GITHUB_STEP_SUMMARY
         
-        # Calcular estadísticas de performance
-        TOTAL_TESTS=$(find target/surefire-reports -name "*PerformanceTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')
-        FAILED_TESTS=$(find target/surefire-reports -name "*PerformanceTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')
-        PASSED_TESTS=$((TOTAL_TESTS - FAILED_TESTS))
-        SUCCESS_RATE=$((TOTAL_TESTS > 0 ? PASSED_TESTS * 100 / TOTAL_TESTS : 0))
-        
-        echo "**Test Type:** ${{ github.event.inputs.test_type || 'scheduled' }}" >> $GITHUB_STEP_SUMMARY
-        echo "**Environment:** ${{ github.event.inputs.environment || 'staging' }}" >> $GITHUB_STEP_SUMMARY
-        echo "**Total Tests:** $TOTAL_TESTS" >> $GITHUB_STEP_SUMMARY
-        echo "**Passed:** $PASSED_TESTS ✅" >> $GITHUB_STEP_SUMMARY
-        echo "**Failed:** $FAILED_TESTS ❌" >> $GITHUB_STEP_SUMMARY
-        echo "**Success Rate:** $SUCCESS_RATE%" >> $GITHUB_STEP_SUMMARY
-        
-        if [ $FAILED_TESTS -eq 0 ]; then
-          echo "🎉 **All performance tests passed!**" >> $GITHUB_STEP_SUMMARY
+    - name: Set Test Type
+      id: test-type
+      run: |
+        if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+          echo "test_type=${{ github.event.inputs.test_type }}" >> $GITHUB_OUTPUT
         else
-          echo "⚠️ **Some performance tests failed. Check the logs for details.**" >> $GITHUB_STEP_SUMMARY
+          echo "test_type=all" >> $GITHUB_OUTPUT
         fi
-
-    - name: 📁 Upload Performance Test Reports
-      if: always()
+        
+    - name: Set Environment
+      id: environment
+      run: |
+        if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+          echo "environment=${{ github.event.inputs.environment }}" >> $GITHUB_OUTPUT
+        else
+          echo "environment=staging" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Run Performance Tests - All
+      if: steps.test-type.outputs.test_type == 'all'
+      run: mvn test -Dtest=PerformanceTestRunner#testAllPerformance
+      
+    - name: Run Performance Tests - Baseline
+      if: steps.test-type.outputs.test_type == 'baseline'
+      run: mvn test -Dtest=PerformanceTestRunner#generateBaselinePerformanceReport
+      
+    - name: Run Performance Tests - Load
+      if: steps.test-type.outputs.test_type == 'load'
+      run: mvn test -Dtest=PerformanceTestRunner#generateLoadPerformanceReport
+      
+    - name: Run Performance Tests - Stress
+      if: steps.test-type.outputs.test_type == 'stress'
+      run: mvn test -Dtest=PerformanceTestRunner#generateStressPerformanceReport
+      
+    - name: Run Performance Tests - Endurance
+      if: steps.test-type.outputs.test_type == 'endurance'
+      run: mvn test -Dtest=PerformanceTestRunner#generateEndurancePerformanceReport
+      
+    - name: Run Performance Tests - Advanced
+      if: steps.test-type.outputs.test_type == 'advanced'
+      run: mvn test -Dtest=PerformanceTestRunner#generateAdvancedPerformanceReport
+      
+    - name: Create Performance Reports Directory
+      run: |
+        mkdir -p reports/performance
+        
+    - name: Copy Performance Reports
+      run: |
+        cp -r target/karate-reports/performance/* reports/performance/
+        
+    - name: Create Performance Summary
+      run: |
+        cat > reports/performance/execution-summary.md << EOF
+        # Performance Test Execution Summary
+        
+        **Execution Date:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+        **Trigger:** ${{ github.event_name }}
+        **Test Type:** ${{ steps.test-type.outputs.test_type }}
+        **Environment:** ${{ steps.environment.outputs.environment }}
+        **Branch:** ${{ github.ref_name }}
+        **Commit:** ${{ github.sha }}
+        
+        ## Test Results
+        - **Total Tests:** $(find target/karate-reports/performance -name "*.json" | wc -l)
+        - **Execution Time:** $(date -u +"%H:%M:%S")
+        
+        ## Reports Available
+        - [Karate Summary](karate-summary.html)
+        - [Karate Tags](karate-tags.html)
+        - [Karate Timeline](karate-timeline.html)
+        
+        ## Next Scheduled Run
+        - **Schedule:** Monday, Wednesday, Friday at 8:00 AM UTC
+        - **Manual Trigger:** Available via workflow_dispatch
+        - **Issue Trigger:** Create issue with label "performance-test"
+        EOF
+        
+    - name: Upload Performance Reports as Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: performance-test-reports-${{ github.run_id }}
-        path: |
-          target/karate-reports/performance/
-          target/surefire-reports/
-        retention-days: 90
+        name: performance-reports-${{ github.run_number }}
+        path: reports/performance/
+        retention-days: 30
+        
+    - name: Comment on Issue (if triggered by issue)
+      if: github.event_name == 'issues'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `## Performance Tests Completed ✅
+            
+            **Execution Details:**
+            - **Test Type:** ${{ steps.test-type.outputs.test_type }}
+            - **Environment:** ${{ steps.environment.outputs.environment }}
+            - **Execution Time:** ${new Date().toISOString()}
+            
+            **Reports:**
+            - [View Reports](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/performance/karate-summary.html)
+            - [Download Artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            
+            **Next Steps:**
+            - Review performance metrics
+            - Check for any performance regressions
+            - Update thresholds if necessary`
+          })
 
-    - name: 🔗 Create Performance Test Report Links
-      if: always()
-      run: |
-        echo "📊 **Performance Test Reports:**" >> $GITHUB_STEP_SUMMARY
-        echo "- [Complete Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts)" >> $GITHUB_STEP_SUMMARY
-        echo "- [Karate HTML Reports](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts)" >> $GITHUB_STEP_SUMMARY
-
-    - name: 📧 Performance Alert on Failure
-      if: failure()
-      run: |
-        echo "🚨 **PERFORMANCE ALERT** 🚨" >> $GITHUB_STEP_SUMMARY
-        echo "Performance tests failed in run ${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
-        echo "This may indicate performance degradation!" >> $GITHUB_STEP_SUMMARY
-        echo "Check the logs: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" >> $GITHUB_STEP_SUMMARY
-
-    - name: 📊 Performance Metrics Summary
-      if: success()
-      run: |
-        echo "📈 **Performance Metrics:**" >> $GITHUB_STEP_SUMMARY
-        echo "✅ Performance tests completed successfully" >> $GITHUB_STEP_SUMMARY
-        echo "📊 Check the detailed performance metrics in the uploaded reports" >> $GITHUB_STEP_SUMMARY 
+  update-pages:
+    needs: performance-test
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Download Performance Reports
+      uses: actions/download-artifact@v3
+      with:
+        name: performance-reports-${{ github.run_number }}
+        path: reports/performance/
+        
+    - name: Deploy Updated Reports to GitHub Pages
+      uses: actions/deploy-pages@v4
+      with:
+        path: reports 
