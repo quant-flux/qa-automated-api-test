@@ -40,42 +40,106 @@ jobs:
       
     - name: Create Reports Directory Structure
       run: |
+        echo "📁 Creando estructura de directorios para reportes..."
         mkdir -p reports/functional
         mkdir -p reports/performance
+        echo "✅ Directorios creados"
+        ls -la reports/
         
     - name: Copy main index.html
       run: |
-        cp index.html reports/
+        echo "📄 Copiando index.html principal..."
+        if [ -f "index.html" ]; then
+          cp index.html reports/
+          echo "✅ index.html copiado"
+        else
+          echo "⚠️ index.html no encontrado en la raíz, creando placeholder"
+          echo '<!DOCTYPE html><html><head><title>QuantFlux Reports</title></head><body><h1>QuantFlux Test Reports</h1><p>Reports will be available here</p></body></html>' > reports/index.html
+        fi
         
     - name: Copy Functional Reports
       run: |
+        echo "📋 Copiando reportes funcionales..."
         if [ -d "target/karate-reports/functional/complete" ]; then
           cp -r target/karate-reports/functional/complete/* reports/functional/
+          echo "✅ Reportes funcionales copiados desde complete/"
+        elif [ -d "target/karate-reports/functional" ]; then
+          cp -r target/karate-reports/functional/* reports/functional/
+          echo "✅ Reportes funcionales copiados desde functional/"
         elif [ -d "target/karate-reports" ]; then
           find target/karate-reports -name "karate-summary.html" -exec cp {} reports/functional/ \;
+          echo "✅ Reportes funcionales copiados desde karate-reports/"
         else
-          echo "No functional reports found, creating placeholder"
-          echo '<!DOCTYPE html><html><head><title>Functional Tests Report - QuantFlux</title><style>body{font-family:Arial,sans-serif;margin:40px}.header{background:#28a745;color:white;padding:20px;border-radius:8px}.content{margin-top:20px}</style></head><body><div class="header"><h1>🧪 Tests Funcionales - QuantFlux</h1><p>Reporte de tests funcionales de la API</p></div><div class="content"><h2>Estado: En ejecución</h2><p>Los tests funcionales se están ejecutando. Este reporte se actualizará automáticamente cuando se completen.</p><p><strong>Última actualización:</strong> '$(date)'</p></div></body></html>' > reports/functional/karate-summary.html
+          echo "⚠️ No se encontraron reportes funcionales, creando placeholder"
+          cat > reports/functional/karate-summary.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Functional Tests Report - QuantFlux</title>
+              <style>
+                  body{font-family:Arial,sans-serif;margin:40px}
+                  .header{background:#28a745;color:white;padding:20px;border-radius:8px}
+                  .content{margin-top:20px}
+              </style>
+          </head>
+          <body>
+              <div class="header">
+                  <h1>🧪 Tests Funcionales - QuantFlux</h1>
+                  <p>Reporte de tests funcionales de la API</p>
+              </div>
+              <div class="content">
+                  <h2>Estado: En ejecución</h2>
+                  <p>Los tests funcionales se están ejecutando. Este reporte se actualizará automáticamente cuando se completen.</p>
+                  <p><strong>Última actualización:</strong> $(date)</p>
+              </div>
+          </body>
+          </html>
+          EOF
         fi
         
     - name: Copy Existing Performance Reports (if any)
       run: |
+        echo "⚡ Copiando reportes de performance..."
         if [ -d "target/karate-reports/performance" ]; then
           cp -r target/karate-reports/performance/* reports/performance/
+          echo "✅ Reportes de performance copiados"
         else
-          echo "No performance reports found, creating placeholder"
-          echo '<!DOCTYPE html><html><head><title>Performance Tests Report - QuantFlux</title><style>body{font-family:Arial,sans-serif;margin:40px}.header{background:#dc3545;color:white;padding:20px;border-radius:8px}.content{margin-top:20px}</style></head><body><div class="header"><h1>⚡ Tests de Performance - QuantFlux</h1><p>Reporte de tests de performance de la API</p></div><div class="content"><h2>Estado: Programado</h2><p>Los tests de performance se ejecutan bajo demanda o en horarios programados.</p><p><strong>Para ejecutar tests de performance:</strong></p><ul><li>Ve a GitHub Actions en el repositorio</li><li>Ejecuta el workflow "Performance Tests On Demand"</li><li>O espera a la ejecución programada</li></ul><p><strong>Última actualización:</strong> '$(date)'</p></div></body></html>' > reports/performance/karate-summary.html
+          echo "⚠️ No se encontraron reportes de performance, creando placeholder"
+          cat > reports/performance/karate-summary.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>Performance Tests Report - QuantFlux</title>
+              <style>
+                  body{font-family:Arial,sans-serif;margin:40px}
+                  .header{background:#dc3545;color:white;padding:20px;border-radius:8px}
+                  .content{margin-top:20px}
+              </style>
+          </head>
+          <body>
+              <div class="header">
+                  <h1>⚡ Tests de Performance - QuantFlux</h1>
+                  <p>Reporte de tests de performance de la API</p>
+              </div>
+              <div class="content">
+                  <h2>Estado: Programado</h2>
+                  <p>Los tests de performance se ejecutan bajo demanda o en horarios programados.</p>
+                  <p><strong>Para ejecutar tests de performance:</strong></p>
+                  <ul>
+                      <li>Ve a GitHub Actions en el repositorio</li>
+                      <li>Ejecuta el workflow "Performance Tests On Demand"</li>
+                      <li>O espera a la ejecución programada</li>
+                  </ul>
+                  <p><strong>Última actualización:</strong> $(date)</p>
+              </div>
+          </body>
+          </html>
+          EOF
         fi
-        
-    - name: Upload reports as artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: reports
-        path: reports/
-        retention-days: 1
         
     - name: Create Navigation Index
       run: |
+        echo "📑 Creando índice de navegación..."
         cat > reports/index.html << 'EOF'
         <!DOCTYPE html>
         <html lang="es">
@@ -221,6 +285,30 @@ jobs:
         </body>
         </html>
         EOF
+        echo "✅ Índice de navegación creado"
+        
+    - name: Verify Reports Directory
+      run: |
+        echo "🔍 Verificando directorio de reportes..."
+        if [ -d "reports" ]; then
+          echo "✅ Directorio reports existe"
+          echo "📁 Contenido del directorio reports:"
+          ls -la reports/
+          echo "📁 Contenido de reports/functional:"
+          ls -la reports/functional/ || echo "No existe reports/functional"
+          echo "📁 Contenido de reports/performance:"
+          ls -la reports/performance/ || echo "No existe reports/performance"
+        else
+          echo "❌ ERROR: Directorio reports no existe"
+          exit 1
+        fi
+        
+    - name: Upload reports as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: reports
+        path: reports/
+        retention-days: 1
 
   deploy:
     runs-on: ubuntu-latest
@@ -234,10 +322,34 @@ jobs:
     steps:
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Upload artifact
+        
+      - name: Download reports artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: reports
+          path: reports
+          
+      - name: Verify downloaded reports
+        run: |
+          echo "🔍 Verificando artifact descargado..."
+          if [ -d "reports" ]; then
+            echo "✅ Directorio reports descargado correctamente"
+            echo "📁 Contenido del directorio reports:"
+            ls -la reports/
+            echo "📁 Contenido de reports/functional:"
+            ls -la reports/functional/ || echo "No existe reports/functional"
+            echo "📁 Contenido de reports/performance:"
+            ls -la reports/performance/ || echo "No existe reports/performance"
+          else
+            echo "❌ ERROR: Directorio reports no existe después de descargar"
+            exit 1
+          fi
+          
+      - name: Upload artifact to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: reports
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 
