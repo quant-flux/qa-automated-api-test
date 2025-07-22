@@ -30,13 +30,13 @@ jobs:
         restore-keys: ${{ runner.os }}-m2
 
     - name: 📁 Download Latest Functional Test Reports
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: functional-test-reports
         path: functional-reports/
 
     - name: 📁 Download Latest Performance Test Reports
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: performance-test-reports-*
         path: performance-reports/
