@@ -20,36 +20,37 @@ class StatsCalculator {
 
     async calculateFunctionalStats() {
         try {
-            // Intentar leer el archivo de resumen generado por el workflow
-            // Primero intentar desde el directorio actual (functional/complete)
-            let response = await fetch('karate-summary-json.txt');
-            if (!response.ok) {
-                // Si no está en el directorio actual, intentar desde la raíz
-                response = await fetch('../karate-summary-json.txt');
-            }
+            // Intentar leer el archivo de resumen desde functional/complete/
+            let response = await fetch('functional/complete/karate-summary-json.txt');
             if (response.ok) {
                 const data = await response.json();
+                console.log('✅ Datos funcionales leídos:', data);
+                
+                // Extraer estadísticas del formato de Karate
+                const totalScenarios = data.scenariosPassed + data.scenariosfailed;
+                const successRate = totalScenarios > 0 ? Math.round((data.scenariosPassed / totalScenarios) * 100) : 0;
+                
                 return {
-                    totalTests: data.functional.totalTests || 0,
-                    passedTests: data.functional.passedTests || 0,
-                    failedTests: data.functional.failedTests || 0,
-                    successRate: data.functional.successRate || 0
+                    totalTests: totalScenarios,
+                    passedTests: data.scenariosPassed,
+                    failedTests: data.scenariosfailed,
+                    successRate: successRate
                 };
             }
         } catch (error) {
-            console.warn('No se pudo leer karate-summary-json.txt, intentando método alternativo:', error);
+            console.warn('No se pudo leer karate-summary-json.txt desde functional/complete/, intentando método alternativo:', error);
         }
 
-        // Método alternativo: intentar leer archivos JSON individuales
+        // Método alternativo: intentar leer archivos JSON individuales desde functional/complete/
         try {
             let totalTests = 0;
             let passedTests = 0;
             let failedTests = 0;
             
-            // Procesar cada archivo JSON
+            // Procesar cada archivo JSON desde functional/complete/
             for (const fileName of this.jsonFiles) {
                 try {
-                    const response = await fetch(fileName);
+                    const response = await fetch(`functional/complete/${fileName}`);
                     if (response.ok) {
                         const data = await response.json();
                         
@@ -58,18 +59,22 @@ class StatsCalculator {
                             if (feature.elements) {
                                 feature.elements.forEach(element => {
                                     if (element.type === 'scenario') {
-                                        // Contar cada step individual como un test (como hace Maven)
+                                        totalTests++;
+                                        
+                                        // Verificar si todos los steps del scenario pasaron
+                                        let scenarioPassed = true;
                                         if (element.steps) {
                                             element.steps.forEach(step => {
-                                                if (step.result) {
-                                                    totalTests++;
-                                                    if (step.result.status === 'passed') {
-                                                        passedTests++;
-                                                    } else if (step.result.status === 'failed') {
-                                                        failedTests++;
-                                                    }
+                                                if (step.result && step.result.status === 'failed') {
+                                                    scenarioPassed = false;
                                                 }
                                             });
+                                        }
+                                        
+                                        if (scenarioPassed) {
+                                            passedTests++;
+                                        } else {
+                                            failedTests++;
                                         }
                                     }
                                 });
@@ -105,37 +110,33 @@ class StatsCalculator {
     async calculatePerformanceStats() {
         console.log('🔍 Iniciando cálculo de estadísticas de performance...');
         try {
-            // Intentar leer el archivo de resumen generado por el workflow
-            // Primero intentar desde el directorio actual (performance)
-            console.log('📁 Intentando leer karate-summary-json.txt desde directorio actual...');
-            let response = await fetch('karate-summary-json.txt');
-            console.log('📊 Respuesta del directorio actual:', response.ok ? 'OK' : 'FAILED');
-            
-            if (!response.ok) {
-                // Si no está en el directorio actual, intentar desde functional/complete
-                console.log('📁 Intentando leer desde ../functional/complete/karate-summary-json.txt...');
-                response = await fetch('../functional/complete/karate-summary-json.txt');
-                console.log('📊 Respuesta del directorio functional:', response.ok ? 'OK' : 'FAILED');
-            }
+            // Intentar leer el archivo de resumen desde performance/
+            console.log('📁 Intentando leer karate-summary-json.txt desde performance/...');
+            let response = await fetch('performance/karate-summary-json.txt');
+            console.log('📊 Respuesta del directorio performance:', response.ok ? 'OK' : 'FAILED');
             
             if (response.ok) {
                 const data = await response.json();
-                console.log('✅ Datos leídos correctamente:', data);
-                console.log('📊 Estadísticas de performance encontradas:', data.performance);
+                console.log('✅ Datos de performance leídos correctamente:', data);
+                
+                // Extraer estadísticas del formato de Karate
+                const totalScenarios = data.scenariosPassed + data.scenariosfailed;
+                const successRate = totalScenarios > 0 ? Math.round((data.scenariosPassed / totalScenarios) * 100) : 0;
+                
                 return {
-                    totalTests: data.performance.totalTests || 0,
-                    passedTests: data.performance.passedTests || 0,
-                    failedTests: data.performance.failedTests || 0,
-                    successRate: data.performance.successRate || 0
+                    totalTests: totalScenarios,
+                    passedTests: data.scenariosPassed,
+                    failedTests: data.scenariosfailed,
+                    successRate: successRate
                 };
             } else {
-                console.warn('❌ No se pudo leer el archivo desde ninguna ubicación');
+                console.warn('❌ No se pudo leer el archivo desde performance/');
             }
         } catch (error) {
             console.warn('❌ Error al leer karate-summary-json.txt, intentando método alternativo:', error);
         }
 
-        // Método alternativo: intentar leer archivos JSON individuales
+        // Método alternativo: intentar leer archivos JSON individuales desde performance/
         try {
             let totalTests = 0;
             let passedTests = 0;
@@ -143,18 +144,18 @@ class StatsCalculator {
             
             // Archivos JSON de performance
             const performanceJsonFiles = [
-                'TokenDataPerformance.json',
-                'TokenDataPerformanceAdvanced.json',
-                'TokenListPerformance.json',
-                'TokenPricePerformance.json',
-                'TradeListPerformance.json',
-                'GlobalLoadTest.json'
+                'features.performance.TokenDataPerformance.json',
+                'features.performance.TokenDataPerformanceAdvanced.json',
+                'features.performance.TokenListPerformance.json',
+                'features.performance.TokenPricePerformance.json',
+                'features.performance.TradeListPerformance.json',
+                'features.performance.GlobalLoadTest.json'
             ];
             
-            // Procesar cada archivo JSON de performance
+            // Procesar cada archivo JSON de performance desde performance/
             for (const fileName of performanceJsonFiles) {
                 try {
-                    const response = await fetch(fileName);
+                    const response = await fetch(`performance/${fileName}`);
                     if (response.ok) {
                         const data = await response.json();
                         

@@ -1,0 +1,180 @@
+name: Dashboard Update
+
+on:
+  workflow_run:
+    workflows: ["Functional Tests", "Performance Tests"]
+    types: [completed]
+  workflow_dispatch: # Permite ejecución manual
+
+jobs:
+  update-dashboard:
+    name: 📊 Update Dashboard
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event.workflow_run.conclusion == 'failure' || github.event_name == 'workflow_dispatch' }}
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+
+    - name: ☕ Set up Java 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: 🔧 Cache Maven dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+
+    - name: 📁 Download Latest Functional Test Reports
+      uses: actions/download-artifact@v3
+      with:
+        name: functional-test-reports
+        path: functional-reports/
+
+    - name: 📁 Download Latest Performance Test Reports
+      uses: actions/download-artifact@v3
+      with:
+        name: performance-test-reports-*
+        path: performance-reports/
+
+    - name: 📊 Generate Consolidated Dashboard
+      run: |
+        echo "📊 Generando Dashboard Consolidado..."
+        
+        # Crear directorio para reportes consolidados
+        mkdir -p src/main/resources/consolidated/
+        
+        # Copiar reportes funcionales
+        if [ -d "functional-reports" ]; then
+          cp -r functional-reports/* src/main/resources/functional/complete/ 2>/dev/null || true
+          echo "✅ Reportes funcionales copiados"
+        fi
+        
+        # Copiar reportes de performance
+        if [ -d "performance-reports" ]; then
+          cp -r performance-reports/* src/main/resources/performance/ 2>/dev/null || true
+          echo "✅ Reportes de performance copiados"
+        fi
+        
+        # Generar estadísticas consolidadas
+        echo "📈 Calculando estadísticas consolidadas..."
+        
+        # Estadísticas funcionales
+        FUNCTIONAL_TOTAL=$(find src/main/resources/functional/complete -name "*.json" -exec grep -h "totalTests" {} \; | grep -o '[0-9]*' | awk '{sum+=$1} END {print sum+0}')
+        FUNCTIONAL_PASSED=$(find src/main/resources/functional/complete -name "*.json" -exec grep -h "passedTests" {} \; | grep -o '[0-9]*' | awk '{sum+=$1} END {print sum+0}')
+        FUNCTIONAL_FAILED=$(find src/main/resources/functional/complete -name "*.json" -exec grep -h "failedTests" {} \; | grep -o '[0-9]*' | awk '{sum+=$1} END {print sum+0}')
+        
+        # Estadísticas de performance
+        PERFORMANCE_TOTAL=$(find src/main/resources/performance -name "*.json" -exec grep -h "totalTests" {} \; | grep -o '[0-9]*' | awk '{sum+=$1} END {print sum+0}')
+        PERFORMANCE_PASSED=$(find src/main/resources/performance -name "*.json" -exec grep -h "passedTests" {} \; | grep -o '[0-9]*' | awk '{sum+=$1} END {print sum+0}')
+        PERFORMANCE_FAILED=$(find src/main/resources/performance -name "*.json" -exec grep -h "failedTests" {} \; | grep -o '[0-9]*' | awk '{sum+=$1} END {print sum+0}')
+        
+        # Totales consolidados
+        TOTAL_TESTS=$((FUNCTIONAL_TOTAL + PERFORMANCE_TOTAL))
+        TOTAL_PASSED=$((FUNCTIONAL_PASSED + PERFORMANCE_PASSED))
+        TOTAL_FAILED=$((FUNCTIONAL_FAILED + PERFORMANCE_FAILED))
+        TOTAL_SUCCESS_RATE=$((TOTAL_TESTS > 0 ? TOTAL_PASSED * 100 / TOTAL_TESTS : 0))
+        
+        # Crear archivo de estadísticas consolidadas
+        cat > src/main/resources/consolidated/test-stats.json << EOF
+        {
+          "consolidated": {
+            "totalTests": $TOTAL_TESTS,
+            "passedTests": $TOTAL_PASSED,
+            "failedTests": $TOTAL_FAILED,
+            "successRate": $TOTAL_SUCCESS_RATE
+          },
+          "functional": {
+            "totalTests": $FUNCTIONAL_TOTAL,
+            "passedTests": $FUNCTIONAL_PASSED,
+            "failedTests": $FUNCTIONAL_FAILED,
+            "successRate": $((FUNCTIONAL_TOTAL > 0 ? FUNCTIONAL_PASSED * 100 / FUNCTIONAL_TOTAL : 0))
+          },
+          "performance": {
+            "totalTests": $PERFORMANCE_TOTAL,
+            "passedTests": $PERFORMANCE_PASSED,
+            "failedTests": $PERFORMANCE_FAILED,
+            "successRate": $((PERFORMANCE_TOTAL > 0 ? PERFORMANCE_PASSED * 100 / PERFORMANCE_TOTAL : 0))
+          },
+          "lastUpdated": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+        }
+        EOF
+        
+        echo "✅ Estadísticas consolidadas generadas"
+        echo "📊 Resumen:"
+        echo "   - Total Tests: $TOTAL_TESTS"
+        echo "   - Passed: $TOTAL_PASSED"
+        echo "   - Failed: $TOTAL_FAILED"
+        echo "   - Success Rate: $TOTAL_SUCCESS_RATE%"
+
+    - name: 🔄 Update Main Dashboard
+      run: |
+        echo "🔄 Actualizando Dashboard Principal..."
+        
+        # Leer estadísticas consolidadas
+        TOTAL_TESTS=$(grep -o '"totalTests": [0-9]*' src/main/resources/consolidated/test-stats.json | grep -o '[0-9]*')
+        TOTAL_PASSED=$(grep -o '"passedTests": [0-9]*' src/main/resources/consolidated/test-stats.json | grep -o '[0-9]*')
+        TOTAL_FAILED=$(grep -o '"failedTests": [0-9]*' src/main/resources/consolidated/test-stats.json | grep -o '[0-9]*')
+        TOTAL_SUCCESS_RATE=$(grep -o '"successRate": [0-9]*' src/main/resources/consolidated/test-stats.json | head -1 | grep -o '[0-9]*')
+        
+        FUNCTIONAL_TOTAL=$(grep -A4 '"functional"' src/main/resources/consolidated/test-stats.json | grep '"totalTests"' | grep -o '[0-9]*')
+        FUNCTIONAL_PASSED=$(grep -A4 '"functional"' src/main/resources/consolidated/test-stats.json | grep '"passedTests"' | grep -o '[0-9]*')
+        FUNCTIONAL_FAILED=$(grep -A4 '"functional"' src/main/resources/consolidated/test-stats.json | grep '"failedTests"' | grep -o '[0-9]*')
+        
+        PERFORMANCE_TOTAL=$(grep -A4 '"performance"' src/main/resources/consolidated/test-stats.json | grep '"totalTests"' | grep -o '[0-9]*')
+        PERFORMANCE_PASSED=$(grep -A4 '"performance"' src/main/resources/consolidated/test-stats.json | grep '"passedTests"' | grep -o '[0-9]*')
+        PERFORMANCE_FAILED=$(grep -A4 '"performance"' src/main/resources/consolidated/test-stats.json | grep '"failedTests"' | grep -o '[0-9]*')
+        
+        # Actualizar el index.html con las nuevas estadísticas
+        sed -i "s/id=\"totalTests\">[0-9]*/id=\"totalTests\">$TOTAL_TESTS/" src/main/resources/index.html
+        sed -i "s/id=\"passedTests\">[0-9]*/id=\"passedTests\">$TOTAL_PASSED/" src/main/resources/index.html
+        sed -i "s/id=\"failedTests\">[0-9]*/id=\"failedTests\">$TOTAL_FAILED/" src/main/resources/index.html
+        sed -i "s/id=\"successRate\">[0-9.]*%/id=\"successRate\">$TOTAL_SUCCESS_RATE%/" src/main/resources/index.html
+        
+        # Actualizar estadísticas de reportes funcionales
+        sed -i "s/<div class=\"report-stat-value\">[0-9]*<\/div>/<div class=\"report-stat-value\">$FUNCTIONAL_TOTAL<\/div>/" src/main/resources/index.html
+        sed -i "s/<div class=\"report-stat-value\" style=\"color: #28a745;\">[0-9]*<\/div>/<div class=\"report-stat-value\" style=\"color: #28a745;\">$FUNCTIONAL_PASSED<\/div>/" src/main/resources/index.html
+        sed -i "s/<div class=\"report-stat-value\" style=\"color: #dc3545;\">[0-9]*<\/div>/<div class=\"report-stat-value\" style=\"color: #dc3545;\">$FUNCTIONAL_FAILED<\/div>/" src/main/resources/index.html
+        
+        # Actualizar estadísticas de reportes de performance
+        sed -i "s/<div class=\"report-stat-value\">[0-9]*<\/div>/<div class=\"report-stat-value\">$PERFORMANCE_TOTAL<\/div>/" src/main/resources/index.html
+        sed -i "s/<div class=\"report-stat-value\" style=\"color: #28a745;\">[0-9]*<\/div>/<div class=\"report-stat-value\" style=\"color: #28a745;\">$PERFORMANCE_PASSED<\/div>/" src/main/resources/index.html
+        sed -i "s/<div class=\"report-stat-value\" style=\"color: #dc3545;\">[0-9]*<\/div>/<div class=\"report-stat-value\" style=\"color: #dc3545;\">$PERFORMANCE_FAILED<\/div>/" src/main/resources/index.html
+        
+        echo "✅ Dashboard principal actualizado"
+
+    - name: 📤 Commit and Push Dashboard Updates
+      run: |
+        echo "📤 Commit y Push de actualizaciones del dashboard..."
+        
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        git add src/main/resources/index.html
+        git add src/main/resources/consolidated/
+        git add src/main/resources/functional/complete/
+        git add src/main/resources/performance/
+        
+        if git diff --staged --quiet; then
+          echo "No hay cambios para commit"
+        else
+          git commit -m "📊 Update dashboard with latest test results [skip ci]"
+          git push
+          echo "✅ Dashboard actualizado y subido"
+        fi
+
+    - name: 📊 Dashboard Summary
+      if: always()
+      run: |
+        echo "## 📊 Dashboard Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "✅ Dashboard consolidado actualizado con los últimos resultados" >> $GITHUB_STEP_SUMMARY
+        echo "📈 Estadísticas consolidadas generadas" >> $GITHUB_STEP_SUMMARY
+        echo "🔄 Dashboard principal actualizado" >> $GITHUB_STEP_SUMMARY
+        echo "📤 Cambios subidos al repositorio" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "🔗 **Access the updated dashboard:**" >> $GITHUB_STEP_SUMMARY
+        echo "- [Main Dashboard](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/src/main/resources/index.html)" >> $GITHUB_STEP_SUMMARY 

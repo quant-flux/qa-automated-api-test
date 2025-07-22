@@ -1,0 +1,90 @@
+name: Functional Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch: # Permite ejecución manual
+
+jobs:
+  functional-tests:
+    name: 🧪 Functional Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout code
+      uses: actions/checkout@v4
+
+    - name: ☕ Set up Java 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: 🔧 Cache Maven dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+
+    - name: 🚀 Run Smoke Tests (Fast)
+      id: smoke-tests
+      run: |
+        echo "🧪 Ejecutando Smoke Tests..."
+        mvn test -Dtest=FunctionalTestRunner#testSmokeTests -q
+        echo "✅ Smoke Tests completados"
+
+    - name: 📊 Run Complete Functional Tests
+      id: complete-tests
+      if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+      run: |
+        echo "🧪 Ejecutando Tests Funcionales Completos..."
+        mvn test -Dtest=FunctionalTestRunner#testCompleteReport -q
+        echo "✅ Tests Funcionales Completos finalizados"
+
+    - name: 📈 Generate Test Summary
+      if: always()
+      run: |
+        echo "## 🧪 Functional Tests Summary" >> $GITHUB_STEP_SUMMARY
+        
+        # Calcular estadísticas
+        TOTAL_TESTS=$(find target/surefire-reports -name "*FunctionalTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'tests="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')
+        FAILED_TESTS=$(find target/surefire-reports -name "*FunctionalTestRunner*" -exec grep -h "testsuite" {} \; | grep -o 'failures="[^"]*"' | cut -d'"' -f2 | awk '{sum+=$1} END {print sum+0}')
+        PASSED_TESTS=$((TOTAL_TESTS - FAILED_TESTS))
+        SUCCESS_RATE=$((TOTAL_TESTS > 0 ? PASSED_TESTS * 100 / TOTAL_TESTS : 0))
+        
+        echo "**Total Tests:** $TOTAL_TESTS" >> $GITHUB_STEP_SUMMARY
+        echo "**Passed:** $PASSED_TESTS ✅" >> $GITHUB_STEP_SUMMARY
+        echo "**Failed:** $FAILED_TESTS ❌" >> $GITHUB_STEP_SUMMARY
+        echo "**Success Rate:** $SUCCESS_RATE%" >> $GITHUB_STEP_SUMMARY
+        
+        if [ $FAILED_TESTS -eq 0 ]; then
+          echo "🎉 **All functional tests passed!**" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "⚠️ **Some functional tests failed. Check the logs for details.**" >> $GITHUB_STEP_SUMMARY
+        fi
+
+    - name: 📁 Upload Functional Test Reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: functional-test-reports
+        path: |
+          target/karate-reports/functional/
+          target/surefire-reports/
+        retention-days: 30
+
+    - name: 🔗 Create Functional Test Report Links
+      if: always()
+      run: |
+        echo "📊 **Functional Test Reports:**" >> $GITHUB_STEP_SUMMARY
+        echo "- [Complete Report](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts)" >> $GITHUB_STEP_SUMMARY
+        echo "- [Karate HTML Reports](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts)" >> $GITHUB_STEP_SUMMARY
+
+    - name: 📧 Notify on Failure
+      if: failure()
+      run: |
+        echo "❌ Functional tests failed in run ${{ github.run_id }}"
+        echo "Check the logs for details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" 

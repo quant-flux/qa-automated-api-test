@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantFlux - Reporte de Tests de Performance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .stat-number.success { color: #28a745; }
+        .stat-number.warning { color: #ffc107; }
+        .stat-number.danger { color: #dc3545; }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .features-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .category-section {
+            margin-bottom: 40px;
+        }
+        
+        .category-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category-title::before {
+            content: "";
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 18px;
+            text-align: left;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            border-color: #007bff;
+            background: #e3f2fd;
+        }
+        
+        .feature-card::after {
+            content: "🔗";
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+        
+        .feature-card:hover::after {
+            opacity: 1;
+        }
+        
+        .feature-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+        
+        .feature-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+        
+        .feature-description {
+            font-size: 0.8rem;
+            color: #666;
+            line-height: 1.3;
+            margin-left: 2.7rem;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+    </style>
+    <script>
+        function openKarateReport(featureName) {
+            // Desde src/main/resources/ necesitamos subir 3 niveles para llegar a la raíz del proyecto
+            const path = '../../../target/karate-reports/performance/' + featureName + '.html';
+            
+            try {
+                const link = document.createElement('a');
+                link.href = path;
+                link.target = '_blank';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } catch (error) {
+                console.log('Error al abrir reporte:', error);
+                alert('No se pudo abrir el reporte. Verifica que el archivo existe en target/karate-reports/performance/');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Volver al Dashboard Principal</a>
+        
+        <div class="header">
+            <h1>⚡ Tests de Performance</h1>
+            <p>Análisis de rendimiento y carga de la API</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number success">24</div>
+                <div class="stat-label">Total Tests</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number success">21</div>
+                <div class="stat-label">Tests Exitosos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number danger">3</div>
+                <div class="stat-label">Tests Fallidos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number warning">88%</div>
+                <div class="stat-label">Tasa de Éxito</div>
+            </div>
+        </div>
+        
+        <div class="features-section">
+            <h2 class="section-title">📊 Tests de Performance</h2>
+            
+            <!-- Categoría: Token Performance -->
+            <div class="category-section">
+                <h3 class="category-title">💰 Token Performance</h3>
+                <div class="features-grid">
+                    <div class="feature-card" onclick="openKarateReport('features.performance.TokenDataPerformance')">
+                        <div class="feature-header">
+                            <span class="feature-icon">💰</span>
+                            <div class="feature-name">Token Data Performance</div>
+                        </div>
+                        <div class="feature-description">Pruebas de rendimiento para consultas de datos de tokens</div>
+                    </div>
+                    
+                    <div class="feature-card" onclick="openKarateReport('features.performance.TokenDataPerformanceAdvanced')">
+                        <div class="feature-header">
+                            <span class="feature-icon">🚀</span>
+                            <div class="feature-name">Token Data Performance Advanced</div>
+                        </div>
+                        <div class="feature-description">Pruebas avanzadas de rendimiento con múltiples escenarios</div>
+                    </div>
+                    
+                    <div class="feature-card" onclick="openKarateReport('features.performance.TokenListPerformance')">
+                        <div class="feature-header">
+                            <span class="feature-icon">📋</span>
+                            <div class="feature-name">Token List Performance</div>
+                        </div>
+                        <div class="feature-description">Rendimiento de listados y paginación de tokens</div>
+                    </div>
+                    
+                    <div class="feature-card" onclick="openKarateReport('features.performance.TokenPricePerformance')">
+                        <div class="feature-header">
+                            <span class="feature-icon">💲</span>
+                            <div class="feature-name">Token Price Performance</div>
+                        </div>
+                        <div class="feature-description">Pruebas de rendimiento para consultas de precios</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Categoría: Trade Performance -->
+            <div class="category-section">
+                <h3 class="category-title">💱 Trade Performance</h3>
+                <div class="features-grid">
+                    <div class="feature-card" onclick="openKarateReport('features.performance.TradeListPerformance')">
+                        <div class="feature-header">
+                            <span class="feature-icon">💱</span>
+                            <div class="feature-name">Trade List Performance</div>
+                        </div>
+                        <div class="feature-description">Rendimiento de listados de operaciones de trading</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Categoría: Load Tests -->
+            <div class="category-section">
+                <h3 class="category-title">🌐 Load Tests</h3>
+                <div class="features-grid">
+                    <div class="feature-card" onclick="openKarateReport('features.performance.GlobalLoadTest')">
+                        <div class="feature-header">
+                            <span class="feature-icon">🌐</span>
+                            <div class="feature-name">Global Load Test</div>
+                        </div>
+                        <div class="feature-description">Pruebas de carga global del sistema</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>📊 QuantFlux Testing Suite - Reporte de Tests de Performance</p>
+        </div>
+    </div>
+</body>
+</html>
+ 

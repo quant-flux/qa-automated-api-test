@@ -1,0 +1,303 @@
+{
+  "functional": {
+    "features": [
+      {
+        "name": "Data Cleanup Validations",
+        "description": "Feature: Data Cleanup Validations",
+        "scenarios": 5,
+        "tags": [
+          "validation"
+        ],
+        "filename": "DataCleanup",
+        "category": "common"
+      },
+      {
+        "name": "Health Check Endpoint",
+        "description": "Feature: Health Check Endpoint",
+        "scenarios": 1,
+        "tags": [
+          "smoke"
+        ],
+        "filename": "HealthCheck",
+        "category": "common"
+      },
+      {
+        "name": "Test Data Configuration",
+        "description": "Feature: Test Data Configuration",
+        "scenarios": 1,
+        "tags": [],
+        "filename": "TestData",
+        "category": "common"
+      },
+      {
+        "name": "Token Data Endpoint",
+        "description": "Feature: Token Data Endpoint",
+        "scenarios": 11,
+        "tags": [
+          "smoke",
+          "positive",
+          "negative",
+          "edge"
+        ],
+        "filename": "TokenData",
+        "category": "common"
+      },
+      {
+        "name": "Token Data Validation Constraints",
+        "description": "Feature: Token Data Validation Constraints",
+        "scenarios": 13,
+        "tags": [
+          "positive",
+          "negative",
+          "validation",
+          "edge"
+        ],
+        "filename": "TokenDataValidation",
+        "category": "common"
+      },
+      {
+        "name": "Token Holders Endpoint",
+        "description": "Feature: Token Holders Endpoint",
+        "scenarios": 10,
+        "tags": [
+          "smoke",
+          "positive",
+          "negative",
+          "validation",
+          "edge"
+        ],
+        "filename": "TokenHolders",
+        "category": "common"
+      },
+      {
+        "name": "Token List Endpoint",
+        "description": "Feature: Token List Endpoint",
+        "scenarios": 19,
+        "tags": [
+          "smoke",
+          "positive",
+          "negative",
+          "boundary",
+          "edge"
+        ],
+        "filename": "TokenList",
+        "category": "common"
+      },
+      {
+        "name": "Token Metadata Endpoint",
+        "description": "Feature: Token Metadata Endpoint",
+        "scenarios": 11,
+        "tags": [
+          "smoke",
+          "positive",
+          "negative",
+          "validation",
+          "edge"
+        ],
+        "filename": "TokenMeta",
+        "category": "common"
+      },
+      {
+        "name": "Token Multi-Price Endpoint",
+        "description": "Feature: Token Multi-Price Endpoint",
+        "scenarios": 8,
+        "tags": [
+          "smoke",
+          "positive",
+          "boundary",
+          "negative"
+        ],
+        "filename": "TokenPricesMulti",
+        "category": "common"
+      },
+      {
+        "name": "Token New Listing Endpoint",
+        "description": "Feature: Token New Listing Endpoint",
+        "scenarios": 29,
+        "tags": [
+          "smoke",
+          "positive",
+          "negative",
+          "validation",
+          "boundary",
+          "edge"
+        ],
+        "filename": "TokenNewListing",
+        "category": "common"
+      },
+      {
+        "name": "Token Price Endpoints",
+        "description": "Feature: Token Price Endpoints",
+        "scenarios": 10,
+        "tags": [
+          "smoke",
+          "positive",
+          "negative",
+          "validation",
+          "edge"
+        ],
+        "filename": "TokenPrice",
+        "category": "common"
+      },
+      {
+        "name": "Token Price Multi Endpoint",
+        "description": "Feature: Token Price Multi Endpoint",
+        "scenarios": 12,
+        "tags": [
+          "smoke",
+          "positive",
+          "boundary",
+          "negative",
+          "validation",
+          "edge"
+        ],
+        "filename": "TokenPriceMulti",
+        "category": "common"
+      },
+      {
+        "name": "Token Price Variations Endpoint",
+        "description": "Feature: Token Price Variations Endpoint",
+        "scenarios": 9,
+        "tags": [
+          "smoke",
+          "positive",
+          "negative",
+          "edge"
+        ],
+        "filename": "TokenPrices",
+        "category": "common"
+      },
+      {
+        "name": "Token Trending Endpoint",
+        "description": "Feature: Token Trending Endpoint",
+        "scenarios": 23,
+        "tags": [
+          "smoke",
+          "positive",
+          "boundary",
+          "negative",
+          "validation"
+        ],
+        "filename": "TokenTrending",
+        "category": "common"
+      },
+      {
+        "name": "Trade List Endpoint",
+        "description": "Feature: Trade List Endpoint",
+        "scenarios": 9,
+        "tags": [
+          "smoke",
+          "positive",
+          "negative",
+          "edge"
+        ],
+        "filename": "TradeList",
+        "category": "common"
+      },
+      {
+        "name": "Trade OHLCV Endpoint",
+        "description": "Feature: Trade OHLCV Endpoint",
+        "scenarios": 16,
+        "tags": [
+          "smoke",
+          "positive",
+          "negative",
+          "boundary",
+          "edge"
+        ],
+        "filename": "TradeOHLCV",
+        "category": "common"
+      }
+    ],
+    "totalFeatures": 16,
+    "totalScenarios": 187
+  },
+  "performance": {
+    "features": [
+      {
+        "name": "Advanced Performance Validation Tests",
+        "description": "Feature: Advanced Performance Validation Tests",
+        "scenarios": 7,
+        "tags": [
+          "performance"
+        ],
+        "filename": "AdvancedPerformanceValidation",
+        "category": "common"
+      },
+      {
+        "name": "Global Performance Load Tests",
+        "description": "Feature: Global Performance Load Tests",
+        "scenarios": 8,
+        "tags": [
+          "performance",
+          "boundary",
+          "edge"
+        ],
+        "filename": "GlobalLoadTest",
+        "category": "common"
+      },
+      {
+        "name": "Token Data Advanced Performance Tests",
+        "description": "Feature: Token Data Advanced Performance Tests",
+        "scenarios": 5,
+        "tags": [
+          "performance"
+        ],
+        "filename": "TokenDataPerformanceAdvanced",
+        "category": "common"
+      },
+      {
+        "name": "Token Data Performance Tests",
+        "description": "Feature: Token Data Performance Tests",
+        "scenarios": 7,
+        "tags": [
+          "performance"
+        ],
+        "filename": "TokenDataPerformance",
+        "category": "common"
+      },
+      {
+        "name": "Token List Performance Tests",
+        "description": "Feature: Token List Performance Tests",
+        "scenarios": 3,
+        "tags": [
+          "performance"
+        ],
+        "filename": "TokenListPerformance",
+        "category": "common"
+      },
+      {
+        "name": "Token Price Multi Performance Tests",
+        "description": "Feature: Token Price Multi Performance Tests",
+        "scenarios": 4,
+        "tags": [
+          "performance"
+        ],
+        "filename": "TokenPriceMultiPerformance",
+        "category": "common"
+      },
+      {
+        "name": "Token Price Performance Tests",
+        "description": "Feature: Token Price Performance Tests",
+        "scenarios": 3,
+        "tags": [
+          "performance"
+        ],
+        "filename": "TokenPricePerformance",
+        "category": "common"
+      },
+      {
+        "name": "Trade List Performance Tests",
+        "description": "Feature: Trade List Performance Tests",
+        "scenarios": 3,
+        "tags": [
+          "performance"
+        ],
+        "filename": "TradeListPerformance",
+        "category": "common"
+      }
+    ],
+    "totalFeatures": 8,
+    "totalScenarios": 40
+  }
+}

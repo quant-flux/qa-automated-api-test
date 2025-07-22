@@ -67,61 +67,105 @@ Los escenarios están organizados con tags para facilitar la ejecución selectiv
 
 ## 🚀 Ejecución de Tests
 
+### **🏗️ Arquitectura CI/CD Independiente**
+
+El proyecto implementa una **arquitectura moderna de CI/CD** que separa completamente la ejecución de tests funcionales y de performance:
+
+#### **🧪 Tests Funcionales (CI/CD Automático)**
+- **Trigger**: Cada commit y pull request
+- **Frecuencia**: Automático en cada cambio de código
+- **Velocidad**: Rápido (smoke tests primero)
+- **Propósito**: Validar funcionalidad básica
+- **Workflow**: `.github/workflows/functional-tests.yml`
+
+#### **⚡ Tests de Performance (Programado/Manual)**
+- **Trigger**: Programado diariamente + ejecución manual
+- **Frecuencia**: Diario a las 2:00 AM UTC + bajo demanda
+- **Velocidad**: Lento (tests exhaustivos)
+- **Propósito**: Validar rendimiento y estabilidad
+- **Workflow**: `.github/workflows/performance-tests.yml`
+
+#### **📊 Dashboard Consolidado**
+- **Trigger**: Después de cada ejecución de tests
+- **Propósito**: Actualizar estadísticas y reportes
+- **Workflow**: `.github/workflows/dashboard-update.yml`
+
 ### **📋 Tests Funcionales**
 
-#### Ejecutar todos los tests funcionales:
+#### **Ejecución Local:**
 ```bash
+# Todos los tests funcionales
 mvn test -Dtest=FunctionalTestRunner#testAllFunctional
-```
 
-#### Ejecutar tests específicos:
-```bash
 # Solo smoke tests (más rápido)
 mvn test -Dtest=FunctionalTestRunner#testSmokeTests
 
-# Solo tests positivos
+# Tests específicos
 mvn test -Dtest=FunctionalTestRunner#testPositiveScenarios
-
-# Solo tests negativos
 mvn test -Dtest=FunctionalTestRunner#testNegativeScenarios
-
-# Tests por módulo
 mvn test -Dtest=FunctionalTestRunner#testTokenFeatures
 mvn test -Dtest=FunctionalTestRunner#testTradeFeatures
 mvn test -Dtest=FunctionalTestRunner#testAppFeatures
-
-# Tests por feature específico
-mvn test -Dtest=FunctionalTestRunner#testTokenData
-mvn test -Dtest=FunctionalTestRunner#testTokenList
-mvn test -Dtest=FunctionalTestRunner#testTokenPrice
-mvn test -Dtest=FunctionalTestRunner#testTradeList
 ```
+
+#### **Ejecución en CI/CD:**
+- **Automático**: En cada commit/pull request
+- **Smoke Tests**: Se ejecutan primero (rápido)
+- **Tests Completos**: Solo en push a main/develop
+- **Reportes**: Generados automáticamente
 
 ### **⚡ Tests de Performance**
 
-#### Ejecutar todos los tests de performance:
+#### **Ejecución Local:**
 ```bash
+# Todos los tests de performance
 mvn test -Dtest=PerformanceTestRunner#testAllPerformance
-```
 
-#### Ejecutar tests específicos de performance:
-```bash
-# Tests por intensidad
-mvn test -Dtest=PerformanceTestRunner#testLightPerformance
-mvn test -Dtest=PerformanceTestRunner#testMediumPerformance
-mvn test -Dtest=PerformanceTestRunner#testHeavyPerformance
+# Tests por tipo
+mvn test -Dtest=PerformanceTestRunner#testBaselinePerformance
+mvn test -Dtest=PerformanceTestRunner#testLoadPerformance
+mvn test -Dtest=PerformanceTestRunner#testStressPerformance
+mvn test -Dtest=PerformanceTestRunner#testEndurancePerformance
 
 # Tests por endpoint
 mvn test -Dtest=PerformanceTestRunner#testTokenDataPerformance
 mvn test -Dtest=PerformanceTestRunner#testTokenListPerformance
 mvn test -Dtest=PerformanceTestRunner#testTokenPricePerformance
 mvn test -Dtest=PerformanceTestRunner#testTradeListPerformance
-
-# Tests agrupados
-mvn test -Dtest=PerformanceTestRunner#generateBaselinePerformanceReport
-mvn test -Dtest=PerformanceTestRunner#generateLoadPerformanceReport
-mvn test -Dtest=PerformanceTestRunner#generateStressPerformanceReport
 ```
+
+#### **Ejecución en CI/CD:**
+- **Programado**: Diariamente a las 2:00 AM UTC
+- **Manual**: Bajo demanda con parámetros personalizables
+- **Tipos**: Baseline, Load, Stress, Endurance
+- **Ambientes**: Staging, Production
+- **Reportes**: Detallados con métricas de performance
+
+### **📊 Dashboard y Reportes**
+
+#### **Dashboard Principal:**
+- **URL**: `src/main/resources/index.html`
+- **Contenido**: Estadísticas consolidadas de ambos tipos de tests
+- **Actualización**: Automática después de cada ejecución de tests
+- **Acceso**: Enlaces directos a reportes funcionales y de performance
+
+#### **Reportes Específicos:**
+- **Funcionales**: `src/main/resources/functional-report.html`
+- **Performance**: `src/main/resources/performance-report.html`
+- **Detallados**: `target/karate-reports/functional/` y `target/karate-reports/performance/`
+
+### **🐛 Debugging Independiente**
+
+#### **Ventajas de la Separación:**
+- **Identificación Rápida**: Fácil distinguir si el problema es funcional o de performance
+- **Debugging Focalizado**: Logs separados para cada tipo de test
+- **Reportes Específicos**: Análisis detallado por categoría
+- **Notificaciones Diferenciadas**: Alertas específicas según el tipo de fallo
+
+#### **Estrategia de Debugging:**
+1. **Tests Funcionales Fallan**: Revisar lógica de negocio, validaciones, endpoints
+2. **Tests de Performance Fallan**: Revisar tiempos de respuesta, carga, recursos
+3. **Ambos Fallan**: Problema sistémico (infraestructura, configuración)
 
 ### **📊 Scripts de Conveniencia**
 
@@ -149,14 +193,27 @@ mvn test -Dtest=FunctionalTestRunner#testAllFunctional -Dkarate.options="--timeo
 mvn test -Dtest=FunctionalTestRunner#testAllFunctional -Dkarate.options="--debug"
 ```
 
-## 📊 Reportes
+## 📊 Reportes y Dashboard
+
+### **Dashboard Principal:**
+- **URL**: `src/main/resources/index.html`
+- **Contenido**: Estadísticas consolidadas de ambos tipos de tests
+- **Actualización**: Automática después de cada ejecución de tests
+- **Acceso**: Enlaces directos a reportes funcionales y de performance
 
 ### **Estructura de Reportes:**
 ```
+src/main/resources/
+├── index.html                    # Dashboard principal consolidado
+├── functional-report.html        # Reporte funcional detallado
+├── performance-report.html       # Reporte de performance detallado
+├── functional/                   # Tests funcionales
+│   └── complete/                 # Reportes completos funcionales
+└── performance/                  # Tests de performance
+    └── *.json                    # Reportes de performance
+
 target/karate-reports/
-├── index.html                     # Reporte principal general
-├── functional/                    # Tests funcionales
-│   ├── index.html                # Reporte principal consolidado
+├── functional/                   # Tests funcionales
 │   ├── complete/                 # Reporte completo
 │   ├── smoke/                    # Smoke tests
 │   ├── positive/                 # Casos positivos
@@ -164,13 +221,11 @@ target/karate-reports/
 │   ├── tokens/                   # Features de tokens
 │   ├── trade/                    # Features de trading
 │   └── app/                      # Features de aplicación
-└── performance/                   # Tests de performance
-    ├── index.html                # Reporte principal consolidado
+└── performance/                  # Tests de performance
     ├── baseline/                 # Tests de baseline
     ├── load/                     # Tests de carga
     ├── stress/                   # Tests de estrés
     ├── endurance/                # Tests de resistencia
-    ├── advanced/                 # Tests avanzados
     ├── token-data/               # Performance de token data
     ├── token-list/               # Performance de token list
     ├── token-price/              # Performance de token price
@@ -179,13 +234,14 @@ target/karate-reports/
 ```
 
 ### **Acceso a Reportes:**
-- **Reporte Principal**: `target/karate-reports/index.html`
-- **Tests Funcionales**: `target/karate-reports/functional/complete/index.html`
-- **Tests de Performance**: `target/karate-reports/performance/index.html`
+- **Dashboard Principal**: `src/main/resources/index.html`
+- **Tests Funcionales**: `src/main/resources/functional-report.html`
+- **Tests de Performance**: `src/main/resources/performance-report.html`
+- **Reportes Detallados**: `target/karate-reports/`
 
 ## 🔧 Configuración
 
-### URL Base
+### **URL Base**
 La URL base se configura en `src/test/resources/karate-config.js`:
 ```javascript
 function fn() {
@@ -194,6 +250,19 @@ function fn() {
   };
 }
 ```
+
+## 🚀 CI/CD Workflows
+
+### **Workflows Principales:**
+- **`.github/workflows/functional-tests.yml`** - Tests funcionales automáticos
+- **`.github/workflows/performance-tests.yml`** - Tests de performance programados
+- **`.github/workflows/dashboard-update.yml`** - Actualización automática del dashboard
+
+### **Workflows Externos:**
+- **`.github/workflows/external-dev-tests.yml`** - Tests para repositorios de desarrollo externos
+- **`.github/workflows/trigger-external-tests.yml`** - Trigger para tests externos
+- **`external-repo-workflow.yml`** - Template para repositorios externos
+- **`dev-repo-trigger.yml`** - Template para triggers de desarrollo
 
 ### Endpoints Cubiertos
 
