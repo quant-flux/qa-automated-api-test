@@ -77,7 +77,7 @@ jobs:
       run: |
         echo "⚡ Copiando reportes de performance..."
         if [ -d "target/karate-reports/performance" ]; then
-          cp -r target/karate-reports/performance/* reports/performance/
+          cp -r target/karate-reports/performance/* reports/performance/ 2>/dev/null || true
           echo "✅ Reportes de performance copiados"
         else
           echo "⚠️ No se encontraron reportes de performance, creando placeholder"
