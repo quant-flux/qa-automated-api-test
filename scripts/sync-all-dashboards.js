@@ -113,6 +113,111 @@ function updateStatistics(htmlFile, jsonFile, type) {
 }
 
 /**
+ * Actualiza las estadísticas en el dashboard principal
+ */
+function updateMainDashboard(htmlFile, functionalJsonFile, performanceJsonFile) {
+    if (!fs.existsSync(htmlFile) || !fs.existsSync(functionalJsonFile) || !fs.existsSync(performanceJsonFile)) {
+        console.log(`⚠️  Archivo no encontrado: ${htmlFile}, ${functionalJsonFile} o ${performanceJsonFile}`);
+        return false;
+    }
+
+    try {
+        // Leer los JSONs de Karate
+        const functionalData = JSON.parse(fs.readFileSync(functionalJsonFile, 'utf8'));
+        const performanceData = JSON.parse(fs.readFileSync(performanceJsonFile, 'utf8'));
+        
+        // Calcular estadísticas funcionales
+        const functionalTotal = functionalData.scenariosPassed + functionalData.scenariosfailed;
+        const functionalPassed = functionalData.scenariosPassed;
+        const functionalFailed = functionalData.scenariosfailed;
+        
+        // Calcular estadísticas de performance
+        const performanceTotal = performanceData.scenariosPassed + performanceData.scenariosfailed;
+        const performancePassed = performanceData.scenariosPassed;
+        const performanceFailed = performanceData.scenariosfailed;
+        
+        // Calcular totales generales
+        const totalTests = functionalTotal + performanceTotal;
+        const totalPassed = functionalPassed + performancePassed;
+        const totalFailed = functionalFailed + performanceFailed;
+        const totalSuccessRate = ((totalPassed / totalTests) * 100).toFixed(1);
+        
+        // Leer el HTML
+        let htmlContent = fs.readFileSync(htmlFile, 'utf8');
+        
+        // Actualizar estadísticas generales (IDs)
+        htmlContent = htmlContent.replace(
+            /<div class="stat-number[^>]*" id="totalTests">[^<]*<\/div>/,
+            `<div class="stat-number success" id="totalTests">${totalTests}</div>`
+        );
+        
+        htmlContent = htmlContent.replace(
+            /<div class="stat-number[^>]*" id="passedTests">[^<]*<\/div>/,
+            `<div class="stat-number success" id="passedTests">${totalPassed}</div>`
+        );
+        
+        htmlContent = htmlContent.replace(
+            /<div class="stat-number[^>]*" id="failedTests">[^<]*<\/div>/,
+            `<div class="stat-number danger" id="failedTests">${totalFailed}</div>`
+        );
+        
+        // Determinar el color de la tasa de éxito
+        const rateClass = totalSuccessRate >= 90 ? 'success' : totalSuccessRate >= 70 ? 'warning' : 'danger';
+        
+        htmlContent = htmlContent.replace(
+            /<div class="stat-number[^>]*" id="successRate">[^<]*<\/div>/,
+            `<div class="stat-number ${rateClass}" id="successRate">${totalSuccessRate}%</div>`
+        );
+        
+        // Actualizar estadísticas de tests funcionales (hardcodeadas)
+        htmlContent = htmlContent.replace(
+            /<div class="report-stat-value">119<\/div>/,
+            `<div class="report-stat-value">${functionalTotal}</div>`
+        );
+        
+        htmlContent = htmlContent.replace(
+            /<div class="report-stat-value" style="color: #28a745;">90<\/div>/,
+            `<div class="report-stat-value" style="color: #28a745;">${functionalPassed}</div>`
+        );
+        
+        htmlContent = htmlContent.replace(
+            /<div class="report-stat-value" style="color: #dc3545;">29<\/div>/,
+            `<div class="report-stat-value" style="color: #dc3545;">${functionalFailed}</div>`
+        );
+        
+        // Actualizar estadísticas de tests de performance (hardcodeadas)
+        htmlContent = htmlContent.replace(
+            /<div class="report-stat-value">24<\/div>/,
+            `<div class="report-stat-value">${performanceTotal}</div>`
+        );
+        
+        htmlContent = htmlContent.replace(
+            /<div class="report-stat-value" style="color: #28a745;">21<\/div>/,
+            `<div class="report-stat-value" style="color: #28a745;">${performancePassed}</div>`
+        );
+        
+        htmlContent = htmlContent.replace(
+            /<div class="report-stat-value" style="color: #dc3545;">3<\/div>/,
+            `<div class="report-stat-value" style="color: #dc3545;">${performanceFailed}</div>`
+        );
+        
+        // Escribir el archivo actualizado
+        fs.writeFileSync(htmlFile, htmlContent, 'utf8');
+        
+        console.log(`✅ Estadísticas actualizadas en Main Dashboard:`);
+        console.log(`   Total General: ${totalTests}, Exitosos: ${totalPassed}, Fallidos: ${totalFailed}, Tasa: ${totalSuccessRate}%`);
+        console.log(`   Funcionales: ${functionalTotal}, Exitosos: ${functionalPassed}, Fallidos: ${functionalFailed}`);
+        console.log(`   Performance: ${performanceTotal}, Exitosos: ${performancePassed}, Fallidos: ${performanceFailed}`);
+        
+        return true;
+        
+    } catch (error) {
+        console.log(`❌ Error actualizando Main Dashboard: ${error.message}`);
+        return false;
+    }
+}
+
+/**
  * Copia archivos JSON específicos para datos del dashboard
  */
 function copyDashboardData() {
@@ -232,6 +337,12 @@ function syncAllDashboards() {
     const performanceStatsFile = path.join(config.docsDir, 'performance-report.html');
     const performanceJsonFile = path.join(config.docsDir, 'karate-reports/performance/karate-summary-json.txt');
     if (updateStatistics(performanceStatsFile, performanceJsonFile, 'Performance Report')) {
+        statsUpdated++;
+    }
+    
+    // Actualizar estadísticas del dashboard principal
+    const mainDashboardFile = path.join(config.docsDir, 'index.html');
+    if (updateMainDashboard(mainDashboardFile, functionalJsonFile, performanceJsonFile)) {
         statsUpdated++;
     }
     
