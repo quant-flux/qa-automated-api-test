@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"8d7de530-2191-4863-8782-d47a95aaa917",karate_version:"1.4.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>features.performance.TokenListPerformance</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">1</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2025-07-22 05:07:03 p. m.</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[2:23]"><span>[2:23]</span> <span>Medium load test for token list endpoint</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">features/performance/TokenListPerformance.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Token List Performance Tests</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:23]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">performance</a><a class="badge badge-primary" href="karate-tags.html">load</a><a class="badge badge-primary" href="karate-tags.html">medium</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:23]</span>
+                <span class="scenario-name">Medium load test for token list endpoint</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1527</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:23]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_list&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def perfData = performanceConfig.TEST_DATA</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def scenarios = performanceConfig.TEST_SCENARIOS.token_list</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def scenario = scenarios.medium_load</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def threshold = performanceConfig.getThreshold(scenario.threshold)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.27">
+      <div class="step-ref passed">27</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_list&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1524</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.28">17:07:01.919 request:
+1 &gt; GET https://full-api.cloud-service-app.com/token/list
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+17:07:03.441 response time in milliseconds: 1520
+1 &lt; 200
+1 &lt; Date: Tue, 22 Jul 2025 21:07:04 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;2c1e-0eBLmfYtp8HqWoe26pqre5PZuuo&quot;
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=LJQhaOW48x92wf5sO%2FeSeEquzUGfaCeu61fHVeZyHlwXsgbq7JtfeFZPq%2BMl43cgDAx4OXavT7ITLhUJoSBPWEI%2BUDXlTBnni8dDlgVHH0mPtIUVh2Lea585oy75Tg%3D%3D&quot;}]}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; X-Cache: MISS
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 9635e7c6297f749b-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:{&quot;elements&quot;:[{&quot;_id&quot;:&quot;687ffd760d6dab97b3caf92c&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;3DdxWHB4bfVBqWYqLTeMfXx7Augdjmhd1B71BEx5bonk&quot;,&quot;name&quot;:&quot;SolEthXrpBtcAdaAvaxLinkLtcSuiDot&quot;,&quot;symbol&quot;:&quot;SexBaalls.&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/3DdxWHB4bfVBqWYqLTeMfXx7Augdjmhd1B71BEx5bonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;6GTH7vVWz7kW3v3EeATDom4Eua1WjwpkRpbXSgsgJqhW&quot;,&quot;create_tx&quot;:&quot;oJYsR983ojZNYXEQ4Cj4S9vLk4h6F1CrJAGofZKQmTPqkvdbizJyd3J6pDkiQK1MQQWCJM1hXnkAoJLJpKHUtEr&quot;,&quot;created_time&quot;:1753218421,&quot;metadata&quot;:{&quot;name&quot;:&quot;SolEthXrpBtcAdaAvaxLinkLtcSuiDot&quot;,&quot;symbol&quot;:&quot;SexBaalls.&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafybeidwpp567qdbdp64tdetzibjx4ebc3ldktwpxp5r7yfemriureppby&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/solidintel_x/status/1947763871105642835&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreickjcqz5fjyla7tjdqevkgm6nzdyqjn22hixzw6mbwpuqpheiwipy&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreickjcqz5fjyla7tjdqevkgm6nzdyqjn22hixzw6mbwpuqpheiwipy&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T21:07:02.145Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T21:07:02.648Z&quot;},{&quot;_id&quot;:&quot;687ffd738f99c865eb40f8b4&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;8AbY8Bt9LipkdmoFNNsYFAssquEEEPsWrz6V2kcn8Y2u&quot;,&quot;name&quot;:&quot;Catfish&quot;,&quot;symbol&quot;:&quot;CATFISH&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/8AbY8Bt9LipkdmoFNNsYFAssquEEEPsWrz6V2kcn8Y2u.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;5owhtfGCp18oGag8PD78YSHm44GPu1EWtPFYiS1FZihk&quot;,&quot;create_tx&quot;:&quot;X4s8j8XZR7xqcgQhk1dUeXL8cBqCWoQ1CYjtpwwfeMdCzJxo59TMVhWpBNMQQAv3eNugzehE9pJLDMu9ghnP6BQ&quot;,&quot;created_time&quot;:1753218418,&quot;metadata&quot;:{&quot;name&quot;:&quot;Catfish&quot;,&quot;symbol&quot;:&quot;CATFISH&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreibou4irigafbim4yx4zjyvgimmn553lb6nlrkkszqtoqdhhe7ibnu&quot;,&quot;description&quot;:&quot;CATFISH&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiake4nruzuuj55bwstcew7grr4xom7s7rx3c6cqz2o5rst3jt6fvq&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;1000000000&quot;,&quot;holders&quot;:1,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;poolId&quot;:&quot;HeWfs2yNtwSH1GBzsUUBE1ejgBT9PiwRjR7vGEPmKgXi&quot;,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T21:06:59.329Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T21:06:59.670Z&quot;,&quot;holders_top_10&quot;:6.6785},{&quot;_id&quot;:&quot;687ffd7250c447ffa257cabd&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;fBPPhi2QFrC7AJy4JAGDYLTr6YREemtsUqCHr2emD9d&quot;,&quot;name&quot;:&quot;Pump a Thon&quot;,&quot;symbol&quot;:&quot;PMPTON&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/fBPPhi2QFrC7AJy4JAGDYLTr6YREemtsUqCHr2emD9d.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;6bquEzvKYkNtskPkLC8EBMkyMeixqrF1nNsN7aZrVH8c&quot;,&quot;create_tx&quot;:&quot;57doLD7JNtkKy8A94WYPZXXr8vTtQwo4sfWUrmwSDLrAzYrBZJGcrt3mbfeb5rm3gqEWc3VyfGphbyNqjDvzyfUU&quot;,&quot;created_time&quot;:1753218417,&quot;metadata&quot;:{&quot;name&quot;:&quot;Pump a Thon&quot;,&quot;symbol&quot;:&quot;PMPTON&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafybeid6doqieczhlt6xfdeohxskabis4pnnu26hzgryrsdzrx3flmxvsi&quot;,&quot;description&quot;:&quot;I’m launching a brand new concept: the Pump-a-Thon. Think of it like a Subathon, but tailored for Pump.fun.&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiaprsgsducifvahidsyvheo7rdlrfmg25q5dxt2bywrzydijq7xtu&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;1000000000&quot;,&quot;holders&quot;:1,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;poolId&quot;:&quot;G3wsD5SXmppuWYjQXjtuAioRL1g1nALoka2z9sQuyKP&quot;,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T21:06:58.072Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T21:06:58.906Z&quot;,&quot;holders_top_10&quot;:2.6983},{&quot;_id&quot;:&quot;687ffd67a6f6420208d16452&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;5nHHSAcA3bPCA34qg3kVLAs64EZQvbxn1cG4mZ3Ebonk&quot;,&quot;name&quot;:&quot;SOLABA&quot;,&quot;symbol&quot;:&quot;SOLABA&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/5nHHSAcA3bPCA34qg3kVLAs64EZQvbxn1cG4mZ3Ebonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;8qdqXjBPopM7W4MPeTECbx3Q8bWAKcn7hzsqSdQNvVpb&quot;,&quot;create_tx&quot;:&quot;2Rx8PGcFZCrdQxPaRg8koVyJbDqycJfbyF9qAAN35ChutguWGkJLCyPDzQ6xmNuhMGRZAgp8brkHpRDSrzHStSFF&quot;,&quot;created_time&quot;:1753218407,&quot;metadata&quot;:{&quot;name&quot;:&quot;SOLABA&quot;,&quot;symbol&quot;:&quot;SOLABA&quot;,&quot;image&quot;:&quot;https://metadata.pumplify.eu/data/Qmd5fZUsfVka4bYNYysQHKYCdEkNWAchhqzjDFy1upLNCZ&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/therealchaseeb/status/1947763064431857705&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://metadata.pumplify.eu/data/QmZQE9ySVPdkHhyCmVhmHiU4goy7e2ncnAFAfszfzEUFJ6&quot;},&quot;metadata_uri&quot;:&quot;https://metadata.pumplify.eu/data/QmZQE9ySVPdkHhyCmVhmHiU4goy7e2ncnAFAfszfzEUFJ6&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;raydium_launchpad&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T21:06:47.712Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T21:06:47.994Z&quot;},{&quot;_id&quot;:&quot;687ffd63a6f6420208d1644e&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;8Yb7V3WnoxhXbJdTWTVqaUKcxENhexugpBfX2ePTbonk&quot;,&quot;name&quot;:&quot;meme coin&quot;,&quot;symbol&quot;:&quot;meme coin&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/8Yb7V3WnoxhXbJdTWTVqaUKcxENhexugpBfX2ePTbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;HDWScsiWvDxy29vPnPASqZ2z2CLKFqJKMPgQ2JrWsDpJ&quot;,&quot;create_tx&quot;:&quot;5PEWkqoLuezHMkgro6wzLNsQLeeoEnGPxVUsuDRTr61qKY6U1R6antRDvts6UL3q9QgkWa65u7t3U7XzycsKaA7f&quot;,&quot;created_time&quot;:1753218403,&quot;metadata&quot;:{&quot;name&quot;:&quot;meme coin&quot;,&quot;symbol&quot;:&quot;meme coin&quot;,&quot;image&quot;:&quot;https://pbs.twimg.com/media/GwfaIfjWsAQxCdV.jpg&quot;,&quot;description&quot;:&quot;ba&quot;,&quot;twitter&quot;:&quot;https://x.com/XbtPika/status/1947765207511531905&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmYnmxwqUFHJddgQ5d4tKDwC1U8viKjoVregVt6qyFu5ws&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/QmYnmxwqUFHJddgQ5d4tKDwC1U8viKjoVregVt6qyFu5ws&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T21:06:43.272Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T21:06:43.647Z&quot;},{&quot;_id&quot;:&quot;687ffd6150c447ffa257cab4&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;HkPCtKupvSiV5kym8CSFKSNhdzyDmm5apkLe9BMVbonk&quot;,&quot;name&quot;:&quot;Bag Secured&quot;,&quot;symbol&quot;:&quot;BS&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/HkPCtKupvSiV5kym8CSFKSNhdzyDmm5apkLe9BMVbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;2NLRxmyM2Te5ZaeLELh1k2B2pFETTT2kNtAGQSbbFajP&quot;,&quot;create_tx&quot;:&quot;3KGcnSuvWMDwZLS2p3T9gwyTfPKBgfi9YVcpgiPTpkvkoPQaJzA1M1oBYFkYkPn4BiSsUpiyXyZUsBfV9VTUoCds&quot;,&quot;created_time&quot;:1753218401,&quot;metadata&quot;:{&quot;name&quot;:&quot;Bag Secured&quot;,&quot;symbol&quot;:&quot;BS&quot;,&quot;image&quot;:&quot;https://pbs.twimg.com/media/GwfPYanWMAAThmJ.jpg&quot;,&quot;description&quot;:&quot;ba&quot;,&quot;twitter&quot;:&quot;https://x.com/RapidResponse47/status/1947753990680084628&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmPqE58AU8D9jzbNsQcCQs2oy7T31c41dHwdicgEMQNgVq&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/QmPqE58AU8D9jzbNsQcCQs2oy7T31c41dHwdicgEMQNgVq&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T21:06:41.181Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T21:06:41.551Z&quot;},{&quot;_id&quot;:&quot;687ffd618f99c865eb40f8a9&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;CT3zCBsY6cnxBbLob5xQ33PyGz8foNnytD1UByUUbonk&quot;,&quot;name&quot;:&quot;Longcoin&quot;,&quot;symbol&quot;:&quot;LONG&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/CT3zCBsY6cnxBbLob5xQ33PyGz8foNnytD1UByUUbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;GVczPwnN39gEApcNzra4j2fyk2Tzep4vd4qecUuqS6qb&quot;,&quot;create_tx&quot;:&quot;59Efnvy8Zs6LkprLYdZyqMkVhNC5TKgTb6d7gJfsyHpZy7DMGQ38TSvmu79TmHqBdkvZHpezzeSpTF2c5nG4e2wL&quot;,&quot;created_time&quot;:1753218401,&quot;metadata&quot;:{&quot;name&quot;:&quot;Longcoin&quot;,&quot;symbol&quot;:&quot;LONG&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafybeiaxt6gay3wjudmxyzjjrbrdefunt5rifrzjjjvsxkzbisqdwuflcm&quot;,&quot;description&quot;:&quot;dasda&quot;,&quot;twitter&quot;:&quot;https://x.com/re3xr/status/1947763098955260318&quot;,&quot;website&quot;:&quot;https://en.wikipedia.org/wiki/Long_(finance)&quot;,&quot;telegram&quot;:&quot;https://en.wikipedia.org/wiki/Long_(finance)&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreidz7p7os7lokg6ah5rjppsgr4ru47jxh5d4bmechcorl6o2gopmd4&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreidz7p7os7lokg6ah5rjppsgr4ru47jxh5d4bmechcorl6o2gopmd4&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T21:06:41.325Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T21:06:43.996Z&quot;},{&quot;_id&quot;:&quot;687ffd60b65811588daed5fa&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;E8owE2CBUcYtqQBaa3JUDyJzNVahWqXvbSV9XGQGSd1g&quot;,&quot;name&quot;:&quot;farm&quot;,&quot;symbol&quot;:&quot;farm&quot;,&quot;image&quot;:&quot;https://gateway.irys.xyz/vhpX4F5wR2FBW5uxyhwp6AIBSwhfLRJ60NtgJhGOEGM&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;CnxU3E4Q6ipu9nBQAdNsKRuxntfsbfeqzgeKyR9uQtvi&quot;,&quot;create_tx&quot;:&quot;2Ne9K6aaxqLqFLKD4iwnR9h9xxEYZet3NRw6k9wpuCAEoweNiur65z49Ee8JrPsRJNaVX1wc91D63iQyCSasQAtU&quot;,&quot;created_time&quot;:1753218399,&quot;metadata&quot;:{&quot;name&quot;:&quot;farm&quot;,&quot;symbol&quot;:&quot;farm&quot;,&quot;image&quot;:&quot;https://gateway.irys.xyz/vhpX4F5wR2FBW5uxyhwp6AIBSwhfLRJ60NtgJhGOEGM&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/0xWander_/status/1947765183604265147GQGSd1g&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://gateway.irys.xyz/L4H6Ew2F08cWAtfkm12ogHg33cBWE01hqZbTbj5owi4&quot;},&quot;metadata_uri&quot;:&quot;https://gateway.irys.xyz/L4H6Ew2F08cWAtfkm12ogHg33cBWE01hqZbTbj5owi4&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;raydium_launchpad&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T21:06:40.319Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T21:06:40.319Z&quot;},{&quot;_id&quot;:&quot;687ffd5db65811588daed5f6&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;CM7WrKq2xz8JSsEXBXBdTpSrNNGHYJBDNY1F9Hz5bonk&quot;,&quot;name&quot;:&quot;Dark Horse&quot;,&quot;symbol&quot;:&quot;DARKHORSE&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/CM7WrKq2xz8JSsEXBXBdTpSrNNGHYJBDNY1F9Hz5bonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;CYdHTrm5XoiGYfJvQda1UE9WHxSvGGHG3hYgg5J1o6su&quot;,&quot;create_tx&quot;:&quot;3Ewm6VDnGMdAUEFxZsdP6aVXwc68HxT7Pm9HtpddRkNJnDbyT1CoFS8H4d3oiPxse6SeU4r8TWQSeayP3xGkvW9D&quot;,&quot;created_time&quot;:1753218397,&quot;metadata&quot;:{&quot;name&quot;:&quot;Dark Horse&quot;,&quot;symbol&quot;:&quot;DARKHORSE&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreigfr3svghtxgdi4xb3qlhjhfxoe4olzhcaiiihwmotmh3wyfffqdu&quot;,&quot;description&quot;:&quot;DARKHORSE&quot;,&quot;twitter&quot;:&quot;https://x.com/DarkHorseSolana&quot;,&quot;website&quot;:&quot;https://www.darkhorsesol.com/&quot;,&quot;telegram&quot;:&quot;https://www.darkhorsesol.com/&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreibty26b2hzs2vad46auotnqwxpoqjwp7kv3woqkq53ncdl6xl4oye&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreibty26b2hzs2vad46auotnqwxpoqjwp7kv3woqkq53ncdl6xl4oye&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T21:06:37.408Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T21:06:37.684Z&quot;},{&quot;_id&quot;:&quot;687ffd5b0d6dab97b3caf921&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;tWzZS6cYCavD5qmEviSDSRYqVKYbn6BUsgTApAHbonk&quot;,&quot;name&quot;:&quot;Omo Protocol&quot;,&quot;symbol&quot;:&quot;OMO&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/tWzZS6cYCavD5qmEviSDSRYqVKYbn6BUsgTApAHbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;LxYSj7szct2Vjrb74jA5JKYcQfuEL1HDW7mNKZnRJsH&quot;,&quot;create_tx&quot;:&quot;2NNojy9kZbZbApCrFDHsgzMPHE6rCqReaRGfpxnx5L8iQB8v86nzBaVT5J8ahQFzChmvoDwqbgNBT4WDtiC5ykiD&quot;,&quot;created_time&quot;:1753218395,&quot;metadata&quot;:{&quot;name&quot;:&quot;Omo Protocol&quot;,&quot;symbol&quot;:&quot;OMO&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreievhzbwhuilklnbt7w27mxvocq55zfrqo3kr2cslj2rh2r4f24meu&quot;,&quot;description&quot;:&quot;AlphaGo for DeFi.&quot;,&quot;twitter&quot;:&quot;https://x.com/OmoProtocol&quot;,&quot;website&quot;:&quot;https://www.omoprotocol.ai/&quot;,&quot;telegram&quot;:&quot;https://www.omoprotocol.ai/&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreicayiof42c5pkve7syp7pbd5r6ijhwu6p4jihuzmvgu5x4onrakmq&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreicayiof42c5pkve7syp7pbd5r6ijhwu6p4jihuzmvgu5x4onrakmq&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T21:06:35.675Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T21:06:35.977Z&quot;}],&quot;pagination&quot;:{&quot;totalElements&quot;:693546,&quot;hasNextPage&quot;:true,&quot;nextPage&quot;:2,&quot;previousPage&quot;:0,&quot;lastPage&quot;:69355}}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.29">
+      <div class="step-ref passed">29</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def time = responseTime</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print &#39;Tiempo de respuesta:&#39;, time, &#39;Threshold:&#39;, threshold</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.31">17:07:03.443 [print] Tiempo de respuesta: 1520 Threshold: 5000 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>assert time &lt; threshold</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.data.elements == &#39;#array&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

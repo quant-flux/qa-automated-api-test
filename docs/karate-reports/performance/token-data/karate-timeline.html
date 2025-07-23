@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"features\/performance\/TokenDataPerformance[1:9]","start":1753218445385,"end":1753218445728,"title":"features\/performance\/TokenDataPerformance[1:9] 17:07:25.385-17:07:25.728 Baseline performance test for token data endpoint"},{"id":2,"group":1,"content":"features\/performance\/TokenDataPerformance[2:25]","start":1753218445731,"end":1753218447086,"title":"features\/performance\/TokenDataPerformance[2:25] 17:07:25.731-17:07:27.086 Light load test for token data endpoint"},{"id":3,"group":1,"content":"features\/performance\/TokenDataPerformance[3:41]","start":1753218447090,"end":1753218447594,"title":"features\/performance\/TokenDataPerformance[3:41] 17:07:27.090-17:07:27.594 Medium load test for token data endpoint"},{"id":4,"group":1,"content":"features\/performance\/TokenDataPerformance[4:57]","start":1753218447599,"end":1753218448917,"title":"features\/performance\/TokenDataPerformance[4:57] 17:07:27.599-17:07:28.917 Stress test for token data endpoint"},{"id":5,"group":1,"content":"features\/performance\/TokenDataPerformance[5:73]","start":1753218448922,"end":1753218449294,"title":"features\/performance\/TokenDataPerformance[5:73] 17:07:28.922-17:07:29.294 Endurance test for token data endpoint"},{"id":6,"group":1,"content":"features\/performance\/TokenDataPerformance[6:82]","start":1753218449300,"end":1753218449632,"title":"features\/performance\/TokenDataPerformance[6:82] 17:07:29.300-17:07:29.632 Mixed token addresses performance test"},{"id":7,"group":1,"content":"features\/performance\/TokenDataPerformance[7:93]","start":1753218449637,"end":1753218449647,"title":"features\/performance\/TokenDataPerformance[7:93] 17:07:29.637-17:07:29.647 Performance test all endpoints"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

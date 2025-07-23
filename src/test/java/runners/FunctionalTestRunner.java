@@ -10,7 +10,7 @@ public class FunctionalTestRunner {
     
     @Karate.Test
     Karate testAllFunctional() {
-        return Karate.run("classpath:features/tokens", "classpath:features/trade", "classpath:features/app")
+        return Karate.run("classpath:features/tokens", "classpath:features/trade", "classpath:features/app", "classpath:features/common")
                 .relativeTo(getClass())
                 .tags("~@performance")  // Excluye tests de performance
                 .outputCucumberJson(true)
@@ -20,7 +20,7 @@ public class FunctionalTestRunner {
     
     @Karate.Test
     Karate testCompleteReport() {
-        return Karate.run("classpath:features/tokens", "classpath:features/trade", "classpath:features/app")
+        return Karate.run("classpath:features/tokens", "classpath:features/trade", "classpath:features/app", "classpath:features/common")
                 .relativeTo(getClass())
                 .tags("~@performance")  // Excluye tests de performance
                 .outputCucumberJson(true)
@@ -30,7 +30,7 @@ public class FunctionalTestRunner {
     
     @Karate.Test
     Karate testSmokeTests() {
-        return Karate.run("classpath:features/tokens", "classpath:features/trade", "classpath:features/app")
+        return Karate.run("classpath:features/tokens", "classpath:features/trade", "classpath:features/app", "classpath:features/common")
                 .relativeTo(getClass())
                 .tags("@smoke")
                 .outputCucumberJson(true)
@@ -40,7 +40,7 @@ public class FunctionalTestRunner {
     
     @Karate.Test
     Karate testPositiveScenarios() {
-        return Karate.run("classpath:features/tokens", "classpath:features/trade", "classpath:features/app")
+        return Karate.run("classpath:features/tokens", "classpath:features/trade", "classpath:features/app", "classpath:features/common")
                 .relativeTo(getClass())
                 .tags("@positive")
                 .outputCucumberJson(true)
@@ -50,7 +50,7 @@ public class FunctionalTestRunner {
     
     @Karate.Test
     Karate testNegativeScenarios() {
-        return Karate.run("classpath:features/tokens", "classpath:features/trade", "classpath:features/app")
+        return Karate.run("classpath:features/tokens", "classpath:features/trade", "classpath:features/app", "classpath:features/common")
                 .relativeTo(getClass())
                 .tags("@negative")
                 .outputCucumberJson(true)

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"8d7de530-2191-4863-8782-d47a95aaa917",karate_version:"1.4.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>features.performance.TradeListPerformance</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">1</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2025-07-22 05:08:24 p. m.</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[2:23]"><span>[2:23]</span> <span>Heavy load test for trade list endpoint</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">features/performance/TradeListPerformance.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Trade List Performance Tests</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:23]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">performance</a><a class="badge badge-primary" href="karate-tags.html">load</a><a class="badge badge-primary" href="karate-tags.html">heavy</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:23]</span>
+                <span class="scenario-name">Heavy load test for trade list endpoint</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>558</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:23]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def perfData = performanceConfig.TEST_DATA</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def scenarios = performanceConfig.TEST_SCENARIOS.trade_list</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def scenario = scenarios.heavy_load</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def threshold = performanceConfig.getThreshold(scenario.threshold)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def tokenAddress = perfData.token_addresses.secondary</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_list&#39;) + tokenAddress</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.29">
+      <div class="step-ref passed">29</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">556</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.29">17:08:24.442 request:
+1 &gt; GET https://full-api.cloud-service-app.com/trade/list/CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+17:08:24.996 response time in milliseconds: 553
+1 &lt; 200
+1 &lt; Date: Tue, 22 Jul 2025 21:08:25 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;6084-h49AkMAkl4wv0cmGh44+Eh42JT0&quot;
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=CrOElys1ckQRhQeg3KfmcI3ojrQjiOiLb8z%2Bdml7GWIWBU7%2FOklK6uOGJ8ryL87%2B60hkd3ZrDaVI2HVtt6%2Fmq8SLnucAagjxkghg657WhSmWWzsGH11F9U7RlsJMNw%3D%3D&quot;}]}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 9635e9c9fae1875b-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;B56AjtTKzAFU4AXgSqP9ckkF92aEFbTixDTp5n6c9rt1&quot;,&quot;signature&quot;:&quot;3TmrDeZqvpLxcUa6UNpuYYiJ7ijKkrbyvg53aYR5GXenaKtoFHxcMjfQUGm3tPJvAvb9DLMaRqmxhfbtGaCbdkMU&quot;,&quot;baseAmount&quot;:0.055524,&quot;tokenAmount&quot;:6151.203634,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018135148417324908,&quot;priceSol&quot;:0.000009026526075823293,&quot;timestamp&quot;:1753218356000,&quot;blockTime&quot;:1753218356000,&quot;slot&quot;:355070497,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;FnHWriviStpsipFH7LagktR3VeHWnrBka1nCCnJevdEr&quot;,&quot;signature&quot;:&quot;5QLH6fQ62LjEo3me4W8ZN6PRkmr5ZZnPsTHohyrtmUtBmnYGTW1Qe3F2Gp8mMRYPCjkYDoEozwZKCSqQFzQe7uXG&quot;,&quot;baseAmount&quot;:0.733155292,&quot;tokenAmount&quot;:81561.025708,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018031923510926431,&quot;priceSol&quot;:0.000008989039625676111,&quot;timestamp&quot;:1753217149000,&quot;blockTime&quot;:1753217149000,&quot;slot&quot;:355067465,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;FnHWriviStpsipFH7LagktR3VeHWnrBka1nCCnJevdEr&quot;,&quot;signature&quot;:&quot;5QLH6fQ62LjEo3me4W8ZN6PRkmr5ZZnPsTHohyrtmUtBmnYGTW1Qe3F2Gp8mMRYPCjkYDoEozwZKCSqQFzQe7uXG&quot;,&quot;baseAmount&quot;:0.733155292,&quot;tokenAmount&quot;:81561.025708,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018031923510926431,&quot;priceSol&quot;:0.000008989039625676111,&quot;timestamp&quot;:1753217149000,&quot;blockTime&quot;:1753217149000,&quot;slot&quot;:355067465,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;B56AjtTKzAFU4AXgSqP9ckkF92aEFbTixDTp5n6c9rt1&quot;,&quot;signature&quot;:&quot;4GXtHUpEd8bDW3qXCuCCtiG7fmmq2dSrKi621yxgDupsYsKmC7YtY2hhJgeVZ7s9eac3Rs9i3VogXYKE5SRbiUZz&quot;,&quot;baseAmount&quot;:0.00304927,&quot;tokenAmount&quot;:337.220647,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018100032370252323,&quot;priceSol&quot;:0.000009042358548111083,&quot;timestamp&quot;:1753216252000,&quot;blockTime&quot;:1753216252000,&quot;slot&quot;:355065209,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7fPdui4ahoKsZuNRJFP6KxmuqFzXC1WEjt364gF11uPb&quot;,&quot;signature&quot;:&quot;3NkxdPygYwV9q5dE4wSHdYEBWgQL5wAM9YZXB9K8VfwSLqCaBbgPNxjtMNYNs4RVEsoGZwPg38AzHes2esgva76w&quot;,&quot;baseAmount&quot;:0.363086591,&quot;tokenAmount&quot;:40337.416747,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0017925204702898077,&quot;priceSol&quot;:0.000009001235584254506,&quot;timestamp&quot;:1753214852000,&quot;blockTime&quot;:1753214852000,&quot;slot&quot;:355061662,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;FnHWriviStpsipFH7LagktR3VeHWnrBka1nCCnJevdEr&quot;,&quot;signature&quot;:&quot;419DcKuZCJDKdQyMtWoC7e9QQvZsKDa85dxsgKACmEgRDsskemWk4Crw42kYUVYr7EoD9pdA8Gw2DXZpcnbzkMJU&quot;,&quot;baseAmount&quot;:0.737491359,&quot;tokenAmount&quot;:81561.025708,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018057747031314212,&quot;priceSol&quot;:0.00000904220309391796,&quot;timestamp&quot;:1753213886000,&quot;blockTime&quot;:1753213886000,&quot;slot&quot;:355059213,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;BTxkPXizimomHUYvT28Bh8XcUMuhWEAKnrgLvXAqutof&quot;,&quot;signature&quot;:&quot;5b1Y5SM9uGi6Gv1tMFHb9hABws1RFp7Vr1zC5Meqb9v6HAuNcWMJyLy1B4pP7RxvZtSMDtUHZfASz52gvALyLgeC&quot;,&quot;baseAmount&quot;:0.198924608,&quot;tokenAmount&quot;:22124.717892,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018109229228505553,&quot;priceSol&quot;:0.000008991057376235676,&quot;timestamp&quot;:1753212778000,&quot;blockTime&quot;:1753212778000,&quot;slot&quot;:355056398,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;BTxkPXizimomHUYvT28Bh8XcUMuhWEAKnrgLvXAqutof&quot;,&quot;signature&quot;:&quot;5b1Y5SM9uGi6Gv1tMFHb9hABws1RFp7Vr1zC5Meqb9v6HAuNcWMJyLy1B4pP7RxvZtSMDtUHZfASz52gvALyLgeC&quot;,&quot;baseAmount&quot;:0.198924608,&quot;tokenAmount&quot;:22124.717892,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018109229228505553,&quot;priceSol&quot;:0.000008991057376235676,&quot;timestamp&quot;:1753212778000,&quot;blockTime&quot;:1753212778000,&quot;slot&quot;:355056398,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;GsHhabQAjNBxqtqauwf3UjKcRqVYa2omsVK8CH3PaQ8x&quot;,&quot;signature&quot;:&quot;3QURjNS7mjoCf38rM81cZRRAZhBFCs1jPzbsTqtKuC541gK2KP6U7vB6sgCVmxduXoVkrLrbiX1wvM4xipNsBaBP&quot;,&quot;baseAmount&quot;:0.00999,&quot;tokenAmount&quot;:1105.295871,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.001825063821288305,&quot;priceSol&quot;:0.00000903830391672566,&quot;timestamp&quot;:1753212229000,&quot;blockTime&quot;:1753212229000,&quot;slot&quot;:355055006,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;GsHhabQAjNBxqtqauwf3UjKcRqVYa2omsVK8CH3PaQ8x&quot;,&quot;signature&quot;:&quot;3QURjNS7mjoCf38rM81cZRRAZhBFCs1jPzbsTqtKuC541gK2KP6U7vB6sgCVmxduXoVkrLrbiX1wvM4xipNsBaBP&quot;,&quot;baseAmount&quot;:0.00999,&quot;tokenAmount&quot;:1105.295871,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.001825063821288305,&quot;priceSol&quot;:0.00000903830391672566,&quot;timestamp&quot;:1753212229000,&quot;blockTime&quot;:1753212229000,&quot;slot&quot;:355055006,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;jvHJMefs6M1j6JwunVMFJL7AtHvDeadZV1Haio3CBz3&quot;,&quot;signature&quot;:&quot;4y4TSv2TL2jgSLeuH5qv5XuFKPw8yKu1tSYUQ4j2HauGtTfDAcmMsonYsPDqRBip4GjNgsLDFUvGGDNpUvVYGYhF&quot;,&quot;baseAmount&quot;:0.002782606,&quot;tokenAmount&quot;:307.872983,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.001824988343162473,&quot;priceSol&quot;:0.000009038162338525171,&quot;timestamp&quot;:1753212126000,&quot;blockTime&quot;:1753212126000,&quot;slot&quot;:355054747,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;8psNvWTrdNTiVRNzAgsou9kETXNJm2SXZyaKuJraVRtf&quot;,&quot;signature&quot;:&quot;nM8Jv8urfh5NeRq5JzyNkRCxwb1Qt9CGiz17iHCaecLeT6N4CRUDU2CoqAViGAu6oDaF52hzZS2zqNiV2ShZQLQ&quot;,&quot;baseAmount&quot;:0.053605759,&quot;tokenAmount&quot;:5960.436669,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018162739628780572,&quot;priceSol&quot;:0.000008993595935479272,&quot;timestamp&quot;:1753212044000,&quot;blockTime&quot;:1753212044000,&quot;slot&quot;:355054540,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;B56AjtTKzAFU4AXgSqP9ckkF92aEFbTixDTp5n6c9rt1&quot;,&quot;signature&quot;:&quot;3Ln26c68Wm9LhA68uiRdEFypLaUeHmBGTV43oKH8b6ngFxks7qGLruEdoxkKNVV4FxZe72mksE5S7u1yR1TXrYgN&quot;,&quot;baseAmount&quot;:0.094295339,&quot;tokenAmount&quot;:10432.889771,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018321061320844857,&quot;priceSol&quot;:0.000009038276169859476,&quot;timestamp&quot;:1753210939000,&quot;blockTime&quot;:1753210939000,&quot;slot&quot;:355051727,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;CUnovtRHzkLDXhRuJm3a9FjhdVdyY1KcySRPdiomiQDD&quot;,&quot;signature&quot;:&quot;5EFrmgZcZRQAaBD3MQgbxUYaGB5vj9x3dNT9QuN5BpNZMVCr52DJQjzHKPaDdzPp5ZiFyAzxf35vSZYNkjJJCGC5&quot;,&quot;baseAmount&quot;:0.037254714,&quot;tokenAmount&quot;:4142.861631,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018154820888004765,&quot;priceSol&quot;:0.000008992507430427381,&quot;timestamp&quot;:1753210569000,&quot;blockTime&quot;:1753210569000,&quot;slot&quot;:355050791,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;sS9SKD2rXKRPANHoNFdSXaeN84oUeVQURXhQQ6kvz1ENXEQJgZ7nMAB3L25hUGKm8mNzAmL1DWAYJ4FdMmWQFU6&quot;,&quot;baseAmount&quot;:0.317237257,&quot;tokenAmount&quot;:35114.001604,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018246853004958352,&quot;priceSol&quot;:0.000009034494575060395,&quot;timestamp&quot;:1753210221000,&quot;blockTime&quot;:1753210221000,&quot;slot&quot;:355049926,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;sS9SKD2rXKRPANHoNFdSXaeN84oUeVQURXhQQ6kvz1ENXEQJgZ7nMAB3L25hUGKm8mNzAmL1DWAYJ4FdMmWQFU6&quot;,&quot;baseAmount&quot;:64,&quot;tokenAmount&quot;:35114.001604,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018233730636762202,&quot;priceSol&quot;:0.001822634763242406,&quot;timestamp&quot;:1753210221000,&quot;blockTime&quot;:1753210221000,&quot;slot&quot;:355049926,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;5NTfmZMjXq4g4hFAZdxiqp7cmxfBKTUuKt8pQWCsMjS7ymmzz3i8WRZR9iEgpQcC2MJG8ySa9fXWqEc11oLrdKwp&quot;,&quot;baseAmount&quot;:0.316733637,&quot;tokenAmount&quot;:35085.864629,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018232495552931592,&quot;priceSol&quot;:0.000009027385824723436,&quot;timestamp&quot;:1753210217000,&quot;blockTime&quot;:1753210217000,&quot;slot&quot;:355049917,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;5NTfmZMjXq4g4hFAZdxiqp7cmxfBKTUuKt8pQWCsMjS7ymmzz3i8WRZR9iEgpQcC2MJG8ySa9fXWqEc11oLrdKwp&quot;,&quot;baseAmount&quot;:64,&quot;tokenAmount&quot;:35085.864629,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018248353107335699,&quot;priceSol&quot;:0.0018240964182225454,&quot;timestamp&quot;:1753210217000,&quot;blockTime&quot;:1753210217000,&quot;slot&quot;:355049917,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;4e2BpYmbU1YDsgLTWDgmjUTvUaKC7DeuLpcjGWCAJ8FgiKLxaFqraqk55GnQ6MfoX24rgqXhKqG95uszgRCzP8at&quot;,&quot;baseAmount&quot;:0.316710165,&quot;tokenAmount&quot;:35110.879358,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018218155637717464,&quot;priceSol&quot;:0.000009020285757321475,&quot;timestamp&quot;:1753210214000,&quot;blockTime&quot;:1753210214000,&quot;slot&quot;:355049907,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;4e2BpYmbU1YDsgLTWDgmjUTvUaKC7DeuLpcjGWCAJ8FgiKLxaFqraqk55GnQ6MfoX24rgqXhKqG95uszgRCzP8at&quot;,&quot;baseAmount&quot;:64,&quot;tokenAmount&quot;:35110.879358,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018235352076999148,&quot;priceSol&quot;:0.0018227968416125021,&quot;timestamp&quot;:1753210214000,&quot;blockTime&quot;:1753210214000,&quot;slot&quot;:355049907,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;2z8KVwpZP1HGV28B1MWGzNscRgbA6oGzQYjK8bJUnP4Fdnv2XrxQD3knNMUNvHmsdZGZscj4AqHw6D53g1DAbyQL&quot;,&quot;baseAmount&quot;:0.316807146,&quot;tokenAmount&quot;:35149.289939,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018203819682145492,&quot;priceSol&quot;:0.000009013187650441999,&quot;timestamp&quot;:1753210210000,&quot;blockTime&quot;:1753210210000,&quot;slot&quot;:355049898,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;2z8KVwpZP1HGV28B1MWGzNscRgbA6oGzQYjK8bJUnP4Fdnv2XrxQD3knNMUNvHmsdZGZscj4AqHw6D53g1DAbyQL&quot;,&quot;baseAmount&quot;:64,&quot;tokenAmount&quot;:35149.289939,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018215424776355732,&quot;priceSol&quot;:0.0018208049184227932,&quot;timestamp&quot;:1753210210000,&quot;blockTime&quot;:1753210210000,&quot;slot&quot;:355049898,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;4k3hj4G8h7kgCHUryG21PQ3gEpiixjk64ezrbv6asKZbJWAjexDJkgnR83KG5TAkhugFH1Z8HV7fvkhTiRDdrsh3&quot;,&quot;baseAmount&quot;:0.317189622,&quot;tokenAmount&quot;:35219.471246,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018189478581603982,&quot;priceSol&quot;:0.000009006086996153423,&quot;timestamp&quot;:1753210207000,&quot;blockTime&quot;:1753210207000,&quot;slot&quot;:355049890,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;4k3hj4G8h7kgCHUryG21PQ3gEpiixjk64ezrbv6asKZbJWAjexDJkgnR83KG5TAkhugFH1Z8HV7fvkhTiRDdrsh3&quot;,&quot;baseAmount&quot;:64,&quot;tokenAmount&quot;:35219.471246,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018179127175252194,&quot;priceSol&quot;:0.0018171766280355133,&quot;timestamp&quot;:1753210207000,&quot;blockTime&quot;:1753210207000,&quot;slot&quot;:355049890,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;2WdRXVudeijYGbCMVn5sgisFpdr4GPVFxsZ1ZzF8xFhCJBXyVHoXeH3Qr4L3xDfoSWt612g96pFaXMdTKJBAdAvJ&quot;,&quot;baseAmount&quot;:0.322095455,&quot;tokenAmount&quot;:35792.639911,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018175023345362554,&quot;priceSol&quot;:0.00000899892983029206,&quot;timestamp&quot;:1753210204000,&quot;blockTime&quot;:1753210204000,&quot;slot&quot;:355049881,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;2WdRXVudeijYGbCMVn5sgisFpdr4GPVFxsZ1ZzF8xFhCJBXyVHoXeH3Qr4L3xDfoSWt612g96pFaXMdTKJBAdAvJ&quot;,&quot;baseAmount&quot;:65,&quot;tokenAmount&quot;:35792.639911,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018167514303911072,&quot;priceSol&quot;:0.0018160158111171852,&quot;timestamp&quot;:1753210204000,&quot;blockTime&quot;:1753210204000,&quot;slot&quot;:355049881,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;rnsbhisSvQ1GEJ4u2QGYCKEV5b2G8hqc2GAaEmM2VicFauZ3iCFKnGfcG6PAtBmfeWSXxZfkDo9L7X6XT9afmiK&quot;,&quot;baseAmount&quot;:0.098961918,&quot;tokenAmount&quot;:11002.833799,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.001818533042044568,&quot;priceSol&quot;:0.000008994220925975834,&quot;timestamp&quot;:1753210156000,&quot;blockTime&quot;:1753210156000,&quot;slot&quot;:355049760,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;rnsbhisSvQ1GEJ4u2QGYCKEV5b2G8hqc2GAaEmM2VicFauZ3iCFKnGfcG6PAtBmfeWSXxZfkDo9L7X6XT9afmiK&quot;,&quot;baseAmount&quot;:20,&quot;tokenAmount&quot;:11002.833799,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018184936203131732,&quot;priceSol&quot;:0.001817713542289234,&quot;timestamp&quot;:1753210156000,&quot;blockTime&quot;:1753210156000,&quot;slot&quot;:355049760,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;HurCta9FdSjnj9oj3XgYbUFy41BJUjm4TskEywzSGLJF&quot;,&quot;signature&quot;:&quot;5EtLG4AZQugG9QBkRtBBb73aT6MM5phFFAatbYZVxfshpRGBxgGMk1dXSkt1K3S2txVVQKiaUDqnbc2MEzkfsp3p&quot;,&quot;baseAmount&quot;:0.377514433,&quot;tokenAmount&quot;:42168.960216,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018100822641427734,&quot;priceSol&quot;:0.000008952424510025295,&quot;timestamp&quot;:1753210155000,&quot;blockTime&quot;:1753210155000,&quot;slot&quot;:355049756,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;HurCta9FdSjnj9oj3XgYbUFy41BJUjm4TskEywzSGLJF&quot;,&quot;signature&quot;:&quot;5EtLG4AZQugG9QBkRtBBb73aT6MM5phFFAatbYZVxfshpRGBxgGMk1dXSkt1K3S2txVVQKiaUDqnbc2MEzkfsp3p&quot;,&quot;baseAmount&quot;:76.15279,&quot;tokenAmount&quot;:42168.960216,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018066717993930712,&quot;priceSol&quot;:0.0018058967925679527,&quot;timestamp&quot;:1753210155000,&quot;blockTime&quot;:1753210155000,&quot;slot&quot;:355049756,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;HKuAHzDpzvVKj3iuwjBampJ7dKDWdjwkWpH8Tvwjv6BH&quot;,&quot;signature&quot;:&quot;37v1UQYZ5fRMbyFKTkKFX62SfNs74ajW5hbHHLteFSF6kWvxFJBorSe9vwEibhvczqTiNdwrqVTkxu7vxHBevic5&quot;,&quot;baseAmount&quot;:0.06,&quot;tokenAmount&quot;:6665.989662,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.001819886318297903,&quot;priceSol&quot;:0.000009000914049122328,&quot;timestamp&quot;:1753210058000,&quot;blockTime&quot;:1753210058000,&quot;slot&quot;:355049510,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;HKuAHzDpzvVKj3iuwjBampJ7dKDWdjwkWpH8Tvwjv6BH&quot;,&quot;signature&quot;:&quot;37v1UQYZ5fRMbyFKTkKFX62SfNs74ajW5hbHHLteFSF6kWvxFJBorSe9vwEibhvczqTiNdwrqVTkxu7vxHBevic5&quot;,&quot;baseAmount&quot;:0.06,&quot;tokenAmount&quot;:6665.989662,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.001819886318297903,&quot;priceSol&quot;:0.000009000914049122328,&quot;timestamp&quot;:1753210058000,&quot;blockTime&quot;:1753210058000,&quot;slot&quot;:355049510,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;6zF9NCLcaXoYazmt7DT4Atq3bEJyynbbZvC5GSwALLdz&quot;,&quot;signature&quot;:&quot;53wcbRr17uWq7Jsj55qFr6D4VZ61MQfddFunw7tj1eZhEi7V8pzBH7C1urZFH4dFZU61gMXwecrTZdYWURiY2toy&quot;,&quot;baseAmount&quot;:0.386224279,&quot;tokenAmount&quot;:42933.298413,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.001819580865222927,&quot;priceSol&quot;:0.000008995914436498387,&quot;timestamp&quot;:1753210031000,&quot;blockTime&quot;:1753210031000,&quot;slot&quot;:355049440,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;6zF9NCLcaXoYazmt7DT4Atq3bEJyynbbZvC5GSwALLdz&quot;,&quot;signature&quot;:&quot;53wcbRr17uWq7Jsj55qFr6D4VZ61MQfddFunw7tj1eZhEi7V8pzBH7C1urZFH4dFZU61gMXwecrTZdYWURiY2toy&quot;,&quot;baseAmount&quot;:78,&quot;tokenAmount&quot;:42933.298413,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.001817551337841718,&quot;priceSol&quot;:0.001816771664028077,&quot;timestamp&quot;:1753210031000,&quot;blockTime&quot;:1753210031000,&quot;slot&quot;:355049440,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;2RF2966xJtLbLr5y1NesBSU3bcCSbKfZq746gbrs1Rij6MovgYydfSM6bePAWtXwD2NgaUAbkyrZ8GqGpER2bfek&quot;,&quot;baseAmount&quot;:0.188171714,&quot;tokenAmount&quot;:20932.411428,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018182815149806791,&quot;priceSol&quot;:0.00000898949051556928,&quot;timestamp&quot;:1753210029000,&quot;blockTime&quot;:1753210029000,&quot;slot&quot;:355049435,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;2RF2966xJtLbLr5y1NesBSU3bcCSbKfZq746gbrs1Rij6MovgYydfSM6bePAWtXwD2NgaUAbkyrZ8GqGpER2bfek&quot;,&quot;baseAmount&quot;:38,&quot;tokenAmount&quot;:20932.411428,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018161456438773446,&quot;priceSol&quot;:0.0018153665730633278,&quot;timestamp&quot;:1753210029000,&quot;blockTime&quot;:1753210029000,&quot;slot&quot;:355049435,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;4eYJvPBpcZRF41sqBSi3cYSyseKqKTrXqb4UcM3pKjJV2Kg6jRiXkUxphEZ23XbVXJezeTyWJ2y6YMwAoLbmWYFs&quot;,&quot;baseAmount&quot;:0.321821902,&quot;tokenAmount&quot;:35822.534129,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018171272332779154,&quot;priceSol&quot;:0.00000898378380605604,&quot;timestamp&quot;:1753210025000,&quot;blockTime&quot;:1753210025000,&quot;slot&quot;:355049425,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;4eYJvPBpcZRF41sqBSi3cYSyseKqKTrXqb4UcM3pKjJV2Kg6jRiXkUxphEZ23XbVXJezeTyWJ2y6YMwAoLbmWYFs&quot;,&quot;baseAmount&quot;:65,&quot;tokenAmount&quot;:35822.534129,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018152790291045265,&quot;priceSol&quot;:0.0018145003300416842,&quot;timestamp&quot;:1753210025000,&quot;blockTime&quot;:1753210025000,&quot;slot&quot;:355049425,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;HKuAHzDpzvVKj3iuwjBampJ7dKDWdjwkWpH8Tvwjv6BH&quot;,&quot;signature&quot;:&quot;4YigHY6GNh6Yar9R75KrWNoCRHmMivefkARdzpjLdCW2h17VTu1QHrF1g1SCWfJwz6z9Kqf8WhBweiMEPdUTyDw&quot;,&quot;baseAmount&quot;:0.171366179,&quot;tokenAmount&quot;:19086.767702,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018160122361289368,&quot;priceSol&quot;:0.000008978271317361056,&quot;timestamp&quot;:1753210014000,&quot;blockTime&quot;:1753210014000,&quot;slot&quot;:355049397,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;BfZm2yBtQFYnV7fLFboEJZbVDGcp29n685qVmgf5pump&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;HKuAHzDpzvVKj3iuwjBampJ7dKDWdjwkWpH8Tvwjv6BH&quot;,&quot;signature&quot;:&quot;4YigHY6GNh6Yar9R75KrWNoCRHmMivefkARdzpjLdCW2h17VTu1QHrF1g1SCWfJwz6z9Kqf8WhBweiMEPdUTyDw&quot;,&quot;baseAmount&quot;:2000000,&quot;tokenAmount&quot;:19086.767702,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0,&quot;priceSol&quot;:104.78463568194582,&quot;timestamp&quot;:1753210014000,&quot;blockTime&quot;:1753210014000,&quot;slot&quot;:355049397,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;92UvcWybx9zDn41Ujms1D9YuVNmx7j63kUzFbUCZqR4K&quot;,&quot;signature&quot;:&quot;4vtETqzDe16vCDryZ5uNNWeNHnopLVUpRQnrZAnV2R9wYAMP2aT8PSL3BzzcL6UK2J8ZRAKZkWxS2qXTaAprJQJW&quot;,&quot;baseAmount&quot;:0.495349431,&quot;tokenAmount&quot;:55426.423142,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018097428315581694,&quot;priceSol&quot;:0.000008937062919087112,&quot;timestamp&quot;:1753209649000,&quot;blockTime&quot;:1753209649000,&quot;slot&quot;:355048488,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;92UvcWybx9zDn41Ujms1D9YuVNmx7j63kUzFbUCZqR4K&quot;,&quot;signature&quot;:&quot;4vtETqzDe16vCDryZ5uNNWeNHnopLVUpRQnrZAnV2R9wYAMP2aT8PSL3BzzcL6UK2J8ZRAKZkWxS2qXTaAprJQJW&quot;,&quot;baseAmount&quot;:100.144644,&quot;tokenAmount&quot;:55426.423142,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018075459525849975,&quot;priceSol&quot;:0.001806803295667013,&quot;timestamp&quot;:1753209649000,&quot;blockTime&quot;:1753209649000,&quot;slot&quot;:355048488,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;6UUCrcqDNkiV8KMe2a57vUFUgrNaiYJZaVn7EXjWiu4p&quot;,&quot;signature&quot;:&quot;pqobR9FpRzohZMpwbnjxx4ms61uAeAWmBf2nSG1N3As2ZcepTKdVNF1PTEwvPYjocZyBkbL8G1yJ3WvLmnyYAHj&quot;,&quot;baseAmount&quot;:0.988843699,&quot;tokenAmount&quot;:110440.52806,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018118460509079864,&quot;priceSol&quot;:0.000008953630667745289,&quot;timestamp&quot;:1753209335000,&quot;blockTime&quot;:1753209335000,&quot;slot&quot;:355047716,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;6UUCrcqDNkiV8KMe2a57vUFUgrNaiYJZaVn7EXjWiu4p&quot;,&quot;signature&quot;:&quot;pqobR9FpRzohZMpwbnjxx4ms61uAeAWmBf2nSG1N3As2ZcepTKdVNF1PTEwvPYjocZyBkbL8G1yJ3WvLmnyYAHj&quot;,&quot;baseAmount&quot;:200,&quot;tokenAmount&quot;:110440.52806,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018116737599930145,&quot;priceSol&quot;:0.0018109294071044666,&quot;timestamp&quot;:1753209335000,&quot;blockTime&quot;:1753209335000,&quot;slot&quot;:355047716,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;HurCta9FdSjnj9oj3XgYbUFy41BJUjm4TskEywzSGLJF&quot;,&quot;signature&quot;:&quot;5Fm8fLF1k6PS2Pajs2daLukdGVFRCXmTRHxKhbmTg8CdMyiXE3TNnPdXryPYSfsT6WEya8GsbkJvmhdQZLsPUt2B&quot;,&quot;baseAmount&quot;:0.097026662,&quot;tokenAmount&quot;:10821.924362,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018110574403643615,&quot;priceSol&quot;:0.000008965749413357433,&quot;timestamp&quot;:1753209190000,&quot;blockTime&quot;:1753209190000,&quot;slot&quot;:355047357,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;HurCta9FdSjnj9oj3XgYbUFy41BJUjm4TskEywzSGLJF&quot;,&quot;signature&quot;:&quot;5Fm8fLF1k6PS2Pajs2daLukdGVFRCXmTRHxKhbmTg8CdMyiXE3TNnPdXryPYSfsT6WEya8GsbkJvmhdQZLsPUt2B&quot;,&quot;baseAmount&quot;:19.64158,&quot;tokenAmount&quot;:10821.924362,&quot;tradeDirection&quot;:&quot;sell&quot;,&quot;priceUsd&quot;:0.0018157270109286333,&quot;priceSol&quot;:0.0018149803438812836,&quot;timestamp&quot;:1753209190000,&quot;blockTime&quot;:1753209190000,&quot;slot&quot;:355047357,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;6zF9NCLcaXoYazmt7DT4Atq3bEJyynbbZvC5GSwALLdz&quot;,&quot;signature&quot;:&quot;3RXMWJdUFhed8LFCSs3fVrU3eLDecMFgW6QjhfeZu2u4z5yGVk5qaghpAkN4wS4EzrzyfJfyBySbNxEHy86HR8nv&quot;,&quot;baseAmount&quot;:0.148209807,&quot;tokenAmount&quot;:16449.163523,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018190463358306779,&quot;priceSol&quot;:0.0000090101728755244,&quot;timestamp&quot;:1753209075000,&quot;blockTime&quot;:1753209075000,&quot;slot&quot;:355047076,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;6zF9NCLcaXoYazmt7DT4Atq3bEJyynbbZvC5GSwALLdz&quot;,&quot;signature&quot;:&quot;3RXMWJdUFhed8LFCSs3fVrU3eLDecMFgW6QjhfeZu2u4z5yGVk5qaghpAkN4wS4EzrzyfJfyBySbNxEHy86HR8nv&quot;,&quot;baseAmount&quot;:30,&quot;tokenAmount&quot;:16449.163523,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018245223260573628,&quot;priceSol&quot;:0.0018238009463552708,&quot;timestamp&quot;:1753209075000,&quot;blockTime&quot;:1753209075000,&quot;slot&quot;:355047076,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;So11111111111111111111111111111111111111112&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;4W2kuYkfCAmikaUEK5aFfp36WdVHpRCHDGgxz4WfAakM5wEx58erwjgu3ZMQmB4BMKcpRcCJy65BJqofN6ejtLz1&quot;,&quot;baseAmount&quot;:0.069110981,&quot;tokenAmount&quot;:7672.399452,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018185552083626213,&quot;priceSol&quot;:0.000009007740203357702,&quot;timestamp&quot;:1753209068000,&quot;blockTime&quot;:1753209068000,&quot;slot&quot;:355047058,&quot;lag&quot;:0},{&quot;baseMint&quot;:&quot;Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB&quot;,&quot;tokenMint&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;creator&quot;:&quot;7gEQ6syDZmyPE4JdfJm4qatawnDqvqdh6i8jJjCXio6h&quot;,&quot;signature&quot;:&quot;4W2kuYkfCAmikaUEK5aFfp36WdVHpRCHDGgxz4WfAakM5wEx58erwjgu3ZMQmB4BMKcpRcCJy65BJqofN6ejtLz1&quot;,&quot;baseAmount&quot;:14,&quot;tokenAmount&quot;:7672.399452,&quot;tradeDirection&quot;:&quot;buy&quot;,&quot;priceUsd&quot;:0.0018254442560687223,&quot;priceSol&quot;:0.0018247225118539097,&quot;timestamp&quot;:1753209068000,&quot;blockTime&quot;:1753209068000,&quot;slot&quot;:355047058,&quot;lag&quot;:0}]}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def time = responseTime</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print &#39;Tiempo de respuesta:&#39;, time, &#39;Threshold:&#39;, threshold</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.32">17:08:24.997 [print] Tiempo de respuesta: 553 Threshold: 5000 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>assert time &lt; threshold</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.34">
+      <div class="step-ref passed">34</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

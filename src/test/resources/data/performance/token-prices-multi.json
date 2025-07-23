@@ -1,0 +1,6 @@
+{
+  "load": { "symbols": ["BTCUSDT", "ETHUSDT", "SOLUSDT"] },
+  "stress": { "symbols": ["BTCUSDT", "ETHUSDT", "SOLUSDT", "XRPUSDT", "DOGEUSDT"], "repeat": 1000 },
+  "latency": { "symbols": ["BTCUSDT", "ETHUSDT"] },
+  "endurance": { "symbols": ["BTCUSDT", "ETHUSDT", "SOLUSDT"], "repeat": 10000 }
+} 

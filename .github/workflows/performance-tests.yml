@@ -93,6 +93,15 @@ jobs:
         run: |
           cp -r target/karate-reports/performance/* reports/performance/ 2>/dev/null || true
 
+      - name: Copy Performance Reports to docs
+        if: always()
+        run: |
+          mkdir -p docs/performance
+          cp -r target/karate-reports/performance/* docs/performance/ || true
+
+      - name: Sync dashboards and Karate reports to docs
+        run: node scripts/sync-docs.js
+
       - name: Upload Performance Reports as Artifact
         uses: actions/upload-artifact@v4
         with:

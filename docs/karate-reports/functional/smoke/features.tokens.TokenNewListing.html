@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"8d7de530-2191-4863-8782-d47a95aaa917",karate_version:"1.4.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>features.tokens.TokenNewListing</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">1</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2025-07-22 12:38:28 p. m.</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:7]"><span>[1:7]</span> <span>Get new listings with default parameters</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">features/tokens/TokenNewListing.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Token New Listing Endpoint</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:7]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">smoke</a><a class="badge badge-primary" href="karate-tags.html">positive</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:7]</span>
+                <span class="scenario-name">Get new listings with default parameters</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1484</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:7]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:7]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_new_listing&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref passed">8</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1481</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.8">12:38:27.410 request:
+1 &gt; GET https://full-api.cloud-service-app.com/token/new_listing
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:38:28.888 response time in milliseconds: 1476
+1 &lt; 200
+1 &lt; Date: Tue, 22 Jul 2025 16:38:29 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;327e-V/0ZBMXCVPA5Q7LMsQ81tEsw7EI&quot;
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=rMR63IlS6fKFW6BQfoMQ7rFJVtAUJQvZPQKcHT4OmcTESiAxU9GcpG%2FHqxXVtc87YlCc94KExVGvANYSb3qWTB7scrdFgs7Cr%2Byv3qZ6KQBC%2FCehax0RRsbO3f2DsA%3D%3D&quot;}]}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; X-Cache: MISS
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 96345e57ad7d74c6-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:{&quot;elements&quot;:[{&quot;address&quot;:&quot;7NXeEQ6nzmgyopFa1qtk4DGz6uFLxqgfnLPKUeJ4bonk&quot;,&quot;name&quot;:&quot;New Meme Stock&quot;,&quot;symbol&quot;:&quot;KohlsX&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/7NXeEQ6nzmgyopFa1qtk4DGz6uFLxqgfnLPKUeJ4bonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;DeQ54SWe2yuzwMnsBABQbWtA3bnQ7SQn6kyqLisjBx8y&quot;,&quot;create_tx&quot;:&quot;4JZUdkDrxZ9xDwaUAJ7do5gdvdQSjiMKrsu4suha7i5P9LATFzcwZED8NZfDJeeuTFiSLzzkQWkt4qQUwGAVfTdi&quot;,&quot;created_time&quot;:1753202306,&quot;metadata&quot;:{&quot;name&quot;:&quot;New Meme Stock&quot;,&quot;symbol&quot;:&quot;KohlsX&quot;,&quot;image&quot;:&quot;https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fipfs.io%2Fipfs%2Fbafkreig7ztexavbl4w26tph5dtq4xl76jrxgvwffrk6lxbazat7pun54q4&quot;,&quot;description&quot;:&quot;ba&quot;,&quot;twitter&quot;:&quot;https://x.com/nypost/status/1947688674881151073&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmPxE9iLW7VJsdBx71qjeHEEFRDLPtCmWVyoYTq5phsVE8&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/QmPxE9iLW7VJsdBx71qjeHEEFRDLPtCmWVyoYTq5phsVE8&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:38:26.984Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:27.373Z&quot;},{&quot;address&quot;:&quot;9ygk5d3z96baismAi6XSuLzxU5Pc8fRpZLFwTuvZbonk&quot;,&quot;name&quot;:&quot;xKohls&quot;,&quot;symbol&quot;:&quot;xKohls&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/9ygk5d3z96baismAi6XSuLzxU5Pc8fRpZLFwTuvZbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;4dnWLzmdkLeuDe6hwRBpPqrDbQZ59hpoBu8JLztAescf&quot;,&quot;create_tx&quot;:&quot;5Bkt9NHk1NtiJTGHiLsqYZp3gsGJrn5cTkFarhGBR9LdUeaFvRcuq2iDoxDecN5cEoUxwjiiJXdojncYh47JENsZ&quot;,&quot;created_time&quot;:1753202305,&quot;metadata&quot;:{&quot;name&quot;:&quot;xKohls&quot;,&quot;symbol&quot;:&quot;xKohls&quot;,&quot;image&quot;:&quot;https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fipfs.io%2Fipfs%2Fbafkreig7ztexavbl4w26tph5dtq4xl76jrxgvwffrk6lxbazat7pun54q4&quot;,&quot;description&quot;:&quot;ba&quot;,&quot;twitter&quot;:&quot;https://x.com/nypost/status/1947688674881151073&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmRAznL7gkXGWieSo4SCisBMEp4PUVDfD2HgA1T7mZZu1u&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/QmRAznL7gkXGWieSo4SCisBMEp4PUVDfD2HgA1T7mZZu1u&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:38:26.095Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:26.447Z&quot;},{&quot;address&quot;:&quot;6xLwz7WK1ngYjLAjrUVZnGSV7BJNRaTiEeJvew2Nbonk&quot;,&quot;name&quot;:&quot;First Autistic Coin&quot;,&quot;symbol&quot;:&quot;AUTZ&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/6xLwz7WK1ngYjLAjrUVZnGSV7BJNRaTiEeJvew2Nbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;GoXdwNy6tmiQtJzt1qNmhegPypSVcWDCVS5MHXgbL6eq&quot;,&quot;create_tx&quot;:&quot;3cuCggAihUv644kZsGmwSNkTC3BMJR9mkJPXRcXXdeKKpheqJ8YjtRSR7LUAS4YS3toXxw6mYoHaa1jZfYRiTXZm&quot;,&quot;created_time&quot;:1753202303,&quot;metadata&quot;:{&quot;name&quot;:&quot;First Autistic Coin&quot;,&quot;symbol&quot;:&quot;AUTZ&quot;,&quot;image&quot;:&quot;https://metadata.pumplify.eu/data/QmXJj2nxA2sxrskvXM7cCPYymfhhLWE4nWdJPqhAuwT8ii&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/brodotbonk/status/1947697715271622661&quot;,&quot;website&quot;:&quot;https://www.facebook.com/AUTZtoken/&quot;,&quot;telegram&quot;:&quot;https://www.facebook.com/AUTZtoken/&quot;,&quot;uri&quot;:&quot;https://metadata.pumplify.eu/data/QmfP4PebPH1gpyPAfRvcqwuFZq7U8ZaD5wYdiu5SUrbi1p&quot;},&quot;metadata_uri&quot;:&quot;https://metadata.pumplify.eu/data/QmfP4PebPH1gpyPAfRvcqwuFZq7U8ZaD5wYdiu5SUrbi1p&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;raydium_launchpad&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:38:24.058Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:24.322Z&quot;},{&quot;address&quot;:&quot;JAcgKcLF6Ab9NL3z4pm8zonXuvuAtpDY4Ze57UEZbonk&quot;,&quot;name&quot;:&quot;Kohls Corp&quot;,&quot;symbol&quot;:&quot;KSS&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/JAcgKcLF6Ab9NL3z4pm8zonXuvuAtpDY4Ze57UEZbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;Dwf1RDeYwLh948Efa4DFhomnzXD7UmSUhAKB9bnRuvB8&quot;,&quot;create_tx&quot;:&quot;3hkHuwmNC599KsVu8F94MHhzZVzTV7A8jxZd5Ry3NqujVdsM3oRz8aUu6DTYRYwxaGEVwVfXSzhsseDfepFCgBXK&quot;,&quot;created_time&quot;:1753202303,&quot;metadata&quot;:{&quot;name&quot;:&quot;Kohls Corp&quot;,&quot;symbol&quot;:&quot;KSS&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreig7ztexavbl4w26tph5dtq4xl76jrxgvwffrk6lxbazat7pun54q4&quot;,&quot;description&quot;:&quot;w&quot;,&quot;twitter&quot;:&quot;https://x.com/nypost/status/1947688674881151073&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiawdmexwe5jy5aiqng3tj7en67sugtiapvux36p6ws5xc3pp55oxi&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiawdmexwe5jy5aiqng3tj7en67sugtiapvux36p6ws5xc3pp55oxi&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:38:24.065Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:24.322Z&quot;},{&quot;address&quot;:&quot;HYUJHwuUh7mcN8J5KAXuPjpYifx6TG8cDwKGQXC9pump&quot;,&quot;name&quot;:&quot;Founders Coin&quot;,&quot;symbol&quot;:&quot;FND&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/HYUJHwuUh7mcN8J5KAXuPjpYifx6TG8cDwKGQXC9pump.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;3Ysps3nfsEPhKgD6RNiH7DCFxidtGfUMQzSPVzoqMGYU&quot;,&quot;create_tx&quot;:&quot;4DiiXtPcVd9kqsXvGoZjtyguCLC8UcotaraxX2MbCP9vWxW36tfbHQ11N5iicW57btt5iXDGsW6JcRmjv9pYGuev&quot;,&quot;created_time&quot;:1753202300,&quot;metadata&quot;:{&quot;name&quot;:&quot;Founders Coin&quot;,&quot;symbol&quot;:&quot;FND&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafybeiew7kam4xtcbsu5oxdvtm7ssursywfn4d2b5tdpnibachxkyx7iva&quot;,&quot;description&quot;:&quot;FoundersCoin ($FND)\nThis isn’t just a project — it’s the spark of something bigger.\nA token reserved for the earliest and boldest minds.\nAccess is now. Limited. Relentless.\nNo airdrops. No hype. Just precision.\nLive for 1 month only on Pump.fun\n🗓 July 22 – August 22\nHold tight. Stay early. Be rewarded&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreibn2etvz3codhtar3cr2okmec665ahxwkeuzj2mspjpsl3jq3zsoe&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreibn2etvz3codhtar3cr2okmec665ahxwkeuzj2mspjpsl3jq3zsoe&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000&quot;,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;bonding_curve&quot;:&quot;Ex2XQ5aR2Wxqh4nwvKCV2EHUYoYPvfqAUtwm1WWfiRde&quot;,&quot;associated_bonding_curve&quot;:&quot;6q5u1dJiCXu9b1otzPNHVAEZErHuVpz3scuPTx4BMSKB&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:38:20.569Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:21.562Z&quot;},{&quot;address&quot;:&quot;BL1uBQ2c2NDiturocd1ufahwxy3qBqK7KFaipEiR1zip&quot;,&quot;name&quot;:&quot;Little Pepe&quot;,&quot;symbol&quot;:&quot;LILPEPE&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/BL1uBQ2c2NDiturocd1ufahwxy3qBqK7KFaipEiR1zip.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;AvLM5hA42GytZRX6GvjAe8fHTuHGV3kTLyFi5V2whPiT&quot;,&quot;create_tx&quot;:&quot;62qqst81rZmgbGMJrG6txdFDTr7NfWauuNGBcnKFZ6zxnjFQtJ1Wj48zV6VDV32KAZwKoZmWHyGk3tCkc3kDFNdY&quot;,&quot;created_time&quot;:1753202288,&quot;metadata&quot;:{&quot;name&quot;:&quot;Little Pepe&quot;,&quot;symbol&quot;:&quot;LILPEPE&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmaQmhGXkyiYAxqKZYRrb7v4LRCsMkSjuGoyoMWCqKAYNP&quot;,&quot;description&quot;:&quot;🚨 Enter the New World Order of Memes 🚨 Welcome to Little Pepe — where the unstoppable power of memes meets a blazing-fast, ultra-low fee Layer 2 EVM chain: the Little Pepe Chain 🔥⚡️ This is the next evolution of meme coins — not just a token, but an entire Layer 2 built for speed, security, and the culture. 💥 At the core of it all is $LILPEPE — the utility token fueling a meme-powered ecosystem that’s rewriting the rules. 🐸 The golden era of meme coins is here. Pepe reigns as King, and Little Pepe Chain is his unshakable kingdom. 🚀 You&#39;re still early. Be part of history in the making.&quot;,&quot;twitter&quot;:&quot;https://x.com/littlepepetoken&quot;,&quot;website&quot;:&quot;https://littlepepe.com/&quot;,&quot;telegram&quot;:&quot;https://t.me/littlepepetoken&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/Qmea2b2zPfuCPLnxbyf6msT5Dpck2uU7mUUbtajx4puiP3&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;1000000000&quot;,&quot;holders&quot;:1,&quot;price&quot;:0.000003,&quot;volume_24h&quot;:100,&quot;market_cap&quot;:0.003,&quot;price_change_24h&quot;:1,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:38:26.707Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:26.963Z&quot;,&quot;holders_top_10&quot;:0},{&quot;address&quot;:&quot;Fymbtw5SEWx8igSifb2tTs9ek1jWCoSBUGS7gWMPbonk&quot;,&quot;name&quot;:&quot;Mental Break&quot;,&quot;symbol&quot;:&quot;BREAK&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/Fymbtw5SEWx8igSifb2tTs9ek1jWCoSBUGS7gWMPbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;7zRhnexA77QFSxgtak2M32DK2UE6ToihEijm9a8KR9Lj&quot;,&quot;create_tx&quot;:&quot;5N52VSypmHDNsyaiQ4Gss7exCxFrrw8ixRQLLUeoCwEE5zMXRDNngATVgK23DpGeqojFyasyUoEc3CBi7on7asbb&quot;,&quot;created_time&quot;:1753202283,&quot;metadata&quot;:{&quot;name&quot;:&quot;Mental Break&quot;,&quot;symbol&quot;:&quot;BREAK&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreib7mhz2rc5zj35xdkb2v2w7f6tay6357bssyofrbtrpdtbx4nntvu&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/search?q=This%20space%20has%20really%20gotten%20to%20me%20mentally&amp;src=typed_query&amp;f=top&quot;,&quot;website&quot;:&quot;https://x.com/search?q=This%20space%20has%20really%20gotten%20to%20me%20mentally%20and%20I%E2%80%99m%20in%20much%20need%20of%20a%20break.%20The%20amount%20of%20stress%20is%20just%20not%20worth%20all%20the%20headache%20at%20this%20point.%20%20%20I%20wish%20the%20best%20to%20everyone%20out%20here%2C%20but%20I%E2%80%99m%20officially%20on%20a%20mental%20break%20and%20be%20back%20in%20like%2040%20mins%20or%20so&amp;src=typed_query&quot;,&quot;telegram&quot;:&quot;https://x.com/search?q=This%20space%20has%20really%20gotten%20to%20me%20mentally%20and%20I%E2%80%99m%20in%20much%20need%20of%20a%20break.%20The%20amount%20of%20stress%20is%20just%20not%20worth%20all%20the%20headache%20at%20this%20point.%20%20%20I%20wish%20the%20best%20to%20everyone%20out%20here%2C%20but%20I%E2%80%99m%20officially%20on%20a%20mental%20break%20and%20be%20back%20in%20like%2040%20mins%20or%20so&amp;src=typed_query&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreibye7hz6nb6qk626a5pj2zq4mi7ngzfsug27lpbn6aaiymxeyj3am&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreibye7hz6nb6qk626a5pj2zq4mi7ngzfsug27lpbn6aaiymxeyj3am&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:38:03.503Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:04.530Z&quot;},{&quot;address&quot;:&quot;5x4XEs3tebFW8Eoa44yziUe6DDg4mmAzAhQ8Ebcipump&quot;,&quot;name&quot;:&quot;REKT WORLD DOMINATION&quot;,&quot;symbol&quot;:&quot;RWD&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/5x4XEs3tebFW8Eoa44yziUe6DDg4mmAzAhQ8Ebcipump.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;FiHbREfrgg3jc1ZYW4iRiiBGZci1uDXzMn7TG9jHFNTi&quot;,&quot;create_tx&quot;:&quot;2t1hvv5e439vmqjXr6rbE5FZuv9NVRetzPAkf72YJFQUVMJKrQTg6JTecUAgFHGD8yMiDK8BEoBKv39LLdBpDKgQ&quot;,&quot;created_time&quot;:1753202283,&quot;metadata&quot;:{&quot;name&quot;:&quot;REKT WORLD DOMINATION&quot;,&quot;symbol&quot;:&quot;RWD&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreif6yle3jpzaf6nooqv7kwrq62bkresvxwumsxcyis4cuuo2knstda&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/BinanceUS/status/1947697391584612705&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreig5wkxte2aa66uamgoaf3mhnpvub7wrcjtv4zqw5uafix5fnztu24&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreig5wkxte2aa66uamgoaf3mhnpvub7wrcjtv4zqw5uafix5fnztu24&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000&quot;,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;bonding_curve&quot;:&quot;A9PpWjgcsXtKymdNsKMLXsd3PatK4MPn6YESVL74VpHD&quot;,&quot;associated_bonding_curve&quot;:&quot;HFx651qUDAYXfxuG32XhYfHdvjC2umMQJudFsLDPo2BT&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:38:04.162Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:04.464Z&quot;},{&quot;address&quot;:&quot;CFVK7Zyxy2F1CgWzwmVvm4h7JWDw4wP8hESfRwi7bonk&quot;,&quot;name&quot;:&quot;fug&quot;,&quot;symbol&quot;:&quot;fug&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/CFVK7Zyxy2F1CgWzwmVvm4h7JWDw4wP8hESfRwi7bonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;36jYFrfeRrULkXrfcRkBKPFQHuNqg8LyEgU4XPrMne2M&quot;,&quot;create_tx&quot;:&quot;27PendGJWZvnhxt7wcJojQdKdvyZMxZSzMhcQToYDLeRR7LqqgM21eYbJybAcWYiFDn39JZ4mFSsfxNwjPTusHz7&quot;,&quot;created_time&quot;:1753202283,&quot;metadata&quot;:{&quot;name&quot;:&quot;fug&quot;,&quot;symbol&quot;:&quot;fug&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreih3exqebzsfhkhv6jddikecb3xonpkwngyi34ylogciwaj5k3e5za&quot;,&quot;description&quot;:&quot;🐸🖕&quot;,&quot;twitter&quot;:&quot;https://x.com/i/communities/1929920217486110857&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreianaedkjfnwqlow2sxo2aqi7sihrggvdinyo67eazo6grw2vu7nze&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreianaedkjfnwqlow2sxo2aqi7sihrggvdinyo67eazo6grw2vu7nze&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:38:03.197Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:03.510Z&quot;},{&quot;address&quot;:&quot;J1Wg7aWunnqzspab8uiTFVhMkk1XJWitbFtVgS7Mbonk&quot;,&quot;name&quot;:&quot;bibi&quot;,&quot;symbol&quot;:&quot;bibi&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/J1Wg7aWunnqzspab8uiTFVhMkk1XJWitbFtVgS7Mbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;CZ7taY9aDtaQG6mKYwigyWTKLbkw2JfgkPcEzLmavHRf&quot;,&quot;create_tx&quot;:&quot;5k1Abz4uGgfqkZSNLUboVioLNjY9nLkXigAxXoGNF8PHQVXZcMzyqqxRu1UCyx8zKhTNnEXSwoBh19yeNntZusUc&quot;,&quot;created_time&quot;:1753202278,&quot;metadata&quot;:{&quot;name&quot;:&quot;bibi&quot;,&quot;symbol&quot;:&quot;bibi&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafybeifsxodbtn7c4b52ywhwnbwshsxn7rkepc2yqu3uafzzn276yt3fye&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/i/communities/1947697549625725166/&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreif46j2n2jnky26h7n3oogp3lubm526wcbdw3gous4aiont2mno3w4&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreif46j2n2jnky26h7n3oogp3lubm526wcbdw3gous4aiont2mno3w4&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:37:58.195Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:37:58.640Z&quot;}],&quot;pagination&quot;:{&quot;totalElements&quot;:686191,&quot;hasNextPage&quot;:true,&quot;nextPage&quot;:2,&quot;previousPage&quot;:0,&quot;lastPage&quot;:68620}}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>def validationResult = validateNewListingSuccessResponse(response, true, true)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match validationResult == true</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

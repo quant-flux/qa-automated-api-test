@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"8d7de530-2191-4863-8782-d47a95aaa917",karate_version:"1.4.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>features.trade.TradeOHLCV</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">4</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2025-07-22 12:40:04 p. m.</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:7]"><span>[1:7]</span> <span>Get OHLCV data for valid token with 1h interval</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:18]"><span>[2:18]</span> <span>Get OHLCV data for another valid token with 5m interval</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[3:29]"><span>[3:29]</span> <span>Get OHLCV data with market cap chart format</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[4:40]"><span>[4:40]</span> <span>Get OHLCV data with different intervals</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">features/trade/TradeOHLCV.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Trade OHLCV Endpoint</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:7]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">smoke</a><a class="badge badge-primary" href="karate-tags.html">positive</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:7]</span>
+                <span class="scenario-name">Get OHLCV data for valid token with 1h interval</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1716</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:7]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:7]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref passed">8</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1713</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">12:39:57.574 request:
+1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=1h
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:39:59.285 response time in milliseconds: 1711
+1 &lt; 200
+1 &lt; Date: Tue, 22 Jul 2025 16:39:59 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=pJ7%2BWkDw7gY1chutd62l2BTiWA1wlJTquZQb45nJlSZw%2FDJ3owSKhHBi32JwIgZejgPbtfAWeNBf6iea2zg%2Bx%2FuOhBIoyStt6X0o7DHQp4Mz8piJ85X1PtAqN%2Bg%2FRw%3D%3D&quot;}]}
+1 &lt; CF-RAY: 9634608eab1cd6cc-IAD
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref passed">13</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref passed">14</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref passed">15</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:18]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">positive</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:18]</span>
+                <span class="scenario-name">Get OHLCV data for another valid token with 5m interval</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>2719</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:18]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:18]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref passed">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(1)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref passed">20</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(1)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref passed">21</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(1)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(1)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.23">
+      <div class="step-ref passed">23</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2706</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.23">12:39:59.301 request:
+1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump?price_format=USD&amp;chart_format=price&amp;interval=5m
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:40:02.005 response time in milliseconds: 2702
+1 &lt; 200
+1 &lt; Date: Tue, 22 Jul 2025 16:40:02 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;3c1d-2Y0jz0aM4tu/z08g4bRlBkfkh3Q&quot;
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=3%2FZ9up5Cg%2BIG4LKbrapaIwT%2B%2B%2Fd3mMjOzCfdHXoqF6narrz%2F1pEfsXilRLIosbXgQQCeCWCDz6G5GowbYi3Pe6R0cxsn425iii1%2Bo14vH51Zk%2FqDCvIq8WdEC%2BzslQ%3D%3D&quot;}]}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 9634609638a3b883-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[{&quot;time&quot;:1753117500000,&quot;open&quot;:0.0018929372037601413,&quot;high&quot;:0.0019024357566343793,&quot;low&quot;:0.0018929372037601413,&quot;close&quot;:0.0018841401774071093,&quot;volume&quot;:39.73698565949528},{&quot;time&quot;:1753119900000,&quot;open&quot;:0.0018841401774071093,&quot;high&quot;:0.00189385634915568,&quot;low&quot;:0.0018841401774071093,&quot;close&quot;:0.0018453674289649448,&quot;volume&quot;:580.8665743045483},{&quot;time&quot;:1753120200000,&quot;open&quot;:0.0018453674289649448,&quot;high&quot;:0.0018779493074268447,&quot;low&quot;:0.0018453674289649448,&quot;close&quot;:0.001887922192650417,&quot;volume&quot;:4.179695583384888},{&quot;time&quot;:1753120500000,&quot;open&quot;:0.001887922192650417,&quot;high&quot;:0.0018885279310681324,&quot;low&quot;:0.001887922192650417,&quot;close&quot;:0.0018841818141901597,&quot;volume&quot;:52.21530014855057},{&quot;time&quot;:1753121700000,&quot;open&quot;:0.0018841818141901597,&quot;high&quot;:0.0018841818141901597,&quot;low&quot;:0.0018841818141901597,&quot;close&quot;:0.0018642920109587062,&quot;volume&quot;:0.2847832509377747},{&quot;time&quot;:1753123500000,&quot;open&quot;:0.0018642920109587062,&quot;high&quot;:0.0018642920109587062,&quot;low&quot;:0.0018642920109587062,&quot;close&quot;:0.0018672635335466464,&quot;volume&quot;:166.25786146646047},{&quot;time&quot;:1753125900000,&quot;open&quot;:0.0018672635335466464,&quot;high&quot;:0.0018672635335466464,&quot;low&quot;:0.0018672635335466464,&quot;close&quot;:0.0018786118310167273,&quot;volume&quot;:27.903162692881775},{&quot;time&quot;:1753126200000,&quot;open&quot;:0.0018786118310167273,&quot;high&quot;:0.0018786118310167273,&quot;low&quot;:0.0018786118310167273,&quot;close&quot;:0.0018714958935797216,&quot;volume&quot;:199.98851830572346},{&quot;time&quot;:1753126800000,&quot;open&quot;:0.0018714958935797216,&quot;high&quot;:0.0018714958935797216,&quot;low&quot;:0.0018714958935797216,&quot;close&quot;:0.0018713414202602074,&quot;volume&quot;:3.739248795372284},{&quot;time&quot;:1753127400000,&quot;open&quot;:0.0018713414202602074,&quot;high&quot;:0.0018713414202602074,&quot;low&quot;:0.0018713414202602074,&quot;close&quot;:0.001860746111130371,&quot;volume&quot;:9.636978135988404},{&quot;time&quot;:1753128300000,&quot;open&quot;:0.001860746111130371,&quot;high&quot;:0.001860746111130371,&quot;low&quot;:0.0018590334480337461,&quot;close&quot;:0.0018571363042462377,&quot;volume&quot;:148.41545725436495},{&quot;time&quot;:1753128900000,&quot;open&quot;:0.0018571363042462377,&quot;high&quot;:0.0018571363042462377,&quot;low&quot;:0.0018571363042462377,&quot;close&quot;:0.0018569405680153252,&quot;volume&quot;:16.001299553919175},{&quot;time&quot;:1753129200000,&quot;open&quot;:0.0018569405680153252,&quot;high&quot;:0.0018569405680153252,&quot;low&quot;:0.0018549655233856823,&quot;close&quot;:0.0018711708418715821,&quot;volume&quot;:171.2945709371813},{&quot;time&quot;:1753131300000,&quot;open&quot;:0.0018711708418715821,&quot;high&quot;:0.0018711708418715821,&quot;low&quot;:0.0018711708418715821,&quot;close&quot;:0.0018555711505039187,&quot;volume&quot;:200.93367199530275},{&quot;time&quot;:1753131600000,&quot;open&quot;:0.0018555711505039187,&quot;high&quot;:0.0018555711505039187,&quot;low&quot;:0.0018497864439591958,&quot;close&quot;:0.0018579634706270892,&quot;volume&quot;:502.95086336907474},{&quot;time&quot;:1753131900000,&quot;open&quot;:0.0018579634706270892,&quot;high&quot;:0.0018579634706270892,&quot;low&quot;:0.0018579634706270892,&quot;close&quot;:0.0018622819365775307,&quot;volume&quot;:207.01600086424497},{&quot;time&quot;:1753132200000,&quot;open&quot;:0.0018622819365775307,&quot;high&quot;:0.0018622819365775307,&quot;low&quot;:0.0018622819365775307,&quot;close&quot;:0.0018642197013638223,&quot;volume&quot;:167.5940754103174},{&quot;time&quot;:1753132500000,&quot;open&quot;:0.0018642197013638223,&quot;high&quot;:0.0018642197013638223,&quot;low&quot;:0.001854735564154503,&quot;close&quot;:0.0018542850239606635,&quot;volume&quot;:15.359777936799684},{&quot;time&quot;:1753132800000,&quot;open&quot;:0.0018542850239606635,&quot;high&quot;:0.0018542850239606635,&quot;low&quot;:0.0018542850239606635,&quot;close&quot;:0.001864818751222579,&quot;volume&quot;:23.900806816340975},{&quot;time&quot;:1753133100000,&quot;open&quot;:0.001864818751222579,&quot;high&quot;:0.001872208092984035,&quot;low&quot;:0.001864818751222579,&quot;close&quot;:0.0018816374944557361,&quot;volume&quot;:1150.5048667624274},{&quot;time&quot;:1753133700000,&quot;open&quot;:0.0018816374944557361,&quot;high&quot;:0.0018816374944557361,&quot;low&quot;:0.0018816374944557361,&quot;close&quot;:0.0018816303808720702,&quot;volume&quot;:0.002394251997070312},{&quot;time&quot;:1753134300000,&quot;open&quot;:0.0018816303808720702,&quot;high&quot;:0.0018816303808720702,&quot;low&quot;:0.0018816303808720702,&quot;close&quot;:0.0018899115989576395,&quot;volume&quot;:25.06925079729095},{&quot;time&quot;:1753137300000,&quot;open&quot;:0.0018899115989576395,&quot;high&quot;:0.0018899115989576395,&quot;low&quot;:0.0018899115989576395,&quot;close&quot;:0.0018897633159047024,&quot;volume&quot;:7.34259250368544},{&quot;time&quot;:1753137600000,&quot;open&quot;:0.0018897633159047024,&quot;high&quot;:0.0018897633159047024,&quot;low&quot;:0.0018897633159047024,&quot;close&quot;:0.0018799280939557719,&quot;volume&quot;:5.491223508880142},{&quot;time&quot;:1753139100000,&quot;open&quot;:0.0018799280939557719,&quot;high&quot;:0.0018799280939557719,&quot;low&quot;:0.0018799280939557719,&quot;close&quot;:0.0018838620002836234,&quot;volume&quot;:500.1892133859376},{&quot;time&quot;:1753140300000,&quot;open&quot;:0.0018838620002836234,&quot;high&quot;:0.0018838620002836234,&quot;low&quot;:0.0018838620002836234,&quot;close&quot;:0.001858656132274097,&quot;volume&quot;:51.129697722473146},{&quot;time&quot;:1753140900000,&quot;open&quot;:0.001858656132274097,&quot;high&quot;:0.001858656132274097,&quot;low&quot;:0.001858656132274097,&quot;close&quot;:0.0018491859941602892,&quot;volume&quot;:824.5646685251767},{&quot;time&quot;:1753141500000,&quot;open&quot;:0.0018491859941602892,&quot;high&quot;:0.0018491859941602892,&quot;low&quot;:0.0018491859941602892,&quot;close&quot;:0.0018489584196019586,&quot;volume&quot;:0.02438195743927002},{&quot;time&quot;:1753141800000,&quot;open&quot;:0.0018489584196019586,&quot;high&quot;:0.0018489584196019586,&quot;low&quot;:0.0018489584196019586,&quot;close&quot;:0.0018240972161009037,&quot;volume&quot;:20.73392139167328},{&quot;time&quot;:1753142100000,&quot;open&quot;:0.0018240972161009037,&quot;high&quot;:0.0018399177757023675,&quot;low&quot;:0.001808887965867703,&quot;close&quot;:0.0018108122220908199,&quot;volume&quot;:2224.7347330324988},{&quot;time&quot;:1753143900000,&quot;open&quot;:0.0018108122220908199,&quot;high&quot;:0.0018108122220908199,&quot;low&quot;:0.0018108122220908199,&quot;close&quot;:0.0017995932605473547,&quot;volume&quot;:669.9809109305623},{&quot;time&quot;:1753144200000,&quot;open&quot;:0.0017995932605473547,&quot;high&quot;:0.0018157029974221013,&quot;low&quot;:0.0017995932605473547,&quot;close&quot;:0.0018067773291816722,&quot;volume&quot;:263.6024504319656},{&quot;time&quot;:1753144500000,&quot;open&quot;:0.0018067773291816722,&quot;high&quot;:0.0018067773291816722,&quot;low&quot;:0.0018067773291816722,&quot;close&quot;:0.0018079856132786282,&quot;volume&quot;:99.68512178026444},{&quot;time&quot;:1753144800000,&quot;open&quot;:0.0018079856132786282,&quot;high&quot;:0.0018079856132786282,&quot;low&quot;:0.0017635958652140176,&quot;close&quot;:0.0018168405644651171,&quot;volume&quot;:7468.887269418287},{&quot;time&quot;:1753145400000,&quot;open&quot;:0.0018168405644651171,&quot;high&quot;:0.0018168405644651171,&quot;low&quot;:0.0017846021628624708,&quot;close&quot;:0.001791872573324533,&quot;volume&quot;:2355.5929716173846},{&quot;time&quot;:1753145700000,&quot;open&quot;:0.001791872573324533,&quot;high&quot;:0.001791872573324533,&quot;low&quot;:0.001791872573324533,&quot;close&quot;:0.001773902183951115,&quot;volume&quot;:79.38135776572085},{&quot;time&quot;:1753146000000,&quot;open&quot;:0.001773902183951115,&quot;high&quot;:0.001773902183951115,&quot;low&quot;:0.001773902183951115,&quot;close&quot;:0.0017746215205016868,&quot;volume&quot;:41.91045694683128},{&quot;time&quot;:1753146300000,&quot;open&quot;:0.0017746215205016868,&quot;high&quot;:0.001775456896281453,&quot;low&quot;:0.0017659876786558532,&quot;close&quot;:0.00177599312421336,&quot;volume&quot;:84.57123063845943},{&quot;time&quot;:1753146600000,&quot;open&quot;:0.00177599312421336,&quot;high&quot;:0.00177599312421336,&quot;low&quot;:0.0017669681041031155,&quot;close&quot;:0.0017667688526006031,&quot;volume&quot;:19.81538905661798},{&quot;time&quot;:1753146900000,&quot;open&quot;:0.0017667688526006031,&quot;high&quot;:0.0017667688526006031,&quot;low&quot;:0.0017656609155703485,&quot;close&quot;:0.0017645051821347153,&quot;volume&quot;:98.96851774295085},{&quot;time&quot;:1753147500000,&quot;open&quot;:0.0017645051821347153,&quot;high&quot;:0.0017645051821347153,&quot;low&quot;:0.0017645051821347153,&quot;close&quot;:0.001807450246211843,&quot;volume&quot;:5.948323419494339},{&quot;time&quot;:1753147800000,&quot;open&quot;:0.001807450246211843,&quot;high&quot;:0.001807450246211843,&quot;low&quot;:0.001807450246211843,&quot;close&quot;:0.001799069353382666,&quot;volume&quot;:147.11825934046243},{&quot;time&quot;:1753148100000,&quot;open&quot;:0.001799069353382666,&quot;high&quot;:0.0018119951789356463,&quot;low&quot;:0.001799069353382666,&quot;close&quot;:0.001792330714516368,&quot;volume&quot;:1205.2999729385301},{&quot;time&quot;:1753148400000,&quot;open&quot;:0.001792330714516368,&quot;high&quot;:0.001792330714516368,&quot;low&quot;:0.001792330714516368,&quot;close&quot;:0.001791969445880003,&quot;volume&quot;:1.8825424151639099},{&quot;time&quot;:1753149000000,&quot;open&quot;:0.001791969445880003,&quot;high&quot;:0.001791969445880003,&quot;low&quot;:0.001791617286546221,&quot;close&quot;:0.0017914956314159657,&quot;volume&quot;:31.550127879437806},{&quot;time&quot;:1753149300000,&quot;open&quot;:0.0017914956314159657,&quot;high&quot;:0.0018004645820392188,&quot;low&quot;:0.001791452224498585,&quot;close&quot;:0.0017992386537266163,&quot;volume&quot;:27.838941853239714},{&quot;time&quot;:1753149900000,&quot;open&quot;:0.0017992386537266163,&quot;high&quot;:0.0018212679749251908,&quot;low&quot;:0.0017942568606457065,&quot;close&quot;:0.0018394580982758547,&quot;volume&quot;:6138.088161623425},{&quot;time&quot;:1753150200000,&quot;open&quot;:0.0018394580982758547,&quot;high&quot;:0.0018394580982758547,&quot;low&quot;:0.0018358552888069878,&quot;close&quot;:0.0018322651486130592,&quot;volume&quot;:637.3242127848647},{&quot;time&quot;:1753151100000,&quot;open&quot;:0.0018322651486130592,&quot;high&quot;:0.0018322651486130592,&quot;low&quot;:0.001830172050775503,&quot;close&quot;:0.0018368122146021969,&quot;volume&quot;:187.04818840449903},{&quot;time&quot;:1753152600000,&quot;open&quot;:0.0018368122146021969,&quot;high&quot;:0.0018370033333746528,&quot;low&quot;:0.0018368122146021969,&quot;close&quot;:0.0018277113232683662,&quot;volume&quot;:34.101215967041014},{&quot;time&quot;:1753152900000,&quot;open&quot;:0.0018277113232683662,&quot;high&quot;:0.0018277113232683662,&quot;low&quot;:0.0018277113232683662,&quot;close&quot;:0.0018148002941343346,&quot;volume&quot;:25.61895604373337},{&quot;time&quot;:1753153200000,&quot;open&quot;:0.0018148002941343346,&quot;high&quot;:0.001822816825483811,&quot;low&quot;:0.0018148002941343346,&quot;close&quot;:0.0018254174818519138,&quot;volume&quot;:106.84731808705749},{&quot;time&quot;:1753153500000,&quot;open&quot;:0.0018254174818519138,&quot;high&quot;:0.0018309640875354635,&quot;low&quot;:0.0018254174818519138,&quot;close&quot;:0.0018236798824761925,&quot;volume&quot;:494.05268319715805},{&quot;time&quot;:1753153800000,&quot;open&quot;:0.0018236798824761925,&quot;high&quot;:0.0018236798824761925,&quot;low&quot;:0.0018236798824761925,&quot;close&quot;:0.0018089212278985787,&quot;volume&quot;:100.81909244246597},{&quot;time&quot;:1753155000000,&quot;open&quot;:0.0018089212278985787,&quot;high&quot;:0.0018089212278985787,&quot;low&quot;:0.0018089212278985787,&quot;close&quot;:0.0018091327812772254,&quot;volume&quot;:6.8496086483737795},{&quot;time&quot;:1753156500000,&quot;open&quot;:0.0018091327812772254,&quot;high&quot;:0.0018091327812772254,&quot;low&quot;:0.0018091327812772254,&quot;close&quot;:0.0017924643997698003,&quot;volume&quot;:11.977569584395676},{&quot;time&quot;:1753157100000,&quot;open&quot;:0.0017924643997698003,&quot;high&quot;:0.0018033174142111088,&quot;low&quot;:0.0017924643997698003,&quot;close&quot;:0.001784266422591826,&quot;volume&quot;:200.7987004999465},{&quot;time&quot;:1753160100000,&quot;open&quot;:0.001784266422591826,&quot;high&quot;:0.001784266422591826,&quot;low&quot;:0.001784266422591826,&quot;close&quot;:0.001806272628247735,&quot;volume&quot;:22.122944983084444},{&quot;time&quot;:1753161600000,&quot;open&quot;:0.001806272628247735,&quot;high&quot;:0.001806272628247735,&quot;low&quot;:0.001806272628247735,&quot;close&quot;:0.0017859303345709012,&quot;volume&quot;:6.713318812373535},{&quot;time&quot;:1753162500000,&quot;open&quot;:0.0017859303345709012,&quot;high&quot;:0.0017859303345709012,&quot;low&quot;:0.0017859303345709012,&quot;close&quot;:0.001803162352061223,&quot;volume&quot;:6.1357503155694575},{&quot;time&quot;:1753164000000,&quot;open&quot;:0.001803162352061223,&quot;high&quot;:0.001803162352061223,&quot;low&quot;:0.0018005936977567054,&quot;close&quot;:0.0018045804814413335,&quot;volume&quot;:229.0069548200958},{&quot;time&quot;:1753165800000,&quot;open&quot;:0.0018045804814413335,&quot;high&quot;:0.0018045804814413335,&quot;low&quot;:0.0018045804814413335,&quot;close&quot;:0.0017954771037841,&quot;volume&quot;:3.974996244506836},{&quot;time&quot;:1753166400000,&quot;open&quot;:0.0017954771037841,&quot;high&quot;:0.0017954771037841,&quot;low&quot;:0.0017954771037841,&quot;close&quot;:0.0018049299993479597,&quot;volume&quot;:10.181408755442963},{&quot;time&quot;:1753167300000,&quot;open&quot;:0.0018049299993479597,&quot;high&quot;:0.0018049299993479597,&quot;low&quot;:0.0018049299993479597,&quot;close&quot;:0.00180502097293646,&quot;volume&quot;:49.58790128477426},{&quot;time&quot;:1753168500000,&quot;open&quot;:0.00180502097293646,&quot;high&quot;:0.00180502097293646,&quot;low&quot;:0.00180502097293646,&quot;close&quot;:0.0017929287495824565,&quot;volume&quot;:19.50762614769214},{&quot;time&quot;:1753169400000,&quot;open&quot;:0.0017929287495824565,&quot;high&quot;:0.0017929287495824565,&quot;low&quot;:0.0017929287495824565,&quot;close&quot;:0.0017871925180303007,&quot;volume&quot;:465.04656888107854},{&quot;time&quot;:1753170000000,&quot;open&quot;:0.0017871925180303007,&quot;high&quot;:0.0017871925180303007,&quot;low&quot;:0.0017871925180303007,&quot;close&quot;:0.0017858699181711355,&quot;volume&quot;:47.54539763075849},{&quot;time&quot;:1753170900000,&quot;open&quot;:0.0017858699181711355,&quot;high&quot;:0.0017858699181711355,&quot;low&quot;:0.0017858699181711355,&quot;close&quot;:0.0017486551777990639,&quot;volume&quot;:70.82760095466723},{&quot;time&quot;:1753171800000,&quot;open&quot;:0.0017486551777990639,&quot;high&quot;:0.0017486551777990639,&quot;low&quot;:0.0017486551777990639,&quot;close&quot;:0.0017559277670916797,&quot;volume&quot;:197.768561693714},{&quot;time&quot;:1753172700000,&quot;open&quot;:0.0017559277670916797,&quot;high&quot;:0.0017616830238432694,&quot;low&quot;:0.0017559277670916797,&quot;close&quot;:0.0017675666072637954,&quot;volume&quot;:321.2865753690225},{&quot;time&quot;:1753173600000,&quot;open&quot;:0.0017675666072637954,&quot;high&quot;:0.0017675666072637954,&quot;low&quot;:0.0017675666072637954,&quot;close&quot;:0.0017548277707141098,&quot;volume&quot;:53.026998217913864},{&quot;time&quot;:1753175100000,&quot;open&quot;:0.0017548277707141098,&quot;high&quot;:0.0017548277707141098,&quot;low&quot;:0.0017548277707141098,&quot;close&quot;:0.00175477754045105,&quot;volume&quot;:0.9973873923500061},{&quot;time&quot;:1753176300000,&quot;open&quot;:0.00175477754045105,&quot;high&quot;:0.00175477754045105,&quot;low&quot;:0.00175477754045105,&quot;close&quot;:0.0017663386481725162,&quot;volume&quot;:7.019110161804199},{&quot;time&quot;:1753176600000,&quot;open&quot;:0.0017663386481725162,&quot;high&quot;:0.0017690153384780504,&quot;low&quot;:0.0017661487453890846,&quot;close&quot;:0.0017693541633783299,&quot;volume&quot;:1065.4608368252564},{&quot;time&quot;:1753178700000,&quot;open&quot;:0.0017693541633783299,&quot;high&quot;:0.0017694902300693176,&quot;low&quot;:0.0017693541633783299,&quot;close&quot;:0.001778918872073875,&quot;volume&quot;:23.06131974524478},{&quot;time&quot;:1753180500000,&quot;open&quot;:0.001778918872073875,&quot;high&quot;:0.0017872236455816763,&quot;low&quot;:0.001778918872073875,&quot;close&quot;:0.001787437068280886,&quot;volume&quot;:529.8411103302543},{&quot;time&quot;:1753180800000,&quot;open&quot;:0.001787437068280886,&quot;high&quot;:0.0017889517912149694,&quot;low&quot;:0.0017748853664924771,&quot;close&quot;:0.0017791283765220824,&quot;volume&quot;:1459.8107857754392},{&quot;time&quot;:1753181700000,&quot;open&quot;:0.0017791283765220824,&quot;high&quot;:0.0017791283765220824,&quot;low&quot;:0.0017791283765220824,&quot;close&quot;:0.00177408468950496,&quot;volume&quot;:356.6171283802024},{&quot;time&quot;:1753182300000,&quot;open&quot;:0.00177408468950496,&quot;high&quot;:0.00177408468950496,&quot;low&quot;:0.00177408468950496,&quot;close&quot;:0.0017909724425538382,&quot;volume&quot;:11.3747101209218},{&quot;time&quot;:1753185000000,&quot;open&quot;:0.0017909724425538382,&quot;high&quot;:0.0017909724425538382,&quot;low&quot;:0.0017909724425538382,&quot;close&quot;:0.001783518021520402,&quot;volume&quot;:99.07233521593406},{&quot;time&quot;:1753186500000,&quot;open&quot;:0.001783518021520402,&quot;high&quot;:0.001783518021520402,&quot;low&quot;:0.001783518021520402,&quot;close&quot;:0.0017971203094269683,&quot;volume&quot;:1.7683581183374788},{&quot;time&quot;:1753188000000,&quot;open&quot;:0.0017971203094269683,&quot;high&quot;:0.0017971203094269683,&quot;low&quot;:0.0017971203094269683,&quot;close&quot;:0.0018029266765944305,&quot;volume&quot;:17.209224083072645},{&quot;time&quot;:1753189800000,&quot;open&quot;:0.0018029266765944305,&quot;high&quot;:0.0018029266765944305,&quot;low&quot;:0.00180285889491336,&quot;close&quot;:0.0018133364720897185,&quot;volume&quot;:6.087779080471161},{&quot;time&quot;:1753190400000,&quot;open&quot;:0.0018133364720897185,&quot;high&quot;:0.0018133364720897185,&quot;low&quot;:0.0018133364720897185,&quot;close&quot;:0.00180241908400523,&quot;volume&quot;:131.069804004983},{&quot;time&quot;:1753191000000,&quot;open&quot;:0.00180241908400523,&quot;high&quot;:0.00180241908400523,&quot;low&quot;:0.00180241908400523,&quot;close&quot;:0.0017988013205915581,&quot;volume&quot;:0.500387586101532},{&quot;time&quot;:1753193700000,&quot;open&quot;:0.0017988013205915581,&quot;high&quot;:0.0017988013205915581,&quot;low&quot;:0.0017988013205915581,&quot;close&quot;:0.0017992713533321128,&quot;volume&quot;:36.01483703613281},{&quot;time&quot;:1753194000000,&quot;open&quot;:0.0017992713533321128,&quot;high&quot;:0.0017992713533321128,&quot;low&quot;:0.0017992713533321128,&quot;close&quot;:0.0017902407928489016,&quot;volume&quot;:5.951451820220948},{&quot;time&quot;:1753194300000,&quot;open&quot;:0.0017902407928489016,&quot;high&quot;:0.0017902407928489016,&quot;low&quot;:0.0017902407928489016,&quot;close&quot;:0.0018001505094040547,&quot;volume&quot;:10.023799505717468},{&quot;time&quot;:1753194600000,&quot;open&quot;:0.0018001505094040547,&quot;high&quot;:0.0018001505094040547,&quot;low&quot;:0.001791300003590395,&quot;close&quot;:0.0018401484604500084,&quot;volume&quot;:15.50554415769342},{&quot;time&quot;:1753197600000,&quot;open&quot;:0.0018401484604500084,&quot;high&quot;:0.0018401484604500084,&quot;low&quot;:0.0018401484604500084,&quot;close&quot;:0.0018176941514912095,&quot;volume&quot;:44.45201152775574},{&quot;time&quot;:1753200000000,&quot;open&quot;:0.0018176941514912095,&quot;high&quot;:0.0018176941514912095,&quot;low&quot;:0.0018176941514912095,&quot;close&quot;:0.0018266679165573783,&quot;volume&quot;:18.176941514912095},{&quot;time&quot;:1753200900000,&quot;open&quot;:0.0018266679165573783,&quot;high&quot;:0.0018266679165573783,&quot;low&quot;:0.0018266679165573783,&quot;close&quot;:0.0018334312696583635,&quot;volume&quot;:4.942377604510117},{&quot;time&quot;:1753202100000,&quot;open&quot;:0.0018334312696583635,&quot;high&quot;:0.0018334312696583635,&quot;low&quot;:0.0018186122711553391,&quot;close&quot;:0.0018253468929202948,&quot;volume&quot;:4081.146044991967}]}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">9</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:29]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">positive</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:29]</span>
+                <span class="scenario-name">Get OHLCV data with market cap chart format</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>951</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:29]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:29]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(5)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(5)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(5)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.34">
+      <div class="step-ref passed">34</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">948</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.34">12:40:02.043 request:
+1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=mcap&amp;interval=1h
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:40:02.990 response time in milliseconds: 946
+1 &lt; 200
+1 &lt; Date: Tue, 22 Jul 2025 16:40:03 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=5d%2F7siDJQi%2BatVf9K3yAk2dWHIb7vY8ia7AQ2Mn8mHHS%2FOwGu1oX3OcJSmXxfqmfQk%2Buk0rRtFzp55euZqJNGGQFivF089hS6CQ4XWPMRnxiz0tZ0Hmdt6YR2ZwyNw%3D%3D&quot;}]}
+1 &lt; CF-RAY: 963460a72828fa48-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.35">
+      <div class="step-ref passed">35</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.36">
+      <div class="step-ref passed">36</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4:40]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">positive</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4:40]</span>
+                <span class="scenario-name">Get OHLCV data with different intervals</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1033</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4:40]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4:40]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.41">
+      <div class="step-ref passed">41</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.42">
+      <div class="step-ref passed">42</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(2)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.43">
+      <div class="step-ref passed">43</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(2)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.44">
+      <div class="step-ref passed">44</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(2)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.45">
+      <div class="step-ref passed">45</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1031</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.45">12:40:03.001 request:
+1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=15m
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:40:04.031 response time in milliseconds: 1029
+1 &lt; 200
+1 &lt; Date: Tue, 22 Jul 2025 16:40:04 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=MC4EqkwxZwNmgIX1nCQ6vo7jsm6HFudAncoExsuFz0sCS4A5RTRe4ehUeWC1FqvjZbNBPw%2B%2BicuS7XP4rFKw9yqaFP%2FoGFm5BErTdm%2B%2F9yXxGt%2F8KYbJlZig%2BnmqLg%3D%3D&quot;}]}
+1 &lt; CF-RAY: 963460acfb3933e0-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.48">
+      <div class="step-ref passed">48</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

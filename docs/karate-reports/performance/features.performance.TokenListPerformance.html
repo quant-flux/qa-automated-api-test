@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"8d7de530-2191-4863-8782-d47a95aaa917",karate_version:"1.4.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>features.performance.TokenListPerformance</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">2</div>
+      <div id="nav-fail" class="bg-danger">1</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2025-07-23 12:02:50 a. m.</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:9]"><span>[1:9]</span> <span>Baseline performance test for token list endpoint</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:23]"><span>[2:23]</span> <span>Medium load test for token list endpoint</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[3:36]"><span>[3:36]</span> <span>Performance test with pagination parameters</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">features/performance/TokenListPerformance.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Token List Performance Tests</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:9]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">performance</a><a class="badge badge-primary" href="karate-tags.html">baseline</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:9]</span>
+                <span class="scenario-name">Baseline performance test for token list endpoint</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1329</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:9]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:9]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_list&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:9]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def perfData = performanceConfig.TEST_DATA</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:9]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def scenarios = performanceConfig.TEST_SCENARIOS.token_list</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def scenario = scenarios.baseline</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def threshold = performanceConfig.getThreshold(scenario.threshold)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def expectedStatus = scenario.expected_status</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref passed">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_list&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref passed">15</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1324</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.15">00:02:48.423 request:
+1 &gt; GET https://full-api.cloud-service-app.com/token/list
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+00:02:49.744 response time in milliseconds: 1320
+1 &lt; 200
+1 &lt; Date: Wed, 23 Jul 2025 04:02:53 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;2ee4-H41VG9jEg59ExAhBH8zGK4ueSI8&quot;
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=usSMvbh2Zu8d1PFILb6QAfKBst6CPD0pTr4YfCgnXkqqxTXNZOVhpmvqZ2Xd60fepnWu78zjUDZ1k3KUi48qtWacoUMzwZsqHPJ3wZhGKszYdnioakKhHRntajyBRQ%3D%3D&quot;}]}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; X-Cache: MISS
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 963848e52e885bd2-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:{&quot;elements&quot;:[{&quot;_id&quot;:&quot;68805eebb65811588daef730&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;BuxjYYoSsHp6H6X8wejNi4LuDGHCHQ11YykuskB9bonk&quot;,&quot;name&quot;:&quot;BLUE&quot;,&quot;symbol&quot;:&quot;BLUE&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/BuxjYYoSsHp6H6X8wejNi4LuDGHCHQ11YykuskB9bonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;D9gQ6RhKEpnobPBUdWY5bPQt2p3zGk3iVz6ChpUi2ArA&quot;,&quot;create_tx&quot;:&quot;jCv8yk236BPjUPBDN6TRZq2QYz8QRPTZ1MejpZYy1euHedyiiMrspP8nnMe6BiiaoBXyKRg3ynaYfFMMQqn8RP1&quot;,&quot;created_time&quot;:1753243370,&quot;metadata&quot;:{&quot;name&quot;:&quot;BLUE&quot;,&quot;symbol&quot;:&quot;BLUE&quot;,&quot;image&quot;:&quot;https://app.rapidlaunch.wtf/temp/images/f55efdc1-d189-4ed0-84ac-93dd8e0ed9f1.png&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/MarioNawfal/status/1947869283767234827&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://app.rapidlaunch.wtf/temp/metadata/122f76b6-42e6-4fb2-b848-0b0d4e0d5a77.json&quot;},&quot;metadata_uri&quot;:&quot;https://app.rapidlaunch.wtf/temp/metadata/122f76b6-42e6-4fb2-b848-0b0d4e0d5a77.json&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;raydium_launchpad&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:51.056Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:51.335Z&quot;},{&quot;_id&quot;:&quot;68805edfa6f6420208d18628&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;77J77DVWrtpJNRcrqmaXX7a8bLS2a6AELWtBmQf5bonk&quot;,&quot;name&quot;:&quot;investing at &quot;,&quot;symbol&quot;:&quot;likes&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/77J77DVWrtpJNRcrqmaXX7a8bLS2a6AELWtBmQf5bonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;8eoF6EpYTzo7Wwaa7BBwFXxZ6V4kK9n1vaC8LMRrVVhS&quot;,&quot;create_tx&quot;:&quot;58bEptr5hRHyzJx1oXbGnnuauVyC4CbeVNuy6jynnF6SEEEMTGtFGkWr5d7Gv8EmmJWkxBiLPgYettBDeNTh9tPZ&quot;,&quot;created_time&quot;:1753243359,&quot;metadata&quot;:{&quot;name&quot;:&quot;investing at &quot;,&quot;symbol&quot;:&quot;likes&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreicfqqug7zr2abfkacq7n74up7o4rgtimdkqtg7lnjbzqjfkqnwyyu&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/search?q=investing%20at%20%2B%20likes&amp;src=typed_query&amp;f=live&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreicujd254l77xkm6lhu3h2t5uihs4gh5dbyxpdp6cidwwhlpyhfcjq&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreicujd254l77xkm6lhu3h2t5uihs4gh5dbyxpdp6cidwwhlpyhfcjq&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:39.874Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:40.204Z&quot;},{&quot;_id&quot;:&quot;68805edf8f99c865eb411a5f&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;3DM4PeT7ByGx4K6gZ5FBHGPxeCSk1iwtusnttC67bonk&quot;,&quot;name&quot;:&quot;GREK NVIDIA COMPANION&quot;,&quot;symbol&quot;:&quot;GREK&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/3DM4PeT7ByGx4K6gZ5FBHGPxeCSk1iwtusnttC67bonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;9bwzwZvTyB8yXdCi2Bz7TATM5nVcSGnNyB2KqhUj8Zqp&quot;,&quot;create_tx&quot;:&quot;5y2dnxWRVsbqbjnWLj67QtpmiNzeFJkVAfVHVhG3efdXhuW4UFhdSAyyjobdWiz5Ty4kcMvF8bBVc2a86etTJZ8J&quot;,&quot;created_time&quot;:1753243354,&quot;metadata&quot;:{&quot;name&quot;:&quot;GREK NVIDIA COMPANION&quot;,&quot;symbol&quot;:&quot;GREK&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmcacZaGMncdghL8Z3dgWBqUzXC8oW5zVNJRuCJ98YmUcU&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/MarioNawfal/status/1947869283767234827&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://metadata.pumplify.eu/data/QmNV4GKWcYRwRng2JXtW3LpUjGwCeEMExQK8AJ92gvuUb9&quot;},&quot;metadata_uri&quot;:&quot;https://metadata.pumplify.eu/data/QmNV4GKWcYRwRng2JXtW3LpUjGwCeEMExQK8AJ92gvuUb9&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;raydium_launchpad&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:39.354Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:39.603Z&quot;},{&quot;_id&quot;:&quot;68805eda50c447ffa257ecff&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;5jXiF9XgYvmWX94bzArKFWiG7nBfsjsyH4UedYbJbonk&quot;,&quot;name&quot;:&quot;Vespa.ai&quot;,&quot;symbol&quot;:&quot;Vespa&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/5jXiF9XgYvmWX94bzArKFWiG7nBfsjsyH4UedYbJbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;5Hwmg3tbeVH8qVxrrNSbMMVhNHuYwBEqRnGCRFJBa9Xa&quot;,&quot;create_tx&quot;:&quot;4d8HZ9RdxRwpzV9FLWMacEqJ6ovX6jszdKncaTM9j1ABT4xCFqiX5b591rBKqBq5B6CRMKVtneb7mQLNdYviHyrW&quot;,&quot;created_time&quot;:1753243354,&quot;metadata&quot;:{&quot;name&quot;:&quot;Vespa.ai&quot;,&quot;symbol&quot;:&quot;Vespa&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreifle4szzadvlyon4ywfaegysf6gmwucttjfujaduggkeakpscfzni&quot;,&quot;description&quot;:&quot;Vespa.ai is an AI Search Platform for developing and operating large-scale applications that combine big data, vector search, machine-learned ranking, and real-time inference. With native tensor support for complex ranking and decisioning, Vespa enables real-time AI applications like RAG, recommendation, and intelligent search—at enterprise scale.&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreifavgyzwsme37shj7asyhaswxbvb5bvqbm6qx3sv6fmhzjnmlzfbi&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreifavgyzwsme37shj7asyhaswxbvb5bvqbm6qx3sv6fmhzjnmlzfbi&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:34.464Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:34.980Z&quot;},{&quot;_id&quot;:&quot;68805ed650c447ffa257ecfb&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;4ANbCC1DwzHWpHXvdhVX1nAhAWhegfSD6F1gqdxPpump&quot;,&quot;name&quot;:&quot;12&quot;,&quot;symbol&quot;:&quot;12&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/4ANbCC1DwzHWpHXvdhVX1nAhAWhegfSD6F1gqdxPpump.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;99q4g7RHKh1eD2w95HFSQdakYC6RqmAqEyzptCLN74E4&quot;,&quot;create_tx&quot;:&quot;tnDpz8hUkgUgwP6e3BiFXRakRyAQjU93cEyUQKuNsQMU6ufZoxbGQLqsbXyhGfeBauaEFE1oqBP15SNpM52tpZk&quot;,&quot;created_time&quot;:1753243349,&quot;metadata&quot;:{&quot;name&quot;:&quot;12&quot;,&quot;symbol&quot;:&quot;12&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreicgsf2k56lhz7wwengwfv25ie5hiv3sjb2e3r5oo6ax36cjrymywq&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiamxm3phfporrtzjjyd2ez3kekzuqtssbs54jxu32s5n54b6kishe&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiamxm3phfporrtzjjyd2ez3kekzuqtssbs54jxu32s5n54b6kishe&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000&quot;,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;bonding_curve&quot;:&quot;75FbdXGqvPRJrgb1YgPUFqivf5eob1tFhF7td3NXG7Tn&quot;,&quot;associated_bonding_curve&quot;:&quot;EMc5fxKKYLCkSS41ZQstezwNs2Mk4eURTCeM2jzHChfw&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:30.094Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:30.393Z&quot;},{&quot;_id&quot;:&quot;68805ed50d6dab97b3cb1bb4&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;GYTx3UbUitpdd6iuMjNPsjVcfjy9n4i7HKVQfetCbonk&quot;,&quot;name&quot;:&quot;Temu Grok&quot;,&quot;symbol&quot;:&quot;GREK&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/GYTx3UbUitpdd6iuMjNPsjVcfjy9n4i7HKVQfetCbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;6Bd8a3L4GRpEyiLhoJFvuTZKYANWxXyFt3GLGnTVea4Q&quot;,&quot;create_tx&quot;:&quot;2RqUuN7LyY1SuAkYXmjwQFp9N6JmgeayUXAGMxsfJuor9v2z3XsfWG7134dEd7PejDqCNYZf9Ne7xVeerTS18wyE&quot;,&quot;created_time&quot;:1753243348,&quot;metadata&quot;:{&quot;name&quot;:&quot;Temu Grok&quot;,&quot;symbol&quot;:&quot;GREK&quot;,&quot;image&quot;:&quot;https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fipfs.io%2Fipfs%2Fbafybeigd42wmilwkawx7lhlkzbpbrx3zobxo37tkkf7hoppzvzi7uwuq2y&quot;,&quot;description&quot;:&quot;ba&quot;,&quot;twitter&quot;:&quot;https://x.com/techdevnotes/status/1947826930880844157&quot;,&quot;website&quot;:&quot;https://x.com/techdevnotes/status/1947826930880844157&quot;,&quot;telegram&quot;:&quot;https://x.com/techdevnotes/status/1947826930880844157&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmTh4P57Jte24QKifA14Bi5vmy9fdKxgg6H1UP43eLjPyf&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/QmTh4P57Jte24QKifA14Bi5vmy9fdKxgg6H1UP43eLjPyf&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:29.095Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:29.549Z&quot;},{&quot;_id&quot;:&quot;68805ed2a6f6420208d18624&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;CU1npQ5Tnk7unLJEVbDwDPvqtKwyyWsx16ojE6bapump&quot;,&quot;name&quot;:&quot;MYTH WARS AI&quot;,&quot;symbol&quot;:&quot;MYTH&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/CU1npQ5Tnk7unLJEVbDwDPvqtKwyyWsx16ojE6bapump.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;6eMbw3zqCuT7BNsoQtE4EW6LH9rvVw3o96yjifnwdvxu&quot;,&quot;create_tx&quot;:&quot;3UCSxyCprvALySXY1ryjvVCnwbjKBPTfwqyTHKnBhD8rxNxWU5eaypSHCETHu17MMbJrhFhtzpm2NLhEuQ6yY4Zg&quot;,&quot;created_time&quot;:1753243345,&quot;metadata&quot;:{&quot;name&quot;:&quot;MYTH WARS AI&quot;,&quot;symbol&quot;:&quot;MYTH&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafybeigajemxcoaxbqxi3syaz3s4jv2nymexhpovilcq2amx5f2ujbstdi&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreigyda3bjb6vv64o3z5egbirrfno44qz5fvjygsk4auecvrjrtqchm&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreigyda3bjb6vv64o3z5egbirrfno44qz5fvjygsk4auecvrjrtqchm&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000&quot;,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;bonding_curve&quot;:&quot;2GeXoYshf88A2oQXmJuY9xCtbvdSe6buc6Jv3gibvixF&quot;,&quot;associated_bonding_curve&quot;:&quot;DREHq8KkZbG38quN8EWMkaKNdutHhVoQPHMR9LmfizG8&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:26.136Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:27.603Z&quot;},{&quot;_id&quot;:&quot;68805ecb0d6dab97b3cb1bb0&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;8GfEsoJn5dyeACFDYFvovGQkJfCg3aHPddEze1B2pump&quot;,&quot;name&quot;:&quot;nothingcoin&quot;,&quot;symbol&quot;:&quot;nothing&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/8GfEsoJn5dyeACFDYFvovGQkJfCg3aHPddEze1B2pump.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;HfLEj1Gy7BTtYXbvTbzNyKBd1iJTmA98dpX8p29fc4wJ&quot;,&quot;create_tx&quot;:&quot;CgixoCTEUKSvqFE5JzcQf3iZ5aKpQnUu5a6HLk9UTyeCRL82tuxfPPLQwKoVZMDYhkJo8V4ubUXaq84DUoudBQ8&quot;,&quot;created_time&quot;:1753243339,&quot;metadata&quot;:{&quot;name&quot;:&quot;nothingcoin&quot;,&quot;symbol&quot;:&quot;nothing&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmPPz6fXWYCnMryCroFFZZwVfLiTWu22KEa6bBGtxfmpeL&quot;,&quot;description&quot;:&quot;its nothing just a coin&quot;,&quot;twitter&quot;:&quot;https://x.com/solanaspaces/status/1944902947307184325&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmRZ4tXWgAKYVB7LH4KrkrpU6SQJ3e8F8V5xEbmKF7cb9F&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/QmRZ4tXWgAKYVB7LH4KrkrpU6SQJ3e8F8V5xEbmKF7cb9F&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000&quot;,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;bonding_curve&quot;:&quot;B1niaGHeYFp9hX2rSL8sU9VasLtuzjkmMyZYwqaSNMjL&quot;,&quot;associated_bonding_curve&quot;:&quot;2UKGP5WcQEjqmhAaVxo5FoAGeq8cyYG4mSoXJia4xDrA&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:19.196Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:19.413Z&quot;},{&quot;_id&quot;:&quot;68805ed58f99c865eb411a5b&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;8pjraHcrs3y1PP1vtmL9QNXeh1Gm7WeUiho6fcq3pump&quot;,&quot;name&quot;:&quot;Wut&quot;,&quot;symbol&quot;:&quot;WUT&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/8pjraHcrs3y1PP1vtmL9QNXeh1Gm7WeUiho6fcq3pump.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;5bFxJbW8G6n3nxQ93KNPU6ajn3FG6A7czpt63ZQFrQwy&quot;,&quot;create_tx&quot;:&quot;423xkAihovn7aGNV7rp3DdE1LGaeuRkuH4NDLBmxfrSZBGajUokfZVV6WFxZobRc6tN4tS4JqLcSM2FuxK4bijWk&quot;,&quot;created_time&quot;:1753243335,&quot;metadata&quot;:{&quot;name&quot;:&quot;Wut&quot;,&quot;symbol&quot;:&quot;WUT&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreiffg7i7kk7vaf5at334celxwtgiz5tnbcnes672lp65whrcdljwpe&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiffcxagt5iknppghjjinxgnq7ifdehq7hazuc5joigtdcyn37tdbe&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiffcxagt5iknppghjjinxgnq7ifdehq7hazuc5joigtdcyn37tdbe&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000&quot;,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;bonding_curve&quot;:&quot;6P1N7sqc3tjSKsXCHgFGbSz9tcSgihzyu2hW188apyGJ&quot;,&quot;associated_bonding_curve&quot;:&quot;5hoNSjHbQgt1ig4xSmH3LNoxu2iBw2eH5seCQYEamSP2&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:29.337Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:29.548Z&quot;},{&quot;_id&quot;:&quot;68805ec250c447ffa257ecf7&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;nkF3C8Xx452DUBKP9rvpSt5gFeQ7KCcAHP6Lt7Nbonk&quot;,&quot;name&quot;:&quot;tinfoil hat cat&quot;,&quot;symbol&quot;:&quot;psyop&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/nkF3C8Xx452DUBKP9rvpSt5gFeQ7KCcAHP6Lt7Nbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;EsuDYZ8HHP2SJRjHaiwj4EgAKUfVWLzMqpHMuXWRQmnm&quot;,&quot;create_tx&quot;:&quot;3x3exodj9Z8WUL2VAaRCKJqNLdKP2REvam2eCXJ5RJHa6WFALXCxX6EvPTwYpiuZC5UUdfMrEYKrj5UmiiDhAxmt&quot;,&quot;created_time&quot;:1753243330,&quot;metadata&quot;:{&quot;name&quot;:&quot;tinfoil hat cat&quot;,&quot;symbol&quot;:&quot;psyop&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreidnerjtkb67sdpgfnbkti46vtscg4gdwgx52li6in42k637tktgli&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/i/communities/1947865854655533284/&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiharvj6sglyvcmiekn752adjfqfhvm5anumwhsil6ilsx35fie5su&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiharvj6sglyvcmiekn752adjfqfhvm5anumwhsil6ilsx35fie5su&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:10.881Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:11.162Z&quot;}],&quot;pagination&quot;:{&quot;totalElements&quot;:702075,&quot;hasNextPage&quot;:true,&quot;nextPage&quot;:2,&quot;previousPage&quot;:0,&quot;lastPage&quot;:70208}}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref passed">16</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref passed">17</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def time = responseTime</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref passed">18</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print &#39;Tiempo de respuesta:&#39;, time, &#39;Threshold:&#39;, threshold</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">00:02:49.745 [print] Tiempo de respuesta: 1320 Threshold: 2000 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref passed">19</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>assert time &lt; threshold</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref passed">20</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.data.elements == &#39;#array&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:23]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">performance</a><a class="badge badge-primary" href="karate-tags.html">load</a><a class="badge badge-primary" href="karate-tags.html">medium</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:23]</span>
+                <span class="scenario-name">Medium load test for token list endpoint</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>328</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:23]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_list&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def perfData = performanceConfig.TEST_DATA</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:23]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def scenarios = performanceConfig.TEST_SCENARIOS.token_list</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def scenario = scenarios.medium_load</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def threshold = performanceConfig.getThreshold(scenario.threshold)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.27">
+      <div class="step-ref passed">27</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_list&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">326</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.28">00:02:49.760 request:
+1 &gt; GET https://full-api.cloud-service-app.com/token/list
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+00:02:50.084 response time in milliseconds: 323
+1 &lt; 200
+1 &lt; Date: Wed, 23 Jul 2025 04:02:53 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;2ee4-H41VG9jEg59ExAhBH8zGK4ueSI8&quot;
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=%2BHatxUVdKDHv8sIPk85HKw3ZzUEflB5upKTzvWCEcUyv6WL9fGkNcebTyb3kgP9zp8fOwOaZGnc5rE0aKIUlUGqdShTDk7%2Fos8Z2KZU5tJ7XO%2B4cfuFRHXjFkt0X3g%3D%3D&quot;}]}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; X-Cache: HIT
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 963848edaffd7445-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:{&quot;elements&quot;:[{&quot;_id&quot;:&quot;68805eebb65811588daef730&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;BuxjYYoSsHp6H6X8wejNi4LuDGHCHQ11YykuskB9bonk&quot;,&quot;name&quot;:&quot;BLUE&quot;,&quot;symbol&quot;:&quot;BLUE&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/BuxjYYoSsHp6H6X8wejNi4LuDGHCHQ11YykuskB9bonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;D9gQ6RhKEpnobPBUdWY5bPQt2p3zGk3iVz6ChpUi2ArA&quot;,&quot;create_tx&quot;:&quot;jCv8yk236BPjUPBDN6TRZq2QYz8QRPTZ1MejpZYy1euHedyiiMrspP8nnMe6BiiaoBXyKRg3ynaYfFMMQqn8RP1&quot;,&quot;created_time&quot;:1753243370,&quot;metadata&quot;:{&quot;name&quot;:&quot;BLUE&quot;,&quot;symbol&quot;:&quot;BLUE&quot;,&quot;image&quot;:&quot;https://app.rapidlaunch.wtf/temp/images/f55efdc1-d189-4ed0-84ac-93dd8e0ed9f1.png&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/MarioNawfal/status/1947869283767234827&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://app.rapidlaunch.wtf/temp/metadata/122f76b6-42e6-4fb2-b848-0b0d4e0d5a77.json&quot;},&quot;metadata_uri&quot;:&quot;https://app.rapidlaunch.wtf/temp/metadata/122f76b6-42e6-4fb2-b848-0b0d4e0d5a77.json&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;raydium_launchpad&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:51.056Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:51.335Z&quot;},{&quot;_id&quot;:&quot;68805edfa6f6420208d18628&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;77J77DVWrtpJNRcrqmaXX7a8bLS2a6AELWtBmQf5bonk&quot;,&quot;name&quot;:&quot;investing at &quot;,&quot;symbol&quot;:&quot;likes&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/77J77DVWrtpJNRcrqmaXX7a8bLS2a6AELWtBmQf5bonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;8eoF6EpYTzo7Wwaa7BBwFXxZ6V4kK9n1vaC8LMRrVVhS&quot;,&quot;create_tx&quot;:&quot;58bEptr5hRHyzJx1oXbGnnuauVyC4CbeVNuy6jynnF6SEEEMTGtFGkWr5d7Gv8EmmJWkxBiLPgYettBDeNTh9tPZ&quot;,&quot;created_time&quot;:1753243359,&quot;metadata&quot;:{&quot;name&quot;:&quot;investing at &quot;,&quot;symbol&quot;:&quot;likes&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreicfqqug7zr2abfkacq7n74up7o4rgtimdkqtg7lnjbzqjfkqnwyyu&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/search?q=investing%20at%20%2B%20likes&amp;src=typed_query&amp;f=live&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreicujd254l77xkm6lhu3h2t5uihs4gh5dbyxpdp6cidwwhlpyhfcjq&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreicujd254l77xkm6lhu3h2t5uihs4gh5dbyxpdp6cidwwhlpyhfcjq&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:39.874Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:40.204Z&quot;},{&quot;_id&quot;:&quot;68805edf8f99c865eb411a5f&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;3DM4PeT7ByGx4K6gZ5FBHGPxeCSk1iwtusnttC67bonk&quot;,&quot;name&quot;:&quot;GREK NVIDIA COMPANION&quot;,&quot;symbol&quot;:&quot;GREK&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/3DM4PeT7ByGx4K6gZ5FBHGPxeCSk1iwtusnttC67bonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;9bwzwZvTyB8yXdCi2Bz7TATM5nVcSGnNyB2KqhUj8Zqp&quot;,&quot;create_tx&quot;:&quot;5y2dnxWRVsbqbjnWLj67QtpmiNzeFJkVAfVHVhG3efdXhuW4UFhdSAyyjobdWiz5Ty4kcMvF8bBVc2a86etTJZ8J&quot;,&quot;created_time&quot;:1753243354,&quot;metadata&quot;:{&quot;name&quot;:&quot;GREK NVIDIA COMPANION&quot;,&quot;symbol&quot;:&quot;GREK&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmcacZaGMncdghL8Z3dgWBqUzXC8oW5zVNJRuCJ98YmUcU&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/MarioNawfal/status/1947869283767234827&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://metadata.pumplify.eu/data/QmNV4GKWcYRwRng2JXtW3LpUjGwCeEMExQK8AJ92gvuUb9&quot;},&quot;metadata_uri&quot;:&quot;https://metadata.pumplify.eu/data/QmNV4GKWcYRwRng2JXtW3LpUjGwCeEMExQK8AJ92gvuUb9&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;raydium_launchpad&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:39.354Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:39.603Z&quot;},{&quot;_id&quot;:&quot;68805eda50c447ffa257ecff&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;5jXiF9XgYvmWX94bzArKFWiG7nBfsjsyH4UedYbJbonk&quot;,&quot;name&quot;:&quot;Vespa.ai&quot;,&quot;symbol&quot;:&quot;Vespa&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/5jXiF9XgYvmWX94bzArKFWiG7nBfsjsyH4UedYbJbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;5Hwmg3tbeVH8qVxrrNSbMMVhNHuYwBEqRnGCRFJBa9Xa&quot;,&quot;create_tx&quot;:&quot;4d8HZ9RdxRwpzV9FLWMacEqJ6ovX6jszdKncaTM9j1ABT4xCFqiX5b591rBKqBq5B6CRMKVtneb7mQLNdYviHyrW&quot;,&quot;created_time&quot;:1753243354,&quot;metadata&quot;:{&quot;name&quot;:&quot;Vespa.ai&quot;,&quot;symbol&quot;:&quot;Vespa&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreifle4szzadvlyon4ywfaegysf6gmwucttjfujaduggkeakpscfzni&quot;,&quot;description&quot;:&quot;Vespa.ai is an AI Search Platform for developing and operating large-scale applications that combine big data, vector search, machine-learned ranking, and real-time inference. With native tensor support for complex ranking and decisioning, Vespa enables real-time AI applications like RAG, recommendation, and intelligent search—at enterprise scale.&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreifavgyzwsme37shj7asyhaswxbvb5bvqbm6qx3sv6fmhzjnmlzfbi&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreifavgyzwsme37shj7asyhaswxbvb5bvqbm6qx3sv6fmhzjnmlzfbi&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:34.464Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:34.980Z&quot;},{&quot;_id&quot;:&quot;68805ed650c447ffa257ecfb&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;4ANbCC1DwzHWpHXvdhVX1nAhAWhegfSD6F1gqdxPpump&quot;,&quot;name&quot;:&quot;12&quot;,&quot;symbol&quot;:&quot;12&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/4ANbCC1DwzHWpHXvdhVX1nAhAWhegfSD6F1gqdxPpump.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;99q4g7RHKh1eD2w95HFSQdakYC6RqmAqEyzptCLN74E4&quot;,&quot;create_tx&quot;:&quot;tnDpz8hUkgUgwP6e3BiFXRakRyAQjU93cEyUQKuNsQMU6ufZoxbGQLqsbXyhGfeBauaEFE1oqBP15SNpM52tpZk&quot;,&quot;created_time&quot;:1753243349,&quot;metadata&quot;:{&quot;name&quot;:&quot;12&quot;,&quot;symbol&quot;:&quot;12&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreicgsf2k56lhz7wwengwfv25ie5hiv3sjb2e3r5oo6ax36cjrymywq&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiamxm3phfporrtzjjyd2ez3kekzuqtssbs54jxu32s5n54b6kishe&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiamxm3phfporrtzjjyd2ez3kekzuqtssbs54jxu32s5n54b6kishe&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000&quot;,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;bonding_curve&quot;:&quot;75FbdXGqvPRJrgb1YgPUFqivf5eob1tFhF7td3NXG7Tn&quot;,&quot;associated_bonding_curve&quot;:&quot;EMc5fxKKYLCkSS41ZQstezwNs2Mk4eURTCeM2jzHChfw&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:30.094Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:30.393Z&quot;},{&quot;_id&quot;:&quot;68805ed50d6dab97b3cb1bb4&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;GYTx3UbUitpdd6iuMjNPsjVcfjy9n4i7HKVQfetCbonk&quot;,&quot;name&quot;:&quot;Temu Grok&quot;,&quot;symbol&quot;:&quot;GREK&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/GYTx3UbUitpdd6iuMjNPsjVcfjy9n4i7HKVQfetCbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;6Bd8a3L4GRpEyiLhoJFvuTZKYANWxXyFt3GLGnTVea4Q&quot;,&quot;create_tx&quot;:&quot;2RqUuN7LyY1SuAkYXmjwQFp9N6JmgeayUXAGMxsfJuor9v2z3XsfWG7134dEd7PejDqCNYZf9Ne7xVeerTS18wyE&quot;,&quot;created_time&quot;:1753243348,&quot;metadata&quot;:{&quot;name&quot;:&quot;Temu Grok&quot;,&quot;symbol&quot;:&quot;GREK&quot;,&quot;image&quot;:&quot;https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fipfs.io%2Fipfs%2Fbafybeigd42wmilwkawx7lhlkzbpbrx3zobxo37tkkf7hoppzvzi7uwuq2y&quot;,&quot;description&quot;:&quot;ba&quot;,&quot;twitter&quot;:&quot;https://x.com/techdevnotes/status/1947826930880844157&quot;,&quot;website&quot;:&quot;https://x.com/techdevnotes/status/1947826930880844157&quot;,&quot;telegram&quot;:&quot;https://x.com/techdevnotes/status/1947826930880844157&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmTh4P57Jte24QKifA14Bi5vmy9fdKxgg6H1UP43eLjPyf&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/QmTh4P57Jte24QKifA14Bi5vmy9fdKxgg6H1UP43eLjPyf&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:29.095Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:29.549Z&quot;},{&quot;_id&quot;:&quot;68805ed2a6f6420208d18624&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;CU1npQ5Tnk7unLJEVbDwDPvqtKwyyWsx16ojE6bapump&quot;,&quot;name&quot;:&quot;MYTH WARS AI&quot;,&quot;symbol&quot;:&quot;MYTH&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/CU1npQ5Tnk7unLJEVbDwDPvqtKwyyWsx16ojE6bapump.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;6eMbw3zqCuT7BNsoQtE4EW6LH9rvVw3o96yjifnwdvxu&quot;,&quot;create_tx&quot;:&quot;3UCSxyCprvALySXY1ryjvVCnwbjKBPTfwqyTHKnBhD8rxNxWU5eaypSHCETHu17MMbJrhFhtzpm2NLhEuQ6yY4Zg&quot;,&quot;created_time&quot;:1753243345,&quot;metadata&quot;:{&quot;name&quot;:&quot;MYTH WARS AI&quot;,&quot;symbol&quot;:&quot;MYTH&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafybeigajemxcoaxbqxi3syaz3s4jv2nymexhpovilcq2amx5f2ujbstdi&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreigyda3bjb6vv64o3z5egbirrfno44qz5fvjygsk4auecvrjrtqchm&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreigyda3bjb6vv64o3z5egbirrfno44qz5fvjygsk4auecvrjrtqchm&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000&quot;,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;bonding_curve&quot;:&quot;2GeXoYshf88A2oQXmJuY9xCtbvdSe6buc6Jv3gibvixF&quot;,&quot;associated_bonding_curve&quot;:&quot;DREHq8KkZbG38quN8EWMkaKNdutHhVoQPHMR9LmfizG8&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:26.136Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:27.603Z&quot;},{&quot;_id&quot;:&quot;68805ecb0d6dab97b3cb1bb0&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;8GfEsoJn5dyeACFDYFvovGQkJfCg3aHPddEze1B2pump&quot;,&quot;name&quot;:&quot;nothingcoin&quot;,&quot;symbol&quot;:&quot;nothing&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/8GfEsoJn5dyeACFDYFvovGQkJfCg3aHPddEze1B2pump.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;HfLEj1Gy7BTtYXbvTbzNyKBd1iJTmA98dpX8p29fc4wJ&quot;,&quot;create_tx&quot;:&quot;CgixoCTEUKSvqFE5JzcQf3iZ5aKpQnUu5a6HLk9UTyeCRL82tuxfPPLQwKoVZMDYhkJo8V4ubUXaq84DUoudBQ8&quot;,&quot;created_time&quot;:1753243339,&quot;metadata&quot;:{&quot;name&quot;:&quot;nothingcoin&quot;,&quot;symbol&quot;:&quot;nothing&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmPPz6fXWYCnMryCroFFZZwVfLiTWu22KEa6bBGtxfmpeL&quot;,&quot;description&quot;:&quot;its nothing just a coin&quot;,&quot;twitter&quot;:&quot;https://x.com/solanaspaces/status/1944902947307184325&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmRZ4tXWgAKYVB7LH4KrkrpU6SQJ3e8F8V5xEbmKF7cb9F&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/QmRZ4tXWgAKYVB7LH4KrkrpU6SQJ3e8F8V5xEbmKF7cb9F&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000&quot;,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;bonding_curve&quot;:&quot;B1niaGHeYFp9hX2rSL8sU9VasLtuzjkmMyZYwqaSNMjL&quot;,&quot;associated_bonding_curve&quot;:&quot;2UKGP5WcQEjqmhAaVxo5FoAGeq8cyYG4mSoXJia4xDrA&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:19.196Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:19.413Z&quot;},{&quot;_id&quot;:&quot;68805ed58f99c865eb411a5b&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;8pjraHcrs3y1PP1vtmL9QNXeh1Gm7WeUiho6fcq3pump&quot;,&quot;name&quot;:&quot;Wut&quot;,&quot;symbol&quot;:&quot;WUT&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/8pjraHcrs3y1PP1vtmL9QNXeh1Gm7WeUiho6fcq3pump.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;5bFxJbW8G6n3nxQ93KNPU6ajn3FG6A7czpt63ZQFrQwy&quot;,&quot;create_tx&quot;:&quot;423xkAihovn7aGNV7rp3DdE1LGaeuRkuH4NDLBmxfrSZBGajUokfZVV6WFxZobRc6tN4tS4JqLcSM2FuxK4bijWk&quot;,&quot;created_time&quot;:1753243335,&quot;metadata&quot;:{&quot;name&quot;:&quot;Wut&quot;,&quot;symbol&quot;:&quot;WUT&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreiffg7i7kk7vaf5at334celxwtgiz5tnbcnes672lp65whrcdljwpe&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiffcxagt5iknppghjjinxgnq7ifdehq7hazuc5joigtdcyn37tdbe&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiffcxagt5iknppghjjinxgnq7ifdehq7hazuc5joigtdcyn37tdbe&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000&quot;,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;bonding_curve&quot;:&quot;6P1N7sqc3tjSKsXCHgFGbSz9tcSgihzyu2hW188apyGJ&quot;,&quot;associated_bonding_curve&quot;:&quot;5hoNSjHbQgt1ig4xSmH3LNoxu2iBw2eH5seCQYEamSP2&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:29.337Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:29.548Z&quot;},{&quot;_id&quot;:&quot;68805ec250c447ffa257ecf7&quot;,&quot;deleted&quot;:false,&quot;address&quot;:&quot;nkF3C8Xx452DUBKP9rvpSt5gFeQ7KCcAHP6Lt7Nbonk&quot;,&quot;name&quot;:&quot;tinfoil hat cat&quot;,&quot;symbol&quot;:&quot;psyop&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/nkF3C8Xx452DUBKP9rvpSt5gFeQ7KCcAHP6Lt7Nbonk.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;EsuDYZ8HHP2SJRjHaiwj4EgAKUfVWLzMqpHMuXWRQmnm&quot;,&quot;create_tx&quot;:&quot;3x3exodj9Z8WUL2VAaRCKJqNLdKP2REvam2eCXJ5RJHa6WFALXCxX6EvPTwYpiuZC5UUdfMrEYKrj5UmiiDhAxmt&quot;,&quot;created_time&quot;:1753243330,&quot;metadata&quot;:{&quot;name&quot;:&quot;tinfoil hat cat&quot;,&quot;symbol&quot;:&quot;psyop&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/bafkreidnerjtkb67sdpgfnbkti46vtscg4gdwgx52li6in42k637tktgli&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/i/communities/1947865854655533284/&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiharvj6sglyvcmiekn752adjfqfhvm5anumwhsil6ilsx35fie5su&quot;},&quot;metadata_uri&quot;:&quot;https://ipfs.io/ipfs/bafkreiharvj6sglyvcmiekn752adjfqfhvm5anumwhsil6ilsx35fie5su&quot;,&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;supply&quot;:&quot;1000000000000000&quot;,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-23T04:02:10.881Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-23T04:02:11.162Z&quot;}],&quot;pagination&quot;:{&quot;totalElements&quot;:702075,&quot;hasNextPage&quot;:true,&quot;nextPage&quot;:2,&quot;previousPage&quot;:0,&quot;lastPage&quot;:70208}}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.29">
+      <div class="step-ref passed">29</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def time = responseTime</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print &#39;Tiempo de respuesta:&#39;, time, &#39;Threshold:&#39;, threshold</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.31">00:02:50.085 [print] Tiempo de respuesta: 323 Threshold: 5000 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>assert time &lt; threshold</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.data.elements == &#39;#array&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:36]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">performance</a><a class="badge badge-primary" href="karate-tags.html">pagination</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:36]</span>
+                <span class="scenario-name">Performance test with pagination parameters</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>441</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:36]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_list&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def perfData = performanceConfig.TEST_DATA</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:36]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def scenarios = performanceConfig.TEST_SCENARIOS.token_list</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def scenario = scenarios.pagination</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def threshold = performanceConfig.getThreshold(scenario.threshold)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.39">
+      <div class="step-ref passed">39</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def paginationParams = perfData.pagination_params</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.41">
+      <div class="step-ref passed">41</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_list&#39;) + &#39;?limit=&#39; + paginationParams.limit + &#39;&amp;page=&#39; + paginationParams.page</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.42">
+      <div class="step-ref passed">42</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">440</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.42">00:02:50.095 request:
+1 &gt; GET https://full-api.cloud-service-app.com/token/list?limit=undefined&amp;page=undefined
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+00:02:50.534 response time in milliseconds: 438
+1 &lt; 400
+1 &lt; Date: Wed, 23 Jul 2025 04:02:54 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 374
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;176-M2zCS24rJEwMSjKxp4h1Z4M5I4U&quot;
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; X-Cache: MISS
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=jJokifzs8cMDA%2FPPoW2tDVcGZxCBgQQuMpE%2F7IzaON%2BBwh3boGnhU75whqxIjd32NzF4Ar05a%2FRirVcKyHXmACNaShZ6DkuraxW5sR0AYaJbcFfHl%2BajXOYYSj2%2BRA%3D%3D&quot;}]}
+1 &lt; CF-RAY: 963848ef880d612e-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;time&quot;:&quot;2025-07-23T04:02:54.258Z&quot;,&quot;path&quot;:&quot;/token/list?limit=undefined&amp;page=undefined&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;limit must not be less than 1&quot;,&quot;limit must be a number conforming to the specified constraints&quot;,&quot;limit must be a positive number&quot;,&quot;page must not be less than 1&quot;,&quot;page must be a number conforming to the specified constraints&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.43">
+      <div class="step-ref failed">43</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.43">00:02:50.535 classpath:features/performance/TokenListPerformance.feature:43
+Then status 200
+status code was: 400, expected: 200, response time in milliseconds: 438, url: https://full-api.cloud-service-app.com/token/list?limit=undefined&amp;page=undefined, response: 
+{&quot;time&quot;:&quot;2025-07-23T04:02:54.258Z&quot;,&quot;path&quot;:&quot;/token/list?limit=undefined&amp;page=undefined&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;limit must not be less than 1&quot;,&quot;limit must be a number conforming to the specified constraints&quot;,&quot;limit must be a positive number&quot;,&quot;page must not be less than 1&quot;,&quot;page must be a number conforming to the specified constraints&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
+classpath:features/performance/TokenListPerformance.feature:43
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.44">
+      <div class="step-ref skipped">44</div>
+      
+      <div class="step-cell skipped">
+        <span>*</span>&nbsp;<span>def time = responseTime</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.45">
+      <div class="step-ref skipped">45</div>
+      
+      <div class="step-cell skipped">
+        <span>*</span>&nbsp;<span>print &#39;Tiempo de respuesta:&#39;, time, &#39;Threshold:&#39;, threshold</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.46">
+      <div class="step-ref skipped">46</div>
+      
+      <div class="step-cell skipped">
+        <span>*</span>&nbsp;<span>assert time &lt; threshold</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.47">
+      <div class="step-ref skipped">47</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.data.elements == &#39;#array&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

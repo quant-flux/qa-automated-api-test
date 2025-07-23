@@ -1,0 +1,15 @@
+[
+  "features.performance.AdvancedPerformanceValidation",
+  "features.performance.BottleneckEndpointsPerformance",
+  "features.performance.CriticalEndpointsPerformance",
+  "features.performance.GlobalLoadTest",
+  "features.performance.HeavyLoadEndpointsPerformance",
+  "features.performance.HighLatencyEndpointsPerformance",
+  "features.performance.ResourceIntensiveEndpointsPerformance",
+  "features.performance.TokenDataPerformance",
+  "features.performance.TokenDataPerformanceAdvanced",
+  "features.performance.TokenListPerformance",
+  "features.performance.TokenPriceMultiPerformance",
+  "features.performance.TokenPricePerformance",
+  "features.performance.TradeListPerformance"
+]

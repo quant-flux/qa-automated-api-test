@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"features\/tokens\/TokenList[1:7]","start":1753202839920,"end":1753202841245,"title":"features\/tokens\/TokenList[1:7] 12:47:19.920-12:47:21.245 Get token list with default parameters"},{"id":2,"group":1,"content":"features\/tokens\/TokenList[2:14]","start":1753202841249,"end":1753202842583,"title":"features\/tokens\/TokenList[2:14] 12:47:21.249-12:47:22.583 Get token list sorted by created_time descending"},{"id":3,"group":1,"content":"features\/tokens\/TokenList[3:25]","start":1753202842588,"end":1753202844119,"title":"features\/tokens\/TokenList[3:25] 12:47:22.588-12:47:24.119 Get token list with pagination"},{"id":4,"group":1,"content":"features\/tokens\/TokenList[4:34]","start":1753202844123,"end":1753202845508,"title":"features\/tokens\/TokenList[4:34] 12:47:24.123-12:47:25.508 Get token list with different sort options"},{"id":5,"group":1,"content":"features\/tokens\/TokenList[5:43]","start":1753202845511,"end":1753202848514,"title":"features\/tokens\/TokenList[5:43] 12:47:25.511-12:47:28.514 Get token list with maximum limit"},{"id":6,"group":1,"content":"features\/tokens\/TokenList[6:51]","start":1753202848518,"end":1753202850115,"title":"features\/tokens\/TokenList[6:51] 12:47:28.518-12:47:30.115 Get token list with valid pagination parameters"},{"id":7,"group":1,"content":"features\/tokens\/TokenList[7:60]","start":1753202850119,"end":1753202850709,"title":"features\/tokens\/TokenList[7:60] 12:47:30.119-12:47:30.709 Get token list with invalid page number"},{"id":8,"group":1,"content":"features\/tokens\/TokenList[8:66]","start":1753202850712,"end":1753202851192,"title":"features\/tokens\/TokenList[8:66] 12:47:30.712-12:47:31.192 Get token list with invalid limit"},{"id":9,"group":1,"content":"features\/tokens\/TokenList[9:72]","start":1753202851196,"end":1753202851588,"title":"features\/tokens\/TokenList[9:72] 12:47:31.196-12:47:31.588 Get token list with invalid sort field"},{"id":10,"group":1,"content":"features\/tokens\/TokenList[10:78]","start":1753202851591,"end":1753202851934,"title":"features\/tokens\/TokenList[10:78] 12:47:31.591-12:47:31.934 Get token list with invalid order"},{"id":11,"group":1,"content":"features\/tokens\/TokenList[11:84]","start":1753202851937,"end":1753202852485,"title":"features\/tokens\/TokenList[11:84] 12:47:31.937-12:47:32.485 Get token list with invalid sort parameters from helper"},{"id":12,"group":1,"content":"features\/tokens\/TokenList[12:91]","start":1753202852489,"end":1753202853017,"title":"features\/tokens\/TokenList[12:91] 12:47:32.489-12:47:33.017 Get token list with invalid pagination parameters from helper"},{"id":13,"group":1,"content":"features\/tokens\/TokenList[13:98]","start":1753202853020,"end":1753202854535,"title":"features\/tokens\/TokenList[13:98] 12:47:33.020-12:47:34.535 Get token list with minimum page (1)"},{"id":14,"group":1,"content":"features\/tokens\/TokenList[14:107]","start":1753202854540,"end":1753202858868,"title":"features\/tokens\/TokenList[14:107] 12:47:34.540-12:47:38.868 Get token list with maximum limit (500)"},{"id":15,"group":1,"content":"features\/tokens\/TokenList[15:115]","start":1753202858873,"end":1753202860551,"title":"features\/tokens\/TokenList[15:115] 12:47:38.873-12:47:40.551 Get token list with minimum limit (10)"},{"id":16,"group":1,"content":"features\/tokens\/TokenList[16:123]","start":1753202860554,"end":1753202862322,"title":"features\/tokens\/TokenList[16:123] 12:47:40.554-12:47:42.322 Get token list with maximum page number"},{"id":17,"group":1,"content":"features\/tokens\/TokenList[17:132]","start":1753202862326,"end":1753202865184,"title":"features\/tokens\/TokenList[17:132] 12:47:42.326-12:47:45.184 Get token list with all parameters at boundary values"},{"id":18,"group":1,"content":"features\/tokens\/TokenList[18:143]","start":1753202865188,"end":1753202867409,"title":"features\/tokens\/TokenList[18:143] 12:47:45.188-12:47:47.409 Get token list with empty response (high page number)","className":"failed"},{"id":19,"group":1,"content":"features\/tokens\/TokenList[19:151]","start":1753202867414,"end":1753202867784,"title":"features\/tokens\/TokenList[19:151] 12:47:47.414-12:47:47.784 Get token list with mixed valid and invalid parameters"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

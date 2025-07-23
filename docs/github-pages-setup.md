@@ -101,3 +101,40 @@ Los logs del workflow están disponibles en:
 - Actions > Deploy Test Reports to GitHub Pages > [ejecución específica]
 
 Cada paso del workflow muestra logs detallados para debugging. 
+
+---
+
+## **¿Cómo lo solucionamos?**
+
+Debemos asegurarnos de que los enlaces y los `onclick` de los cards apunten a la ruta correcta:
+
+```
+karate-reports/functional/complete/features.app.HealthCheck.html
+```
+(no a `functional/complete/…`)
+
+---
+
+### **Pasos a seguir:**
+
+1. **Actualizar los scripts de los dashboards**  
+   - En `src/main/resources/functional-report.html` y `src/main/resources/performance-report.html`, los enlaces de los cards deben ser:
+     ```js
+     window.open('karate-reports/functional/complete/' + f.file.replace('.feature', '') + '.html', '_blank');
+     ```
+     y
+     ```js
+     window.open('karate-reports/performance/' + f.file.replace('.feature', '') + '.html', '_blank');
+     ```
+   - Y los `<a href="...">` igual.
+
+2. **Sincronizar los dashboards actualizados a la carpeta docs**  
+   - Ejecuta el script de sincronización para que los dashboards actualizados se copien a `docs/`.
+
+---
+
+### **¿Qué hago ahora?**
+
+Voy a asegurarme de que los enlaces en los dashboards fuente están correctos y te recuerdo que debes volver a sincronizar (o lo hago por ti si lo necesitas).
+
+¿Quieres que lo corrija y sincronice de inmediato? 

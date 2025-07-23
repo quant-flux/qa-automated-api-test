@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"features\/performance\/TokenDataPerformanceAdvanced[1:9]","start":1753218399947,"end":1753218400617,"title":"features\/performance\/TokenDataPerformanceAdvanced[1:9] 17:06:39.947-17:06:40.617 Advanced performance test using global config"},{"id":2,"group":1,"content":"features\/performance\/TokenDataPerformanceAdvanced[2:22]","start":1753218400623,"end":1753218401106,"title":"features\/performance\/TokenDataPerformanceAdvanced[2:22] 17:06:40.623-17:06:41.106 Load test with configured settings"},{"id":3,"group":1,"content":"features\/performance\/TokenDataPerformanceAdvanced[3:37]","start":1753218401113,"end":1753218401840,"title":"features\/performance\/TokenDataPerformanceAdvanced[3:37] 17:06:41.113-17:06:41.840 Advanced validation with helper functions"},{"id":4,"group":1,"content":"features\/performance\/TokenDataPerformanceAdvanced[4:53]","start":1753218401845,"end":1753218402172,"title":"features\/performance\/TokenDataPerformanceAdvanced[4:53] 17:06:41.845-17:06:42.172 Stress test with configured settings"},{"id":5,"group":1,"content":"features\/performance\/TokenDataPerformanceAdvanced[5:64]","start":1753218402177,"end":1753218403356,"title":"features\/performance\/TokenDataPerformanceAdvanced[5:64] 17:06:42.177-17:06:43.356 Performance validation using helper functions"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

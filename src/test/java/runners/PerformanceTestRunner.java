@@ -98,6 +98,51 @@ public class PerformanceTestRunner {
     }
     
     @Karate.Test
+    Karate testCriticalEndpointsPerformance() {
+        return Karate.run("classpath:features/performance/CriticalEndpointsPerformance.feature")
+                .relativeTo(getClass())
+                .outputCucumberJson(true)
+                .outputHtmlReport(true)
+                .reportDir("target/karate-reports/performance/critical-endpoints");
+    }
+    
+    @Karate.Test
+    Karate testHeavyLoadEndpointsPerformance() {
+        return Karate.run("classpath:features/performance/HeavyLoadEndpointsPerformance.feature")
+                .relativeTo(getClass())
+                .outputCucumberJson(true)
+                .outputHtmlReport(true)
+                .reportDir("target/karate-reports/performance/heavy-load-endpoints");
+    }
+    
+    @Karate.Test
+    Karate testBottleneckEndpointsPerformance() {
+        return Karate.run("classpath:features/performance/BottleneckEndpointsPerformance.feature")
+                .relativeTo(getClass())
+                .outputCucumberJson(true)
+                .outputHtmlReport(true)
+                .reportDir("target/karate-reports/performance/bottleneck-endpoints");
+    }
+    
+    @Karate.Test
+    Karate testHighLatencyEndpointsPerformance() {
+        return Karate.run("classpath:features/performance/HighLatencyEndpointsPerformance.feature")
+                .relativeTo(getClass())
+                .outputCucumberJson(true)
+                .outputHtmlReport(true)
+                .reportDir("target/karate-reports/performance/high-latency-endpoints");
+    }
+    
+    @Karate.Test
+    Karate testResourceIntensiveEndpointsPerformance() {
+        return Karate.run("classpath:features/performance/ResourceIntensiveEndpointsPerformance.feature")
+                .relativeTo(getClass())
+                .outputCucumberJson(true)
+                .outputHtmlReport(true)
+                .reportDir("target/karate-reports/performance/resource-intensive-endpoints");
+    }
+    
+    @Karate.Test
     Karate testTradeListPerformance() {
         return Karate.run("classpath:features/performance/TradeListPerformance.feature")
                 .relativeTo(getClass())

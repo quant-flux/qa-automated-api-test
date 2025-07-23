@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"features\/performance\/GlobalLoadTest[1:8]","start":1753218435776,"end":1753218437968,"title":"features\/performance\/GlobalLoadTest[1:8] 17:07:15.776-17:07:17.968 Global load test across all endpoints"},{"id":2,"group":1,"content":"features\/performance\/GlobalLoadTest[2:36]","start":1753218437973,"end":1753218440418,"title":"features\/performance\/GlobalLoadTest[2:36] 17:07:17.973-17:07:20.418 Global stress test across endpoints"},{"id":3,"group":1,"content":"features\/performance\/GlobalLoadTest[3:56]","start":1753218440422,"end":1753218442109,"title":"features\/performance\/GlobalLoadTest[3:56] 17:07:20.422-17:07:22.109 Global endurance test"},{"id":4,"group":1,"content":"features\/performance\/GlobalLoadTest[4:75]","start":1753218442115,"end":1753218442126,"title":"features\/performance\/GlobalLoadTest[4:75] 17:07:22.115-17:07:22.126 Get token list with minimum page (1)","className":"failed"},{"id":5,"group":1,"content":"features\/performance\/GlobalLoadTest[5:82]","start":1753218442132,"end":1753218442143,"title":"features\/performance\/GlobalLoadTest[5:82] 17:07:22.132-17:07:22.143 Get token list with maximum limit (500)","className":"failed"},{"id":6,"group":1,"content":"features\/performance\/GlobalLoadTest[6:88]","start":1753218442149,"end":1753218442156,"title":"features\/performance\/GlobalLoadTest[6:88] 17:07:22.149-17:07:22.156 Get token list with minimum limit (10)","className":"failed"},{"id":7,"group":1,"content":"features\/performance\/GlobalLoadTest[7:94]","start":1753218442163,"end":1753218442174,"title":"features\/performance\/GlobalLoadTest[7:94] 17:07:22.163-17:07:22.174 Get token list with all parameters at boundary values","className":"failed"},{"id":8,"group":1,"content":"features\/performance\/GlobalLoadTest[8:103]","start":1753218442178,"end":1753218442186,"title":"features\/performance\/GlobalLoadTest[8:103] 17:07:22.178-17:07:22.186 Get token list with empty response (high page number)","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

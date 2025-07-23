@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"8d7de530-2191-4863-8782-d47a95aaa917",karate_version:"1.4.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>features.tokens.TokenTrending</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">0</div>
+      <div id="nav-fail" class="bg-danger">1</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2025-07-22 12:38:36 p. m.</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item failed">
+            <a href="#[1:7]"><span>[1:7]</span> <span>Get trending tokens with default parameters</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">features/tokens/TokenTrending.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Token Trending Endpoint</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:7]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">smoke</a><a class="badge badge-primary" href="karate-tags.html">positive</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:7]</span>
+                <span class="scenario-name">Get trending tokens with default parameters</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>905</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:7]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:7]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_trending&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref passed">8</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param minutes = 5</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param order = &#39;DESC&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param orderField = &#39;volume&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param limit = 10</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">870</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">12:38:35.310 request:
+1 &gt; GET https://full-api.cloud-service-app.com/token/trending?minutes=5&amp;limit=10&amp;orderField=volume&amp;order=DESC
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:38:36.174 response time in milliseconds: 862
+1 &lt; 200
+1 &lt; Date: Tue, 22 Jul 2025 16:38:36 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;485a-1FHwtSAMG5g+BZSMAJr3tgMjcdA&quot;
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=bZHO67yXXlgj3ysP%2F4Lisjo0hBynJkx%2BvAllzEHagXajXQtZ%2BL9%2FobumcJHBRbIVB%2F8zV2%2BF0t27iQzDEFlIos5afBTc82tzKTCea1Yd%2B00JB1OtNYf%2FWT9ePPxOcg%3D%3D&quot;}]}
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; X-Cache: MISS
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; CF-RAY: 96345e897bec5008-IAD
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[{&quot;address&quot;:&quot;W1MVqWXXrXBsiNuo2EFpVk1GXoJsbPC17kGQYPbctYo&quot;,&quot;volume&quot;:519426.3961900936,&quot;count&quot;:1105,&quot;buy_count&quot;:552,&quot;sell_count&quot;:553,&quot;current_price&quot;:0.00012675399803879604,&quot;volume_5m&quot;:519426.3961900936,&quot;count_5m&quot;:1105,&quot;buy_count_5m&quot;:552,&quot;sell_count_5m&quot;:553,&quot;price_5m&quot;:0.00012675399803879604,&quot;volume_30m&quot;:519426.3961900936,&quot;count_30m&quot;:1105,&quot;buy_count_30m&quot;:552,&quot;sell_count_30m&quot;:553,&quot;price_30m&quot;:0.00012675399803879604,&quot;volume_1h&quot;:519426.3961900936,&quot;count_1h&quot;:1105,&quot;buy_count_1h&quot;:552,&quot;sell_count_1h&quot;:553,&quot;price_1h&quot;:0.00012675399803879604,&quot;volume_1d&quot;:519426.3961900936,&quot;count_1d&quot;:1105,&quot;buy_count_1d&quot;:552,&quot;sell_count_1d&quot;:553,&quot;price_1d&quot;:0.00012675399803879604,&quot;token&quot;:{&quot;address&quot;:&quot;W1MVqWXXrXBsiNuo2EFpVk1GXoJsbPC17kGQYPbctYo&quot;,&quot;name&quot;:&quot;COCA COLA&quot;,&quot;symbol&quot;:&quot;COCACOLA&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/W1MVqWXXrXBsiNuo2EFpVk1GXoJsbPC17kGQYPbctYo.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;9d88nF6RFQTUvGSJFgh37GMCbz424X8LHBGcWvX7qoSs&quot;,&quot;create_tx&quot;:&quot;44ZY2Vg9FhqWsHpWJuRrhJv7ZfbykLLJmvYy7PSadpaFPukbN7gVkk9uLeMykHVe65nKCwRBm4dB8EA4WfDToRdk&quot;,&quot;created_time&quot;:1753201439,&quot;metadata&quot;:{&quot;name&quot;:&quot;COCA COLA&quot;,&quot;symbol&quot;:&quot;COCACOLA&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmT5KfBGEDEqSfedyu4Jf8q6WQkux5vtEh8sjcWMWUWw2P&quot;,&quot;description&quot;:&quot;OFFICIAL COCA COLA SOLANA TOKEN&quot;,&quot;twitter&quot;:&quot;https://x.com/CocaCola&quot;,&quot;website&quot;:&quot;https://www.coca-colacompany.com/&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmVmvdKndJ5m5Znb3FfKL9QP2dViQd2VaduuNJ4exAa2g1&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;999999693783631&quot;,&quot;holders&quot;:1,&quot;price&quot;:0.00012675399803879604,&quot;volume_24h&quot;:879411.6001868162,&quot;market_cap&quot;:0.12675399803879603,&quot;price_change_24h&quot;:336.9849968284798,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:24:13.500Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:36.287Z&quot;,&quot;holders_top_10&quot;:0}},{&quot;address&quot;:&quot;2i2xrSrWvysjYBYcvmooeRC3QUULT8CwfbezT85ZsqDk&quot;,&quot;volume&quot;:503119.9274479574,&quot;count&quot;:1020,&quot;buy_count&quot;:510,&quot;sell_count&quot;:510,&quot;current_price&quot;:0.00017078023735831252,&quot;volume_5m&quot;:503119.9274479574,&quot;count_5m&quot;:1020,&quot;buy_count_5m&quot;:510,&quot;sell_count_5m&quot;:510,&quot;price_5m&quot;:0.00017078023735831252,&quot;volume_30m&quot;:503119.9274479574,&quot;count_30m&quot;:1020,&quot;buy_count_30m&quot;:510,&quot;sell_count_30m&quot;:510,&quot;price_30m&quot;:0.00017078023735831252,&quot;volume_1h&quot;:503119.9274479574,&quot;count_1h&quot;:1020,&quot;buy_count_1h&quot;:510,&quot;sell_count_1h&quot;:510,&quot;price_1h&quot;:0.00017078023735831252,&quot;volume_1d&quot;:503119.9274479574,&quot;count_1d&quot;:1020,&quot;buy_count_1d&quot;:510,&quot;sell_count_1d&quot;:510,&quot;price_1d&quot;:0.00017078023735831252,&quot;token&quot;:{&quot;address&quot;:&quot;2i2xrSrWvysjYBYcvmooeRC3QUULT8CwfbezT85ZsqDk&quot;,&quot;name&quot;:&quot;Backpack&quot;,&quot;symbol&quot;:&quot;BACKPACK&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/Qmane2XgCcQLXYf65n9MjCnyDnaiCd2ojf9nceweLU2kjc&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;7rpVsq3rLQaLnc71tcVFV55kfdFdButshbNS8uoRV7mx&quot;,&quot;create_tx&quot;:&quot;5omFC3ce9CrFyzpGUUYxBXjb3jXAeEBmRtvVZswNGCBPMuVngTBUVgHSGbrxZiZ8tfJtgDSVmXePC8aSzitPfzcd&quot;,&quot;created_time&quot;:1753200068,&quot;metadata&quot;:{&quot;name&quot;:&quot;Backpack&quot;,&quot;symbol&quot;:&quot;BACKPACK&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/Qmane2XgCcQLXYf65n9MjCnyDnaiCd2ojf9nceweLU2kjc&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/solana/status/1947687048984596489&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/Qmem4rDqT3EH9Lgx3x1BzUL3mys9rQBctVXNQY7BJ7HZs5&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;999999559689034&quot;,&quot;holders&quot;:1,&quot;price&quot;:0.00017078023735831252,&quot;volume_24h&quot;:3129369.543552731,&quot;market_cap&quot;:170780.16216190124,&quot;price_change_24h&quot;:283.949735866023,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:01:21.187Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:36.161Z&quot;,&quot;holders_top_10&quot;:0}},{&quot;address&quot;:&quot;sMZN1QbN4j6JNKs2nW1WaHy55EYr33yHZW4p7dn3yhu&quot;,&quot;volume&quot;:494518.89947526413,&quot;count&quot;:786,&quot;buy_count&quot;:393,&quot;sell_count&quot;:393,&quot;current_price&quot;:0.00014704226052265256,&quot;volume_5m&quot;:494518.89947526413,&quot;count_5m&quot;:786,&quot;buy_count_5m&quot;:393,&quot;sell_count_5m&quot;:393,&quot;price_5m&quot;:0.00014704226052265256,&quot;volume_30m&quot;:494518.89947526413,&quot;count_30m&quot;:786,&quot;buy_count_30m&quot;:393,&quot;sell_count_30m&quot;:393,&quot;price_30m&quot;:0.00014704226052265256,&quot;volume_1h&quot;:494518.89947526413,&quot;count_1h&quot;:786,&quot;buy_count_1h&quot;:393,&quot;sell_count_1h&quot;:393,&quot;price_1h&quot;:0.00014704226052265256,&quot;volume_1d&quot;:494518.89947526413,&quot;count_1d&quot;:786,&quot;buy_count_1d&quot;:393,&quot;sell_count_1d&quot;:393,&quot;price_1d&quot;:0.00014704226052265256,&quot;token&quot;:{&quot;address&quot;:&quot;sMZN1QbN4j6JNKs2nW1WaHy55EYr33yHZW4p7dn3yhu&quot;,&quot;name&quot;:&quot;boner&quot;,&quot;symbol&quot;:&quot;boner&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmacVAZ3PfNNxMJrDVPqqJJD3dUadDb8cMLjFDv9Vi9cZW&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;HP7FmNfSuL7dxHrxHXSEpAQD4CVSEUm73J6TEWBbzk2p&quot;,&quot;create_tx&quot;:&quot;3s1HsrCGY7rKM85kMhGogLz2M82vy2Y4PkxcoN4yLEDV4kzzM8C4WV9qCrwQtyyJxk5JLhJiYKpuLWJRJA72tfUC&quot;,&quot;created_time&quot;:1753200535,&quot;metadata&quot;:{&quot;name&quot;:&quot;boner&quot;,&quot;symbol&quot;:&quot;boner&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmacVAZ3PfNNxMJrDVPqqJJD3dUadDb8cMLjFDv9Vi9cZW&quot;,&quot;description&quot;:&quot;boner&quot;,&quot;twitter&quot;:&quot;https://x.com/i/communities/1947675439775809680&quot;,&quot;website&quot;:&quot;https://x.com/i/communities/1947675439775809680&quot;,&quot;telegram&quot;:&quot;https://x.com/i/communities/1947675439775809680&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmZVG9MXhGV75vQeZ7R5BJGDhxUMYC7SPMitGTLeU1hYhM&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;999999553386200&quot;,&quot;holders&quot;:1,&quot;price&quot;:0.00014704226052265256,&quot;volume_24h&quot;:2503018.5281899385,&quot;market_cap&quot;:147042.20784422543,&quot;price_change_24h&quot;:206.68236361879684,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:&quot;4W52opqrkv58gUUmwgqrxA1uNcTFV7SunFXNwJ5eS7vu&quot;,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:09:19.240Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:36.283Z&quot;,&quot;holders_top_10&quot;:0}},{&quot;address&quot;:&quot;8QUeDwLe3mZBVeUufNbboq1TDSbyZJkSybTnyGq7yE6n&quot;,&quot;volume&quot;:491749.8886416727,&quot;count&quot;:778,&quot;buy_count&quot;:388,&quot;sell_count&quot;:390,&quot;current_price&quot;:0.00014066438294820855,&quot;volume_5m&quot;:491749.8886416727,&quot;count_5m&quot;:778,&quot;buy_count_5m&quot;:388,&quot;sell_count_5m&quot;:390,&quot;price_5m&quot;:0.00014066438294820855,&quot;volume_30m&quot;:491749.8886416727,&quot;count_30m&quot;:778,&quot;buy_count_30m&quot;:388,&quot;sell_count_30m&quot;:390,&quot;price_30m&quot;:0.00014066438294820855,&quot;volume_1h&quot;:491749.8886416727,&quot;count_1h&quot;:778,&quot;buy_count_1h&quot;:388,&quot;sell_count_1h&quot;:390,&quot;price_1h&quot;:0.00014066438294820855,&quot;volume_1d&quot;:491749.8886416727,&quot;count_1d&quot;:778,&quot;buy_count_1d&quot;:388,&quot;sell_count_1d&quot;:390,&quot;price_1d&quot;:0.00014066438294820855,&quot;token&quot;:{&quot;address&quot;:&quot;8QUeDwLe3mZBVeUufNbboq1TDSbyZJkSybTnyGq7yE6n&quot;,&quot;name&quot;:&quot;X COIN&quot;,&quot;symbol&quot;:&quot;X&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/Qmcps4caVBmTyoxtCDaWcZ7iHrgsUVRGkxx2YxkcyRJQbC&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;2VxBLHKTWMQSDjBfHPZRopi8NA71tLMAQbymQXcQK1s5&quot;,&quot;create_tx&quot;:&quot;28kPej9XHkcxQve3nbfTAL1RhLkzFgor3JBHPahcrXGcHt4hiNRbLAmtXW5YL8ZGpdEC36V3LUMc6ZUDd7xJcfB3&quot;,&quot;created_time&quot;:1753200838,&quot;metadata&quot;:{&quot;name&quot;:&quot;X COIN&quot;,&quot;symbol&quot;:&quot;X&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/Qmcps4caVBmTyoxtCDaWcZ7iHrgsUVRGkxx2YxkcyRJQbC&quot;,&quot;description&quot;:&quot;@realmsdaos or @MetaDAOProject should build out a \&quot;strategies\&quot; module. basically the same thing. deposit stables =&gt; get dao votes =&gt; decide when to buy coin X&quot;,&quot;twitter&quot;:&quot;https://x.com/aeyakovenko/status/1947690296294445206&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmZcFkRLUY5ZcKqYU875PQyxtTKffeVSMqQcvmHJNr1ps4&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;999999125408666&quot;,&quot;holders&quot;:1,&quot;price&quot;:0.00014066438294820855,&quot;volume_24h&quot;:2131756.4283202575,&quot;market_cap&quot;:140664.283649915,&quot;price_change_24h&quot;:262.9347906338449,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:14:25.438Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:36.283Z&quot;,&quot;holders_top_10&quot;:0}},{&quot;address&quot;:&quot;6x4pKVmpmPMHq4kUzsc93msCwfVAHGrrEM2Z58rDiPcJ&quot;,&quot;volume&quot;:489078.7837998873,&quot;count&quot;:961,&quot;buy_count&quot;:488,&quot;sell_count&quot;:473,&quot;current_price&quot;:0.00011259282927809065,&quot;volume_5m&quot;:489078.7837998873,&quot;count_5m&quot;:961,&quot;buy_count_5m&quot;:488,&quot;sell_count_5m&quot;:473,&quot;price_5m&quot;:0.00011259282927809065,&quot;volume_30m&quot;:489078.7837998873,&quot;count_30m&quot;:961,&quot;buy_count_30m&quot;:488,&quot;sell_count_30m&quot;:473,&quot;price_30m&quot;:0.00011259282927809065,&quot;volume_1h&quot;:489078.7837998873,&quot;count_1h&quot;:961,&quot;buy_count_1h&quot;:488,&quot;sell_count_1h&quot;:473,&quot;price_1h&quot;:0.00011259282927809065,&quot;volume_1d&quot;:489078.7837998873,&quot;count_1d&quot;:961,&quot;buy_count_1d&quot;:488,&quot;sell_count_1d&quot;:473,&quot;price_1d&quot;:0.00011259282927809065,&quot;token&quot;:{&quot;address&quot;:&quot;6x4pKVmpmPMHq4kUzsc93msCwfVAHGrrEM2Z58rDiPcJ&quot;,&quot;name&quot;:&quot;Rajesh Grok Companion&quot;,&quot;symbol&quot;:&quot;RAJESH&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/6x4pKVmpmPMHq4kUzsc93msCwfVAHGrrEM2Z58rDiPcJ.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;CWXHgatbgKeZa5u4qdxHMXGpEbSZc8iYR38JGj77kmWw&quot;,&quot;create_tx&quot;:&quot;dTQxmYCjzKCbBj8CeQUP17TKuKgT9K9UAXjUGoU99zsfwQnsiSpxgoEGB6TSp42TMvQE4qFCDPJnxc1ZwrfyPMa&quot;,&quot;created_time&quot;:1753200620,&quot;metadata&quot;:{&quot;name&quot;:&quot;Rajesh Grok Companion&quot;,&quot;symbol&quot;:&quot;RAJESH&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmePHhtFHkLe7NyUSKbNmEr6s3BPNUmZSBeAHYNiwii6Lo&quot;,&quot;description&quot;:&quot;Dis is Rajesh, your new Grok Companion. Not from Mars, but from Madhya Pradesh. He don’t need AI, he is intelligence. He solve chart pattern with chai in one hand, and destiny in other. Download him fast or your portfolio gonna cry like your ex&quot;,&quot;twitter&quot;:&quot;https://x.com/i/communities/1941888481157935571&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;https://t.me/rajeshgrokcompanion&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmUs6hWkxdfkdByc6CFbuRvku5gsahABHCiJK3S5oRFTPS&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;999999814518156&quot;,&quot;holders&quot;:1,&quot;price&quot;:0.00011259282927809065,&quot;volume_24h&quot;:2453518.044850816,&quot;market_cap&quot;:112592.810597881,&quot;price_change_24h&quot;:146.257750311848,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:10:37.566Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:36.165Z&quot;,&quot;holders_top_10&quot;:0}},{&quot;address&quot;:&quot;HR1U4XJn7uZdk7LvvUejS2x5Uq6qhw3GoNrXmAwS46Bb&quot;,&quot;volume&quot;:485062.21965290786,&quot;count&quot;:1126,&quot;buy_count&quot;:561,&quot;sell_count&quot;:565,&quot;current_price&quot;:0.00020231114342512423,&quot;volume_5m&quot;:485062.21965290786,&quot;count_5m&quot;:1126,&quot;buy_count_5m&quot;:561,&quot;sell_count_5m&quot;:565,&quot;price_5m&quot;:0.00020231114342512423,&quot;volume_30m&quot;:485062.21965290786,&quot;count_30m&quot;:1126,&quot;buy_count_30m&quot;:561,&quot;sell_count_30m&quot;:565,&quot;price_30m&quot;:0.00020231114342512423,&quot;volume_1h&quot;:485062.21965290786,&quot;count_1h&quot;:1126,&quot;buy_count_1h&quot;:561,&quot;sell_count_1h&quot;:565,&quot;price_1h&quot;:0.00020231114342512423,&quot;volume_1d&quot;:485062.21965290786,&quot;count_1d&quot;:1126,&quot;buy_count_1d&quot;:561,&quot;sell_count_1d&quot;:565,&quot;price_1d&quot;:0.00020231114342512423,&quot;token&quot;:{&quot;address&quot;:&quot;HR1U4XJn7uZdk7LvvUejS2x5Uq6qhw3GoNrXmAwS46Bb&quot;,&quot;name&quot;:&quot;草台班子pumpfun&quot;,&quot;symbol&quot;:&quot;草台&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmQVCHqxSYz6uqzReVLTseeot2SxHSGytU8zx8bCp3YWXc&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;BrmoaaG2yrE75bt8WnKzL6bQb4USDNSpDquBvtVabns9&quot;,&quot;create_tx&quot;:&quot;5fP1nBJ8Qqr1sDEpBbZngRawAAX89AsHpqk2SnkU3274QWs8vDqRnQcshEaUoi2fGWQqbZ2tR1vabKSTWPjFFBFa&quot;,&quot;created_time&quot;:1753199964,&quot;metadata&quot;:{&quot;name&quot;:&quot;草台班子pumpfun&quot;,&quot;symbol&quot;:&quot;草台&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmQVCHqxSYz6uqzReVLTseeot2SxHSGytU8zx8bCp3YWXc&quot;,&quot;description&quot;:&quot;原指世界是个巨大的草台，现指草台班子pumpfun，意为pumpfun整个团队就像草台班子临时组建而成，不管是对资金还是平台的管理，处处体现出弱智和随意。&quot;,&quot;twitter&quot;:&quot;https://x.com/search?q=%24%E8%8D%89%E5%8F%B0&quot;,&quot;website&quot;:&quot;https://x.com/pumpdotfun&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmY3jMHkdphRA4Eg5GsHDG8ZGWZRHYPEbqtXdJvbW3XXeq&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;999997933991421&quot;,&quot;holders&quot;:1,&quot;price&quot;:0.00020231114342512423,&quot;volume_24h&quot;:3037065.371026553,&quot;market_cap&quot;:202310.73009600144,&quot;price_change_24h&quot;:494.0625291885172,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T15:59:39.032Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:36.282Z&quot;,&quot;holders_top_10&quot;:0}},{&quot;address&quot;:&quot;43FEUUPoUsBt6BFZUHUdcuP1kcwGRMZh6pLDsF1yT7EX&quot;,&quot;volume&quot;:481886.2910710565,&quot;count&quot;:912,&quot;buy_count&quot;:456,&quot;sell_count&quot;:456,&quot;current_price&quot;:0.00019596995711585385,&quot;volume_5m&quot;:481886.2910710565,&quot;count_5m&quot;:912,&quot;buy_count_5m&quot;:456,&quot;sell_count_5m&quot;:456,&quot;price_5m&quot;:0.00019596995711585385,&quot;volume_30m&quot;:481886.2910710565,&quot;count_30m&quot;:912,&quot;buy_count_30m&quot;:456,&quot;sell_count_30m&quot;:456,&quot;price_30m&quot;:0.00019596995711585385,&quot;volume_1h&quot;:481886.2910710565,&quot;count_1h&quot;:912,&quot;buy_count_1h&quot;:456,&quot;sell_count_1h&quot;:456,&quot;price_1h&quot;:0.00019596995711585385,&quot;volume_1d&quot;:481886.2910710565,&quot;count_1d&quot;:912,&quot;buy_count_1d&quot;:456,&quot;sell_count_1d&quot;:456,&quot;price_1d&quot;:0.00019596995711585385,&quot;token&quot;:{&quot;address&quot;:&quot;43FEUUPoUsBt6BFZUHUdcuP1kcwGRMZh6pLDsF1yT7EX&quot;,&quot;name&quot;:&quot;CITY&quot;,&quot;symbol&quot;:&quot;CITY&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/43FEUUPoUsBt6BFZUHUdcuP1kcwGRMZh6pLDsF1yT7EX.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;EUQcLDaRxV8QB6jdhZPtqcyTdYqpEjshiNDKnoGjtjzh&quot;,&quot;create_tx&quot;:&quot;3oYbwpT9nkgoqGDxt5mnmA1LaMCUU59dMxL3sdbKKbv9peHnE8bgbezjYSYTb2ExpwEk1fvXwJqf3S9A3zp4NEhG&quot;,&quot;created_time&quot;:1753200510,&quot;metadata&quot;:{&quot;name&quot;:&quot;CITY&quot;,&quot;symbol&quot;:&quot;CITY&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmTwU39s25ugGmx4ZfiAonehLUkSUnkfHfhj4FpnK1VBi1&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmY4gvkkSFGQRn4tGbLNJnjGdscPn36vDwhMC1RE2HGiMo&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;999999778818592&quot;,&quot;holders&quot;:1,&quot;price&quot;:0.00019596995711585385,&quot;volume_24h&quot;:2289067.3341302,&quot;market_cap&quot;:195969.9137709428,&quot;price_change_24h&quot;:580.8796201412205,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:08:49.879Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:36.281Z&quot;,&quot;holders_top_10&quot;:0}},{&quot;address&quot;:&quot;8yrmWVwNrM6AK2qTqmMp2ZEKqQT1SKFvHtkLyCSBbL6A&quot;,&quot;volume&quot;:472555.3973879741,&quot;count&quot;:1049,&quot;buy_count&quot;:525,&quot;sell_count&quot;:524,&quot;current_price&quot;:0.00007736056414787634,&quot;volume_5m&quot;:472555.3973879741,&quot;count_5m&quot;:1049,&quot;buy_count_5m&quot;:525,&quot;sell_count_5m&quot;:524,&quot;price_5m&quot;:0.00007736056414787634,&quot;volume_30m&quot;:472555.3973879741,&quot;count_30m&quot;:1049,&quot;buy_count_30m&quot;:525,&quot;sell_count_30m&quot;:524,&quot;price_30m&quot;:0.00007736056414787634,&quot;volume_1h&quot;:472555.3973879741,&quot;count_1h&quot;:1049,&quot;buy_count_1h&quot;:525,&quot;sell_count_1h&quot;:524,&quot;price_1h&quot;:0.00007736056414787634,&quot;volume_1d&quot;:472555.3973879741,&quot;count_1d&quot;:1049,&quot;buy_count_1d&quot;:525,&quot;sell_count_1d&quot;:524,&quot;price_1d&quot;:0.00007736056414787634,&quot;token&quot;:{&quot;address&quot;:&quot;8yrmWVwNrM6AK2qTqmMp2ZEKqQT1SKFvHtkLyCSBbL6A&quot;,&quot;name&quot;:&quot;brc2.0&quot;,&quot;symbol&quot;:&quot;BRC&quot;,&quot;image&quot;:&quot;https://static.cloud-service-app.com/token/8yrmWVwNrM6AK2qTqmMp2ZEKqQT1SKFvHtkLyCSBbL6A.webp&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;A566o7QHfgJTZ4tusPSXHf2LTdoKACXi1KwPrPqcM7py&quot;,&quot;create_tx&quot;:&quot;y9xzqNTocC31cipvANxvC184LzuwBVi3Eg7op5oMDcVwwtHYS5N66E824j3p4v2fmD7YhwDCLYWvz7wGPmsAXbN&quot;,&quot;created_time&quot;:1753201849,&quot;metadata&quot;:{&quot;name&quot;:&quot;brc2.0&quot;,&quot;symbol&quot;:&quot;BRC&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/QmNoSNn4x8DeZZsvemTjTTUdqTqNkMuguE42yQKMtwzd7v&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/bitx2100/status/1947572196391481500&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmdV6dzsDHjLpdeR221hCrvCXwUALj4WRQPUj8mwdHphy6&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;999999998953150&quot;,&quot;holders&quot;:1,&quot;price&quot;:0.00007736056414787634,&quot;volume_24h&quot;:608518.0259169405,&quot;market_cap&quot;:0.07736056414787634,&quot;price_change_24h&quot;:131.89165074316404,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:31:09.133Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:36.163Z&quot;,&quot;holders_top_10&quot;:0}},{&quot;address&quot;:&quot;H5y6PiJoprHqwZSx3XNLNHGpAEqagHVviypo98skoTH8&quot;,&quot;volume&quot;:471293.92440406146,&quot;count&quot;:1078,&quot;buy_count&quot;:539,&quot;sell_count&quot;:539,&quot;current_price&quot;:0.0001047456036918619,&quot;volume_5m&quot;:471293.92440406146,&quot;count_5m&quot;:1078,&quot;buy_count_5m&quot;:539,&quot;sell_count_5m&quot;:539,&quot;price_5m&quot;:0.0001047456036918619,&quot;volume_30m&quot;:471293.92440406146,&quot;count_30m&quot;:1078,&quot;buy_count_30m&quot;:539,&quot;sell_count_30m&quot;:539,&quot;price_30m&quot;:0.0001047456036918619,&quot;volume_1h&quot;:471293.92440406146,&quot;count_1h&quot;:1078,&quot;buy_count_1h&quot;:539,&quot;sell_count_1h&quot;:539,&quot;price_1h&quot;:0.0001047456036918619,&quot;volume_1d&quot;:471293.92440406146,&quot;count_1d&quot;:1078,&quot;buy_count_1d&quot;:539,&quot;sell_count_1d&quot;:539,&quot;price_1d&quot;:0.0001047456036918619,&quot;token&quot;:{&quot;address&quot;:&quot;H5y6PiJoprHqwZSx3XNLNHGpAEqagHVviypo98skoTH8&quot;,&quot;name&quot;:&quot;The Diddler&quot;,&quot;symbol&quot;:&quot;DIDDLER&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/Qme4yEZ463tF2N5UquGuCXFNszkWH2zRzW7eg9KpTWjbBq&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;4vjqB5WsgeAEgdme7CXxsEkJQTJ71y53nQKr5PifSXdE&quot;,&quot;create_tx&quot;:&quot;2HmqwgV6Wsq5hu3oDgudriqvgzS9uymuw1WxeBVbL6SMHsi9gb6SUV26bpDshvQp3aAjwhns2sMHra8QkqVGrN7d&quot;,&quot;created_time&quot;:1753201428,&quot;metadata&quot;:{&quot;name&quot;:&quot;The Diddler&quot;,&quot;symbol&quot;:&quot;DIDDLER&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/Qme4yEZ463tF2N5UquGuCXFNszkWH2zRzW7eg9KpTWjbBq&quot;,&quot;description&quot;:&quot;The Old Boy Peanut is now on-chain!&quot;,&quot;twitter&quot;:&quot;https://x.com/YourAnonNews/status/1947636470518370578&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/QmTFV99MVzTXY1uqRj2QzcbXYF9saUXVe75N85thXjt7gu&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;999997165299220&quot;,&quot;holders&quot;:1,&quot;price&quot;:0.0001047456036918619,&quot;volume_24h&quot;:963835.6185737203,&quot;market_cap&quot;:0.1047456036918619,&quot;price_change_24h&quot;:207.528821150532,&quot;created_on&quot;:&quot;unknown&quot;,&quot;poolId&quot;:null,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:24:02.532Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:36.164Z&quot;,&quot;holders_top_10&quot;:0}},{&quot;address&quot;:&quot;E7ZBuPjBkdAx8exPxfwDiLpxmbsbJRnQP9rxshxmgBRS&quot;,&quot;volume&quot;:462358.17937601235,&quot;count&quot;:1147,&quot;buy_count&quot;:560,&quot;sell_count&quot;:587,&quot;current_price&quot;:0.000156030954502647,&quot;volume_5m&quot;:462358.17937601235,&quot;count_5m&quot;:1147,&quot;buy_count_5m&quot;:560,&quot;sell_count_5m&quot;:587,&quot;price_5m&quot;:0.000156030954502647,&quot;volume_30m&quot;:462358.17937601235,&quot;count_30m&quot;:1147,&quot;buy_count_30m&quot;:560,&quot;sell_count_30m&quot;:587,&quot;price_30m&quot;:0.000156030954502647,&quot;volume_1h&quot;:462358.17937601235,&quot;count_1h&quot;:1147,&quot;buy_count_1h&quot;:560,&quot;sell_count_1h&quot;:587,&quot;price_1h&quot;:0.000156030954502647,&quot;volume_1d&quot;:462358.17937601235,&quot;count_1d&quot;:1147,&quot;buy_count_1d&quot;:560,&quot;sell_count_1d&quot;:587,&quot;price_1d&quot;:0.000156030954502647,&quot;token&quot;:{&quot;address&quot;:&quot;E7ZBuPjBkdAx8exPxfwDiLpxmbsbJRnQP9rxshxmgBRS&quot;,&quot;name&quot;:&quot;Backpack&quot;,&quot;symbol&quot;:&quot;BACKPACK&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/Qmane2XgCcQLXYf65n9MjCnyDnaiCd2ojf9nceweLU2kjc&quot;,&quot;decimals&quot;:6,&quot;creator&quot;:&quot;A4z5HTEsxwW7JZUktzDHZqz4Gk4PoR34EoGwdkMfSiUF&quot;,&quot;create_tx&quot;:&quot;4kK6mBL5GndoNWQMCf4QYc7PPppEE4ZZJ8Dt6vwcJCbssRAFPwzcMvSuGh5MYCLdKi69SjnQbm1AX93utZzakdY8&quot;,&quot;created_time&quot;:1753200383,&quot;metadata&quot;:{&quot;name&quot;:&quot;Backpack&quot;,&quot;symbol&quot;:&quot;BACKPACK&quot;,&quot;image&quot;:&quot;https://ipfs.io/ipfs/Qmane2XgCcQLXYf65n9MjCnyDnaiCd2ojf9nceweLU2kjc&quot;,&quot;description&quot;:&quot;&quot;,&quot;twitter&quot;:&quot;https://x.com/solana/status/1947687048984596489&quot;,&quot;website&quot;:&quot;&quot;,&quot;telegram&quot;:&quot;&quot;,&quot;uri&quot;:&quot;https://ipfs.io/ipfs/Qmem4rDqT3EH9Lgx3x1BzUL3mys9rQBctVXNQY7BJ7HZs5&quot;},&quot;mint_authority&quot;:null,&quot;freeze_authority&quot;:null,&quot;total_supply&quot;:&quot;1000000000&quot;,&quot;supply&quot;:&quot;999997831716448&quot;,&quot;holders&quot;:1,&quot;created_on&quot;:&quot;pumpfun&quot;,&quot;poolId&quot;:&quot;EM6Tt7J5Rzm5HMnezXUaJh2C91b9EPdh5sUGuUzLRkbB&quot;,&quot;isAmm&quot;:false,&quot;isToken2022&quot;:false,&quot;createdAt&quot;:&quot;2025-07-22T16:06:23.840Z&quot;,&quot;updatedAt&quot;:&quot;2025-07-22T16:38:36.283Z&quot;,&quot;holders_top_10&quot;:0,&quot;market_cap&quot;:156030.62081587562,&quot;price&quot;:0.000156030954502647,&quot;price_change_24h&quot;:389.3169351472264,&quot;volume_24h&quot;:2478818.0687886244}}]}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref passed">13</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref passed">14</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>def validationResult = validateTrendingTokensBasic(response, 10)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref passed">15</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match validationResult == true</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref failed">16</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>def detailedValidation = validateTrendingTokensResponse(response, true)</span>
+      </div>
+    </div>
+    <div class="time-cell failed">26</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.16">12:38:36.208 classpath:features/tokens/TokenTrending.feature:16
+And def detailedValidation = validateTrendingTokensResponse(response, true)
+js failed:
+&gt;&gt;&gt;&gt;
+01: validateTrendingTokensResponse(response, true)
+&lt;&lt;&lt;&lt;
+org.graalvm.polyglot.PolyglotException: Error: Required field missing: name in token 0
+- &lt;js&gt;.validateTrendingTokensResponse(Unnamed:54)
+
+classpath:features/tokens/TokenTrending.feature:16
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref skipped">17</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match detailedValidation == true</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

@@ -104,38 +104,26 @@
         
         .section-title {
             font-size: 2rem;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: #333;
             text-align: center;
         }
         
         .category-section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         
         .category-title {
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #333;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e0e0e0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .category-title::before {
-            content: "";
-            width: 4px;
-            height: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
+            font-weight: bold;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
         }
         
         .feature-card {
@@ -150,51 +138,51 @@
         }
         
         .feature-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-            border-color: #007bff;
-            background: #e3f2fd;
-        }
-        
-        .feature-card::after {
-            content: "🔗";
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            font-size: 0.9rem;
-            opacity: 0.6;
-            transition: opacity 0.3s ease;
-        }
-        
-        .feature-card:hover::after {
-            opacity: 1;
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .feature-header {
             display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 8px;
+            align-items: flex-start;
+            margin-bottom: 15px;
         }
         
         .feature-icon {
-            font-size: 1.5rem;
+            font-size: 2rem;
+            margin-right: 15px;
             flex-shrink: 0;
         }
         
+        .feature-info {
+            flex: 1;
+        }
+        
         .feature-name {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: bold;
+            margin-bottom: 5px;
             color: #333;
-            margin: 0;
         }
         
         .feature-description {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: #666;
-            line-height: 1.3;
-            margin-left: 2.7rem;
+            line-height: 1.4;
         }
+        
+        .feature-success-rate {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 8px;
+            border-radius: 5px;
+            background: rgba(255,255,255,0.8);
+        }
+        
+        .feature-success-rate.high { color: #28a745; }
+        .feature-success-rate.medium { color: #ffc107; }
+        .feature-success-rate.low { color: #dc3545; }
         
         .footer {
             text-align: center;
@@ -203,24 +191,6 @@
             opacity: 0.8;
         }
     </style>
-    <script>
-        function openKarateReport(featureName) {
-            // Desde src/main/resources/ necesitamos subir 3 niveles para llegar a la raíz del proyecto
-            const path = '../../../target/karate-reports/performance/' + featureName + '.html';
-            
-            try {
-                const link = document.createElement('a');
-                link.href = path;
-                link.target = '_blank';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            } catch (error) {
-                console.log('Error al abrir reporte:', error);
-                alert('No se pudo abrir el reporte. Verifica que el archivo existe en target/karate-reports/performance/');
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="container">
@@ -251,74 +221,218 @@
         </div>
         
         <div class="features-section">
-            <h2 class="section-title">📊 Tests de Performance</h2>
+            <h2 class="section-title">📊 Tests de Performance por Categorías</h2>
             
-            <!-- Categoría: Token Performance -->
+            <!-- Categoría: ⚡ Tests de Latencia -->
             <div class="category-section">
-                <h3 class="category-title">💰 Token Performance</h3>
+                <h3 class="category-title">⚡ Tests de Latencia</h3>
                 <div class="features-grid">
-                    <div class="feature-card" onclick="openKarateReport('features.performance.TokenDataPerformance')">
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.TokenPricePerformance.html', '_blank')">
                         <div class="feature-header">
-                            <span class="feature-icon">💰</span>
-                            <div class="feature-name">Token Data Performance</div>
+                            <div class="feature-icon">💰</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Token Price</div>
+                                <div class="feature-description">Validación de latencia en consultas de precios</div>
+                            </div>
                         </div>
-                        <div class="feature-description">Pruebas de rendimiento para consultas de datos de tokens</div>
+                        <div class="feature-success-rate low">67% Éxito</div>
                     </div>
-                    
-                    <div class="feature-card" onclick="openKarateReport('features.performance.TokenDataPerformanceAdvanced')">
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.TokenPriceMultiPerformance.html', '_blank')">
                         <div class="feature-header">
-                            <span class="feature-icon">🚀</span>
-                            <div class="feature-name">Token Data Performance Advanced</div>
+                            <div class="feature-icon">💰</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Token Price Multi</div>
+                                <div class="feature-description">Validación de latencia en consultas de precios</div>
+                            </div>
                         </div>
-                        <div class="feature-description">Pruebas avanzadas de rendimiento con múltiples escenarios</div>
+                        <div class="feature-success-rate low">0% Éxito</div>
                     </div>
-                    
-                    <div class="feature-card" onclick="openKarateReport('features.performance.TokenListPerformance')">
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.HighLatencyEndpointsPerformance.html', '_blank')">
                         <div class="feature-header">
-                            <span class="feature-icon">📋</span>
-                            <div class="feature-name">Token List Performance</div>
+                            <div class="feature-icon">⏱️</div>
+                            <div class="feature-info">
+                                <div class="feature-name">High Latency Endpoints</div>
+                                <div class="feature-description">Análisis de endpoints con alta latencia</div>
+                            </div>
                         </div>
-                        <div class="feature-description">Rendimiento de listados y paginación de tokens</div>
-                    </div>
-                    
-                    <div class="feature-card" onclick="openKarateReport('features.performance.TokenPricePerformance')">
-                        <div class="feature-header">
-                            <span class="feature-icon">💲</span>
-                            <div class="feature-name">Token Price Performance</div>
-                        </div>
-                        <div class="feature-description">Pruebas de rendimiento para consultas de precios</div>
+                        <div class="feature-success-rate low">0% Éxito</div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Categoría: Trade Performance -->
+            <!-- Categoría: 📈 Tests de Carga -->
             <div class="category-section">
-                <h3 class="category-title">💱 Trade Performance</h3>
+                <h3 class="category-title">📈 Tests de Carga</h3>
                 <div class="features-grid">
-                    <div class="feature-card" onclick="openKarateReport('features.performance.TradeListPerformance')">
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.TokenDataPerformance.html', '_blank')">
                         <div class="feature-header">
-                            <span class="feature-icon">💱</span>
-                            <div class="feature-name">Trade List Performance</div>
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Token Data</div>
+                                <div class="feature-description">Tests de carga para datos de tokens</div>
+                            </div>
                         </div>
-                        <div class="feature-description">Rendimiento de listados de operaciones de trading</div>
+                        <div class="feature-success-rate high">100% Éxito</div>
+                    </div>
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.TokenDataPerformanceAdvanced.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Token Data Advanced</div>
+                                <div class="feature-description">Tests de carga para datos de tokens</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate high">100% Éxito</div>
+                    </div>
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.TokenListPerformance.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">📋</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Token List</div>
+                                <div class="feature-description">Rendimiento en listado de tokens</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate low">67% Éxito</div>
+                    </div>
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.TradeListPerformance.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">📈</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Trade List</div>
+                                <div class="feature-description">Pruebas de carga para listas de trades</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate high">100% Éxito</div>
+                    </div>
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.GlobalLoadTest.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">🌐</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Global Load Test</div>
+                                <div class="feature-description">Test de carga global del sistema</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate high">100% Éxito</div>
+                    </div>
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.HeavyLoadEndpointsPerformance.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">🏋️</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Heavy Load Endpoints</div>
+                                <div class="feature-description">Endpoints bajo carga pesada</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate low">0% Éxito</div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Categoría: Load Tests -->
+            <!-- Categoría: 🔥 Tests de Estrés -->
             <div class="category-section">
-                <h3 class="category-title">🌐 Load Tests</h3>
+                <h3 class="category-title">🔥 Tests de Estrés</h3>
                 <div class="features-grid">
-                    <div class="feature-card" onclick="openKarateReport('features.performance.GlobalLoadTest')">
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.AdvancedPerformanceValidation.html', '_blank')">
                         <div class="feature-header">
-                            <span class="feature-icon">🌐</span>
-                            <div class="feature-name">Global Load Test</div>
+                            <div class="feature-icon">🔥</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Advanced Validation</div>
+                                <div class="feature-description">Validación avanzada de performance</div>
+                            </div>
                         </div>
-                        <div class="feature-description">Pruebas de carga global del sistema</div>
+                        <div class="feature-success-rate low">0% Éxito</div>
                     </div>
                 </div>
             </div>
-        </div>
+            <!-- Categoría: 🔍 Tests de Análisis -->
+            <div class="category-section">
+                <h3 class="category-title">🔍 Tests de Análisis</h3>
+                <div class="features-grid">
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.BottleneckEndpointsPerformance.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">🔍</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Bottleneck Endpoints</div>
+                                <div class="feature-description">Identificación de cuellos de botella</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate low">0% Éxito</div>
+                    </div>
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.CriticalEndpointsPerformance.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">⚠️</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Critical Endpoints</div>
+                                <div class="feature-description">Endpoints críticos del sistema</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate low">0% Éxito</div>
+                    </div>
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.ResourceIntensiveEndpointsPerformance.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">💻</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Resource Intensive Endpoints</div>
+                                <div class="feature-description">Endpoints intensivos en recursos</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate low">0% Éxito</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Categoría: 🔄 Tests de Concurrencia -->
+            <div class="category-section">
+                <h3 class="category-title">🔄 Tests de Concurrencia</h3>
+                <div class="features-grid">
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.TokenMetaPerformance.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">ℹ️</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Token Meta</div>
+                                <div class="feature-description">Metadatos de tokens bajo carga</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate low">0% Éxito</div>
+                    </div>
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.TokenNewListingPerformance.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">🆕</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Token New Listing</div>
+                                <div class="feature-description">Nuevos listados de tokens</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate low">0% Éxito</div>
+                    </div>
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.TokenTrendingPerformance.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">📈</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Token Trending</div>
+                                <div class="feature-description">Tokens en tendencia</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate low">0% Éxito</div>
+                    </div>
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.TradeOHLCVPerformance.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Trade O H L C V</div>
+                                <div class="feature-description">Datos OHLCV de trades</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate low">0% Éxito</div>
+                    </div>
+                    <div class="feature-card" onclick="window.open('karate-reports/performance/features.performance.HealthCheckPerformance.html', '_blank')">
+                        <div class="feature-header">
+                            <div class="feature-icon">🏥</div>
+                            <div class="feature-info">
+                                <div class="feature-name">Health Check</div>
+                                <div class="feature-description">Verificación de salud del sistema</div>
+                            </div>
+                        </div>
+                        <div class="feature-success-rate low">0% Éxito</div>
+                    </div>
+                </div>
+            </div></div>
         
         <div class="footer">
             <p>📊 QuantFlux Testing Suite - Reporte de Tests de Performance</p>
@@ -326,4 +440,3 @@
     </div>
 </body>
 </html>
- 

@@ -1,0 +1,28 @@
+{
+  "name": "quantflux-testing-suite",
+  "version": "1.0.0",
+  "description": "Testing suite with automated dashboard synchronization",
+  "main": "scripts/sync-all-dashboards.js",
+  "scripts": {
+    "sync-all": "node scripts/sync-all-dashboards.js",
+    "run-all-tests": "run-all-and-sync-dashboard.bat",
+    "open-dashboard": "start docs/index.html",
+    "open-functional": "start docs/functional-report.html",
+    "open-performance": "start docs/performance-report.html"
+  },
+  "keywords": [
+    "karate",
+    "testing",
+    "automation",
+    "dashboard",
+    "reports"
+  ],
+  "author": "QuantFlux Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+} 

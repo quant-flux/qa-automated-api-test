@@ -44,6 +44,12 @@ jobs:
       - name: 🚀 Run Complete Functional Tests
         run: mvn -X test -Dtest=FunctionalTestRunner#testCompleteReport
 
+      - name: Copy Functional Reports to docs
+        if: always()
+        run: |
+          mkdir -p docs/functional
+          cp -r target/karate-reports/functional/* docs/functional/ || true
+
       - name: 📁 Upload Functional Test Reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -53,3 +59,6 @@ jobs:
             target/karate-reports/functional/
             target/surefire-reports/
           retention-days: 30 
+
+      - name: Sync dashboards and Karate reports to docs
+        run: node scripts/sync-docs.js 

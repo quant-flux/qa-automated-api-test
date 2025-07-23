@@ -1,0 +1,6 @@
+{
+  "baseline": { "symbol": "BTCUSDT", "interval": "1h" },
+  "load": { "symbol": "BTCUSDT", "interval": "1m", "limit": 1000 },
+  "stress": { "symbol": "BTCUSDT", "interval": "1m", "limit": 5000 },
+  "latency": { "symbol": "ETHUSDT", "interval": "5m" }
+} 

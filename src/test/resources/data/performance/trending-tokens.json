@@ -1,0 +1,10 @@
+{
+  "baseline": { "limit": 5 },
+  "load": { "limit": 50 },
+  "stress": { "limit": 200 },
+  "latency": { "limit": 10 },
+  "expected": [
+    { "id": "token1", "trend": 100 },
+    { "id": "token2", "trend": 90 }
+  ]
+} 

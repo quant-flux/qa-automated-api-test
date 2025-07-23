@@ -1,0 +1,18 @@
+[
+  "features.app.HealthCheck",
+  "features.common.DataCleanup",
+  "features.common.TestData",
+  "features.tokens.TokenData",
+  "features.tokens.TokenDataValidation",
+  "features.tokens.TokenHolders",
+  "features.tokens.TokenList",
+  "features.tokens.TokenMeta",
+  "features.tokens.TokenNewListing",
+  "features.tokens.TokenPrice",
+  "features.tokens.TokenPriceMulti",
+  "features.tokens.TokenPrices",
+  "features.tokens.TokenPricesMulti",
+  "features.tokens.TokenTrending",
+  "features.trade.TradeList",
+  "features.trade.TradeOHLCV"
+]

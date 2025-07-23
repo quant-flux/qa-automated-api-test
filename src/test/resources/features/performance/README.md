@@ -9,8 +9,11 @@
   - `TokenDataPerformanceAdvanced.feature` - Tests avanzados de performance para datos de tokens
   - `TokenListPerformance.feature` - Tests de performance para listado de tokens
   - `TokenPricePerformance.feature` - Tests de performance para precios de tokens
+  - `TokenPriceMultiPerformance.feature` - Tests de performance para precios múltiples de tokens
   - `TradeListPerformance.feature` - Tests de performance para listado de trades
   - `GlobalLoadTest.feature` - Tests de carga global cross-endpoints
+  - `ProblematicEndpointsPerformance.feature` - Tests específicos para endpoints problemáticos
+  - `ExtremeLoadPerformance.feature` - Tests de carga extrema y situaciones problemáticas
 - Propósito: Todos los tests de performance centralizados en un directorio
 
 ### 2. **Configuración**
@@ -29,6 +32,11 @@ Los tests están organizados con tags específicos para facilitar la ejecución 
 - `@endurance` - Tests de resistencia (carga prolongada)
 - `@global` - Tests globales cross-endpoints
 - `@advanced` - Tests avanzados con validaciones complejas
+- `@critical` - Tests de endpoints críticos del sistema
+- `@heavy_load` - Tests de carga pesada y grandes volúmenes
+- `@bottleneck` - Tests de puntos de estrangulamiento
+- `@high_latency` - Tests de latencia alta
+- `@resource_intensive` - Tests de uso intensivo de recursos
 
 #### **Subcategorías de Carga:**
 - `@light` - Carga ligera
@@ -78,6 +86,9 @@ mvn test -Dtest=PerformanceTestRunner#testStressLoad
 ```bash
 # Generar todos los reportes de performance organizados
 scripts/generate-performance-reports.bat
+
+# Tests específicos por categoría
+scripts/run-categorized-performance-tests.bat
 
 # Generar reportes de tests funcionales
 scripts/generate-functional-reports.bat
@@ -152,10 +163,63 @@ Los umbrales se configuran en `performance-test-data.json` y se acceden mediante
 - `TokenDataPerformanceAdvanced.feature` - Performance avanzada de `/token/data` con múltiples escenarios
 - `TokenListPerformance.feature` - Performance de `/token/list`
 - `TokenPricePerformance.feature` - Performance de `/token/price`
+- `TokenPriceMultiPerformance.feature` - Performance de `/token/price/multi`
 - `TradeListPerformance.feature` - Performance de `/trade/list`
 
 ### **Tests Globales:**
 - `GlobalLoadTest.feature` - Carga general del sistema
+
+### **Tests de Endpoints Críticos:**
+- `CriticalEndpointsPerformance.feature` - Tests para endpoints críticos del sistema:
+  - `/token/price` - Precio de tokens (funcionalidad core)
+  - `/token/data` - Datos de tokens (funcionalidad core)
+  - `/token/list` - Lista de tokens (funcionalidad core)
+  - `/trade/list` - Lista de trades (funcionalidad core)
+  - Concurrencia de endpoints críticos
+  - Disponibilidad 24/7
+
+### **Tests de Carga Pesada:**
+- `HeavyLoadEndpointsPerformance.feature` - Tests para endpoints con grandes volúmenes de datos:
+  - `/token/prices/multi` - Múltiples tokens con variaciones de precio
+  - `/token/price/multi` - Múltiples tokens con precios actuales
+  - `/token/list` - Paginación máxima
+  - `/token/holders` - Grandes datasets
+  - `/token/new_listing` - Grandes datasets
+  - Procesamiento de volúmenes de datos
+  - Tests de throughput
+
+### **Tests de Puntos de Estrangulamiento:**
+- `BottleneckEndpointsPerformance.feature` - Tests para identificar bottlenecks:
+  - `/trade/ohlcv/` - Datos OHLCV (datasets grandes)
+  - `/token/trending` - Cálculos complejos
+  - Queries complejas de base de datos
+  - Operaciones intensivas en memoria
+  - Operaciones intensivas en CPU
+  - Operaciones intensivas en red
+  - Detección de bottlenecks
+
+### **Tests de Latencia Alta:**
+- `HighLatencyEndpointsPerformance.feature` - Tests para endpoints con latencia alta:
+  - Llamadas a APIs externas
+  - Operaciones lentas de base de datos
+  - Cache miss scenarios
+  - Delays de red
+  - Latencia geográfica
+  - Análisis de patrones de latencia
+  - Detección de degradación de latencia
+  - Escenarios de timeout
+
+### **Tests de Uso Intensivo de Recursos:**
+- `ResourceIntensiveEndpointsPerformance.feature` - Tests para endpoints que consumen muchos recursos:
+  - Operaciones intensivas en memoria
+  - Operaciones intensivas en CPU
+  - Operaciones intensivas en disco I/O
+  - Operaciones intensivas en ancho de banda de red
+  - Operaciones intensivas en conexiones de BD
+  - Operaciones concurrentes de recursos
+  - Agotamiento de recursos
+  - Detección de memory leaks
+  - Monitoreo de uso de recursos
 
 ## Tags de Performance
 
@@ -218,6 +282,44 @@ mvn test -Dtest=PerformanceTestRunner#testAllPerformance -Dkarate.options="--tag
 
 # Solo stress tests
 mvn test -Dtest=PerformanceTestRunner#testAllPerformance -Dkarate.options="--tags @stress"
+
+# Solo endpoints críticos
+mvn test -Dtest=PerformanceTestRunner#testAllPerformance -Dkarate.options="--tags @critical"
+
+# Solo carga pesada
+mvn test -Dtest=PerformanceTestRunner#testAllPerformance -Dkarate.options="--tags @heavy_load"
+
+# Solo puntos de estrangulamiento
+mvn test -Dtest=PerformanceTestRunner#testAllPerformance -Dkarate.options="--tags @bottleneck"
+
+# Solo latencia alta
+mvn test -Dtest=PerformanceTestRunner#testAllPerformance -Dkarate.options="--tags @high_latency"
+
+# Solo uso intensivo de recursos
+mvn test -Dtest=PerformanceTestRunner#testAllPerformance -Dkarate.options="--tags @resource_intensive"
+```
+
+### **Ejecutar tests específicos por categoría:**
+```bash
+# Todos los endpoints críticos
+mvn test -Dtest=PerformanceTestRunner#testCriticalEndpointsPerformance
+
+# Todos los tests de carga pesada
+mvn test -Dtest=PerformanceTestRunner#testHeavyLoadEndpointsPerformance
+
+# Todos los tests de puntos de estrangulamiento
+mvn test -Dtest=PerformanceTestRunner#testBottleneckEndpointsPerformance
+
+# Todos los tests de latencia alta
+mvn test -Dtest=PerformanceTestRunner#testHighLatencyEndpointsPerformance
+
+# Todos los tests de uso intensivo de recursos
+mvn test -Dtest=PerformanceTestRunner#testResourceIntensiveEndpointsPerformance
+
+# Endpoint específico por categoría
+mvn test -Dtest=PerformanceTestRunner#testAllPerformance -Dkarate.options="--tags @trade_ohlcv"
+mvn test -Dtest=PerformanceTestRunner#testAllPerformance -Dkarate.options="--tags @token_trending"
+mvn test -Dtest=PerformanceTestRunner#testAllPerformance -Dkarate.options="--tags @token_prices_multi"
 ```
 
 ## Reportes de Performance
