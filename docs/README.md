@@ -2,13 +2,12 @@
 
 Este directorio contiene los dashboards de tests automatizados para la API de QuantFlux.
 
-## 🚀 Deploy Automático
+## 🚀 Deploy Automático Integrado
 
-Los dashboards se despliegan automáticamente en GitHub Pages cuando:
+Los dashboards se despliegan automáticamente en GitHub Pages **inmediatamente después** de que se completen los tests:
 
-1. **Se hace push a la rama `main`**
-2. **Se completan exitosamente los tests funcionales**
-3. **Se completan exitosamente los tests de performance**
+1. **Tests Funcionales** - Deploy automático después de tests exitosos
+2. **Tests Performance** - Deploy automático después de tests exitosos
 
 ### 📋 Configuración de GitHub Pages
 
@@ -19,15 +18,19 @@ Para habilitar el deploy automático:
 3. **Branch**: `main`
 4. **Folder**: `/docs`
 
-### 🔄 Workflow de Deploy
+### 🔄 Deploy Integrado en Workflows
 
-El workflow `deploy.yml` se ejecuta automáticamente y:
+El deploy está **integrado directamente** en los workflows de tests:
 
-1. ✅ Hace checkout del código
-2. ✅ Configura Node.js
-3. ✅ Instala dependencias
-4. ✅ Ejecuta sincronización de dashboards
-5. ✅ Sube los archivos a GitHub Pages
+#### **Workflow Funcional** (`functional-tests.yml`):
+1. ✅ Ejecuta tests funcionales
+2. ✅ Sincroniza dashboards
+3. ✅ **Deploy automático a GitHub Pages**
+
+#### **Workflow Performance** (`performance-tests.yml`):
+1. ✅ Ejecuta tests de performance
+2. ✅ Sincroniza dashboards
+3. ✅ **Deploy automático a GitHub Pages**
 
 ## 📁 Estructura de Archivos
 

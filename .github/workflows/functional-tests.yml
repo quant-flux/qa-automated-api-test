@@ -7,6 +7,11 @@ on:
     branches: [main, develop]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   functional-tests:
     name: 🧪 Functional Tests
@@ -69,4 +74,18 @@ jobs:
         run: npm install
 
       - name: 🔄 Sync dashboards and Karate reports to docs
-        run: node scripts/sync-all-dashboards.js 
+        run: node scripts/sync-all-dashboards.js
+
+      - name: 📁 Setup Pages
+        if: success()
+        uses: actions/configure-pages@v4
+
+      - name: 📤 Upload artifact
+        if: success()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
+
+      - name: 🚀 Deploy to GitHub Pages
+        if: success()
+        uses: actions/deploy-pages@v4 
