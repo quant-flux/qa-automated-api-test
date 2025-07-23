@@ -44,11 +44,11 @@ jobs:
       - name: 🚀 Run Complete Functional Tests
         run: mvn -X test -Dtest=FunctionalTestRunner#testCompleteReport
 
-      - name: Copy Functional Reports to docs
+      - name: 📁 Prepare reports directory
         if: always()
         run: |
-          mkdir -p docs/functional
-          cp -r target/karate-reports/functional/* docs/functional/ || true
+          mkdir -p docs/karate-reports/functional
+          cp -r target/karate-reports/functional/* docs/karate-reports/functional/ || true
 
       - name: 📁 Upload Functional Test Reports
         if: always()
@@ -60,5 +60,13 @@ jobs:
             target/surefire-reports/
           retention-days: 30 
 
-      - name: Sync dashboards and Karate reports to docs
-        run: node scripts/sync-docs.js 
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🔄 Sync dashboards and Karate reports to docs
+        run: node scripts/sync-all-dashboards.js 

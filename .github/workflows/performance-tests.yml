@@ -93,14 +93,22 @@ jobs:
         run: |
           cp -r target/karate-reports/performance/* reports/performance/ 2>/dev/null || true
 
-      - name: Copy Performance Reports to docs
+      - name: 📁 Prepare reports directory
         if: always()
         run: |
-          mkdir -p docs/performance
-          cp -r target/karate-reports/performance/* docs/performance/ || true
+          mkdir -p docs/karate-reports/performance
+          cp -r target/karate-reports/performance/* docs/karate-reports/performance/ || true
 
-      - name: Sync dashboards and Karate reports to docs
-        run: node scripts/sync-docs.js
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Install dependencies
+        run: npm install
+
+      - name: 🔄 Sync dashboards and Karate reports to docs
+        run: node scripts/sync-all-dashboards.js
 
       - name: Upload Performance Reports as Artifact
         uses: actions/upload-artifact@v4

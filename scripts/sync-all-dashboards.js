@@ -223,7 +223,7 @@ function syncAllDashboards() {
     
     // Actualizar estadísticas funcionales
     const functionalStatsFile = path.join(config.docsDir, 'functional-report.html');
-    const functionalJsonFile = path.join(config.docsDir, 'karate-reports/functional/complete/karate-summary-json.txt');
+    const functionalJsonFile = path.join(config.docsDir, 'karate-reports/functional/karate-summary-json.txt');
     if (updateStatistics(functionalStatsFile, functionalJsonFile, 'Functional Report')) {
         statsUpdated++;
     }
