@@ -2,7 +2,7 @@ name: Performance Tests (Full-API Trigger)
 
 on:
   repository_dispatch:
-    types: [full-api-commit-trigger]
+    types: [full-api-performance-trigger]
 
 jobs:
   performance-test:
