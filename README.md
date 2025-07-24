@@ -1,4 +1,4 @@
-# 🚀 API Testing Project - Karate Framework
+# 🚀 API Testing Project - Karate Framework 
 
 Este proyecto contiene tests automatizados para la API de tokens utilizando el framework Karate, con una arquitectura moderna que separa tests funcionales y de performance.
 
