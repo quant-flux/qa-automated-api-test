@@ -2,7 +2,7 @@ name: Functional Tests (Full-API Trigger)
 
 on:
   repository_dispatch:
-    types: [full-api-commit-trigger]
+    types: [full-api-functional-trigger]
 
 jobs:
   functional-tests:
