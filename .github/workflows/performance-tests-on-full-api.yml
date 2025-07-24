@@ -2,13 +2,16 @@ name: Performance Tests (Full-API Trigger)
 
 on:
   repository_dispatch:
-    types: [full-api-commit-trigger]
+    types: [full-api-performance-trigger]
 
 jobs:
   performance-test:
     name: "\U0001F680 Performance Tests (Full-API Trigger)"
     runs-on: ubuntu-latest
     steps:
+      - name: Debug event
+        run: echo "${{ toJson(github.event) }}"
+
       - name: Checkout
         uses: actions/checkout@v4
 
