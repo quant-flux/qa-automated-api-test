@@ -38,8 +38,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">13</div>
-      <div id="nav-fail" class="bg-danger">3</div>
+      <div id="nav-pass" class="bg-success">15</div>
+      <div id="nav-fail" class="bg-danger">0</div>
     </div>
   </div>
   <div id="nav-env">
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2025-07-22 05:06:25 p. m.</div>
+    <div>2025-07-25 06:18:05 p. m.</div>
   </div>
 </div>
 
@@ -75,32 +75,29 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <div class="nav-item passed">
             <a href="#[7:69]"><span>[7:69]</span> <span>Get OHLCV data for empty address - Current API Behavior</span></a>
           </div>
-          <div class="nav-item failed">
+          <div class="nav-item passed">
             <a href="#[8:80]"><span>[8:80]</span> <span>Get OHLCV data for non-existent address - Current API Behavior</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[9:93]"><span>[9:93]</span> <span>Get OHLCV data with minimum interval (5m)</span></a>
+            <a href="#[9:89]"><span>[9:89]</span> <span>Get OHLCV data with minimum interval (5m)</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[10:104]"><span>[10:104]</span> <span>Get OHLCV data with maximum interval (1h)</span></a>
+            <a href="#[10:100]"><span>[10:100]</span> <span>Get OHLCV data with maximum interval (1h)</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[11:115]"><span>[11:115]</span> <span>Get OHLCV data with USD price format</span></a>
-          </div>
-          <div class="nav-item failed">
-            <a href="#[12:126]"><span>[12:126]</span> <span>Get OHLCV data with SOL price format</span></a>
+            <a href="#[11:111]"><span>[11:111]</span> <span>Get OHLCV data with USD price format</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[13:137]"><span>[13:137]</span> <span>Get OHLCV data with all parameters at extremes</span></a>
+            <a href="#[12:122]"><span>[12:122]</span> <span>Get OHLCV data with BASE price format</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[14:148]"><span>[14:148]</span> <span>Get OHLCV data with very long address</span></a>
-          </div>
-          <div class="nav-item failed">
-            <a href="#[15:157]"><span>[15:157]</span> <span>Get OHLCV data with special characters in address</span></a>
+            <a href="#[13:133]"><span>[13:133]</span> <span>Get OHLCV data with all parameters at extremes</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[16:166]"><span>[16:166]</span> <span>Get OHLCV data with mixed valid and invalid parameters</span></a>
+            <a href="#[14:144]"><span>[14:144]</span> <span>Get OHLCV data with very long address</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[15:153]"><span>[15:153]</span> <span>Get OHLCV data with mixed valid and invalid parameters</span></a>
           </div>
         </div>
       </div>
@@ -126,7 +123,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>4007</span>
+              <span>ms:</span>&nbsp;<span>2649</span>
             </div>
           </div>
           <div class="step-row">
@@ -149,7 +146,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -177,7 +174,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -289,7 +286,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">4003</div>
+    <div class="time-cell passed">2645</div>
   </div>
 
    
@@ -298,7 +295,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.12">17:06:08.626 request:
+  <div class="preformatted" data-parent="0.12">18:17:44.548 request:
 1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=1h
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -306,9 +303,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-17:06:12.628 response time in milliseconds: 4002
+18:17:47.192 response time in milliseconds: 2644
 1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 21:06:13 GMT
+1 &lt; Date: Fri, 25 Jul 2025 22:17:50 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
@@ -332,8 +329,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Remaining: 119
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=3ozREHvWPmIOO7qZ%2BitC6VSGk2yvk33phiiq3aqCMz5lGNXS%2F6iffOsBYq9wuRGhJm7g7bK9TmUO%2F%2FI287kzO18WQRasHWGzyLHnBMfRYVLA7ZaRMuwhcCzFqYzB9w%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e679aa8ca101-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=VMzoNmN4GMNnQRa2pWTejVxn%2FTuV4bY1prxKrzlNFW8b03icfYHhy2gYkm0Dav9r1iHWNnbz9mNSfPsVBrSWFJ7MDfC6%2F1O0PjEzBSBuyeBUSi6VoY4vQlINy%2FvLxw%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f078c785efffb-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
 {&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
 
@@ -441,7 +438,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>2097</span>
+              <span>ms:</span>&nbsp;<span>2221</span>
             </div>
           </div>
           <div class="step-row">
@@ -604,7 +601,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">2094</div>
+    <div class="time-cell passed">2220</div>
   </div>
 
    
@@ -613,7 +610,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.23">17:06:12.644 request:
+  <div class="preformatted" data-parent="0.23">18:17:47.203 request:
 1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump?price_format=USD&amp;chart_format=price&amp;interval=5m
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -621,9 +618,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-17:06:14.736 response time in milliseconds: 2090
+18:17:49.420 response time in milliseconds: 2216
 1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 21:06:15 GMT
+1 &lt; Date: Fri, 25 Jul 2025 22:17:52 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
@@ -639,8 +636,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;408b-kkg+cxZciTtK1EOv8JAVIkRJSjQ&quot;
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=uxDaOuA0bqvnVl%2Fdhd%2BvWJEg%2BEB5AYlstyy5bKExCwZ1xg1jtvKXns4HSQnd2eigwlBGT6FimSDhvXi7B81xIDTHLPi5VmFPwDmf%2B8nELnYOYQAinXjJytW1KuGKFQ%3D%3D&quot;}]}
+1 &lt; Etag: W/&quot;4896-CF/PmhkfvgSZO/4q9toxBHfdMiY&quot;
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=i616%2BdxfXsiz%2Fpeinn2%2BKqWJgQ6uWKYuFIpLrHjxumWwOavpxcz67Oqg%2FqZJssSLv18YpEcVhbMngSRFPaUqt5olMPylP1wzcQGEhjz6vZPjg9bK%2F4IHWPjcUYaRWw%3D%3D&quot;}]}
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -648,9 +645,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Remaining: 119
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; CF-RAY: 9635e6923d1d257a-MIA
+1 &lt; CF-RAY: 964f079cd99f0bd1-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[{&quot;time&quot;:1753132200000,&quot;open&quot;:0.0018622819365775307,&quot;high&quot;:0.0018622819365775307,&quot;low&quot;:0.0018622819365775307,&quot;close&quot;:0.0018642197013638223,&quot;volume&quot;:167.5940754103174},{&quot;time&quot;:1753132500000,&quot;open&quot;:0.0018642197013638223,&quot;high&quot;:0.0018642197013638223,&quot;low&quot;:0.001854735564154503,&quot;close&quot;:0.0018542850239606635,&quot;volume&quot;:15.359777936799684},{&quot;time&quot;:1753132800000,&quot;open&quot;:0.0018542850239606635,&quot;high&quot;:0.0018542850239606635,&quot;low&quot;:0.0018542850239606635,&quot;close&quot;:0.001864818751222579,&quot;volume&quot;:23.900806816340975},{&quot;time&quot;:1753133100000,&quot;open&quot;:0.001864818751222579,&quot;high&quot;:0.001872208092984035,&quot;low&quot;:0.001864818751222579,&quot;close&quot;:0.0018816374944557361,&quot;volume&quot;:1150.5048667624274},{&quot;time&quot;:1753133700000,&quot;open&quot;:0.0018816374944557361,&quot;high&quot;:0.0018816374944557361,&quot;low&quot;:0.0018816374944557361,&quot;close&quot;:0.0018816303808720702,&quot;volume&quot;:0.002394251997070312},{&quot;time&quot;:1753134300000,&quot;open&quot;:0.0018816303808720702,&quot;high&quot;:0.0018816303808720702,&quot;low&quot;:0.0018816303808720702,&quot;close&quot;:0.0018899115989576395,&quot;volume&quot;:25.06925079729095},{&quot;time&quot;:1753137300000,&quot;open&quot;:0.0018899115989576395,&quot;high&quot;:0.0018899115989576395,&quot;low&quot;:0.0018899115989576395,&quot;close&quot;:0.0018897633159047024,&quot;volume&quot;:7.34259250368544},{&quot;time&quot;:1753137600000,&quot;open&quot;:0.0018897633159047024,&quot;high&quot;:0.0018897633159047024,&quot;low&quot;:0.0018897633159047024,&quot;close&quot;:0.0018799280939557719,&quot;volume&quot;:5.491223508880142},{&quot;time&quot;:1753139100000,&quot;open&quot;:0.0018799280939557719,&quot;high&quot;:0.0018799280939557719,&quot;low&quot;:0.0018799280939557719,&quot;close&quot;:0.0018838620002836234,&quot;volume&quot;:500.1892133859376},{&quot;time&quot;:1753140300000,&quot;open&quot;:0.0018838620002836234,&quot;high&quot;:0.0018838620002836234,&quot;low&quot;:0.0018838620002836234,&quot;close&quot;:0.001858656132274097,&quot;volume&quot;:51.129697722473146},{&quot;time&quot;:1753140900000,&quot;open&quot;:0.001858656132274097,&quot;high&quot;:0.001858656132274097,&quot;low&quot;:0.001858656132274097,&quot;close&quot;:0.0018491859941602892,&quot;volume&quot;:824.5646685251767},{&quot;time&quot;:1753141500000,&quot;open&quot;:0.0018491859941602892,&quot;high&quot;:0.0018491859941602892,&quot;low&quot;:0.0018491859941602892,&quot;close&quot;:0.0018489584196019586,&quot;volume&quot;:0.02438195743927002},{&quot;time&quot;:1753141800000,&quot;open&quot;:0.0018489584196019586,&quot;high&quot;:0.0018489584196019586,&quot;low&quot;:0.0018489584196019586,&quot;close&quot;:0.0018240972161009037,&quot;volume&quot;:20.73392139167328},{&quot;time&quot;:1753142100000,&quot;open&quot;:0.0018240972161009037,&quot;high&quot;:0.0018399177757023675,&quot;low&quot;:0.001808887965867703,&quot;close&quot;:0.0018108122220908199,&quot;volume&quot;:2224.7347330324988},{&quot;time&quot;:1753143900000,&quot;open&quot;:0.0018108122220908199,&quot;high&quot;:0.0018108122220908199,&quot;low&quot;:0.0018108122220908199,&quot;close&quot;:0.0017995932605473547,&quot;volume&quot;:669.9809109305623},{&quot;time&quot;:1753144200000,&quot;open&quot;:0.0017995932605473547,&quot;high&quot;:0.0018157029974221013,&quot;low&quot;:0.0017995932605473547,&quot;close&quot;:0.0018067773291816722,&quot;volume&quot;:263.6024504319656},{&quot;time&quot;:1753144500000,&quot;open&quot;:0.0018067773291816722,&quot;high&quot;:0.0018067773291816722,&quot;low&quot;:0.0018067773291816722,&quot;close&quot;:0.0018079856132786282,&quot;volume&quot;:99.68512178026444},{&quot;time&quot;:1753144800000,&quot;open&quot;:0.0018079856132786282,&quot;high&quot;:0.0018079856132786282,&quot;low&quot;:0.0017635958652140176,&quot;close&quot;:0.0018168405644651171,&quot;volume&quot;:7468.887269418287},{&quot;time&quot;:1753145400000,&quot;open&quot;:0.0018168405644651171,&quot;high&quot;:0.0018168405644651171,&quot;low&quot;:0.0017846021628624708,&quot;close&quot;:0.001791872573324533,&quot;volume&quot;:2355.5929716173846},{&quot;time&quot;:1753145700000,&quot;open&quot;:0.001791872573324533,&quot;high&quot;:0.001791872573324533,&quot;low&quot;:0.001791872573324533,&quot;close&quot;:0.001773902183951115,&quot;volume&quot;:79.38135776572085},{&quot;time&quot;:1753146000000,&quot;open&quot;:0.001773902183951115,&quot;high&quot;:0.001773902183951115,&quot;low&quot;:0.001773902183951115,&quot;close&quot;:0.0017746215205016868,&quot;volume&quot;:41.91045694683128},{&quot;time&quot;:1753146300000,&quot;open&quot;:0.0017746215205016868,&quot;high&quot;:0.001775456896281453,&quot;low&quot;:0.0017659876786558532,&quot;close&quot;:0.00177599312421336,&quot;volume&quot;:84.57123063845943},{&quot;time&quot;:1753146600000,&quot;open&quot;:0.00177599312421336,&quot;high&quot;:0.00177599312421336,&quot;low&quot;:0.0017669681041031155,&quot;close&quot;:0.0017667688526006031,&quot;volume&quot;:19.81538905661798},{&quot;time&quot;:1753146900000,&quot;open&quot;:0.0017667688526006031,&quot;high&quot;:0.0017667688526006031,&quot;low&quot;:0.0017656609155703485,&quot;close&quot;:0.0017645051821347153,&quot;volume&quot;:98.96851774295085},{&quot;time&quot;:1753147500000,&quot;open&quot;:0.0017645051821347153,&quot;high&quot;:0.0017645051821347153,&quot;low&quot;:0.0017645051821347153,&quot;close&quot;:0.001807450246211843,&quot;volume&quot;:5.948323419494339},{&quot;time&quot;:1753147800000,&quot;open&quot;:0.001807450246211843,&quot;high&quot;:0.001807450246211843,&quot;low&quot;:0.001807450246211843,&quot;close&quot;:0.001799069353382666,&quot;volume&quot;:147.11825934046243},{&quot;time&quot;:1753148100000,&quot;open&quot;:0.001799069353382666,&quot;high&quot;:0.0018119951789356463,&quot;low&quot;:0.001799069353382666,&quot;close&quot;:0.001792330714516368,&quot;volume&quot;:1205.2999729385301},{&quot;time&quot;:1753148400000,&quot;open&quot;:0.001792330714516368,&quot;high&quot;:0.001792330714516368,&quot;low&quot;:0.001792330714516368,&quot;close&quot;:0.001791969445880003,&quot;volume&quot;:1.8825424151639099},{&quot;time&quot;:1753149000000,&quot;open&quot;:0.001791969445880003,&quot;high&quot;:0.001791969445880003,&quot;low&quot;:0.001791617286546221,&quot;close&quot;:0.0017914956314159657,&quot;volume&quot;:31.550127879437806},{&quot;time&quot;:1753149300000,&quot;open&quot;:0.0017914956314159657,&quot;high&quot;:0.0018004645820392188,&quot;low&quot;:0.001791452224498585,&quot;close&quot;:0.0017992386537266163,&quot;volume&quot;:27.838941853239714},{&quot;time&quot;:1753149900000,&quot;open&quot;:0.0017992386537266163,&quot;high&quot;:0.0018212679749251908,&quot;low&quot;:0.0017942568606457065,&quot;close&quot;:0.0018394580982758547,&quot;volume&quot;:6138.088161623425},{&quot;time&quot;:1753150200000,&quot;open&quot;:0.0018394580982758547,&quot;high&quot;:0.0018394580982758547,&quot;low&quot;:0.0018358552888069878,&quot;close&quot;:0.0018322651486130592,&quot;volume&quot;:637.3242127848647},{&quot;time&quot;:1753151100000,&quot;open&quot;:0.0018322651486130592,&quot;high&quot;:0.0018322651486130592,&quot;low&quot;:0.001830172050775503,&quot;close&quot;:0.0018368122146021969,&quot;volume&quot;:187.04818840449903},{&quot;time&quot;:1753152600000,&quot;open&quot;:0.0018368122146021969,&quot;high&quot;:0.0018370033333746528,&quot;low&quot;:0.0018368122146021969,&quot;close&quot;:0.0018277113232683662,&quot;volume&quot;:34.101215967041014},{&quot;time&quot;:1753152900000,&quot;open&quot;:0.0018277113232683662,&quot;high&quot;:0.0018277113232683662,&quot;low&quot;:0.0018277113232683662,&quot;close&quot;:0.0018148002941343346,&quot;volume&quot;:25.61895604373337},{&quot;time&quot;:1753153200000,&quot;open&quot;:0.0018148002941343346,&quot;high&quot;:0.001822816825483811,&quot;low&quot;:0.0018148002941343346,&quot;close&quot;:0.0018254174818519138,&quot;volume&quot;:106.84731808705749},{&quot;time&quot;:1753153500000,&quot;open&quot;:0.0018254174818519138,&quot;high&quot;:0.0018309640875354635,&quot;low&quot;:0.0018254174818519138,&quot;close&quot;:0.0018236798824761925,&quot;volume&quot;:494.05268319715805},{&quot;time&quot;:1753153800000,&quot;open&quot;:0.0018236798824761925,&quot;high&quot;:0.0018236798824761925,&quot;low&quot;:0.0018236798824761925,&quot;close&quot;:0.0018089212278985787,&quot;volume&quot;:100.81909244246597},{&quot;time&quot;:1753155000000,&quot;open&quot;:0.0018089212278985787,&quot;high&quot;:0.0018089212278985787,&quot;low&quot;:0.0018089212278985787,&quot;close&quot;:0.0018091327812772254,&quot;volume&quot;:6.8496086483737795},{&quot;time&quot;:1753156500000,&quot;open&quot;:0.0018091327812772254,&quot;high&quot;:0.0018091327812772254,&quot;low&quot;:0.0018091327812772254,&quot;close&quot;:0.0017924643997698003,&quot;volume&quot;:11.977569584395676},{&quot;time&quot;:1753157100000,&quot;open&quot;:0.0017924643997698003,&quot;high&quot;:0.0018033174142111088,&quot;low&quot;:0.0017924643997698003,&quot;close&quot;:0.001784266422591826,&quot;volume&quot;:200.7987004999465},{&quot;time&quot;:1753160100000,&quot;open&quot;:0.001784266422591826,&quot;high&quot;:0.001784266422591826,&quot;low&quot;:0.001784266422591826,&quot;close&quot;:0.001806272628247735,&quot;volume&quot;:22.122944983084444},{&quot;time&quot;:1753161600000,&quot;open&quot;:0.001806272628247735,&quot;high&quot;:0.001806272628247735,&quot;low&quot;:0.001806272628247735,&quot;close&quot;:0.0017859303345709012,&quot;volume&quot;:6.713318812373535},{&quot;time&quot;:1753162500000,&quot;open&quot;:0.0017859303345709012,&quot;high&quot;:0.0017859303345709012,&quot;low&quot;:0.0017859303345709012,&quot;close&quot;:0.001803162352061223,&quot;volume&quot;:6.1357503155694575},{&quot;time&quot;:1753164000000,&quot;open&quot;:0.001803162352061223,&quot;high&quot;:0.001803162352061223,&quot;low&quot;:0.0018005936977567054,&quot;close&quot;:0.0018045804814413335,&quot;volume&quot;:229.0069548200958},{&quot;time&quot;:1753165800000,&quot;open&quot;:0.0018045804814413335,&quot;high&quot;:0.0018045804814413335,&quot;low&quot;:0.0018045804814413335,&quot;close&quot;:0.0017954771037841,&quot;volume&quot;:3.974996244506836},{&quot;time&quot;:1753166400000,&quot;open&quot;:0.0017954771037841,&quot;high&quot;:0.0017954771037841,&quot;low&quot;:0.0017954771037841,&quot;close&quot;:0.0018049299993479597,&quot;volume&quot;:10.181408755442963},{&quot;time&quot;:1753167300000,&quot;open&quot;:0.0018049299993479597,&quot;high&quot;:0.0018049299993479597,&quot;low&quot;:0.0018049299993479597,&quot;close&quot;:0.00180502097293646,&quot;volume&quot;:49.58790128477426},{&quot;time&quot;:1753168500000,&quot;open&quot;:0.00180502097293646,&quot;high&quot;:0.00180502097293646,&quot;low&quot;:0.00180502097293646,&quot;close&quot;:0.0017929287495824565,&quot;volume&quot;:19.50762614769214},{&quot;time&quot;:1753169400000,&quot;open&quot;:0.0017929287495824565,&quot;high&quot;:0.0017929287495824565,&quot;low&quot;:0.0017929287495824565,&quot;close&quot;:0.0017871925180303007,&quot;volume&quot;:465.04656888107854},{&quot;time&quot;:1753170000000,&quot;open&quot;:0.0017871925180303007,&quot;high&quot;:0.0017871925180303007,&quot;low&quot;:0.0017871925180303007,&quot;close&quot;:0.0017858699181711355,&quot;volume&quot;:47.54539763075849},{&quot;time&quot;:1753170900000,&quot;open&quot;:0.0017858699181711355,&quot;high&quot;:0.0017858699181711355,&quot;low&quot;:0.0017858699181711355,&quot;close&quot;:0.0017486551777990639,&quot;volume&quot;:70.82760095466723},{&quot;time&quot;:1753171800000,&quot;open&quot;:0.0017486551777990639,&quot;high&quot;:0.0017486551777990639,&quot;low&quot;:0.0017486551777990639,&quot;close&quot;:0.0017559277670916797,&quot;volume&quot;:197.768561693714},{&quot;time&quot;:1753172700000,&quot;open&quot;:0.0017559277670916797,&quot;high&quot;:0.0017616830238432694,&quot;low&quot;:0.0017559277670916797,&quot;close&quot;:0.0017675666072637954,&quot;volume&quot;:321.2865753690225},{&quot;time&quot;:1753173600000,&quot;open&quot;:0.0017675666072637954,&quot;high&quot;:0.0017675666072637954,&quot;low&quot;:0.0017675666072637954,&quot;close&quot;:0.0017548277707141098,&quot;volume&quot;:53.026998217913864},{&quot;time&quot;:1753175100000,&quot;open&quot;:0.0017548277707141098,&quot;high&quot;:0.0017548277707141098,&quot;low&quot;:0.0017548277707141098,&quot;close&quot;:0.00175477754045105,&quot;volume&quot;:0.9973873923500061},{&quot;time&quot;:1753176300000,&quot;open&quot;:0.00175477754045105,&quot;high&quot;:0.00175477754045105,&quot;low&quot;:0.00175477754045105,&quot;close&quot;:0.0017663386481725162,&quot;volume&quot;:7.019110161804199},{&quot;time&quot;:1753176600000,&quot;open&quot;:0.0017663386481725162,&quot;high&quot;:0.0017690153384780504,&quot;low&quot;:0.0017661487453890846,&quot;close&quot;:0.0017693541633783299,&quot;volume&quot;:1065.4608368252564},{&quot;time&quot;:1753178700000,&quot;open&quot;:0.0017693541633783299,&quot;high&quot;:0.0017694902300693176,&quot;low&quot;:0.0017693541633783299,&quot;close&quot;:0.001778918872073875,&quot;volume&quot;:23.06131974524478},{&quot;time&quot;:1753180500000,&quot;open&quot;:0.001778918872073875,&quot;high&quot;:0.0017872236455816763,&quot;low&quot;:0.001778918872073875,&quot;close&quot;:0.001787437068280886,&quot;volume&quot;:529.8411103302543},{&quot;time&quot;:1753180800000,&quot;open&quot;:0.001787437068280886,&quot;high&quot;:0.0017889517912149694,&quot;low&quot;:0.0017748853664924771,&quot;close&quot;:0.0017791283765220824,&quot;volume&quot;:1459.8107857754392},{&quot;time&quot;:1753181700000,&quot;open&quot;:0.0017791283765220824,&quot;high&quot;:0.0017791283765220824,&quot;low&quot;:0.0017791283765220824,&quot;close&quot;:0.00177408468950496,&quot;volume&quot;:356.6171283802024},{&quot;time&quot;:1753182300000,&quot;open&quot;:0.00177408468950496,&quot;high&quot;:0.00177408468950496,&quot;low&quot;:0.00177408468950496,&quot;close&quot;:0.0017909724425538382,&quot;volume&quot;:11.3747101209218},{&quot;time&quot;:1753185000000,&quot;open&quot;:0.0017909724425538382,&quot;high&quot;:0.0017909724425538382,&quot;low&quot;:0.0017909724425538382,&quot;close&quot;:0.001783518021520402,&quot;volume&quot;:99.07233521593406},{&quot;time&quot;:1753186500000,&quot;open&quot;:0.001783518021520402,&quot;high&quot;:0.001783518021520402,&quot;low&quot;:0.001783518021520402,&quot;close&quot;:0.0017971203094269683,&quot;volume&quot;:1.7683581183374788},{&quot;time&quot;:1753188000000,&quot;open&quot;:0.0017971203094269683,&quot;high&quot;:0.0017971203094269683,&quot;low&quot;:0.0017971203094269683,&quot;close&quot;:0.0018029266765944305,&quot;volume&quot;:17.209224083072645},{&quot;time&quot;:1753189800000,&quot;open&quot;:0.0018029266765944305,&quot;high&quot;:0.0018029266765944305,&quot;low&quot;:0.00180285889491336,&quot;close&quot;:0.0018133364720897185,&quot;volume&quot;:6.087779080471161},{&quot;time&quot;:1753190400000,&quot;open&quot;:0.0018133364720897185,&quot;high&quot;:0.0018133364720897185,&quot;low&quot;:0.0018133364720897185,&quot;close&quot;:0.00180241908400523,&quot;volume&quot;:131.069804004983},{&quot;time&quot;:1753191000000,&quot;open&quot;:0.00180241908400523,&quot;high&quot;:0.00180241908400523,&quot;low&quot;:0.00180241908400523,&quot;close&quot;:0.0017988013205915581,&quot;volume&quot;:0.500387586101532},{&quot;time&quot;:1753193700000,&quot;open&quot;:0.0017988013205915581,&quot;high&quot;:0.0017988013205915581,&quot;low&quot;:0.0017988013205915581,&quot;close&quot;:0.0017992713533321128,&quot;volume&quot;:36.01483703613281},{&quot;time&quot;:1753194000000,&quot;open&quot;:0.0017992713533321128,&quot;high&quot;:0.0017992713533321128,&quot;low&quot;:0.0017992713533321128,&quot;close&quot;:0.0017902407928489016,&quot;volume&quot;:5.951451820220948},{&quot;time&quot;:1753194300000,&quot;open&quot;:0.0017902407928489016,&quot;high&quot;:0.0017902407928489016,&quot;low&quot;:0.0017902407928489016,&quot;close&quot;:0.0018001505094040547,&quot;volume&quot;:10.023799505717468},{&quot;time&quot;:1753194600000,&quot;open&quot;:0.0018001505094040547,&quot;high&quot;:0.0018001505094040547,&quot;low&quot;:0.001791300003590395,&quot;close&quot;:0.0018401484604500084,&quot;volume&quot;:15.50554415769342},{&quot;time&quot;:1753197600000,&quot;open&quot;:0.0018401484604500084,&quot;high&quot;:0.0018401484604500084,&quot;low&quot;:0.0018401484604500084,&quot;close&quot;:0.0018176941514912095,&quot;volume&quot;:44.45201152775574},{&quot;time&quot;:1753200000000,&quot;open&quot;:0.0018176941514912095,&quot;high&quot;:0.0018176941514912095,&quot;low&quot;:0.0018176941514912095,&quot;close&quot;:0.0018266679165573783,&quot;volume&quot;:18.176941514912095},{&quot;time&quot;:1753200900000,&quot;open&quot;:0.0018266679165573783,&quot;high&quot;:0.0018266679165573783,&quot;low&quot;:0.0018266679165573783,&quot;close&quot;:0.0018403518743412936,&quot;volume&quot;:4.942377604510117},{&quot;time&quot;:1753202100000,&quot;open&quot;:0.0018403518743412936,&quot;high&quot;:0.0018403518743412936,&quot;low&quot;:0.0018254769389552598,&quot;close&quot;:0.0018274929174579805,&quot;volume&quot;:4096.551039385869},{&quot;time&quot;:1753202400000,&quot;open&quot;:0.0018274929174579805,&quot;high&quot;:0.0018274929174579805,&quot;low&quot;:0.0018274929174579805,&quot;close&quot;:0.001820577923497032,&quot;volume&quot;:1199.945087632655},{&quot;time&quot;:1753203000000,&quot;open&quot;:0.001820577923497032,&quot;high&quot;:0.001820577923497032,&quot;low&quot;:0.001820577923497032,&quot;close&quot;:0.0018129968418437313,&quot;volume&quot;:19.153178019645555},{&quot;time&quot;:1753203900000,&quot;open&quot;:0.0018129968418437313,&quot;high&quot;:0.0018129968418437313,&quot;low&quot;:0.0018129968418437313,&quot;close&quot;:0.0018159211421386009,&quot;volume&quot;:60.02035930480957},{&quot;time&quot;:1753204200000,&quot;open&quot;:0.0018159211421386009,&quot;high&quot;:0.0018159211421386009,&quot;low&quot;:0.0018159211421386009,&quot;close&quot;:0.0018089907695050275,&quot;volume&quot;:403.1344935547694},{&quot;time&quot;:1753204500000,&quot;open&quot;:0.0018089907695050275,&quot;high&quot;:0.0018089907695050275,&quot;low&quot;:0.0018089907695050275,&quot;close&quot;:0.001823057127987573,&quot;volume&quot;:9.972061560817748},{&quot;time&quot;:1753206000000,&quot;open&quot;:0.001823057127987573,&quot;high&quot;:0.001823057127987573,&quot;low&quot;:0.001823057127987573,&quot;close&quot;:0.00182321769586828,&quot;volume&quot;:14.020873054237365},{&quot;time&quot;:1753206600000,&quot;open&quot;:0.00182321769586828,&quot;high&quot;:0.00182321769586828,&quot;low&quot;:0.00182321769586828,&quot;close&quot;:0.0018138341446845535,&quot;volume&quot;:0.258230382711258},{&quot;time&quot;:1753207500000,&quot;open&quot;:0.0018138341446845535,&quot;high&quot;:0.0018226364144189693,&quot;low&quot;:0.0018138341446845535,&quot;close&quot;:0.0018134452439211742,&quot;volume&quot;:30.77062592713611},{&quot;time&quot;:1753208400000,&quot;open&quot;:0.0018134452439211742,&quot;high&quot;:0.0018134452439211742,&quot;low&quot;:0.0018134452439211742,&quot;close&quot;:0.001821289445665255,&quot;volume&quot;:9.996156056275634},{&quot;time&quot;:1753209000000,&quot;open&quot;:0.001821289445665255,&quot;high&quot;:0.0018217813115541399,&quot;low&quot;:0.00181279926045608,&quot;close&quot;:0.0018103489518348486,&quot;volume&quot;:63.55841532190017},{&quot;time&quot;:1753209300000,&quot;open&quot;:0.0018103489518348486,&quot;high&quot;:0.0018103489518348486,&quot;low&quot;:0.0018103489518348486,&quot;close&quot;:0.001806999092148806,&quot;volume&quot;:199.93589421350816},{&quot;time&quot;:1753209600000,&quot;open&quot;:0.001806999092148806,&quot;high&quot;:0.001806999092148806,&quot;low&quot;:0.001806999092148806,&quot;close&quot;:0.0018153310843193981,&quot;volume&quot;:100.15549629864958},{&quot;time&quot;:1753209900000,&quot;open&quot;:0.0018153310843193981,&quot;high&quot;:0.00181990925458706,&quot;low&quot;:0.001810105076870025,&quot;close&quot;:0.0018195080621978624,&quot;volume&quot;:336.4590475058338},{&quot;time&quot;:1753210200000,&quot;open&quot;:0.0018195080621978624,&quot;high&quot;:0.0018266989550102686,&quot;low&quot;:0.0018195080621978624,&quot;close&quot;:0.0018182095068637486,&quot;volume&quot;:385.5335495231747},{&quot;time&quot;:1753210500000,&quot;open&quot;:0.0018182095068637486,&quot;high&quot;:0.0018182095068637486,&quot;low&quot;:0.0018182095068637486,&quot;close&quot;:0.0018227416913159061,&quot;volume&quot;:7.532590403105256},{&quot;time&quot;:1753210800000,&quot;open&quot;:0.0018227416913159061,&quot;high&quot;:0.0018227416913159061,&quot;low&quot;:0.0018227416913159061,&quot;close&quot;:0.0018137310653456409,&quot;volume&quot;:19.01646314650496},{&quot;time&quot;:1753212000000,&quot;open&quot;:0.0018137310653456409,&quot;high&quot;:0.001822747287003496,&quot;low&quot;:0.0018137310653456409,&quot;close&quot;:0.0017950705867649033,&quot;volume&quot;:15.401145104121627},{&quot;time&quot;:1753212600000,&quot;open&quot;:0.0017950705867649033,&quot;high&quot;:0.0017950705867649033,&quot;low&quot;:0.0017950705867649033,&quot;close&quot;:0.0018052818633265584,&quot;volume&quot;:79.43086065680079},{&quot;time&quot;:1753213800000,&quot;open&quot;:0.0018052818633265584,&quot;high&quot;:0.0018052818633265584,&quot;low&quot;:0.0018052818633265584,&quot;close&quot;:0.0017968509139655883,&quot;volume&quot;:147.24064046496358},{&quot;time&quot;:1753214700000,&quot;open&quot;:0.0017968509139655883,&quot;high&quot;:0.0017968509139655883,&quot;low&quot;:0.0017968509139655883,&quot;close&quot;:0.001816014275118906,&quot;volume&quot;:72.48032414885778},{&quot;time&quot;:1753216200000,&quot;open&quot;:0.001816014275118906,&quot;high&quot;:0.001816014275118906,&quot;low&quot;:0.001816014275118906,&quot;close&quot;:0.001805306015347887,&quot;volume&quot;:0.6123975088168335},{&quot;time&quot;:1753217100000,&quot;open&quot;:0.001805306015347887,&quot;high&quot;:0.001805306015347887,&quot;low&quot;:0.001805306015347887,&quot;close&quot;:0.0018130676198976489,&quot;volume&quot;:294.48522065719214},{&quot;time&quot;:1753218300000,&quot;open&quot;:0.0018130676198976489,&quot;high&quot;:0.0018130676198976489,&quot;low&quot;:0.0018130676198976489,&quot;close&quot;:0.0018130676198976489,&quot;volume&quot;:11.152548132202147}]}
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[{&quot;time&quot;:1753395900000,&quot;open&quot;:0.0018107560775747098,&quot;high&quot;:0.0018107560775747098,&quot;low&quot;:0.0018107560775747098,&quot;close&quot;:0.0017791569063332516,&quot;volume&quot;:2.2977002706275633},{&quot;time&quot;:1753396200000,&quot;open&quot;:0.0017791569063332516,&quot;high&quot;:0.0017824842493067772,&quot;low&quot;:0.001730158573951031,&quot;close&quot;:0.0017278603637468574,&quot;volume&quot;:4801.289403595295},{&quot;time&quot;:1753396500000,&quot;open&quot;:0.0017278603637468574,&quot;high&quot;:0.0017347130488629045,&quot;low&quot;:0.0017251869084814063,&quot;close&quot;:0.0017328059488607576,&quot;volume&quot;:330.25233794027855},{&quot;time&quot;:1753396800000,&quot;open&quot;:0.0017328059488607576,&quot;high&quot;:0.0017331121509435187,&quot;low&quot;:0.0017328059488607576,&quot;close&quot;:0.0017335540026239132,&quot;volume&quot;:26.77106712704654},{&quot;time&quot;:1753397100000,&quot;open&quot;:0.0017335540026239132,&quot;high&quot;:0.0017335540026239132,&quot;low&quot;:0.0017335540026239132,&quot;close&quot;:0.0017339155410825361,&quot;volume&quot;:29.231020198536378},{&quot;time&quot;:1753397700000,&quot;open&quot;:0.0017339155410825361,&quot;high&quot;:0.0017339155410825361,&quot;low&quot;:0.0017195901859256516,&quot;close&quot;:0.0017124080272999974,&quot;volume&quot;:1001.8412923983752},{&quot;time&quot;:1753398000000,&quot;open&quot;:0.0017124080272999974,&quot;high&quot;:0.0017126624396513912,&quot;low&quot;:0.0017035878827803004,&quot;close&quot;:0.0017115848768871232,&quot;volume&quot;:82.92277915591157},{&quot;time&quot;:1753398600000,&quot;open&quot;:0.0017115848768871232,&quot;high&quot;:0.0017175493427548836,&quot;low&quot;:0.0017115848768871232,&quot;close&quot;:0.0017137896764040097,&quot;volume&quot;:524.0420475137984},{&quot;time&quot;:1753399500000,&quot;open&quot;:0.0017137896764040097,&quot;high&quot;:0.0017231957165779726,&quot;low&quot;:0.0017137896764040097,&quot;close&quot;:0.0017192770027767913,&quot;volume&quot;:187.22438301145797},{&quot;time&quot;:1753399800000,&quot;open&quot;:0.0017192770027767913,&quot;high&quot;:0.0017212618867545539,&quot;low&quot;:0.0017192770027767913,&quot;close&quot;:0.0017121002159137867,&quot;volume&quot;:141.56958901854836},{&quot;time&quot;:1753400100000,&quot;open&quot;:0.0017121002159137867,&quot;high&quot;:0.0017121002159137867,&quot;low&quot;:0.0017121002159137867,&quot;close&quot;:0.001709844940575892,&quot;volume&quot;:111.28651403439615},{&quot;time&quot;:1753400400000,&quot;open&quot;:0.001709844940575892,&quot;high&quot;:0.0017175840479396168,&quot;low&quot;:0.001709844940575892,&quot;close&quot;:0.0017055183496201716,&quot;volume&quot;:99.39091027066965},{&quot;time&quot;:1753401600000,&quot;open&quot;:0.0017055183496201716,&quot;high&quot;:0.0017055183496201716,&quot;low&quot;:0.0017055183496201716,&quot;close&quot;:0.0017112121285255608,&quot;volume&quot;:19.750212101580704},{&quot;time&quot;:1753401900000,&quot;open&quot;:0.0017112121285255608,&quot;high&quot;:0.0017112121285255608,&quot;low&quot;:0.0017112121285255608,&quot;close&quot;:0.0017119098851494736,&quot;volume&quot;:10.052415361725402},{&quot;time&quot;:1753402500000,&quot;open&quot;:0.0017119098851494736,&quot;high&quot;:0.0017119098851494736,&quot;low&quot;:0.0017119098851494736,&quot;close&quot;:0.0017130826632970524,&quot;volume&quot;:51.09328796386719},{&quot;time&quot;:1753402800000,&quot;open&quot;:0.0017130826632970524,&quot;high&quot;:0.0017130826632970524,&quot;low&quot;:0.0017130826632970524,&quot;close&quot;:0.0017062973891133048,&quot;volume&quot;:51.55563222150839},{&quot;time&quot;:1753403700000,&quot;open&quot;:0.0017062973891133048,&quot;high&quot;:0.0017062973891133048,&quot;low&quot;:0.0017062973891133048,&quot;close&quot;:0.0017070003583305054,&quot;volume&quot;:2.387507829654648},{&quot;time&quot;:1753404300000,&quot;open&quot;:0.0017070003583305054,&quot;high&quot;:0.0017070003583305054,&quot;low&quot;:0.0016978158260427185,&quot;close&quot;:0.0017087206563886905,&quot;volume&quot;:176.34092810913248},{&quot;time&quot;:1753406100000,&quot;open&quot;:0.0017087206563886905,&quot;high&quot;:0.0017087206563886905,&quot;low&quot;:0.0017087206563886905,&quot;close&quot;:0.001700198627639927,&quot;volume&quot;:9.157259625606065},{&quot;time&quot;:1753406400000,&quot;open&quot;:0.001700198627639927,&quot;high&quot;:0.001700198627639927,&quot;low&quot;:0.001700198627639927,&quot;close&quot;:0.0017088644189169936,&quot;volume&quot;:8.197230892529525},{&quot;time&quot;:1753406700000,&quot;open&quot;:0.0017088644189169936,&quot;high&quot;:0.0017088644189169936,&quot;low&quot;:0.0017088644189169936,&quot;close&quot;:0.0017059458416644614,&quot;volume&quot;:19.8762665121017},{&quot;time&quot;:1753407300000,&quot;open&quot;:0.0017059458416644614,&quot;high&quot;:0.0017059458416644614,&quot;low&quot;:0.0017059458416644614,&quot;close&quot;:0.0017146167027104824,&quot;volume&quot;:5.507288513621521},{&quot;time&quot;:1753407600000,&quot;open&quot;:0.0017146167027104824,&quot;high&quot;:0.0017146167027104824,&quot;low&quot;:0.001713463289659837,&quot;close&quot;:0.0017148459866389771,&quot;volume&quot;:15.087950152533189},{&quot;time&quot;:1753408200000,&quot;open&quot;:0.0017148459866389771,&quot;high&quot;:0.0017148459866389771,&quot;low&quot;:0.0017058792648420023,&quot;close&quot;:0.0017113862069653247,&quot;volume&quot;:45.3424680792675},{&quot;time&quot;:1753408800000,&quot;open&quot;:0.0017113862069653247,&quot;high&quot;:0.0017118894238406827,&quot;low&quot;:0.0017113862069653247,&quot;close&quot;:0.0017124949683770755,&quot;volume&quot;:44.07176160205536},{&quot;time&quot;:1753409400000,&quot;open&quot;:0.0017124949683770755,&quot;high&quot;:0.0017124949683770755,&quot;low&quot;:0.0017124949683770755,&quot;close&quot;:0.0016945825433837447,&quot;volume&quot;:19.748725434625992},{&quot;time&quot;:1753410600000,&quot;open&quot;:0.0016945825433837447,&quot;high&quot;:0.0016945825433837447,&quot;low&quot;:0.0016945825433837447,&quot;close&quot;:0.0016981085578552267,&quot;volume&quot;:294.604284103775},{&quot;time&quot;:1753411500000,&quot;open&quot;:0.0016981085578552267,&quot;high&quot;:0.0016983761005554478,&quot;low&quot;:0.0016981085578552267,&quot;close&quot;:0.0016888381825790491,&quot;volume&quot;:23.35717647852345},{&quot;time&quot;:1753412100000,&quot;open&quot;:0.0016888381825790491,&quot;high&quot;:0.0016888381825790491,&quot;low&quot;:0.0016870864798035072,&quot;close&quot;:0.0016702061938409008,&quot;volume&quot;:153.3608272016994},{&quot;time&quot;:1753412400000,&quot;open&quot;:0.0016702061938409008,&quot;high&quot;:0.0016755465470705314,&quot;low&quot;:0.0016702061938409008,&quot;close&quot;:0.0016674319271292367,&quot;volume&quot;:361.12164873409307},{&quot;time&quot;:1753412700000,&quot;open&quot;:0.0016674319271292367,&quot;high&quot;:0.0016674319271292367,&quot;low&quot;:0.0016674319271292367,&quot;close&quot;:0.001666908701337254,&quot;volume&quot;:25.753556318397493},{&quot;time&quot;:1753413000000,&quot;open&quot;:0.001666908701337254,&quot;high&quot;:0.001676970139177075,&quot;low&quot;:0.001666908701337254,&quot;close&quot;:0.0016793385804875236,&quot;volume&quot;:189.13622564609776},{&quot;time&quot;:1753413300000,&quot;open&quot;:0.0016793385804875236,&quot;high&quot;:0.0016800548176199007,&quot;low&quot;:0.0016793385804875236,&quot;close&quot;:0.0016717355396371938,&quot;volume&quot;:62.62608485552984},{&quot;time&quot;:1753413900000,&quot;open&quot;:0.0016717355396371938,&quot;high&quot;:0.0016801097760407455,&quot;low&quot;:0.0016717355396371938,&quot;close&quot;:0.0016674722329500255,&quot;volume&quot;:35.42649495209005},{&quot;time&quot;:1753414200000,&quot;open&quot;:0.0016674722329500255,&quot;high&quot;:0.0016674722329500255,&quot;low&quot;:0.0016674722329500255,&quot;close&quot;:0.0016682028735311024,&quot;volume&quot;:9.077830550149658},{&quot;time&quot;:1753414500000,&quot;open&quot;:0.0016682028735311024,&quot;high&quot;:0.0016682028735311024,&quot;low&quot;:0.0016682028735311024,&quot;close&quot;:0.0016691347355055658,&quot;volume&quot;:54.86773422428888},{&quot;time&quot;:1753414800000,&quot;open&quot;:0.0016691347355055658,&quot;high&quot;:0.0016691347355055658,&quot;low&quot;:0.0016691347355055658,&quot;close&quot;:0.0016697120868712787,&quot;volume&quot;:26.550226658252743},{&quot;time&quot;:1753415100000,&quot;open&quot;:0.0016697120868712787,&quot;high&quot;:0.0016697120868712787,&quot;low&quot;:0.0016697120868712787,&quot;close&quot;:0.0016702286118237526,&quot;volume&quot;:23.902767119760863},{&quot;time&quot;:1753415400000,&quot;open&quot;:0.0016702286118237526,&quot;high&quot;:0.0016745649275183897,&quot;low&quot;:0.0016702286118237526,&quot;close&quot;:0.0016795165501607586,&quot;volume&quot;:202.554089236264},{&quot;time&quot;:1753418100000,&quot;open&quot;:0.0016795165501607586,&quot;high&quot;:0.0016795165501607586,&quot;low&quot;:0.0016795165501607586,&quot;close&quot;:0.0016879454777813739,&quot;volume&quot;:19.771432577997054},{&quot;time&quot;:1753418700000,&quot;open&quot;:0.0016879454777813739,&quot;high&quot;:0.0016879454777813739,&quot;low&quot;:0.0016796212470075584,&quot;close&quot;:0.0016870811706447668,&quot;volume&quot;:30.501284237840594},{&quot;time&quot;:1753421400000,&quot;open&quot;:0.0016870811706447668,&quot;high&quot;:0.0016870811706447668,&quot;low&quot;:0.0016870811706447668,&quot;close&quot;:0.0016881001202092413,&quot;volume&quot;:88.40107746606033},{&quot;time&quot;:1753421700000,&quot;open&quot;:0.0016881001202092413,&quot;high&quot;:0.0016881001202092413,&quot;low&quot;:0.0016881001202092413,&quot;close&quot;:0.0016884089319832711,&quot;volume&quot;:0.2655941516304016},{&quot;time&quot;:1753422000000,&quot;open&quot;:0.0016884089319832711,&quot;high&quot;:0.0016884089319832711,&quot;low&quot;:0.0016884089319832711,&quot;close&quot;:0.0016927727076124735,&quot;volume&quot;:26.787105560302734},{&quot;time&quot;:1753422600000,&quot;open&quot;:0.0016927727076124735,&quot;high&quot;:0.0016927727076124735,&quot;low&quot;:0.0016927727076124735,&quot;close&quot;:0.0016839671545777588,&quot;volume&quot;:354.1255355072022},{&quot;time&quot;:1753424100000,&quot;open&quot;:0.0016839671545777588,&quot;high&quot;:0.0016839671545777588,&quot;low&quot;:0.0016839671545777588,&quot;close&quot;:0.0016978703956642184,&quot;volume&quot;:54.72445893873349},{&quot;time&quot;:1753424700000,&quot;open&quot;:0.0016978703956642184,&quot;high&quot;:0.0016978703956642184,&quot;low&quot;:0.0016978703956642184,&quot;close&quot;:0.0017172238797525184,&quot;volume&quot;:529.9986575775147},{&quot;time&quot;:1753425300000,&quot;open&quot;:0.0017172238797525184,&quot;high&quot;:0.001727546297793342,&quot;low&quot;:0.0016970764875594187,&quot;close&quot;:0.001728008496635462,&quot;volume&quot;:894.6377373876181},{&quot;time&quot;:1753425900000,&quot;open&quot;:0.001728008496635462,&quot;high&quot;:0.001728008496635462,&quot;low&quot;:0.0017140843562419754,&quot;close&quot;:0.0017207648771857885,&quot;volume&quot;:36.10849615228714},{&quot;time&quot;:1753426800000,&quot;open&quot;:0.0017207648771857885,&quot;high&quot;:0.0017207648771857885,&quot;low&quot;:0.0017072404955056292,&quot;close&quot;:0.0017021419682704396,&quot;volume&quot;:447.0210159257543},{&quot;time&quot;:1753427400000,&quot;open&quot;:0.0017021419682704396,&quot;high&quot;:0.0017021419682704396,&quot;low&quot;:0.0017021419682704396,&quot;close&quot;:0.0017108370243586054,&quot;volume&quot;:8.831627732271972},{&quot;time&quot;:1753427700000,&quot;open&quot;:0.0017108370243586054,&quot;high&quot;:0.0017114484412690174,&quot;low&quot;:0.0017108370243586054,&quot;close&quot;:0.001703118834329297,&quot;volume&quot;:52.85588826599121},{&quot;time&quot;:1753428000000,&quot;open&quot;:0.001703118834329297,&quot;high&quot;:0.001703118834329297,&quot;low&quot;:0.001703118834329297,&quot;close&quot;:0.0017045364666679974,&quot;volume&quot;:16.424487053280945},{&quot;time&quot;:1753428600000,&quot;open&quot;:0.0017045364666679974,&quot;high&quot;:0.0017045364666679974,&quot;low&quot;:0.0017045364666679974,&quot;close&quot;:0.0017157153583480765,&quot;volume&quot;:70.15538467712402},{&quot;time&quot;:1753430700000,&quot;open&quot;:0.0017157153583480765,&quot;high&quot;:0.0017157153583480765,&quot;low&quot;:0.0017157153583480765,&quot;close&quot;:0.0017241596689881612,&quot;volume&quot;:34.0354717988802},{&quot;time&quot;:1753431600000,&quot;open&quot;:0.0017241596689881612,&quot;high&quot;:0.0017241596689881612,&quot;low&quot;:0.0017241596689881612,&quot;close&quot;:0.0017237085387703645,&quot;volume&quot;:19.80091398151874},{&quot;time&quot;:1753434000000,&quot;open&quot;:0.0017237085387703645,&quot;high&quot;:0.0017237085387703645,&quot;low&quot;:0.0017237085387703645,&quot;close&quot;:0.0017193910056559113,&quot;volume&quot;:2.466172165022568},{&quot;time&quot;:1753435800000,&quot;open&quot;:0.0017193910056559113,&quot;high&quot;:0.0017193910056559113,&quot;low&quot;:0.0017193910056559113,&quot;close&quot;:0.0017130695983874377,&quot;volume&quot;:9.637099757455598},{&quot;time&quot;:1753436100000,&quot;open&quot;:0.0017130695983874377,&quot;high&quot;:0.0017130695983874377,&quot;low&quot;:0.0017130695983874377,&quot;close&quot;:0.0017277391043340332,&quot;volume&quot;:538.3905170041572},{&quot;time&quot;:1753440000000,&quot;open&quot;:0.0017277391043340332,&quot;high&quot;:0.0017277391043340332,&quot;low&quot;:0.0017277391043340332,&quot;close&quot;:0.0017343778139614979,&quot;volume&quot;:28.640131076660158},{&quot;time&quot;:1753442400000,&quot;open&quot;:0.0017343778139614979,&quot;high&quot;:0.0017343778139614979,&quot;low&quot;:0.0017343778139614979,&quot;close&quot;:0.0017346688687184483,&quot;volume&quot;:44.663049506788326},{&quot;time&quot;:1753443000000,&quot;open&quot;:0.0017346688687184483,&quot;high&quot;:0.001736431171250595,&quot;low&quot;:0.0017346688687184483,&quot;close&quot;:0.0017282117702214859,&quot;volume&quot;:152.8343606352864},{&quot;time&quot;:1753443300000,&quot;open&quot;:0.0017282117702214859,&quot;high&quot;:0.0017282117702214859,&quot;low&quot;:0.0017282117702214859,&quot;close&quot;:0.0017358495060833157,&quot;volume&quot;:99.23324763049831},{&quot;time&quot;:1753443900000,&quot;open&quot;:0.0017358495060833157,&quot;high&quot;:0.0017358495060833157,&quot;low&quot;:0.0017358495060833157,&quot;close&quot;:0.0017272367727754227,&quot;volume&quot;:9.899597370111145},{&quot;time&quot;:1753445100000,&quot;open&quot;:0.0017272367727754227,&quot;high&quot;:0.0017272367727754227,&quot;low&quot;:0.0017272367727754227,&quot;close&quot;:0.001736871780216563,&quot;volume&quot;:276.8708269796301},{&quot;time&quot;:1753447500000,&quot;open&quot;:0.001736871780216563,&quot;high&quot;:0.001736871780216563,&quot;low&quot;:0.001736871780216563,&quot;close&quot;:0.0017180417103151208,&quot;volume&quot;:4.323387109258331},{&quot;time&quot;:1753449600000,&quot;open&quot;:0.0017180417103151208,&quot;high&quot;:0.0017180417103151208,&quot;low&quot;:0.0017180417103151208,&quot;close&quot;:0.0017122480894317474,&quot;volume&quot;:142.16282339226228},{&quot;time&quot;:1753451400000,&quot;open&quot;:0.0017122480894317474,&quot;high&quot;:0.0017122480894317474,&quot;low&quot;:0.0017122480894317474,&quot;close&quot;:0.0017071909503768878,&quot;volume&quot;:17.122480894317473},{&quot;time&quot;:1753452300000,&quot;open&quot;:0.0017071909503768878,&quot;high&quot;:0.0017071909503768878,&quot;low&quot;:0.0017071909503768878,&quot;close&quot;:0.0016975323668135937,&quot;volume&quot;:0.9810432752886963},{&quot;time&quot;:1753452600000,&quot;open&quot;:0.0016975323668135937,&quot;high&quot;:0.0016975323668135937,&quot;low&quot;:0.0016975323668135937,&quot;close&quot;:0.0016962774486922157,&quot;volume&quot;:99.18525019554444},{&quot;time&quot;:1753453200000,&quot;open&quot;:0.0016962774486922157,&quot;high&quot;:0.0016962774486922157,&quot;low&quot;:0.0016962774486922157,&quot;close&quot;:0.001690992871660945,&quot;volume&quot;:9.947101119588623},{&quot;time&quot;:1753453800000,&quot;open&quot;:0.001690992871660945,&quot;high&quot;:0.001690992871660945,&quot;low&quot;:0.001690500818796541,&quot;close&quot;:0.0016904492665456177,&quot;volume&quot;:42.773153286066204},{&quot;time&quot;:1753454400000,&quot;open&quot;:0.0016904492665456177,&quot;high&quot;:0.0016904492665456177,&quot;low&quot;:0.0016904492665456177,&quot;close&quot;:0.0017032420105408076,&quot;volume&quot;:4.019348881080597},{&quot;time&quot;:1753455300000,&quot;open&quot;:0.0017032420105408076,&quot;high&quot;:0.001707700843276242,&quot;low&quot;:0.0017032420105408076,&quot;close&quot;:0.0017055722509663057,&quot;volume&quot;:385.88021717644295},{&quot;time&quot;:1753455600000,&quot;open&quot;:0.0017055722509663057,&quot;high&quot;:0.0017065796508334186,&quot;low&quot;:0.0016946902638587953,&quot;close&quot;:0.001699829964478913,&quot;volume&quot;:380.74957574924974},{&quot;time&quot;:1753455900000,&quot;open&quot;:0.001699829964478913,&quot;high&quot;:0.0017012915243261734,&quot;low&quot;:0.001699829964478913,&quot;close&quot;:0.001655971140507613,&quot;volume&quot;:126.93492786432711},{&quot;time&quot;:1753456200000,&quot;open&quot;:0.001655971140507613,&quot;high&quot;:0.0016848144878349423,&quot;low&quot;:0.0016269235180053272,&quot;close&quot;:0.001640142261762587,&quot;volume&quot;:4283.440691699332},{&quot;time&quot;:1753456500000,&quot;open&quot;:0.001640142261762587,&quot;high&quot;:0.001648717586679016,&quot;low&quot;:0.001640142261762587,&quot;close&quot;:0.0016406680049857521,&quot;volume&quot;:22.242917129514375},{&quot;time&quot;:1753456800000,&quot;open&quot;:0.0016406680049857521,&quot;high&quot;:0.0016406680049857521,&quot;low&quot;:0.0016406680049857521,&quot;close&quot;:0.0016350448173067318,&quot;volume&quot;:5.990938622488281},{&quot;time&quot;:1753457100000,&quot;open&quot;:0.0016350448173067318,&quot;high&quot;:0.0016456135562298241,&quot;low&quot;:0.0016350448173067318,&quot;close&quot;:0.0016439817372424386,&quot;volume&quot;:873.9918603007604},{&quot;time&quot;:1753457700000,&quot;open&quot;:0.0016439817372424386,&quot;high&quot;:0.0016520312390495954,&quot;low&quot;:0.0016439817372424386,&quot;close&quot;:0.0016437000124575934,&quot;volume&quot;:387.804016018896},{&quot;time&quot;:1753458300000,&quot;open&quot;:0.0016437000124575934,&quot;high&quot;:0.0016437000124575934,&quot;low&quot;:0.0016437000124575934,&quot;close&quot;:0.00164256505891078,&quot;volume&quot;:10.160713895257294},{&quot;time&quot;:1753458600000,&quot;open&quot;:0.00164256505891078,&quot;high&quot;:0.00164256505891078,&quot;low&quot;:0.00164256505891078,&quot;close&quot;:0.0016415732577385346,&quot;volume&quot;:180.02729482189292},{&quot;time&quot;:1753459200000,&quot;open&quot;:0.0016415732577385346,&quot;high&quot;:0.0016415732577385346,&quot;low&quot;:0.0016415732577385346,&quot;close&quot;:0.0016683924782788177,&quot;volume&quot;:24.832711967433195},{&quot;time&quot;:1753461300000,&quot;open&quot;:0.0016683924782788177,&quot;high&quot;:0.0016683924782788177,&quot;low&quot;:0.0016683924782788177,&quot;close&quot;:0.0016732289244228585,&quot;volume&quot;:1481.8328248442763},{&quot;time&quot;:1753461600000,&quot;open&quot;:0.0016732289244228585,&quot;high&quot;:0.0016732289244228585,&quot;low&quot;:0.0016732289244228585,&quot;close&quot;:0.0016740448950929917,&quot;volume&quot;:53.79354400634765},{&quot;time&quot;:1753462200000,&quot;open&quot;:0.0016740448950929917,&quot;high&quot;:0.0016740448950929917,&quot;low&quot;:0.0016740448950929917,&quot;close&quot;:0.0016742646903868579,&quot;volume&quot;:17.7787662940979},{&quot;time&quot;:1753462500000,&quot;open&quot;:0.0016742646903868579,&quot;high&quot;:0.0016742646903868579,&quot;low&quot;:0.0016742646903868579,&quot;close&quot;:0.001669787937603812,&quot;volume&quot;:1.4823768576032408},{&quot;time&quot;:1753463400000,&quot;open&quot;:0.001669787937603812,&quot;high&quot;:0.0016788261831895657,&quot;low&quot;:0.001669787937603812,&quot;close&quot;:0.0016798698210373313,&quot;volume&quot;:115.02032379860451},{&quot;time&quot;:1753463700000,&quot;open&quot;:0.0016798698210373313,&quot;high&quot;:0.0016798698210373313,&quot;low&quot;:0.0016798698210373313,&quot;close&quot;:0.0016714853654186026,&quot;volume&quot;:4.954931734204101},{&quot;time&quot;:1753464300000,&quot;open&quot;:0.0016714853654186026,&quot;high&quot;:0.0016714853654186026,&quot;low&quot;:0.0016714853654186026,&quot;close&quot;:0.0016916790926421574,&quot;volume&quot;:0.004683903150390625},{&quot;time&quot;:1753464900000,&quot;open&quot;:0.0016916790926421574,&quot;high&quot;:0.0016916790926421574,&quot;low&quot;:0.0016806088002169481,&quot;close&quot;:0.001676306793689095,&quot;volume&quot;:687.0364084892119},{&quot;time&quot;:1753465500000,&quot;open&quot;:0.001676306793689095,&quot;high&quot;:0.001676306793689095,&quot;low&quot;:0.001676306793689095,&quot;close&quot;:0.0016823673454576978,&quot;volume&quot;:223.7600595203611},{&quot;time&quot;:1753465800000,&quot;open&quot;:0.0016823673454576978,&quot;high&quot;:0.0016823673454576978,&quot;low&quot;:0.0016823673454576978,&quot;close&quot;:0.001682773139737402,&quot;volume&quot;:17.74523740219702},{&quot;time&quot;:1753466100000,&quot;open&quot;:0.001682773139737402,&quot;high&quot;:0.001682773139737402,&quot;low&quot;:0.001682773139737402,&quot;close&quot;:0.0016783856047792914,&quot;volume&quot;:35.87211174316406},{&quot;time&quot;:1753466400000,&quot;open&quot;:0.0016783856047792914,&quot;high&quot;:0.0016783856047792914,&quot;low&quot;:0.0016783856047792914,&quot;close&quot;:0.0016875148774976967,&quot;volume&quot;:29.721702059420167},{&quot;time&quot;:1753468800000,&quot;open&quot;:0.0016875148774976967,&quot;high&quot;:0.0016875148774976967,&quot;low&quot;:0.0016875148774976967,&quot;close&quot;:0.001683337290210831,&quot;volume&quot;:7.218476094465638},{&quot;time&quot;:1753470600000,&quot;open&quot;:0.001683337290210831,&quot;high&quot;:0.001683337290210831,&quot;low&quot;:0.001683337290210831,&quot;close&quot;:0.001690818249382131,&quot;volume&quot;:171.95239238475},{&quot;time&quot;:1753471500000,&quot;open&quot;:0.001690818249382131,&quot;high&quot;:0.001690818249382131,&quot;low&quot;:0.001690818249382131,&quot;close&quot;:0.0016951521089279575,&quot;volume&quot;:87.5369422987356},{&quot;time&quot;:1753471800000,&quot;open&quot;:0.0016951521089279575,&quot;high&quot;:0.0016971622861578367,&quot;low&quot;:0.0016951521089279575,&quot;close&quot;:0.001688642784547298,&quot;volume&quot;:104.46025167482281},{&quot;time&quot;:1753473000000,&quot;open&quot;:0.001688642784547298,&quot;high&quot;:0.001688642784547298,&quot;low&quot;:0.001688642784547298,&quot;close&quot;:0.0016983191300147431,&quot;volume&quot;:26.94452404152548},{&quot;time&quot;:1753474200000,&quot;open&quot;:0.0016983191300147431,&quot;high&quot;:0.0016983191300147431,&quot;low&quot;:0.0016983191300147431,&quot;close&quot;:0.0017098276058661718,&quot;volume&quot;:1.652140798593292},{&quot;time&quot;:1753474500000,&quot;open&quot;:0.0017098276058661718,&quot;high&quot;:0.0017128217962864576,&quot;low&quot;:0.0016951839729875586,&quot;close&quot;:0.001708820991034029,&quot;volume&quot;:1012.6646926020832},{&quot;time&quot;:1753474800000,&quot;open&quot;:0.001708820991034029,&quot;high&quot;:0.001708820991034029,&quot;low&quot;:0.001708820991034029,&quot;close&quot;:0.0017285131780015463,&quot;volume&quot;:350.35168103942823},{&quot;time&quot;:1753475700000,&quot;open&quot;:0.0017285131780015463,&quot;high&quot;:0.001734416197056176,&quot;low&quot;:0.0017247315112733784,&quot;close&quot;:0.0017313070528840366,&quot;volume&quot;:518.2690298460041},{&quot;time&quot;:1753476300000,&quot;open&quot;:0.0017313070528840366,&quot;high&quot;:0.0017313070528840366,&quot;low&quot;:0.0017313070528840366,&quot;close&quot;:0.0017305486474009962,&quot;volume&quot;:14.838095534896913},{&quot;time&quot;:1753476900000,&quot;open&quot;:0.0017305486474009962,&quot;high&quot;:0.0017305486474009962,&quot;low&quot;:0.0017305486474009962,&quot;close&quot;:0.0017336922549834196,&quot;volume&quot;:51.55858450565387},{&quot;time&quot;:1753477200000,&quot;open&quot;:0.0017336922549834196,&quot;high&quot;:0.0017427191925756395,&quot;low&quot;:0.0017336922549834196,&quot;close&quot;:0.0017566151206455031,&quot;volume&quot;:549.4929227135843},{&quot;time&quot;:1753478100000,&quot;open&quot;:0.0017566151206455031,&quot;high&quot;:0.0017594534600452174,&quot;low&quot;:0.0017463086672737727,&quot;close&quot;:0.0017683090230789975,&quot;volume&quot;:1013.2551752962916},{&quot;time&quot;:1753478700000,&quot;open&quot;:0.0017683090230789975,&quot;high&quot;:0.0017683090230789975,&quot;low&quot;:0.0017683090230789975,&quot;close&quot;:0.0017544504065490792,&quot;volume&quot;:3.700411018597977},{&quot;time&quot;:1753479900000,&quot;open&quot;:0.0017544504065490792,&quot;high&quot;:0.001759223960206144,&quot;low&quot;:0.0017544504065490792,&quot;close&quot;:0.0017628993029042573,&quot;volume&quot;:536.8545523423082},{&quot;time&quot;:1753481400000,&quot;open&quot;:0.0017628993029042573,&quot;high&quot;:0.0017628993029042573,&quot;low&quot;:0.0017628993029042573,&quot;close&quot;:0.0017628993029042573,&quot;volume&quot;:369.81695556640625}]}
 
 </div>   
 
@@ -756,7 +753,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1184</span>
+              <span>ms:</span>&nbsp;<span>2245</span>
             </div>
           </div>
           <div class="step-row">
@@ -835,7 +832,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(5)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -863,7 +860,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(5)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -891,7 +888,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(5)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -919,7 +916,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">1180</div>
+    <div class="time-cell passed">2243</div>
   </div>
 
    
@@ -928,7 +925,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.34">17:06:14.759 request:
+  <div class="preformatted" data-parent="0.34">18:17:49.433 request:
 1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=mcap&amp;interval=1h
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -936,9 +933,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-17:06:15.937 response time in milliseconds: 1177
+18:17:51.675 response time in milliseconds: 2100
 1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 21:06:16 GMT
+1 &lt; Date: Fri, 25 Jul 2025 22:17:54 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
@@ -962,8 +959,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Remaining: 119
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=oPT4nrQC8VtpJ765S1gjHFmr2LMFagAtQDX8H%2FSmIx50eAfBgytTNaGOhFrBL7lhAHRJK63%2FzeoWbZSq6lLrPDRimZiwqCCLQA3toqRC8NWxASDRqkNs72rgSZYj9Q%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e69f6b37359d-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=qdWO78tned2BD6jPzo5Mwqv7Wz4eYNOZH9JRLWeH3L7kvgd5iza45yrlfX8gvZqugRQ0Zm6jRTe6HXWk8rugcAver4rjhsb4ZwfgA4boUjKlmBK7s2gQBAzt4xs%2FoA%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f07ab0f7a0a49-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
 {&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
 
@@ -1014,7 +1011,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1071,7 +1068,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1663</span>
+              <span>ms:</span>&nbsp;<span>1787</span>
             </div>
           </div>
           <div class="step-row">
@@ -1150,7 +1147,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(2)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1178,7 +1175,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(2)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1234,7 +1231,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">1660</div>
+    <div class="time-cell passed">1785</div>
   </div>
 
    
@@ -1243,7 +1240,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.45">17:06:15.954 request:
+  <div class="preformatted" data-parent="0.45">18:17:51.701 request:
 1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=15m
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -1251,9 +1248,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-17:06:17.614 response time in milliseconds: 1243
+18:17:53.485 response time in milliseconds: 1620
 1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 21:06:17 GMT
+1 &lt; Date: Fri, 25 Jul 2025 22:17:56 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
@@ -1277,8 +1274,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Remaining: 119
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=%2FLQQlR%2FRUj4ARoG6rVzNfH8i4QnhtHj%2FNiJoRecnM%2F9I4rumvfLFsyAmiXLNjLg%2FGkdxPsjYcwVzplyTHKvmzvOngQQ154TS%2FuhZ24tXW1c8P7b3mFIpf2e%2FGrC0%2Fg%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e6a8d85c36f2-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=AattjLBzAK4snoNp4LaJc%2FRWA%2BnBzFTyjthgW7ONl4l3b8ngL6TfcAbB6DrVX94xgdaKd6MGN%2B6tF2UBWM03vV146Rf0dXF66ImisKO9BRcbYuw8%2FTstA16rfRdIXg%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f07b99ee71cd2-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
 {&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
 
@@ -1386,7 +1383,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>324</span>
+              <span>ms:</span>&nbsp;<span>715</span>
             </div>
           </div>
           <div class="step-row">
@@ -1493,7 +1490,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(8)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1549,7 +1546,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">322</div>
+    <div class="time-cell passed">714</div>
   </div>
 
    
@@ -1558,7 +1555,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.56">17:06:17.629 request:
+  <div class="preformatted" data-parent="0.56">18:17:53.495 request:
 1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=invalid_interval
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -1566,9 +1563,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-17:06:17.951 response time in milliseconds: 321
+18:17:54.208 response time in milliseconds: 712
 1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 21:06:18 GMT
+1 &lt; Date: Fri, 25 Jul 2025 22:17:57 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 320
 1 &lt; Connection: keep-alive
@@ -1584,7 +1581,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;140-Kyc9F8aJIv6hS3499YFo1LsbMA4&quot;
+1 &lt; Etag: W/&quot;140-c8a2qU7WIpPELVIi4WNBOylKcMo&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -1592,10 +1589,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Remaining: 119
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=6eGg3wcX5NsLpQgMFB4NT%2BP563RzOpQrQJbPqo1Ectjxw6uB2CA6Pf9oyY9KKuCTgUpViNKiwc65cf%2BXi%2Bc0DAdWTUVqea0qBZqa8QB%2F3q%2BUjVRSmthAzXMMhD76wg%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e6b1195ce00f-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=VY7mkXpCZHNfiiq6FhYwfGbszBFXlKJ4jGv4IFM79sR99XHY9GhtIKv2vCbGauq%2Bykaz6I7tMpE4d%2ByAeZ1mI4BVSPNDevlQAtEa1nlw6lvxy51mY1DkKMUXlo7INQ%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f07c49ae1b936-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T21:06:18.511Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=invalid_interval&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;interval must be one of the following values: 1s, 5s, 15s, 30s, 1m, 5m, 15m, 30m, 1h, 6h, 1d&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
+{&quot;time&quot;:&quot;2025-07-25T22:17:57.243Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=invalid_interval&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;interval must be one of the following values: 1s, 5s, 15s, 30s, 1m, 5m, 15m, 30m, 1h, 6h, 1d&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
 
 </div>   
 
@@ -1645,7 +1642,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>435</span>
+              <span>ms:</span>&nbsp;<span>725</span>
             </div>
           </div>
           <div class="step-row">
@@ -1696,7 +1693,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getInvalidTokenAddress(0)</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1808,7 +1805,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">434</div>
+    <div class="time-cell passed">724</div>
   </div>
 
    
@@ -1817,7 +1814,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.65">17:06:17.962 request:
+  <div class="preformatted" data-parent="0.65">18:17:54.217 request:
 1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/invalid_address_123?price_format=USD&amp;chart_format=price&amp;interval=1h
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -1825,9 +1822,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-17:06:18.395 response time in milliseconds: 433
+18:17:54.940 response time in milliseconds: 723
 1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 21:06:19 GMT
+1 &lt; Date: Fri, 25 Jul 2025 22:17:57 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 207
 1 &lt; Connection: keep-alive
@@ -1843,7 +1840,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;cf-NptbZF0YuiWXOzB0w7hPHLwJXVA&quot;
+1 &lt; Etag: W/&quot;cf-2v46aLvtDfHlhJzJAzJbaHwCMPs&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -1851,10 +1848,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Remaining: 119
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=4BUL3S4BbDCYBtkf23qYZCJsnCk4DzgN4bNT8x3tQTQqszE2WhYApQjCiyWGJ2JvmjFZ91hLi5yUwFgxaHEBcmCsWj3G3wzAMxcU0SQkYCAN4qv0zTcuVRGxgJhNlw%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e6b409a48dac-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=yvZ%2BfJxZMaO7Q5ulilPs32lWnCZ3bevikC4PK4tG5oKUyWBT7mGEGDmgKhZdAlqLqybTVBipo7%2FESH4hPs%2BZEI3bIF8ipguIfkVOi4QGlt4EQDYzThCzRqYtE251RA%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f07c908090e2e-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T21:06:18.978Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/invalid_address_123?price_format=USD&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Address must be valid Base58.&quot;}}
+{&quot;time&quot;:&quot;2025-07-25T22:17:57.951Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/invalid_address_123?price_format=USD&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Address must be valid Base58.&quot;}}
 
 </div>   
 
@@ -1904,7 +1901,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>405</span>
+              <span>ms:</span>&nbsp;<span>579</span>
             </div>
           </div>
           <div class="step-row">
@@ -1971,7 +1968,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getInvalidTokenAddress(1)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2083,7 +2080,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">404</div>
+    <div class="time-cell passed">578</div>
   </div>
 
    
@@ -2092,7 +2089,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.76">17:06:18.410 request:
+  <div class="preformatted" data-parent="0.76">18:17:54.950 request:
 1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/?price_format=USD&amp;chart_format=price&amp;interval=1h
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -2100,9 +2097,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-17:06:18.813 response time in milliseconds: 401
+18:17:55.527 response time in milliseconds: 576
 1 &lt; 404
-1 &lt; Date: Tue, 22 Jul 2025 21:06:19 GMT
+1 &lt; Date: Fri, 25 Jul 2025 22:17:58 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
@@ -2118,15 +2115,15 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;ee-RuApTXxfxT30PcwpGjpsjmkaxF4&quot;
+1 &lt; Etag: W/&quot;ee-NC0LRlp6euDguA+e9V/OxI4vjmw&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=RpStM1cdJVBF062SPn6G2GKZkpRV%2Fnhxyx1d0Zhj%2Fe43cFrvEo%2FAXZtuHnbSgSR5LlRoEDPdjC0sqlNU6OPxiWV8Av5iEGVOpHW9Dm5jLRUI23J26RMltmJbrEEX9Q%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e6b67b74daae-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=Ve6YYx1ItCU8f2nvW%2BWrUVyJCkOWf5yKVzE0%2B2ada6ODhD2cTFq8TyhDaMwbYyI5G8XDHDVSx3Cg7%2BkGyKVvH6IgCZ%2BrbMZBrbevtnJeW38mHIjEJMLItFnU9t18Ig%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f07cdacc70e4c-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T21:06:19.369Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/?price_format=USD&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:{&quot;message&quot;:&quot;Cannot GET /trade/ohlcv/?price_format=USD&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:&quot;Not Found&quot;,&quot;statusCode&quot;:404}}
+{&quot;time&quot;:&quot;2025-07-25T22:17:58.689Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/?price_format=USD&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:{&quot;message&quot;:&quot;Cannot GET /trade/ohlcv/?price_format=USD&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:&quot;Not Found&quot;,&quot;statusCode&quot;:404}}
 
 </div>   
 
@@ -2175,8 +2172,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>416</span>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>562</span>
             </div>
           </div>
           <div class="step-row">
@@ -2217,33 +2214,73 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <div><div>
   
 
-  <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
-      
-      <div class="step-cell comment"># Test que documenta el comportamiento actual (incorrecto) de la API</div>
-    </div>
-    <div class="time-cell comment"></div>            
-  </div>
+  
 
   <div class="step-row">
-    <div class="step-container">
-      <div class="step-ref passed"></div>
+    <div class="step-container" id="0.81">
+      <div class="step-ref passed">81</div>
       
-      <div class="step-cell comment"># Este test pasa pero documenta un bug</div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getInvalidTokenAddress(2)</span>
+      </div>
     </div>
-    <div class="time-cell comment"></div>            
+    <div class="time-cell passed">0</div>
   </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.82">
+      <div class="step-ref passed">82</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
 
   <div class="step-row">
     <div class="step-container" id="0.83">
       <div class="step-ref passed">83</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getInvalidTokenAddress(2)</span>
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(0)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2268,7 +2305,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">84</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(0)</span>
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(0)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -2296,66 +2333,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">85</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(0)</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.86">
-      <div class="step-ref passed">86</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(0)</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.87">
-      <div class="step-ref passed">87</div>
-      
-      <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">414</div>
+    <div class="time-cell passed">561</div>
   </div>
 
    
@@ -2364,7 +2345,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.87">17:06:18.828 request:
+  <div class="preformatted" data-parent="0.85">18:17:55.535 request:
 1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM?price_format=USD&amp;chart_format=price&amp;interval=1h
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -2372,9 +2353,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-17:06:19.241 response time in milliseconds: 412
+18:17:56.096 response time in milliseconds: 558
 1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 21:06:19 GMT
+1 &lt; Date: Fri, 25 Jul 2025 22:17:59 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 273
 1 &lt; Connection: keep-alive
@@ -2390,7 +2371,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;111-7kjfnCLC6PROF6gx5MJpidgoW6I&quot;
+1 &lt; Etag: W/&quot;111-zzCCqWWnqEcfa3AfeI/XMmxLvrE&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -2398,10 +2379,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Remaining: 119
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=cpoX1MZMF7HRI1r9G1502vMUIuPj%2FzqQ5Z40q6DZ7ZF%2Bt7CzQa1NIlDg2BJ1kpMOjiwHv1HoUQ8uOmp51IVT8QfysIvgm34FAM3IXy%2BoHWApkipxGMyy0aUKRyYF%2Bg%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e6b969a823ca-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=POUX%2BZiSHxwxykJLI1mA9u8oI4ZOieaYCShys7yZQ922pwMca3gu7WH0wopOuw7NYEzhkGJaI6Ywqwy7zN2SoIOKvDykiHGq%2FUmd8hhVsjuLYUr0qSC3trqWwB4cKA%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f07d14c5c0a71-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T21:06:19.844Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM?price_format=USD&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:{&quot;statusCode&quot;:400,&quot;status&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Token failed for mint 9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM&quot;}}
+{&quot;time&quot;:&quot;2025-07-25T22:17:59.274Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM?price_format=USD&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:{&quot;statusCode&quot;:400,&quot;status&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Token failed for mint 9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM&quot;}}
 
 </div>   
 
@@ -2415,14 +2396,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.88">
-      <div class="step-ref failed">88</div>
+    <div class="step-container" id="0.86">
+      <div class="step-ref passed">86</div>
       
-      <div class="step-cell failed">
-        <span>Then</span>&nbsp;<span>status 200</span>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
       </div>
     </div>
-    <div class="time-cell failed">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2431,31 +2412,50 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.88">17:06:19.241 classpath:features/trade/TradeOHLCV.feature:88
-Then status 200
-status code was: 400, expected: 200, response time in milliseconds: 412, url: https://full-api.cloud-service-app.com/trade/ohlcv/9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM?price_format=USD&amp;chart_format=price&amp;interval=1h, response: 
-{&quot;time&quot;:&quot;2025-07-22T21:06:19.844Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM?price_format=USD&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:{&quot;statusCode&quot;:400,&quot;status&quot;:&quot;error&quot;,&quot;message&quot;:&quot;Token failed for mint 9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM&quot;}}
-classpath:features/trade/TradeOHLCV.feature:88
-</div>   
+     
 
   
 
 </div>
 </div>
-          <div><div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[9:89]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">boundary</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[9:89]</span>
+                <span class="scenario-name">Get OHLCV data with minimum interval (5m)</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1221</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[9:89]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[9:89]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.89">
-      <div class="step-ref skipped">89</div>
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
       
-      <div class="step-cell skipped">
-        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2477,13 +2477,13 @@ classpath:features/trade/TradeOHLCV.feature:88
 
   <div class="step-row">
     <div class="step-container" id="0.90">
-      <div class="step-ref skipped">90</div>
+      <div class="step-ref passed">90</div>
       
-      <div class="step-cell skipped">
-        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2498,44 +2498,76 @@ classpath:features/trade/TradeOHLCV.feature:88
 
 </div>
 </div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[9:93]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">boundary</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[9:93]</span>
-                <span class="scenario-name">Get OHLCV data with minimum interval (5m)</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>969</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[9:93]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[9:93]bg"><div>
+          <div><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
+    <div class="step-container" id="0.91">
+      <div class="step-ref passed">91</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(1)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.92">
+      <div class="step-ref passed">92</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(1)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.93">
+      <div class="step-ref passed">93</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(1)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -2560,10 +2592,10 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">94</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
+        <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">1220</div>
   </div>
 
    
@@ -2572,7 +2604,46 @@ classpath:features/trade/TradeOHLCV.feature:88
 
   
 
-     
+  <div class="preformatted" data-parent="0.94">18:17:56.105 request:
+1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=5m
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:17:57.324 response time in milliseconds: 1219
+1 &lt; 200
+1 &lt; Date: Fri, 25 Jul 2025 22:18:00 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=UlafNTHZNkkB2L1t%2BtSOYtQXPwZQWpFndOzZDVqEEkQ%2BjPF16z%2Bzob29iGtXKXVNm8kfrIH9pysjJUn6W1qJYC9eEC%2B4pgIsVMqGWL%2BORa8TU7QEQb7uqZszsAsBfQ%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f07d4fe229ff8-AMS
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
+
+</div>   
 
   
 
@@ -2588,7 +2659,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">95</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param interval = &#39;5m&#39;</span>
+        <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -2616,7 +2687,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">96</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param price_format = &#39;USD&#39;</span>
+        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -2644,7 +2715,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">97</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param chart_format = &#39;price&#39;</span>
+        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -2662,112 +2733,41 @@ classpath:features/trade/TradeOHLCV.feature:88
 
 </div>
 </div>
-          <div><div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[10:100]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">boundary</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[10:100]</span>
+                <span class="scenario-name">Get OHLCV data with maximum interval (1h)</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1979</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[10:100]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[10:100]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.98">
-      <div class="step-ref passed">98</div>
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
-      </div>
-    </div>
-    <div class="time-cell passed">966</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.98">17:06:19.269 request:
-1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=5m
-1 &gt; Host: full-api.cloud-service-app.com
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
-1 &gt; Accept-Encoding: gzip,deflate
-
-
-17:06:20.233 response time in milliseconds: 964
-1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 21:06:20 GMT
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
-1 &lt; Server: cloudflare
-1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
-1 &lt; Vary: Origin, Accept-Encoding
-1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
-1 &lt; Cross-Origin-Opener-Policy: same-origin
-1 &lt; Cross-Origin-Resource-Policy: same-origin
-1 &lt; Referrer-Policy: no-referrer
-1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
-1 &lt; X-Content-Type-Options: nosniff
-1 &lt; X-Dns-Prefetch-Control: off
-1 &lt; X-Frame-Options: SAMEORIGIN
-1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
-1 &lt; Origin-Agent-Cluster: ?1
-1 &lt; X-Download-Options: noopen
-1 &lt; X-Permitted-Cross-Domain-Policies: none
-1 &lt; X-Ratelimit-Limit: 120
-1 &lt; X-Ratelimit-Remaining: 119
-1 &lt; X-Ratelimit-Reset: 1
-1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=wvbesDVdXakPhHW1qhwrPWAGkBDwU16OVA68fVsILkypavwqlhgKLdBaKqglJpkINzjpPALnLgcfpWHq0KN9f4MWbxXA3HBBpjcsXSun67sqiazhnVjCT42OzKvH5Q%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e6bc3cba7b87-MIA
-1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.99">
-      <div class="step-ref passed">99</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.100">
-      <div class="step-ref passed">100</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -2795,7 +2795,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">101</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -2813,41 +2813,73 @@ classpath:features/trade/TradeOHLCV.feature:88
 
 </div>
 </div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[10:104]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">boundary</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[10:104]</span>
-                <span class="scenario-name">Get OHLCV data with maximum interval (1h)</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>902</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[10:104]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[10:104]bg"><div>
+          <div><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
+    <div class="step-container" id="0.102">
+      <div class="step-ref passed">102</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.103">
+      <div class="step-ref passed">103</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.104">
+      <div class="step-ref passed">104</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(0)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -2875,10 +2907,10 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">105</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
+        <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1978</div>
   </div>
 
    
@@ -2887,7 +2919,46 @@ classpath:features/trade/TradeOHLCV.feature:88
 
   
 
-     
+  <div class="preformatted" data-parent="0.105">18:17:57.334 request:
+1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=1h
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:17:59.311 response time in milliseconds: 1976
+1 &lt; 200
+1 &lt; Date: Fri, 25 Jul 2025 22:18:02 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=ec9kcIWFHVc0A28wnOKknupOzJbNNiaCku2ocWikXTHqMhFpDc%2BeL1r%2BR%2BV7ZOEKN8JEswA2hIGesMDGg%2FmUmpLmgpScn2wi%2B5QjIJ6t9fA5ER39g9HQQDbGkOztSg%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f07dd5aa90bdc-AMS
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
+
+</div>   
 
   
 
@@ -2903,7 +2974,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">106</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param interval = &#39;1h&#39;</span>
+        <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -2931,7 +3002,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">107</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param price_format = &#39;USD&#39;</span>
+        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -2959,7 +3030,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">108</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param chart_format = &#39;price&#39;</span>
+        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -2977,112 +3048,41 @@ classpath:features/trade/TradeOHLCV.feature:88
 
 </div>
 </div>
-          <div><div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[11:111]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">boundary</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[11:111]</span>
+                <span class="scenario-name">Get OHLCV data with USD price format</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1750</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[11:111]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[11:111]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.109">
-      <div class="step-ref passed">109</div>
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
-      </div>
-    </div>
-    <div class="time-cell passed">901</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.109">17:06:20.249 request:
-1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=1h
-1 &gt; Host: full-api.cloud-service-app.com
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
-1 &gt; Accept-Encoding: gzip,deflate
-
-
-17:06:21.148 response time in milliseconds: 899
-1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 21:06:21 GMT
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
-1 &lt; Server: cloudflare
-1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
-1 &lt; Vary: Origin, Accept-Encoding
-1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
-1 &lt; Cross-Origin-Opener-Policy: same-origin
-1 &lt; Cross-Origin-Resource-Policy: same-origin
-1 &lt; Referrer-Policy: no-referrer
-1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
-1 &lt; X-Content-Type-Options: nosniff
-1 &lt; X-Dns-Prefetch-Control: off
-1 &lt; X-Frame-Options: SAMEORIGIN
-1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
-1 &lt; Origin-Agent-Cluster: ?1
-1 &lt; X-Download-Options: noopen
-1 &lt; X-Permitted-Cross-Domain-Policies: none
-1 &lt; X-Ratelimit-Limit: 120
-1 &lt; X-Ratelimit-Remaining: 119
-1 &lt; X-Ratelimit-Reset: 1
-1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=J7eZxM9bslTg0%2FW9aMkxd7c43qmokKBp%2BmIVXrKLiEWmj19zM83n%2FsyfU%2FU6vL6EZEDuIAW9r3n7UqliMOacSBtTWa9qsnglpLAnK%2FkjfTDLhkJFZ%2BY3xnO0Kxg3BQ%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e6c20cdbb3f1-MIA
-1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.110">
-      <div class="step-ref passed">110</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.111">
-      <div class="step-ref passed">111</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3110,7 +3110,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">112</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3128,41 +3128,73 @@ classpath:features/trade/TradeOHLCV.feature:88
 
 </div>
 </div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[11:115]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">boundary</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[11:115]</span>
-                <span class="scenario-name">Get OHLCV data with USD price format</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>2037</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[11:115]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[11:115]bg"><div>
+          <div><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
+    <div class="step-container" id="0.113">
+      <div class="step-ref passed">113</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.114">
+      <div class="step-ref passed">114</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.115">
+      <div class="step-ref passed">115</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(0)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3190,10 +3222,10 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">116</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
+        <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1749</div>
   </div>
 
    
@@ -3202,7 +3234,46 @@ classpath:features/trade/TradeOHLCV.feature:88
 
   
 
-     
+  <div class="preformatted" data-parent="0.116">18:17:59.322 request:
+1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=1h
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:18:01.069 response time in milliseconds: 1747
+1 &lt; 200
+1 &lt; Date: Fri, 25 Jul 2025 22:18:04 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=%2F8cRVCgvTOwJia2UKfU62m6AnEGB32pY7xgYxOS4pmMoZ762%2F5%2FFTSUxeeP1hAcjPwRTRMbIydpVa%2B%2Ft5MDS9kDJETGrntrug23hTZwUNvin9gtm4H8BvBKpfhCiwg%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f07e968cc0ea0-AMS
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
+
+</div>   
 
   
 
@@ -3218,7 +3289,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">117</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param interval = &#39;1h&#39;</span>
+        <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3246,7 +3317,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">118</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param price_format = &#39;USD&#39;</span>
+        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3274,7 +3345,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">119</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param chart_format = &#39;price&#39;</span>
+        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3292,112 +3363,41 @@ classpath:features/trade/TradeOHLCV.feature:88
 
 </div>
 </div>
-          <div><div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[12:122]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">boundary</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[12:122]</span>
+                <span class="scenario-name">Get OHLCV data with BASE price format</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1627</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[12:122]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[12:122]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.120">
-      <div class="step-ref passed">120</div>
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
-      </div>
-    </div>
-    <div class="time-cell passed">2036</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.120">17:06:21.164 request:
-1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=1h
-1 &gt; Host: full-api.cloud-service-app.com
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
-1 &gt; Accept-Encoding: gzip,deflate
-
-
-17:06:23.199 response time in milliseconds: 2033
-1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 21:06:23 GMT
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
-1 &lt; Server: cloudflare
-1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
-1 &lt; Vary: Origin, Accept-Encoding
-1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
-1 &lt; Cross-Origin-Opener-Policy: same-origin
-1 &lt; Cross-Origin-Resource-Policy: same-origin
-1 &lt; Referrer-Policy: no-referrer
-1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
-1 &lt; X-Content-Type-Options: nosniff
-1 &lt; X-Dns-Prefetch-Control: off
-1 &lt; X-Frame-Options: SAMEORIGIN
-1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
-1 &lt; Origin-Agent-Cluster: ?1
-1 &lt; X-Download-Options: noopen
-1 &lt; X-Permitted-Cross-Domain-Policies: none
-1 &lt; X-Ratelimit-Limit: 120
-1 &lt; X-Ratelimit-Remaining: 119
-1 &lt; X-Ratelimit-Reset: 1
-1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=uEX36A924IvSvdUiV%2B7sYnIDibR3bm0442mPie9H61%2FnrRxXsCkS3IZaQyPODM6QsNj5QWjrqOHRTr7uPkggnBQJceBn5rfscTEx2Xq305ELdqYO%2FlXJCOUJbzTMDw%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e6c78819c8e0-MIA
-1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.121">
-      <div class="step-ref passed">121</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.122">
-      <div class="step-ref passed">122</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3425,7 +3425,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">123</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3443,41 +3443,73 @@ classpath:features/trade/TradeOHLCV.feature:88
 
 </div>
 </div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[12:126]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">boundary</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[12:126]</span>
-                <span class="scenario-name">Get OHLCV data with SOL price format</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>348</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[12:126]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[12:126]bg"><div>
+          <div><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
+    <div class="step-container" id="0.124">
+      <div class="step-ref passed">124</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(6)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.125">
+      <div class="step-ref passed">125</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(6)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.126">
+      <div class="step-ref passed">126</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(6)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3505,10 +3537,10 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">127</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
+        <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1625</div>
   </div>
 
    
@@ -3517,7 +3549,46 @@ classpath:features/trade/TradeOHLCV.feature:88
 
   
 
-     
+  <div class="preformatted" data-parent="0.127">18:18:01.080 request:
+1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=BASE&amp;chart_format=price&amp;interval=1h
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:18:02.704 response time in milliseconds: 1623
+1 &lt; 200
+1 &lt; Date: Fri, 25 Jul 2025 22:18:05 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=kV7Tz6SPN9KVjXOKfMPC%2ByPCfXIxmmDkTTSA8fUQ3OEt3OJvxCeN%2FFdKgYnBcAnWz%2BWmoNOqmoagE11plNhTPrL0rINSZWFU1EfwKugIvbD6XycQ0Mb9onAqxcKfYg%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f07f3cc0d6d94-AMS
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
+
+</div>   
 
   
 
@@ -3533,7 +3604,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">128</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param interval = &#39;1h&#39;</span>
+        <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3561,7 +3632,7 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">129</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param price_format = &#39;SOL&#39;</span>
+        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3589,7 +3660,59 @@ classpath:features/trade/TradeOHLCV.feature:88
       <div class="step-ref passed">130</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param chart_format = &#39;price&#39;</span>
+        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[13:133]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">edge</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[13:133]</span>
+                <span class="scenario-name">Get OHLCV data with all parameters at extremes</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1766</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[13:133]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[13:133]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3613,142 +3736,14 @@ classpath:features/trade/TradeOHLCV.feature:88
   
 
   <div class="step-row">
-    <div class="step-container" id="0.131">
-      <div class="step-ref passed">131</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
-      </div>
-    </div>
-    <div class="time-cell passed">348</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.131">17:06:23.211 request:
-1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=SOL&amp;chart_format=price&amp;interval=1h
-1 &gt; Host: full-api.cloud-service-app.com
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
-1 &gt; Accept-Encoding: gzip,deflate
-
-
-17:06:23.558 response time in milliseconds: 346
-1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 21:06:24 GMT
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 273
-1 &lt; Connection: keep-alive
-1 &lt; Server: cloudflare
-1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
-1 &lt; Vary: Origin, Accept-Encoding
-1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
-1 &lt; Cross-Origin-Opener-Policy: same-origin
-1 &lt; Cross-Origin-Resource-Policy: same-origin
-1 &lt; Referrer-Policy: no-referrer
-1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
-1 &lt; X-Content-Type-Options: nosniff
-1 &lt; X-Dns-Prefetch-Control: off
-1 &lt; X-Frame-Options: SAMEORIGIN
-1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;111-B4dW0ZyE4NRrMPPGrvEbObXaqFE&quot;
-1 &lt; Origin-Agent-Cluster: ?1
-1 &lt; X-Download-Options: noopen
-1 &lt; X-Permitted-Cross-Domain-Policies: none
-1 &lt; X-Ratelimit-Limit: 120
-1 &lt; X-Ratelimit-Remaining: 119
-1 &lt; X-Ratelimit-Reset: 1
-1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=dSuPQHebD4AzvoLcp12lNRx48WizNReXtIwDp6X2667VIhTQthiU9LW8%2FMbhZnnAuSbUHd51PEKig%2F3l1bOivB71aNGwRniO3bO2gh%2F5d0TXQMfGmiNkdZK5ToVI7w%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e6d449f17472-MIA
-1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T21:06:24.155Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=SOL&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;price_format must be one of the following values: USD, BASE&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.132">
-      <div class="step-ref failed">132</div>
-      
-      <div class="step-cell failed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell failed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.132">17:06:23.558 classpath:features/trade/TradeOHLCV.feature:132
-Then status 200
-status code was: 400, expected: 200, response time in milliseconds: 346, url: https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=SOL&amp;chart_format=price&amp;interval=1h, response: 
-{&quot;time&quot;:&quot;2025-07-22T21:06:24.155Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=SOL&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;price_format must be one of the following values: USD, BASE&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
-classpath:features/trade/TradeOHLCV.feature:132
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.133">
-      <div class="step-ref skipped">133</div>
-      
-      <div class="step-cell skipped">
-        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
     <div class="step-container" id="0.134">
-      <div class="step-ref skipped">134</div>
+      <div class="step-ref passed">134</div>
       
-      <div class="step-cell skipped">
-        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -3763,41 +3758,73 @@ classpath:features/trade/TradeOHLCV.feature:132
 
 </div>
 </div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[13:137]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">edge</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[13:137]</span>
-                <span class="scenario-name">Get OHLCV data with all parameters at extremes</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1177</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[13:137]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[13:137]bg"><div>
+          <div><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
+    <div class="step-container" id="0.135">
+      <div class="step-ref passed">135</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.136">
+      <div class="step-ref passed">136</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.137">
+      <div class="step-ref passed">137</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(0)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3825,10 +3852,10 @@ classpath:features/trade/TradeOHLCV.feature:132
       <div class="step-ref passed">138</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
+        <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1765</div>
   </div>
 
    
@@ -3837,7 +3864,46 @@ classpath:features/trade/TradeOHLCV.feature:132
 
   
 
-     
+  <div class="preformatted" data-parent="0.138">18:18:02.714 request:
+1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=1h
+1 &gt; Host: full-api.cloud-service-app.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+18:18:04.478 response time in milliseconds: 1764
+1 &lt; 200
+1 &lt; Date: Fri, 25 Jul 2025 22:18:07 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; Server: cloudflare
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Vary: Origin, Accept-Encoding
+1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+1 &lt; Cross-Origin-Opener-Policy: same-origin
+1 &lt; Cross-Origin-Resource-Policy: same-origin
+1 &lt; Referrer-Policy: no-referrer
+1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+1 &lt; X-Content-Type-Options: nosniff
+1 &lt; X-Dns-Prefetch-Control: off
+1 &lt; X-Frame-Options: SAMEORIGIN
+1 &lt; X-Xss-Protection: 0
+1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
+1 &lt; Origin-Agent-Cluster: ?1
+1 &lt; X-Download-Options: noopen
+1 &lt; X-Permitted-Cross-Domain-Policies: none
+1 &lt; X-Ratelimit-Limit: 120
+1 &lt; X-Ratelimit-Remaining: 119
+1 &lt; X-Ratelimit-Reset: 1
+1 &lt; Cf-Cache-Status: DYNAMIC
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=Q0xfDrP2xlapWhI5SN1kRad%2BKx2Knpw5owIJkHwKJf1Is0pn1sqJmNZoSTUoeozw0%2B9puKPa%2Bp5h2zgk5hSfyVLJqu%2B7za8pE5hsTd%2Bx040AE9BnR48F2F2xwReIIw%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f07fe28211c08-AMS
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
+
+</div>   
 
   
 
@@ -3853,7 +3919,7 @@ classpath:features/trade/TradeOHLCV.feature:132
       <div class="step-ref passed">139</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param interval = &#39;1h&#39;</span>
+        <span>Then</span>&nbsp;<span>status 200</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3881,7 +3947,7 @@ classpath:features/trade/TradeOHLCV.feature:132
       <div class="step-ref passed">140</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param price_format = &#39;USD&#39;</span>
+        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3909,7 +3975,7 @@ classpath:features/trade/TradeOHLCV.feature:132
       <div class="step-ref passed">141</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param chart_format = &#39;price&#39;</span>
+        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -3927,112 +3993,41 @@ classpath:features/trade/TradeOHLCV.feature:132
 
 </div>
 </div>
-          <div><div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[14:144]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">edge</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[14:144]</span>
+                <span class="scenario-name">Get OHLCV data with very long address</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>690</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[14:144]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[14:144]bg"><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.142">
-      <div class="step-ref passed">142</div>
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1175</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.142">17:06:23.580 request:
-1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=price&amp;interval=1h
-1 &gt; Host: full-api.cloud-service-app.com
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
-1 &gt; Accept-Encoding: gzip,deflate
-
-
-17:06:24.753 response time in milliseconds: 1173
-1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 21:06:25 GMT
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
-1 &lt; Server: cloudflare
-1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
-1 &lt; Vary: Origin, Accept-Encoding
-1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
-1 &lt; Cross-Origin-Opener-Policy: same-origin
-1 &lt; Cross-Origin-Resource-Policy: same-origin
-1 &lt; Referrer-Policy: no-referrer
-1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
-1 &lt; X-Content-Type-Options: nosniff
-1 &lt; X-Dns-Prefetch-Control: off
-1 &lt; X-Frame-Options: SAMEORIGIN
-1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;1e-JkPcI+pGj7BBTxOuZTVVIm91zaY&quot;
-1 &lt; Origin-Agent-Cluster: ?1
-1 &lt; X-Download-Options: noopen
-1 &lt; X-Permitted-Cross-Domain-Policies: none
-1 &lt; X-Ratelimit-Limit: 120
-1 &lt; X-Ratelimit-Remaining: 119
-1 &lt; X-Ratelimit-Reset: 1
-1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=F%2Bc4oopvlL7DhZfxYLMv1KZ4JKFWOHhPyaJ6vz%2FQF%2BGTjYBv%2Bmg1luY%2Bmp6go46GXc%2Bhtd0z6WPvGduou1sYETc819HmI%2B%2FYV7qSitpaScxO49Tkc294Nxabdilqlg%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e6d8a861a524-MIA
-1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[]}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.143">
-      <div class="step-ref passed">143</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.144">
-      <div class="step-ref passed">144</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.status == &#39;success&#39;</span>
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -4060,7 +4055,63 @@ classpath:features/trade/TradeOHLCV.feature:132
       <div class="step-ref passed">145</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + &#39;a&#39;.repeat(1000)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">8</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.146">
+      <div class="step-ref passed">146</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.147">
+      <div class="step-ref passed">147</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(0)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -4078,41 +4129,17 @@ classpath:features/trade/TradeOHLCV.feature:132
 
 </div>
 </div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[14:148]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">edge</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[14:148]</span>
-                <span class="scenario-name">Get OHLCV data with very long address</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>522</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[14:148]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[14:148]bg"><div>
+          <div><div>
   
 
   
 
   <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
+    <div class="step-container" id="0.148">
+      <div class="step-ref passed">148</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(0)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -4140,122 +4167,10 @@ classpath:features/trade/TradeOHLCV.feature:132
       <div class="step-ref passed">149</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + &#39;a&#39;.repeat(1000)</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.150">
-      <div class="step-ref passed">150</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param interval = &#39;1h&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.151">
-      <div class="step-ref passed">151</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param price_format = &#39;USD&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.152">
-      <div class="step-ref passed">152</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param chart_format = &#39;price&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.153">
-      <div class="step-ref passed">153</div>
-      
-      <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">520</div>
+    <div class="time-cell passed">681</div>
   </div>
 
    
@@ -4264,7 +4179,7 @@ classpath:features/trade/TradeOHLCV.feature:132
 
   
 
-  <div class="preformatted" data-parent="0.153">17:06:24.769 request:
+  <div class="preformatted" data-parent="0.149">18:18:04.500 request:
 1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa?price_format=USD&amp;chart_format=price&amp;interval=1h
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -4272,9 +4187,9 @@ classpath:features/trade/TradeOHLCV.feature:132
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-17:06:25.288 response time in milliseconds: 519
+18:18:05.180 response time in milliseconds: 679
 1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 21:06:25 GMT
+1 &lt; Date: Fri, 25 Jul 2025 22:18:08 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
@@ -4290,8 +4205,8 @@ classpath:features/trade/TradeOHLCV.feature:132
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;4bb-JT3up4JzkvGXdAF7whJsXEFo9vU&quot;
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=%2BH%2Fr7ZFxPsb9zGDicJ3sa%2FCzz%2BdYW%2B29ryFwopIHYDBNbwNxef70BrAREn1FtAmQzZnpv5eRbP5qXak5zYa0VeEFtrkYKjsyK0LR%2FHNt1VGHSPbkzpzdIbnJtSx%2FqA%3D%3D&quot;}]}
+1 &lt; Etag: W/&quot;4bb-kuNfrdkBrkNgdINHxm+9MY5QSEg&quot;
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=2bVmVZ573h%2FVlzazwZ9ZETF8YqYLCj7lJzfqaddHKCXuvdxcmam0ciURY0IVimdeWxqQDlzDs%2FcCKBoQPpazCiFi04WtBVdh%2F3%2FkYH20Xng%2F0HjbptKBN9bfUu0stQ%3D%3D&quot;}]}
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -4299,9 +4214,9 @@ classpath:features/trade/TradeOHLCV.feature:132
 1 &lt; X-Ratelimit-Remaining: 119
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; CF-RAY: 9635e6de18897461-MIA
+1 &lt; CF-RAY: 964f08093a696630-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T21:06:25.863Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa?price_format=USD&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Invalid address length: expected 32 - 44 characters.&quot;}}
+{&quot;time&quot;:&quot;2025-07-25T22:18:08.221Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa?price_format=USD&amp;chart_format=price&amp;interval=1h&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Invalid address length: expected 32 - 44 characters.&quot;}}
 
 </div>   
 
@@ -4315,8 +4230,8 @@ classpath:features/trade/TradeOHLCV.feature:132
   
 
   <div class="step-row">
-    <div class="step-container" id="0.154">
-      <div class="step-ref passed">154</div>
+    <div class="step-container" id="0.150">
+      <div class="step-ref passed">150</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
@@ -4339,29 +4254,29 @@ classpath:features/trade/TradeOHLCV.feature:132
 </div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[15:157]">
+          <div class="scenario-heading" id="[15:153]">
             <div class="heading-container">
               <div class="scenario-tags">
                 <a class="badge badge-primary" href="karate-tags.html">edge</a>
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[15:157]</span>
-                <span class="scenario-name">Get OHLCV data with special characters in address</span>
+                Scenario: <span>[15:153]</span>
+                <span class="scenario-name">Get OHLCV data with mixed valid and invalid parameters</span>
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>1</span>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>596</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[15:157]bg">
+            <div class="step-container" id="[15:153]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[15:157]bg"><div>
+          <div data-parent="[15:153]bg"><div>
   
 
   
@@ -4372,6 +4287,118 @@ classpath:features/trade/TradeOHLCV.feature:132
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.154">
+      <div class="step-ref passed">154</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.155">
+      <div class="step-ref passed">155</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param interval = getOHLCVInterval(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.156">
+      <div class="step-ref passed">156</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param price_format = getOHLCVPriceFormat(0)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.157">
+      <div class="step-ref passed">157</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param chart_format = getOHLCVChartFormat(10)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -4399,122 +4426,10 @@ classpath:features/trade/TradeOHLCV.feature:132
       <div class="step-ref passed">158</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + &#39;!@#$%^&amp;*()&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.159">
-      <div class="step-ref passed">159</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param interval = &#39;1h&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.160">
-      <div class="step-ref passed">160</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param price_format = &#39;USD&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.161">
-      <div class="step-ref passed">161</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param chart_format = &#39;price&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.162">
-      <div class="step-ref failed">162</div>
-      
-      <div class="step-cell failed">
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell failed">0</div>
+    <div class="time-cell passed">596</div>
   </div>
 
    
@@ -4523,231 +4438,7 @@ classpath:features/trade/TradeOHLCV.feature:132
 
   
 
-  <div class="preformatted" data-parent="0.162">17:06:25.302 classpath:features/trade/TradeOHLCV.feature:162
-When method get
-java.net.URISyntaxException: Malformed escape pair at index 55: https://full-api.cloud-service-app.com/trade/ohlcv/!@#$%^&amp;*()
-classpath:features/trade/TradeOHLCV.feature:162
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.163">
-      <div class="step-ref skipped">163</div>
-      
-      <div class="step-cell skipped">
-        <span>Then</span>&nbsp;<span>status 400</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[16:166]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">edge</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[16:166]</span>
-                <span class="scenario-name">Get OHLCV data with mixed valid and invalid parameters</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>387</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[16:166]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[16:166]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;)</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.167">
-      <div class="step-ref passed">167</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;trade_ohlcv&#39;) + getValidTokenAddress(0)</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.168">
-      <div class="step-ref passed">168</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param interval = &#39;1h&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.169">
-      <div class="step-ref passed">169</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param price_format = &#39;USD&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.170">
-      <div class="step-ref passed">170</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param chart_format = &#39;invalid_chart&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.171">
-      <div class="step-ref passed">171</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
-      </div>
-    </div>
-    <div class="time-cell passed">386</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.171">17:06:25.320 request:
+  <div class="preformatted" data-parent="0.158">18:18:05.189 request:
 1 &gt; GET https://full-api.cloud-service-app.com/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=invalid_chart&amp;interval=1h
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -4755,9 +4446,9 @@ classpath:features/trade/TradeOHLCV.feature:162
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-17:06:25.704 response time in milliseconds: 383
+18:18:05.784 response time in milliseconds: 594
 1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 21:06:26 GMT
+1 &lt; Date: Fri, 25 Jul 2025 22:18:08 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 283
 1 &lt; Connection: keep-alive
@@ -4773,7 +4464,7 @@ classpath:features/trade/TradeOHLCV.feature:162
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;11b-88ryEshXR6AZAemuElwSBGi4/H0&quot;
+1 &lt; Etag: W/&quot;11b-CUQe2NN/HAr8Yd8zR3nzdxKjC6Y&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -4781,10 +4472,10 @@ classpath:features/trade/TradeOHLCV.feature:162
 1 &lt; X-Ratelimit-Remaining: 119
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=%2FFqTLAGCHfM8lVwpxeMMoaSZReaypV%2BlX2mZ1jIJOl48MIhxsLqP4stvw4djxsAMrkQZQlOAW4ZUszLIJM5gzJdwo0Qo37c1Whm8afOljl8KUlKa6gdC48htdaso%2Bg%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9635e6e17a71f166-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=CVGODQtk4lStf12luj4mRdaOFfGlYYxG4%2BhqwhnYuHQUFwuCL%2FnqL5b41nWxDfNrc6xt5qmEeAI8L05CTszJg7KQo%2FXcfH9UbsYmXHrc3Ma0na0SrtyGSUN8yY5Aog%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964f080da8eb9fa6-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T21:06:26.254Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=invalid_chart&amp;interval=1h&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;chart_format must be one of the following values: mcap, price&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
+{&quot;time&quot;:&quot;2025-07-25T22:18:08.957Z&quot;,&quot;path&quot;:&quot;/trade/ohlcv/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP?price_format=USD&amp;chart_format=invalid_chart&amp;interval=1h&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;chart_format must be one of the following values: mcap, price&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
 
 </div>   
 
@@ -4798,8 +4489,8 @@ classpath:features/trade/TradeOHLCV.feature:162
   
 
   <div class="step-row">
-    <div class="step-container" id="0.172">
-      <div class="step-ref passed">172</div>
+    <div class="step-container" id="0.159">
+      <div class="step-ref passed">159</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>

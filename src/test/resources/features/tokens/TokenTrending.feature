@@ -5,10 +5,10 @@ Feature: Token Trending Endpoint
 
   @smoke @positive
   Scenario: Get trending tokens with default parameters
-    And param minutes = 5
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getValidTrendingMinutes(1)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 200
     And def validationResult = validateTrendingTokensBasic(response, 10)
@@ -18,10 +18,10 @@ Feature: Token Trending Endpoint
 
   @positive
   Scenario: Get trending tokens with small limit
-    And param minutes = 5
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 5
+    And param minutes = getValidTrendingMinutes(1)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(1)
     When method get
     Then status 200
     And def validationResult = validateTrendingTokensBasic(response, 5)
@@ -31,10 +31,10 @@ Feature: Token Trending Endpoint
 
   @positive
   Scenario: Get trending tokens with medium limit
-    And param minutes = 10
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getValidTrendingMinutes(2)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 200
     And def validationResult = validateTrendingTokensBasic(response, 10)
@@ -44,10 +44,10 @@ Feature: Token Trending Endpoint
 
   @positive
   Scenario: Get trending tokens with large limit
-    And param minutes = 15
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 20
+    And param minutes = getValidTrendingMinutes(3)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(4)
     When method get
     Then status 200
     And def validationResult = validateTrendingTokensBasic(response, 20)
@@ -57,10 +57,10 @@ Feature: Token Trending Endpoint
 
   @positive
   Scenario: Get trending tokens with minimum limit
-    And param minutes = 1
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 1
+    And param minutes = getValidTrendingMinutes(0)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(0)
     When method get
     Then status 200
     And def validationResult = validateTrendingTokensBasic(response, 1)
@@ -70,10 +70,10 @@ Feature: Token Trending Endpoint
 
   @positive
   Scenario: Get trending tokens with maximum limit
-    And param minutes = 20
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 100
+    And param minutes = getValidTrendingMinutes(4)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(7)
     When method get
     Then status 200
     And def validationResult = validateTrendingTokensBasic(response, 100)
@@ -83,10 +83,10 @@ Feature: Token Trending Endpoint
 
   @positive
   Scenario: Get trending tokens with ascending order
-    And param minutes = 5
-    And param order = 'ASC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getValidTrendingMinutes(1)
+    And param order = getValidTrendingOrder(0)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 200
     And def validationResult = validateTrendingTokensBasic(response, 10)
@@ -96,10 +96,10 @@ Feature: Token Trending Endpoint
 
   @positive
   Scenario: Get trending tokens ordered by count
-    And param minutes = 5
-    And param order = 'DESC'
-    And param orderField = 'count'
-    And param limit = 10
+    And param minutes = getValidTrendingMinutes(1)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(0)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 200
     And def validationResult = validateTrendingTokensBasic(response, 10)
@@ -109,10 +109,10 @@ Feature: Token Trending Endpoint
 
   @positive
   Scenario: Get trending tokens with combined parameters
-    And param minutes = 10
-    And param order = 'ASC'
-    And param orderField = 'count'
-    And param limit = 15
+    And param minutes = getValidTrendingMinutes(2)
+    And param order = getValidTrendingOrder(0)
+    And param orderField = getValidTrendingOrderField(0)
+    And param limit = getValidTrendingLimit(3)
     When method get
     Then status 200
     And def validationResult = validateTrendingTokensBasic(response, 15)
@@ -122,10 +122,10 @@ Feature: Token Trending Endpoint
 
   @boundary
   Scenario: Get trending tokens with minimum minutes
-    And param minutes = 1
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getValidTrendingMinutes(0)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 200
     And def validationResult = validateTrendingTokensBasic(response, 10)
@@ -133,10 +133,10 @@ Feature: Token Trending Endpoint
 
   @boundary
   Scenario: Get trending tokens with maximum minutes
-    And param minutes = 20
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getValidTrendingMinutes(4)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 200
     And def validationResult = validateTrendingTokensBasic(response, 10)
@@ -149,82 +149,82 @@ Feature: Token Trending Endpoint
 
   @negative
   Scenario: Get trending tokens with invalid minutes (zero)
-    And param minutes = 0
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getInvalidTrendingMinutes(0)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 400
 
   @negative
   Scenario: Get trending tokens with invalid minutes (negative)
-    And param minutes = -1
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getInvalidTrendingMinutes(1)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 400
 
   @negative
   Scenario: Get trending tokens with invalid minutes (too high)
-    And param minutes = 21
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getInvalidTrendingMinutes(3)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 400
 
   @negative
   Scenario: Get trending tokens with invalid order
-    And param minutes = 5
-    And param order = 'asc'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getValidTrendingMinutes(1)
+    And param order = getInvalidTrendingOrder(0)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 400
 
   @negative
   Scenario: Get trending tokens with invalid order field
-    And param minutes = 5
-    And param order = 'DESC'
-    And param orderField = 'price'
-    And param limit = 10
+    And param minutes = getValidTrendingMinutes(1)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getInvalidTrendingOrderField(0)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 400
 
   @negative
   Scenario: Get trending tokens with invalid limit (zero)
-    And param minutes = 5
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 0
+    And param minutes = getValidTrendingMinutes(1)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getInvalidTrendingLimit(0)
     When method get
     Then status 400
 
   @negative
   Scenario: Get trending tokens with invalid limit (too high)
-    And param minutes = 5
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 101
+    And param minutes = getValidTrendingMinutes(1)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getInvalidTrendingLimit(3)
     When method get
     Then status 400
 
   @negative
   Scenario: Get trending tokens with invalid parameter types
-    And param minutes = 'invalid'
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getInvalidTrendingMinutes(5)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 400
 
   @validation
   Scenario: Validate trending tokens response structure
-    And param minutes = 5
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getValidTrendingMinutes(1)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 200
     And match response.status == 'success'
@@ -247,10 +247,10 @@ Feature: Token Trending Endpoint
 
   @validation
   Scenario: Validate trending tokens are sorted by volume
-    And param minutes = 5
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getValidTrendingMinutes(1)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 200
     And match response.status == 'success'
@@ -261,10 +261,10 @@ Feature: Token Trending Endpoint
 
   @validation
   Scenario: Validate no unwanted fields in trending tokens response
-    And param minutes = 5
-    And param order = 'DESC'
-    And param orderField = 'volume'
-    And param limit = 10
+    And param minutes = getValidTrendingMinutes(1)
+    And param order = getValidTrendingOrder(1)
+    And param orderField = getValidTrendingOrderField(1)
+    And param limit = getValidTrendingLimit(2)
     When method get
     Then status 200
     And match response.status == 'success'

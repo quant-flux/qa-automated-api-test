@@ -37,26 +37,6 @@ Feature: Token Price Variations Endpoint
     When method get
     Then status 404
 
-  @edge
-  Scenario: Get price variations with very long address
-    * url baseUrl + getEndpoint('token_prices') + 'a'.repeat(1000)
-    When method get
-    Then status 400
-
-  @edge
-  Scenario: Get price variations with special characters in address
-    * url baseUrl + getEndpoint('token_prices') + '!@#$%^&*()'
-    When method get
-    Then status 400
-
-  @edge
-  Scenario: Get price variations with numeric address
-    * url baseUrl + getEndpoint('token_prices') + '1234567890123456789012345678901234567890'
-    When method get
-    Then status 400
-
-  @edge
-  Scenario: Get price variations with mixed case address
-    * url baseUrl + getEndpoint('token_prices') + 'AbCdEfGhIjKlMnOpQrStUvWxYz1234567890'
-    When method get
-    Then status 400 
+   @edge
+  Scenario: Validate token prices edge cases
+    * call read('classpath:features/common/EdgeCases.feature') { endpoint: 'token/prices', baseUrl: 'https://full-api.cloud-service-app.com' }

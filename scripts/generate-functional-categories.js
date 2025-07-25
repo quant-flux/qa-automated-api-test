@@ -21,6 +21,7 @@ const categories = {
             { name: 'TokenList', prefix: 'tokens' },
             { name: 'TokenPrice', prefix: 'tokens' },
             { name: 'TokenPrices', prefix: 'tokens' },
+            { name: 'TokenPriceMulti', prefix: 'tokens' },
             { name: 'TokenPricesMulti', prefix: 'tokens' },
             { name: 'TokenMeta', prefix: 'tokens' },
             { name: 'TokenHolders', prefix: 'tokens' },
@@ -117,8 +118,9 @@ function generateFeatureCard(testName, data, prefix) {
         'TokenDataValidation': '✅',
         'TokenList': '📋',
         'TokenPrice': '💰',
-        'TokenPrices': '💎',
-        'TokenPricesMulti': '💎',
+        'TokenPrices': '💼',
+        'TokenPriceMulti': '💼💼',
+        'TokenPricesMulti': '💼💼💼',
         'TokenMeta': 'ℹ️',
         'TokenHolders': '👥',
         'TokenNewListing': '🆕',
@@ -132,7 +134,7 @@ function generateFeatureCard(testName, data, prefix) {
     // Buscar el icono correcto basado en el nombre del test
     let icon = '⚡';
     for (const [key, value] of Object.entries(icons)) {
-        if (testName.includes(key)) {
+        if (testName === key) {
             icon = value;
             break;
         }
@@ -146,6 +148,7 @@ function generateFeatureCard(testName, data, prefix) {
         'TokenList': 'Listado y filtrado de tokens',
         'TokenPrice': 'Consultas de precios de tokens',
         'TokenPrices': 'Múltiples consultas de precios',
+        'TokenPriceMulti': 'Consultas multi-precio de tokens',
         'TokenPricesMulti': 'Consultas multi-precio de tokens',
         'TokenMeta': 'Metadatos de tokens',
         'TokenHolders': 'Información de holders de tokens',
@@ -160,7 +163,7 @@ function generateFeatureCard(testName, data, prefix) {
     // Buscar la descripción correcta basada en el nombre del test
     let description = 'Test funcional';
     for (const [key, value] of Object.entries(descriptions)) {
-        if (testName.includes(key)) {
+        if (testName === key) {
             description = value;
             break;
         }

@@ -169,36 +169,83 @@ function updateMainDashboard(htmlFile, functionalJsonFile, performanceJsonFile) 
             `<div class="stat-number ${rateClass}" id="successRate">${totalSuccessRate}%</div>`
         );
         
-        // Actualizar estadísticas de tests funcionales (hardcodeadas)
+        // Actualizar estadísticas de tests funcionales (valores reales del HTML)
         htmlContent = htmlContent.replace(
-            /<div class="report-stat-value">119<\/div>/,
+            /<div class="report-stat-value">187<\/div>/,
             `<div class="report-stat-value">${functionalTotal}</div>`
         );
         
         htmlContent = htmlContent.replace(
-            /<div class="report-stat-value" style="color: #28a745;">90<\/div>/,
+            /<div class="report-stat-value" style="color: #28a745;">142<\/div>/,
             `<div class="report-stat-value" style="color: #28a745;">${functionalPassed}</div>`
         );
         
         htmlContent = htmlContent.replace(
-            /<div class="report-stat-value" style="color: #dc3545;">29<\/div>/,
+            /<div class="report-stat-value" style="color: #dc3545;">45<\/div>/,
             `<div class="report-stat-value" style="color: #dc3545;">${functionalFailed}</div>`
         );
         
-        // Actualizar estadísticas de tests de performance (hardcodeadas)
+        // Actualizar estadísticas de tests de performance (valores reales del HTML)
         htmlContent = htmlContent.replace(
-            /<div class="report-stat-value">24<\/div>/,
+            /<div class="report-stat-value">71<\/div>/,
             `<div class="report-stat-value">${performanceTotal}</div>`
         );
         
         htmlContent = htmlContent.replace(
-            /<div class="report-stat-value" style="color: #28a745;">21<\/div>/,
+            /<div class="report-stat-value" style="color: #28a745;">22<\/div>/,
             `<div class="report-stat-value" style="color: #28a745;">${performancePassed}</div>`
         );
         
         htmlContent = htmlContent.replace(
-            /<div class="report-stat-value" style="color: #dc3545;">3<\/div>/,
+            /<div class="report-stat-value" style="color: #dc3545;">49<\/div>/,
             `<div class="report-stat-value" style="color: #dc3545;">${performanceFailed}</div>`
+        );
+        
+        // Obtener la fecha de ejecución de los tests desde los archivos JSON
+        let testExecutionDate = '';
+        
+        try {
+            // Intentar obtener la fecha del archivo funcional (más reciente)
+            if (fs.existsSync(functionalJsonFile)) {
+                const functionalData = JSON.parse(fs.readFileSync(functionalJsonFile, 'utf8'));
+                if (functionalData.resultDate) {
+                    testExecutionDate = functionalData.resultDate;
+                }
+            }
+            
+            // Si no hay fecha funcional, intentar con performance
+            if (!testExecutionDate && fs.existsSync(performanceJsonFile)) {
+                const performanceData = JSON.parse(fs.readFileSync(performanceJsonFile, 'utf8'));
+                if (performanceData.resultDate) {
+                    testExecutionDate = performanceData.resultDate;
+                }
+            }
+            
+            // Si no hay fecha de tests, usar la fecha actual
+            if (!testExecutionDate) {
+                testExecutionDate = new Date().toLocaleString('es-ES', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            }
+            
+        } catch (error) {
+            console.log('⚠️  Error obteniendo fecha de ejecución de tests:', error.message);
+            testExecutionDate = new Date().toLocaleString('es-ES', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+        
+        htmlContent = htmlContent.replace(
+            /<span id="lastUpdated">[^<]*<\/span>/,
+            `<span id="lastUpdated">${testExecutionDate}</span>`
         );
         
         // Escribir el archivo actualizado
@@ -208,6 +255,7 @@ function updateMainDashboard(htmlFile, functionalJsonFile, performanceJsonFile) 
         console.log(`   Total General: ${totalTests}, Exitosos: ${totalPassed}, Fallidos: ${totalFailed}, Tasa: ${totalSuccessRate}%`);
         console.log(`   Funcionales: ${functionalTotal}, Exitosos: ${functionalPassed}, Fallidos: ${functionalFailed}`);
         console.log(`   Performance: ${performanceTotal}, Exitosos: ${performancePassed}, Fallidos: ${performanceFailed}`);
+        console.log(`   Fecha de ejecución de tests: ${testExecutionDate}`);
         
         return true;
         
@@ -326,23 +374,36 @@ function syncAllDashboards() {
     // 4. Actualizar estadísticas en dashboards HTML
     console.log('\n📈 PASO 3: Actualizando estadísticas...');
     
+    // Verificar que existan los archivos JSON de Karate
+    const functionalJsonFile = path.join(config.docsDir, 'karate-reports/functional/karate-summary-json.txt');
+    const performanceJsonFile = path.join(config.docsDir, 'karate-reports/performance/karate-summary-json.txt');
+    
+    if (!fs.existsSync(functionalJsonFile)) {
+        console.log(`⚠️  Archivo JSON funcional no encontrado: ${functionalJsonFile}`);
+        console.log('   Asegúrate de ejecutar las pruebas funcionales primero');
+    }
+    
+    if (!fs.existsSync(performanceJsonFile)) {
+        console.log(`⚠️  Archivo JSON performance no encontrado: ${performanceJsonFile}`);
+        console.log('   Asegúrate de ejecutar las pruebas de performance primero');
+    }
+    
     // Actualizar estadísticas funcionales
     const functionalStatsFile = path.join(config.docsDir, 'functional-report.html');
-    const functionalJsonFile = path.join(config.docsDir, 'karate-reports/functional/karate-summary-json.txt');
-    if (updateStatistics(functionalStatsFile, functionalJsonFile, 'Functional Report')) {
+    if (fs.existsSync(functionalJsonFile) && updateStatistics(functionalStatsFile, functionalJsonFile, 'Functional Report')) {
         statsUpdated++;
     }
     
     // Actualizar estadísticas de performance
     const performanceStatsFile = path.join(config.docsDir, 'performance-report.html');
-    const performanceJsonFile = path.join(config.docsDir, 'karate-reports/performance/karate-summary-json.txt');
-    if (updateStatistics(performanceStatsFile, performanceJsonFile, 'Performance Report')) {
+    if (fs.existsSync(performanceJsonFile) && updateStatistics(performanceStatsFile, performanceJsonFile, 'Performance Report')) {
         statsUpdated++;
     }
     
     // Actualizar estadísticas del dashboard principal
     const mainDashboardFile = path.join(config.docsDir, 'index.html');
-    if (updateMainDashboard(mainDashboardFile, functionalJsonFile, performanceJsonFile)) {
+    if (fs.existsSync(functionalJsonFile) && fs.existsSync(performanceJsonFile) && 
+        updateMainDashboard(mainDashboardFile, functionalJsonFile, performanceJsonFile)) {
         statsUpdated++;
     }
     

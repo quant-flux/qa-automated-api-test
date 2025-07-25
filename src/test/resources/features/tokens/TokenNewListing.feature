@@ -179,8 +179,8 @@ Feature: Token New Listing Endpoint
 
   @boundary
   Scenario: Get new listings with minimum page (1)
-    And param page = 1
-    And param limit = 10
+    And param page = getValidNewListingPage(0)
+    And param limit = getValidNewListingLimit(0)
     When method get
     Then status 200
     And def validationResult = validateNewListingSuccessResponse(response, false, true)
@@ -188,7 +188,7 @@ Feature: Token New Listing Endpoint
 
   @boundary
   Scenario: Get new listings with maximum limit
-    And param limit = 500
+    And param limit = getValidNewListingLimit(3)
     When method get
     Then status 200
     And def validationResult = validateNewListingSuccessResponse(response, false, true)
@@ -196,7 +196,7 @@ Feature: Token New Listing Endpoint
 
   @boundary
   Scenario: Get new listings with minimum limit (10)
-    And param limit = 10
+    And param limit = getValidNewListingLimit(0)
     When method get
     Then status 200
     And def validationResult = validateNewListingSuccessResponse(response, false, true)
@@ -204,8 +204,8 @@ Feature: Token New Listing Endpoint
 
   @boundary
   Scenario: Get new listings with maximum page number
-    And param page = 100
-    And param limit = 10
+    And param page = getValidNewListingPage(3)
+    And param limit = getValidNewListingLimit(0)
     When method get
     Then status 200
     And def validationResult = validateNewListingSuccessResponse(response, false, true)
@@ -213,9 +213,9 @@ Feature: Token New Listing Endpoint
 
   @edge
   Scenario: Get new listings with all parameters at boundary values
-    And param page = 1
-    And param limit = 500
-    And param created_on = 'pumpfun'
+    And param page = getValidNewListingPage(0)
+    And param limit = getValidNewListingLimit(3)
+    And param created_on = getValidNewListingCreatedOn(0)
     When method get
     Then status 200
     And def validationResult = validateNewListingSuccessResponse(response, true, true)
@@ -223,16 +223,16 @@ Feature: Token New Listing Endpoint
 
   @edge
   Scenario: Get new listings with empty response (high page number)
-    And param page = 1000
-    And param limit = 10
+    And param page = getInvalidNewListingPage(4)
+    And param limit = getValidNewListingLimit(0)
     When method get
     Then status 200
     And match response.data.elements == '#array'
 
   @edge
   Scenario: Get new listings with mixed valid and invalid parameters
-    And param page = 1
-    And param limit = 500
-    And param created_on = 'invalid_platform'
+    And param page = getValidNewListingPage(0)
+    And param limit = getValidNewListingLimit(3)
+    And param created_on = getInvalidNewListingCreatedOn(0)
     When method get
     Then status 400 

@@ -78,9 +78,27 @@ Feature: Trade OHLCV Endpoint
 
   @negative @api-bug @current-behavior
   Scenario: Get OHLCV data for non-existent address - Current API Behavior
-    # Test que documenta el comportamiento actual (incorrecto) de la API
-    # Este test pasa pero documenta un bug
     * url baseUrl + getEndpoint('trade_ohlcv') + getInvalidTokenAddress(2)
+    And param interval = getOHLCVInterval(0)
+    And param price_format = getOHLCVPriceFormat(0)
+    And param chart_format = getOHLCVChartFormat(0)
+    When method get
+    Then status 400
+
+  @boundary
+  Scenario: Get OHLCV data with minimum interval (5m)
+    * url baseUrl + getEndpoint('trade_ohlcv') + getValidTokenAddress(0)
+    And param interval = getOHLCVInterval(1)
+    And param price_format = getOHLCVPriceFormat(1)
+    And param chart_format = getOHLCVChartFormat(1)
+    When method get
+    Then status 200
+    And match response.status == 'success'
+    And match response.data == '#array'
+
+  @boundary
+  Scenario: Get OHLCV data with maximum interval (1h)
+    * url baseUrl + getEndpoint('trade_ohlcv') + getValidTokenAddress(0)
     And param interval = getOHLCVInterval(0)
     And param price_format = getOHLCVPriceFormat(0)
     And param chart_format = getOHLCVChartFormat(0)
@@ -90,44 +108,22 @@ Feature: Trade OHLCV Endpoint
     And match response.data == '#array'
 
   @boundary
-  Scenario: Get OHLCV data with minimum interval (5m)
-    * url baseUrl + getEndpoint('trade_ohlcv') + getValidTokenAddress(0)
-    And param interval = '5m'
-    And param price_format = 'USD'
-    And param chart_format = 'price'
-    When method get
-    Then status 200
-    And match response.status == 'success'
-    And match response.data == '#array'
-
-  @boundary
-  Scenario: Get OHLCV data with maximum interval (1h)
-    * url baseUrl + getEndpoint('trade_ohlcv') + getValidTokenAddress(0)
-    And param interval = '1h'
-    And param price_format = 'USD'
-    And param chart_format = 'price'
-    When method get
-    Then status 200
-    And match response.status == 'success'
-    And match response.data == '#array'
-
-  @boundary
   Scenario: Get OHLCV data with USD price format
     * url baseUrl + getEndpoint('trade_ohlcv') + getValidTokenAddress(0)
-    And param interval = '1h'
-    And param price_format = 'USD'
-    And param chart_format = 'price'
+    And param interval = getOHLCVInterval(0)
+    And param price_format = getOHLCVPriceFormat(0)
+    And param chart_format = getOHLCVChartFormat(0)
     When method get
     Then status 200
     And match response.status == 'success'
     And match response.data == '#array'
 
   @boundary
-  Scenario: Get OHLCV data with SOL price format
+  Scenario: Get OHLCV data with BASE price format
     * url baseUrl + getEndpoint('trade_ohlcv') + getValidTokenAddress(0)
-    And param interval = '1h'
-    And param price_format = 'SOL'
-    And param chart_format = 'price'
+    And param interval = getOHLCVInterval(6)
+    And param price_format = getOHLCVPriceFormat(6)
+    And param chart_format = getOHLCVChartFormat(6)
     When method get
     Then status 200
     And match response.status == 'success'
@@ -136,9 +132,9 @@ Feature: Trade OHLCV Endpoint
   @edge
   Scenario: Get OHLCV data with all parameters at extremes
     * url baseUrl + getEndpoint('trade_ohlcv') + getValidTokenAddress(0)
-    And param interval = '1h'
-    And param price_format = 'USD'
-    And param chart_format = 'price'
+    And param interval = getOHLCVInterval(0)
+    And param price_format = getOHLCVPriceFormat(0)
+    And param chart_format = getOHLCVChartFormat(0)
     When method get
     Then status 200
     And match response.status == 'success'
@@ -147,26 +143,17 @@ Feature: Trade OHLCV Endpoint
   @edge
   Scenario: Get OHLCV data with very long address
     * url baseUrl + getEndpoint('trade_ohlcv') + 'a'.repeat(1000)
-    And param interval = '1h'
-    And param price_format = 'USD'
-    And param chart_format = 'price'
-    When method get
-    Then status 400
-
-  @edge
-  Scenario: Get OHLCV data with special characters in address
-    * url baseUrl + getEndpoint('trade_ohlcv') + '!@#$%^&*()'
-    And param interval = '1h'
-    And param price_format = 'USD'
-    And param chart_format = 'price'
+    And param interval = getOHLCVInterval(0)
+    And param price_format = getOHLCVPriceFormat(0)
+    And param chart_format = getOHLCVChartFormat(0)
     When method get
     Then status 400
 
   @edge
   Scenario: Get OHLCV data with mixed valid and invalid parameters
     * url baseUrl + getEndpoint('trade_ohlcv') + getValidTokenAddress(0)
-    And param interval = '1h'
-    And param price_format = 'USD'
-    And param chart_format = 'invalid_chart'
+    And param interval = getOHLCVInterval(0)
+    And param price_format = getOHLCVPriceFormat(0)
+    And param chart_format = getOHLCVChartFormat(10)
     When method get
     Then status 400

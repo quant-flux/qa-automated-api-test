@@ -30,6 +30,15 @@ Feature: Token Data Endpoint
     And def validationResult = validateTokenDataSuccessResponse(response, true)
     And match validationResult == true
 
+  @positive
+  Scenario: Get token data for valid address
+    * url baseUrl + getEndpoint('token_data') + getValidTokenAddress(0)
+    When method get
+    Then status 200
+    And match response.data == '#object'
+    * def tokenData = response.data
+    * validateTokenDataConstraints(tokenData)
+
   @negative
   Scenario: Get token data for invalid address format
     * url baseUrl + getEndpoint('token_data') + getInvalidTokenAddress(0)
@@ -48,37 +57,6 @@ Feature: Token Data Endpoint
     When method get
     Then status 404
 
-  @positive
-  Scenario: Get token data for valid address
-    * url baseUrl + getEndpoint('token_data') + getValidTokenAddress(0)
-    When method get
-    Then status 200
-    And match response.data == '#object'
-    * def tokenData = response.data
-    * validateTokenDataConstraints(tokenData)
-
   @edge
-  Scenario: Get token data with very long address
-    * url baseUrl + getEndpoint('token_data') + 'a'.repeat(1000)
-    When method get
-    Then status 400
-
-  @edge
-  Scenario: Get token data with special characters in address
-    * url baseUrl + getEndpoint('token_data') + '!@#$%^&*()'
-    When method get
-    Then status 400
-
-  @edge
-  Scenario: Get token data with numeric address
-    * url baseUrl + getEndpoint('token_data') + '1234567890123456789012345678901234567890'
-    When method get
-    Then status 400
-
-  @edge
-  Scenario: Get token data with mixed case address
-    * url baseUrl + getEndpoint('token_data') + 'AbCdEfGhIjKlMnOpQrStUvWxYz1234567890'
-    When method get
-    Then status 400
-
- 
+  Scenario: Validate token data edge cases
+    * call read('classpath:features/common/EdgeCases.feature') { endpoint: 'token/data', baseUrl: 'https://full-api.cloud-service-app.com' }

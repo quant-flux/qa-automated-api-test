@@ -96,8 +96,8 @@ Feature: Token List Endpoint
 
   @boundary
   Scenario: Get token list with minimum page (1)
-    And param page = 1
-    And param limit = 10
+    And param page = getValidPage(0)
+    And param limit = getValidLimit(0)
     When method get
     Then status 200
     And def validationResult = validateTokenListSuccessResponse(response, true)
@@ -105,7 +105,7 @@ Feature: Token List Endpoint
 
   @boundary
   Scenario: Get token list with maximum limit (500)
-    And param limit = 500
+    And param limit = getValidLimit(5)
     When method get
     Then status 200
     And def validationResult = validateTokenListSuccessResponse(response, true)
@@ -113,7 +113,7 @@ Feature: Token List Endpoint
 
   @boundary
   Scenario: Get token list with minimum limit (10)
-    And param limit = 10
+    And param limit = getValidLimit(0)
     When method get
     Then status 200
     And def validationResult = validateTokenListSuccessResponse(response, true)
@@ -121,8 +121,8 @@ Feature: Token List Endpoint
 
   @boundary
   Scenario: Get token list with maximum page number
-    And param page = 100
-    And param limit = 10
+    And param page = getValidPage(5)
+    And param limit = getValidLimit(0)
     When method get
     Then status 200
     And def validationResult = validateTokenListSuccessResponse(response, true)
@@ -130,10 +130,10 @@ Feature: Token List Endpoint
 
   @edge
   Scenario: Get token list with all parameters at boundary values
-    And param page = 1
-    And param limit = 500
-    And param sort_by = 'created_time'
-    And param order = 'desc'
+    And param page = getValidPage(0)
+    And param limit = getValidLimit(5)
+    And param sort_by = getValidSortBy(0)
+    And param order = getValidOrder(1)
     When method get
     Then status 200
     And def validationResult = validateTokenListSuccessResponse(response, true)
@@ -141,18 +141,16 @@ Feature: Token List Endpoint
 
   @edge
   Scenario: Get token list with empty response (high page number)
-    And param page = 1000
-    And param limit = 10
+    And param page = getInvalidPage(3)
+    And param limit = getValidLimit(0)
     When method get
     Then status 200
-    And match response.data == '#array'
+    And match response.data.elements == '#array'
 
   @edge
   Scenario: Get token list with mixed valid and invalid parameters
-    And param page = 1
-    And param limit = 500
-    And param sort_by = 'invalid_field'
+    And param page = getValidPage(0)
+    And param limit = getValidLimit(5)
+    And param sort_by = getInvalidSortBy(0)
     When method get
     Then status 400
-
-

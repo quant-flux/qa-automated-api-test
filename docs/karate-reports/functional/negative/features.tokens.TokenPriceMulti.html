@@ -39,7 +39,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     </a>
     <div class="nav-count">
       <div id="nav-pass" class="bg-success">4</div>
-      <div id="nav-fail" class="bg-danger">1</div>
+      <div id="nav-fail" class="bg-danger">0</div>
     </div>
   </div>
   <div id="nav-env">
@@ -49,25 +49,22 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2025-07-22 12:44:32 p. m.</div>
+    <div>2025-07-25 05:30:19 p. m.</div>
   </div>
 </div>
 
         <div class="nav-container">
           <div class="nav-item passed">
-            <a href="#[4:38]"><span>[4:38]</span> <span>Get price data without addresses parameter</span></a>
+            <a href="#[4:37]"><span>[4:37]</span> <span>Get price data without addresses parameter</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[5:43]"><span>[5:43]</span> <span>Get price data with empty addresses array</span></a>
+            <a href="#[5:42]"><span>[5:42]</span> <span>Get price data with empty addresses array</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[6:49]"><span>[6:49]</span> <span>Get price data with more than 10 addresses</span></a>
+            <a href="#[6:48]"><span>[6:48]</span> <span>Get price data with more than 10 addresses</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[7:56]"><span>[7:56]</span> <span>Get price data with invalid addresses format</span></a>
-          </div>
-          <div class="nav-item failed">
-            <a href="#[8:63]"><span>[8:63]</span> <span>Get price data for non-existent addresses</span></a>
+            <a href="#[7:55]"><span>[7:55]</span> <span>Get price data with invalid addresses format</span></a>
           </div>
         </div>
       </div>
@@ -81,29 +78,29 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <span class="feature-description"></span>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[4:38]">
+          <div class="scenario-heading" id="[4:37]">
             <div class="heading-container">
               <div class="scenario-tags">
                 <a class="badge badge-primary" href="karate-tags.html">negative</a>
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[4:38]</span>
+                Scenario: <span>[4:37]</span>
                 <span class="scenario-name">Get price data without addresses parameter</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>437</span>
+              <span>ms:</span>&nbsp;<span>811</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[4:38]bg">
+            <div class="step-container" id="[4:37]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[4:38]bg"><div>
+          <div data-parent="[4:37]bg"><div>
   
 
   
@@ -137,14 +134,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.39">
-      <div class="step-ref passed">39</div>
+    <div class="step-container" id="0.38">
+      <div class="step-ref passed">38</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">437</div>
+    <div class="time-cell passed">810</div>
   </div>
 
    
@@ -153,7 +150,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.39">12:44:28.738 request:
+  <div class="preformatted" data-parent="0.38">17:30:16.308 request:
 1 &gt; GET https://full-api.cloud-service-app.com/token/price/multi
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -161,9 +158,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-12:44:29.173 response time in milliseconds: 435
+17:30:17.117 response time in milliseconds: 809
 1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 16:44:29 GMT
+1 &lt; Date: Fri, 25 Jul 2025 21:30:20 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 279
 1 &lt; Connection: keep-alive
@@ -179,7 +176,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;117-U7Jyl1mWpjzDzlma88fbu4oz8no&quot;
+1 &lt; Etag: W/&quot;117-Z+6N8DQMG40lGG2iFCPzaULf8zc&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -188,10 +185,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; X-Cache: MISS
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=HYN9magFfHCILdOrtO27RdCFOnx5QHT7A6XaatOyoevDu4LJ9vYIKMsZNsNeOl%2FsTlRC8Jom0jcb1vE%2Fq7qwQ2isQhxnfBzTaVaUkap3iOsRTnkfnRLYttI%2FzdY%3D&quot;}]}
-1 &lt; CF-RAY: 96346729f8bb498e-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=D3wOVRJdrA1CKuAs1nJEuJ79HHsZAtNRA5OueYZ0%2B%2FqlOzKVDDF238UrvvC3ezQglNV41RLfczfDKUhFt4vI2l77PzivOzA0oL6Q%2FhD29XtID8szANvxLIvEmzs%3D&quot;}]}
+1 &lt; CF-RAY: 964ec203ea2ff5de-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T16:44:29.369Z&quot;,&quot;path&quot;:&quot;/token/price/multi&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;Each address must be a valid Solana wallet address&quot;,&quot;You can verify up to 10 addresses only&quot;,&quot;addresses should not be empty&quot;,&quot;addresses must be an array&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
+{&quot;time&quot;:&quot;2025-07-25T21:30:20.196Z&quot;,&quot;path&quot;:&quot;/token/price/multi&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;Each address must be a valid Solana wallet address&quot;,&quot;You can verify up to 10 addresses only&quot;,&quot;addresses should not be empty&quot;,&quot;addresses must be an array&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
 
 </div>   
 
@@ -205,8 +202,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.40">
-      <div class="step-ref passed">40</div>
+    <div class="step-container" id="0.39">
+      <div class="step-ref passed">39</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
@@ -229,29 +226,29 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 </div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[5:43]">
+          <div class="scenario-heading" id="[5:42]">
             <div class="heading-container">
               <div class="scenario-tags">
                 <a class="badge badge-primary" href="karate-tags.html">negative</a>
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[5:43]</span>
+                Scenario: <span>[5:42]</span>
                 <span class="scenario-name">Get price data with empty addresses array</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>660</span>
+              <span>ms:</span>&nbsp;<span>683</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[5:43]bg">
+            <div class="step-container" id="[5:42]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[5:43]bg"><div>
+          <div data-parent="[5:42]bg"><div>
   
 
   
@@ -262,6 +259,34 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_price_multi&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.43">
+      <div class="step-ref passed">43</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param addresses = []</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -289,38 +314,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref passed">44</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param addresses = []</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.45">
-      <div class="step-ref passed">45</div>
-      
-      <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">660</div>
+    <div class="time-cell passed">683</div>
   </div>
 
    
@@ -329,7 +326,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.45">12:44:29.181 request:
+  <div class="preformatted" data-parent="0.44">17:30:17.128 request:
 1 &gt; GET https://full-api.cloud-service-app.com/token/price/multi
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -337,9 +334,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-12:44:29.839 response time in milliseconds: 658
+17:30:17.811 response time in milliseconds: 683
 1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 16:44:29 GMT
+1 &lt; Date: Fri, 25 Jul 2025 21:30:20 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 279
 1 &lt; Connection: keep-alive
@@ -355,7 +352,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;117-hXNeeputlsyDZbFKeh9m6Y8eolk&quot;
+1 &lt; Etag: W/&quot;117-SomikBWobiJg15NAt3GSTuj88Os&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -364,10 +361,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; X-Cache: MISS
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=2SBIjQgAuBrKVQ9Csk3pf3LhZ1doZnSqS3gn4r1OF7Bmobq2d%2Fbp1gRWU8rcoZzR9EXhJPb3J93DhhjJRjRuzOIiFzIu8Gej8V90WXUTslmfNxhgmEufQ6n9zSJCog%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9634672d792425cc-IAD
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=6DhyVT456spqzUZn4gPQWRP7JY1k04y%2F7OxJThZbdeggr0OT64gYDc9oIgjSrXBjhAeJnwEI1oa5%2Bc5LFK6%2F4KZrxkAzqpbLOt4RnBndAiZ858bin%2F6N4t2PqvaOzw%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964ec2086fe1170a-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T16:44:29.738Z&quot;,&quot;path&quot;:&quot;/token/price/multi&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;Each address must be a valid Solana wallet address&quot;,&quot;You can verify up to 10 addresses only&quot;,&quot;addresses should not be empty&quot;,&quot;addresses must be an array&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
+{&quot;time&quot;:&quot;2025-07-25T21:30:20.912Z&quot;,&quot;path&quot;:&quot;/token/price/multi&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;Each address must be a valid Solana wallet address&quot;,&quot;You can verify up to 10 addresses only&quot;,&quot;addresses should not be empty&quot;,&quot;addresses must be an array&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
 
 </div>   
 
@@ -381,8 +378,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.46">
-      <div class="step-ref passed">46</div>
+    <div class="step-container" id="0.45">
+      <div class="step-ref passed">45</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
@@ -405,29 +402,29 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 </div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[6:49]">
+          <div class="scenario-heading" id="[6:48]">
             <div class="heading-container">
               <div class="scenario-tags">
                 <a class="badge badge-primary" href="karate-tags.html">negative</a>
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[6:49]</span>
+                Scenario: <span>[6:48]</span>
                 <span class="scenario-name">Get price data with more than 10 addresses</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1201</span>
+              <span>ms:</span>&nbsp;<span>642</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[6:49]bg">
+            <div class="step-container" id="[6:48]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[6:49]bg"><div>
+          <div data-parent="[6:48]bg"><div>
   
 
   
@@ -461,8 +458,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.50">
-      <div class="step-ref passed">50</div>
+    <div class="step-container" id="0.49">
+      <div class="step-ref passed">49</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def tooManyAddresses = getTokenPriceMultiAddresses(&#39;too_many_tokens&#39;)</span>
@@ -489,8 +486,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.51">
-      <div class="step-ref passed">51</div>
+    <div class="step-container" id="0.50">
+      <div class="step-ref passed">50</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>param addresses = tooManyAddresses</span>
@@ -517,14 +514,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.52">
-      <div class="step-ref passed">52</div>
+    <div class="step-container" id="0.51">
+      <div class="step-ref passed">51</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">1198</div>
+    <div class="time-cell passed">639</div>
   </div>
 
    
@@ -533,7 +530,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.52">12:44:29.851 request:
+  <div class="preformatted" data-parent="0.51">17:30:17.829 request:
 1 &gt; GET https://full-api.cloud-service-app.com/token/price/multi?addresses=Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP%2CCnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump%2C7EYnhQoR9YM3N7UoaKRoA44Uy8JeaZV3qyouov87awMs%2CEPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v%2CEs9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB%2CDezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263%2C7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj%2CmSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So%2C7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs%2CEPeUFDgHRxs9xxEPVaL6kfGQvCon7jmAWKVUHuux1Tpz%2C7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr%2C7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj%2CDezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263%2CEs9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB%2CEPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -541,9 +538,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-12:44:31.048 response time in milliseconds: 1196
+17:30:18.466 response time in milliseconds: 637
 1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 16:44:30 GMT
+1 &lt; Date: Fri, 25 Jul 2025 21:30:21 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 877
 1 &lt; Connection: keep-alive
@@ -559,7 +556,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;36d-/YPpbur4VnQ4nbEgM2I0A+CXfiw&quot;
+1 &lt; Etag: W/&quot;36d-5ES+WzULql8yFQyy/5nAjRbj82s&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -568,10 +565,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; X-Cache: MISS
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=E0AldmShSXAe5xW3EIFNErbOW2p25q1Pyi5hLDKa%2F6vSO2BJhLxy3URw5dJ83%2FuaDKK7XiQwkIFlBGeD8Tj5bf8ym4AhqmT8J5yewcfbg2xSmQbpIyKAJ96lPNdBLA%3D%3D&quot;}]}
-1 &lt; CF-RAY: 963467329e47b7d3-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=gly9jG%2FL6%2FGj0z8iqDsv%2BoXwqBaWTMh8j6mLn7kllXDS2YSvXot%2FHBVcCAzIoHd3%2Bhw8W87n%2FzJ3bL6aYSTFxXjtuolwSJYFHAZx%2FaxBO69TIiaByPK64f1Ubz9w7A%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964ec20c5fd9fe9b-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T16:44:30.600Z&quot;,&quot;path&quot;:&quot;/token/price/multi?addresses=Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP%2CCnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump%2C7EYnhQoR9YM3N7UoaKRoA44Uy8JeaZV3qyouov87awMs%2CEPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v%2CEs9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB%2CDezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263%2C7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj%2CmSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So%2C7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs%2CEPeUFDgHRxs9xxEPVaL6kfGQvCon7jmAWKVUHuux1Tpz%2C7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr%2C7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj%2CDezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263%2CEs9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB%2CEPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;You can verify up to 10 addresses only&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
+{&quot;time&quot;:&quot;2025-07-25T21:30:21.549Z&quot;,&quot;path&quot;:&quot;/token/price/multi?addresses=Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP%2CCnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump%2C7EYnhQoR9YM3N7UoaKRoA44Uy8JeaZV3qyouov87awMs%2CEPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v%2CEs9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB%2CDezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263%2C7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj%2CmSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So%2C7vfCXTUXx5WJV5JADk17DUJ4ksgau7utNKj4b963voxs%2CEPeUFDgHRxs9xxEPVaL6kfGQvCon7jmAWKVUHuux1Tpz%2C7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr%2C7dHbWXmci3dT8UFYWYZweBLXgycu7Y3iL6trKn1Y7ARj%2CDezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263%2CEs9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB%2CEPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;You can verify up to 10 addresses only&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
 
 </div>   
 
@@ -585,8 +582,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.53">
-      <div class="step-ref passed">53</div>
+    <div class="step-container" id="0.52">
+      <div class="step-ref passed">52</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
@@ -609,29 +606,29 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 </div>
         </div>
         <div class="scenario">
-          <div class="scenario-heading" id="[7:56]">
+          <div class="scenario-heading" id="[7:55]">
             <div class="heading-container">
               <div class="scenario-tags">
                 <a class="badge badge-primary" href="karate-tags.html">negative</a>
               </div>
               <div class="scenario-keyword">
-                Scenario: <span>[7:56]</span>
+                Scenario: <span>[7:55]</span>
                 <span class="scenario-name">Get price data with invalid addresses format</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>468</span>
+              <span>ms:</span>&nbsp;<span>604</span>
             </div>
           </div>
           <div class="step-row">
-            <div class="step-container" id="[7:56]bg">
+            <div class="step-container" id="[7:55]bg">
               <div class="step-ref bg-step">&gt;&gt;</div>
               <div class="step-cell passed">Background:</div>
             </div>
             <div class="time-cell passed"></div>
           </div>
-          <div data-parent="[7:56]bg"><div>
+          <div data-parent="[7:55]bg"><div>
   
 
   
@@ -665,8 +662,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.57">
-      <div class="step-ref passed">57</div>
+    <div class="step-container" id="0.56">
+      <div class="step-ref passed">56</div>
       
       <div class="step-cell passed">
         <span>*</span>&nbsp;<span>def invalidAddress = getInvalidTokenAddress(0)</span>
@@ -693,8 +690,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.58">
-      <div class="step-ref passed">58</div>
+    <div class="step-container" id="0.57">
+      <div class="step-ref passed">57</div>
       
       <div class="step-cell passed">
         <span>And</span>&nbsp;<span>param addresses = invalidAddress</span>
@@ -721,14 +718,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.59">
-      <div class="step-ref passed">59</div>
+    <div class="step-container" id="0.58">
+      <div class="step-ref passed">58</div>
       
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">467</div>
+    <div class="time-cell passed">603</div>
   </div>
 
    
@@ -737,7 +734,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.59">12:44:31.058 request:
+  <div class="preformatted" data-parent="0.58">17:30:18.480 request:
 1 &gt; GET https://full-api.cloud-service-app.com/token/price/multi?addresses=invalid_address_123
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -745,9 +742,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-12:44:31.524 response time in milliseconds: 466
+17:30:19.082 response time in milliseconds: 602
 1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 16:44:31 GMT
+1 &lt; Date: Fri, 25 Jul 2025 21:30:22 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 207
 1 &lt; Connection: keep-alive
@@ -763,7 +760,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;cf-sGvdSuf/dCIMW2N2rSAVOOqgrnU&quot;
+1 &lt; Etag: W/&quot;cf-UBv4101HbvBYeoeAeGinBKRSUyw&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -772,10 +769,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; X-Cache: MISS
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=RwXCZBXErg4VARKCj8BQPPfxbt%2BxshPcWbLMTIZUL6Q3LNCKx2lQ9fgiKARcpoJxhzMKrpZRD6d0rnfp6x2F%2F3W61MmHR9fC%2B72Mq4TWX62YH2NI%2FaBSIYn2Pq4mlA%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9634673889288dc1-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=khvYcHOpYRroxqZOZALRCkJvu9iEXdjrUZQxIzBolIguca61FcvX4xmy%2F3b3VJoBJZft0%2BBl%2BBFvT1JsuNZQcQla7d0IGgSzaonEHi7ue54H17SWtbR0kLPAvbEBGA%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964ec2106850907e-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T16:44:31.698Z&quot;,&quot;path&quot;:&quot;/token/price/multi?addresses=invalid_address_123&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;Each address must be a valid Solana wallet address&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
+{&quot;time&quot;:&quot;2025-07-25T21:30:22.196Z&quot;,&quot;path&quot;:&quot;/token/price/multi?addresses=invalid_address_123&quot;,&quot;error&quot;:{&quot;message&quot;:[&quot;Each address must be a valid Solana wallet address&quot;],&quot;error&quot;:&quot;Bad Request&quot;,&quot;statusCode&quot;:400}}
 
 </div>   
 
@@ -789,8 +786,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.60">
-      <div class="step-ref passed">60</div>
+    <div class="step-container" id="0.59">
+      <div class="step-ref passed">59</div>
       
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
@@ -806,215 +803,6 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
      
-
-  
-
-</div>
-</div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[8:63]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">negative</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[8:63]</span>
-                <span class="scenario-name">Get price data for non-existent addresses</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>757</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[8:63]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[8:63]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_price_multi&#39;)</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.64">
-      <div class="step-ref passed">64</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>def nonExistentAddress = getInvalidTokenAddress(2)</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.65">
-      <div class="step-ref passed">65</div>
-      
-      <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>param addresses = nonExistentAddress</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.66">
-      <div class="step-ref passed">66</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
-      </div>
-    </div>
-    <div class="time-cell passed">756</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.66">12:44:31.533 request:
-1 &gt; GET https://full-api.cloud-service-app.com/token/price/multi?addresses=9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM
-1 &gt; Host: full-api.cloud-service-app.com
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
-1 &gt; Accept-Encoding: gzip,deflate
-
-
-12:44:32.287 response time in milliseconds: 753
-1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 16:44:32 GMT
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Transfer-Encoding: chunked
-1 &lt; Connection: keep-alive
-1 &lt; Server: cloudflare
-1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
-1 &lt; Vary: Origin, Accept-Encoding
-1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
-1 &lt; Cross-Origin-Opener-Policy: same-origin
-1 &lt; Cross-Origin-Resource-Policy: same-origin
-1 &lt; Referrer-Policy: no-referrer
-1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
-1 &lt; X-Content-Type-Options: nosniff
-1 &lt; X-Dns-Prefetch-Control: off
-1 &lt; X-Frame-Options: SAMEORIGIN
-1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;22-YXPwddmDudxjzhLgsDvpfGzl+54&quot;
-1 &lt; Origin-Agent-Cluster: ?1
-1 &lt; X-Download-Options: noopen
-1 &lt; X-Permitted-Cross-Domain-Policies: none
-1 &lt; X-Ratelimit-Limit: 120
-1 &lt; X-Ratelimit-Remaining: 119
-1 &lt; X-Ratelimit-Reset: 1
-1 &lt; X-Cache: MISS
-1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=RIkQ5biGe5ecWD4sHa7%2B68caQjOXIpVY07Wxwc5Dep9sDK%2F7spGO2yzaXl0gLFUUvCpbtp9JFUXx%2BtJlsMve2O1I1bpuP9ywEo0q%2B8K%2ByTDS%2BfDqEaaNOEvCP00FQQ%3D%3D&quot;}]}
-1 &lt; CF-RAY: 9634673bac83a56a-MIA
-1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[null]}
-
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.67">
-      <div class="step-ref failed">67</div>
-      
-      <div class="step-cell failed">
-        <span>Then</span>&nbsp;<span>status 404</span>
-      </div>
-    </div>
-    <div class="time-cell failed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.67">12:44:32.287 classpath:features/tokens/TokenPriceMulti.feature:67
-Then status 404
-status code was: 200, expected: 404, response time in milliseconds: 753, url: https://full-api.cloud-service-app.com/token/price/multi?addresses=9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM, response: 
-{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:[null]}
-classpath:features/tokens/TokenPriceMulti.feature:67
-</div>   
 
   
 

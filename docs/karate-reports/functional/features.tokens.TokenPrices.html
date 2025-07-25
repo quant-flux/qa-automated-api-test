@@ -38,8 +38,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">6</div>
-      <div id="nav-fail" class="bg-danger">3</div>
+      <div id="nav-pass" class="bg-success">4</div>
+      <div id="nav-fail" class="bg-danger">2</div>
     </div>
   </div>
   <div id="nav-env">
@@ -49,7 +49,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2025-07-22 12:51:50 p. m.</div>
+    <div>2025-07-25 05:41:24 p. m.</div>
   </div>
 </div>
 
@@ -70,16 +70,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
             <a href="#[5:35]"><span>[5:35]</span> <span>Get price variations for non-existent address</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[6:41]"><span>[6:41]</span> <span>Get price variations with very long address</span></a>
-          </div>
-          <div class="nav-item failed">
-            <a href="#[7:47]"><span>[7:47]</span> <span>Get price variations with special characters in address</span></a>
-          </div>
-          <div class="nav-item passed">
-            <a href="#[8:53]"><span>[8:53]</span> <span>Get price variations with numeric address</span></a>
-          </div>
-          <div class="nav-item passed">
-            <a href="#[9:59]"><span>[9:59]</span> <span>Get price variations with mixed case address</span></a>
+            <a href="#[6:41]"><span>[6:41]</span> <span>Validate token prices edge cases</span></a>
           </div>
         </div>
       </div>
@@ -105,7 +96,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1176</span>
+              <span>ms:</span>&nbsp;<span>1668</span>
             </div>
           </div>
           <div class="step-row">
@@ -184,7 +175,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">1175</div>
+    <div class="time-cell passed">1667</div>
   </div>
 
    
@@ -193,7 +184,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.9">12:51:39.565 request:
+  <div class="preformatted" data-parent="0.9">17:41:14.825 request:
 1 &gt; GET https://full-api.cloud-service-app.com/token/prices/Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -201,9 +192,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-12:51:40.739 response time in milliseconds: 1174
+17:41:16.492 response time in milliseconds: 1666
 1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 16:51:40 GMT
+1 &lt; Date: Fri, 25 Jul 2025 21:41:19 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
@@ -228,8 +219,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; X-Cache: MISS
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=Nio%2B6VjS%2FBxiV0QD1zooyWRbApRs1hwIq3LAFmjrXzTc4eLYMhK6Ns3ImWTXyxjBL%2FICnadpZetoNxFduuoW8vybkH05yabxLAY%2FrOFHoIX8Jvb6bCGMnIhMifI%3D&quot;}]}
-1 &lt; CF-RAY: 963471aef8228752-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=pg0234H3s%2BejJZYkMIyIw2iFcy7ATBzT1N8nVZZXhUShxgMZjmXW68o7Wsi68yQPP8waZcbO0qewemXAO5%2FTHV%2FqGaDPie5Ajmi6ajpLgaAMATwdfHI3iMa3V5317g%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964ed2191d40d835-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
 {&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:{&quot;address&quot;:&quot;Hm6u8PKTyR5hPFHzhpVbGsbSWPpHDaEg6dhpyKdyPUMP&quot;,&quot;price&quot;:6.592161580592792e-7,&quot;price_5m&quot;:6.592161580592792e-7,&quot;percent_5m&quot;:0,&quot;volume_5m&quot;:0,&quot;volume_buy_5m&quot;:0,&quot;volume_sell_5m&quot;:0,&quot;price_30m&quot;:6.592161580592792e-7,&quot;percent_30m&quot;:0,&quot;volume_30m&quot;:0,&quot;volume_buy_30m&quot;:0,&quot;volume_sell_30m&quot;:0,&quot;price_1h&quot;:6.592161580592792e-7,&quot;percent_1h&quot;:0,&quot;volume_1h&quot;:0,&quot;volume_buy_1h&quot;:0,&quot;volume_sell_1h&quot;:0,&quot;price_6h&quot;:6.592161580592792e-7,&quot;percent_6h&quot;:0,&quot;volume_6h&quot;:0,&quot;volume_buy_6h&quot;:0,&quot;volume_sell_6h&quot;:0,&quot;price_24h&quot;:6.592161580592792e-7,&quot;percent_24h&quot;:0,&quot;volume_24h&quot;:0,&quot;volume_buy_24h&quot;:0,&quot;volume_sell_24h&quot;:0,&quot;last_trade_datetime&quot;:&quot;2025-06-29T10:52:03.947000Z&quot;}}
 
@@ -280,7 +271,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>match response.data.address == getValidTokenAddress(0)</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -365,7 +356,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>2229</span>
+              <span>ms:</span>&nbsp;<span>1568</span>
             </div>
           </div>
           <div class="step-row">
@@ -416,7 +407,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_prices&#39;) + getValidTokenAddress(1)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -444,7 +435,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">2228</div>
+    <div class="time-cell passed">1567</div>
   </div>
 
    
@@ -453,7 +444,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.18">12:51:40.758 request:
+  <div class="preformatted" data-parent="0.18">17:41:16.505 request:
 1 &gt; GET https://full-api.cloud-service-app.com/token/prices/CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -461,9 +452,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-12:51:42.985 response time in milliseconds: 2226
+17:41:18.071 response time in milliseconds: 1566
 1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 16:51:43 GMT
+1 &lt; Date: Fri, 25 Jul 2025 21:41:21 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
@@ -479,7 +470,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;2ee-jQzC93bn51BxDw6F1ali0tlEzaQ&quot;
+1 &lt; Etag: W/&quot;2d3-XMrhXm8Fj4LnoB8mSq1ciVZjDOU&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -488,10 +479,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; X-Cache: MISS
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=S%2BUMO%2FqP35pR0UwrMZkbrKB9kbFD4EmVxPlSnNeyIw078S35r6djQeyhipSr2qasWs3tpt2FkbXV5T9BKi%2BzHPFjyPUnRNIz6YrjCpGz6F%2F6a1gy12NizkHi5bbn7Q%3D%3D&quot;}]}
-1 &lt; CF-RAY: 963471be8fa77476-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=yTXvXqMyxmXbuMvV8MuPYWn4qr2yVYK31yayQXBqf7zACnLM0bBkJNZBCaUaH%2FTbRd10poSKDteZn2%2FyRJ0P9w8Qj%2F2CyLP1ghX%2BQq1bf3fvNnuXmlgsFDLx0PQ3pA%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964ed2235fbc9deb-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:{&quot;address&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;price&quot;:0.00126396550118375,&quot;price_5m&quot;:0.00126396550118375,&quot;percent_5m&quot;:0,&quot;volume_5m&quot;:0,&quot;volume_buy_5m&quot;:0,&quot;volume_sell_5m&quot;:0,&quot;price_30m&quot;:0.00126396550118375,&quot;percent_30m&quot;:0,&quot;volume_30m&quot;:0,&quot;volume_buy_30m&quot;:0,&quot;volume_sell_30m&quot;:0,&quot;price_1h&quot;:0.00126396550118375,&quot;percent_1h&quot;:0,&quot;volume_1h&quot;:0,&quot;volume_buy_1h&quot;:0,&quot;volume_sell_1h&quot;:0,&quot;price_6h&quot;:0.00126396550118375,&quot;percent_6h&quot;:0,&quot;volume_6h&quot;:199.7859501325,&quot;volume_buy_6h&quot;:176.0950029325,&quot;volume_sell_6h&quot;:23.690947199999997,&quot;price_24h&quot;:0.00126396550118375,&quot;percent_24h&quot;:0,&quot;volume_24h&quot;:6966.4195381725,&quot;volume_buy_24h&quot;:2668.4013126237505,&quot;volume_sell_24h&quot;:4298.01822554875,&quot;last_trade_datetime&quot;:&quot;2025-07-22T14:34:04.701000Z&quot;}}
+{&quot;status&quot;:&quot;success&quot;,&quot;data&quot;:{&quot;address&quot;:&quot;CnGb7hJsGdsFyQP2uXNWrUgT5K1tovBA3mNnUZcTpump&quot;,&quot;price&quot;:0.0013199372700724637,&quot;price_5m&quot;:0.0013199372700724637,&quot;percent_5m&quot;:0,&quot;volume_5m&quot;:0,&quot;volume_buy_5m&quot;:0,&quot;volume_sell_5m&quot;:0,&quot;price_30m&quot;:0.0013199372700724637,&quot;percent_30m&quot;:0,&quot;volume_30m&quot;:0,&quot;volume_buy_30m&quot;:0,&quot;volume_sell_30m&quot;:0,&quot;price_1h&quot;:0.0013199372700724637,&quot;percent_1h&quot;:0,&quot;volume_1h&quot;:0,&quot;volume_buy_1h&quot;:0,&quot;volume_sell_1h&quot;:0,&quot;price_6h&quot;:0.0013199372700724637,&quot;percent_6h&quot;:0,&quot;volume_6h&quot;:0,&quot;volume_buy_6h&quot;:0,&quot;volume_sell_6h&quot;:0,&quot;price_24h&quot;:0.0013199372700724637,&quot;percent_24h&quot;:0,&quot;volume_24h&quot;:3052.9072153687507,&quot;volume_buy_24h&quot;:443.37858995249996,&quot;volume_sell_24h&quot;:2609.528625416251,&quot;last_trade_datetime&quot;:&quot;2025-07-25T00:47:16.963000Z&quot;}}
 
 </div>   
 
@@ -569,7 +560,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>443</span>
+              <span>ms:</span>&nbsp;<span>1029</span>
             </div>
           </div>
           <div class="step-row">
@@ -620,7 +611,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_prices&#39;) + getInvalidTokenAddress(0)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -648,7 +639,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">443</div>
+    <div class="time-cell passed">1029</div>
   </div>
 
    
@@ -657,7 +648,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.25">12:51:42.994 request:
+  <div class="preformatted" data-parent="0.25">17:41:18.080 request:
 1 &gt; GET https://full-api.cloud-service-app.com/token/prices/invalid_address_123
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -665,9 +656,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-12:51:43.435 response time in milliseconds: 441
+17:41:19.109 response time in milliseconds: 1027
 1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 16:51:43 GMT
+1 &lt; Date: Fri, 25 Jul 2025 21:41:22 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Content-Length: 160
 1 &lt; Connection: keep-alive
@@ -683,7 +674,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;a0-2/EhYR2LD6hoXTDBm6jDJHfF5w8&quot;
+1 &lt; Etag: W/&quot;a0-uKKUnNZ8ni9xsSpOgODSbOFCTKg&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -692,10 +683,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; X-Cache: MISS
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=tmPsfWXcW1dmA64435GqISkQjBnx6fPCZJAh9EEnx%2F45LyoEDI%2BGgJDwwT623toj8rjFHGQ4M33Ws0uvZMmMrbYEldVZRrqUWVqQw8F79CipaVqqXy2%2BQkry58%2FNRw%3D%3D&quot;}]}
-1 &lt; CF-RAY: 963471c4e939a50f-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=JBIXGH%2BIyhI55zkhtwC9%2BqKedev2zOHkP87QFrY%2FpQi0AzTL0BPsgs6fipIngTwBea7kdyc26cRQ7%2FqahMBVHC%2BuwYlFs4HtLX4BQptNBsSjcz%2F8sA645r92kWjxjQ%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964ed22c4a1e7763-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T16:51:43.607Z&quot;,&quot;path&quot;:&quot;/token/prices/invalid_address_123&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Address must be valid Base58.&quot;}}
+{&quot;time&quot;:&quot;2025-07-25T21:41:22.024Z&quot;,&quot;path&quot;:&quot;/token/prices/invalid_address_123&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Address must be valid Base58.&quot;}}
 
 </div>   
 
@@ -745,7 +736,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
             </div>
             <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>639</span>
+              <span>ms:</span>&nbsp;<span>860</span>
             </div>
           </div>
           <div class="step-row">
@@ -824,7 +815,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">639</div>
+    <div class="time-cell passed">860</div>
   </div>
 
    
@@ -833,7 +824,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.31">12:51:43.444 request:
+  <div class="preformatted" data-parent="0.31">17:41:19.117 request:
 1 &gt; GET https://full-api.cloud-service-app.com/token/prices/
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -841,9 +832,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-12:51:44.082 response time in milliseconds: 638
+17:41:19.976 response time in milliseconds: 859
 1 &lt; 404
-1 &lt; Date: Tue, 22 Jul 2025 16:51:44 GMT
+1 &lt; Date: Fri, 25 Jul 2025 21:41:22 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
@@ -859,15 +850,15 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;90-Fk0Fy24mjTSfEofIp1DCn/FIa4c&quot;
+1 &lt; Etag: W/&quot;90-XktXd/M4mtF/rVWY7LhCIDuwe3w&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=8J3Zjiq7nS%2F9VU7H2VyOy%2FluSe8Wbhlkue05tpTumXr88iBcCKJLm0Ti5q5oH0moKrvfjEgcZeMoNDV8HYijeKjltHnv4ldM3h7oGlMCRzrL9SNqq6PFkxrzZH2xNw%3D%3D&quot;}]}
-1 &lt; CF-RAY: 963471c82bc2745a-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=UBtnbKW%2BLFZYdK94YuP%2B5x5bPE6VQX2HJN82dY8aYBxhpD6se4nN9oJZ%2BYgWgiBUCa4KFZC4Tw7lyxSYzJ054TRME%2FL%2B%2Bn9XlOpITREHKm5KY8EMRST3rdrzCTQILw%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964ed2320a2e0eac-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T16:51:44.282Z&quot;,&quot;path&quot;:&quot;/token/prices/&quot;,&quot;error&quot;:{&quot;message&quot;:&quot;Cannot GET /token/prices/&quot;,&quot;error&quot;:&quot;Not Found&quot;,&quot;statusCode&quot;:404}}
+{&quot;time&quot;:&quot;2025-07-25T21:41:22.944Z&quot;,&quot;path&quot;:&quot;/token/prices/&quot;,&quot;error&quot;:{&quot;message&quot;:&quot;Cannot GET /token/prices/&quot;,&quot;error&quot;:&quot;Not Found&quot;,&quot;statusCode&quot;:404}}
 
 </div>   
 
@@ -897,10 +888,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.32">12:51:44.083 classpath:features/tokens/TokenPrices.feature:32
+  <div class="preformatted" data-parent="0.32">17:41:19.976 classpath:features/tokens/TokenPrices.feature:32
 Then status 400
-status code was: 404, expected: 400, response time in milliseconds: 638, url: https://full-api.cloud-service-app.com/token/prices/, response: 
-{&quot;time&quot;:&quot;2025-07-22T16:51:44.282Z&quot;,&quot;path&quot;:&quot;/token/prices/&quot;,&quot;error&quot;:{&quot;message&quot;:&quot;Cannot GET /token/prices/&quot;,&quot;error&quot;:&quot;Not Found&quot;,&quot;statusCode&quot;:404}}
+status code was: 404, expected: 400, response time in milliseconds: 859, url: https://full-api.cloud-service-app.com/token/prices/, response: 
+{&quot;time&quot;:&quot;2025-07-25T21:41:22.944Z&quot;,&quot;path&quot;:&quot;/token/prices/&quot;,&quot;error&quot;:{&quot;message&quot;:&quot;Cannot GET /token/prices/&quot;,&quot;error&quot;:&quot;Not Found&quot;,&quot;statusCode&quot;:404}}
 classpath:features/tokens/TokenPrices.feature:32
 </div>   
 
@@ -922,7 +913,7 @@ classpath:features/tokens/TokenPrices.feature:32
               </div>
             </div>
             <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>1768</span>
+              <span>ms:</span>&nbsp;<span>1305</span>
             </div>
           </div>
           <div class="step-row">
@@ -1001,7 +992,7 @@ classpath:features/tokens/TokenPrices.feature:32
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">1767</div>
+    <div class="time-cell passed">1304</div>
   </div>
 
    
@@ -1010,7 +1001,7 @@ classpath:features/tokens/TokenPrices.feature:32
 
   
 
-  <div class="preformatted" data-parent="0.37">12:51:44.091 request:
+  <div class="preformatted" data-parent="0.37">17:41:19.988 request:
 1 &gt; GET https://full-api.cloud-service-app.com/token/prices/9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
@@ -1018,9 +1009,9 @@ classpath:features/tokens/TokenPrices.feature:32
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-12:51:45.859 response time in milliseconds: 1766
+17:41:21.291 response time in milliseconds: 1302
 1 &lt; 200
-1 &lt; Date: Tue, 22 Jul 2025 16:51:45 GMT
+1 &lt; Date: Fri, 25 Jul 2025 21:41:24 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
 1 &lt; Transfer-Encoding: chunked
 1 &lt; Connection: keep-alive
@@ -1045,8 +1036,8 @@ classpath:features/tokens/TokenPrices.feature:32
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; X-Cache: MISS
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=IOrrpNaIoypVnl7XSMZ%2B%2FCvHHpnq8rBqJ08H41xhGPk5SbJYHYZ39tQ%2BxAqPKNdBmmCO%2BKac3BzM7%2BRAlcxWZb%2B0ls7YPBHDqA%2FdjXNd3P%2F6Rzntk0OBgPVInMM3pw%3D%3D&quot;}]}
-1 &lt; CF-RAY: 963471cdeae2d6ff-IAD
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=Ov0mWFIB7318IA2B8fUL%2Bz9EZUC7JDWIig9HkBQy0nfRTmwPIyDH58JWi6jkN0G3XHjQihdT7rIcEilUYiIFsxSiRbvvU9KNEHmgBWM9IpO%2B2lR2ftx1fgKH6hbxBw%3D%3D&quot;}]}
+1 &lt; CF-RAY: 964ed23878bb4f72-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
 {&quot;status&quot;:&quot;success&quot;}
 
@@ -1078,9 +1069,9 @@ classpath:features/tokens/TokenPrices.feature:32
 
   
 
-  <div class="preformatted" data-parent="0.38">12:51:45.859 classpath:features/tokens/TokenPrices.feature:38
+  <div class="preformatted" data-parent="0.38">17:41:21.291 classpath:features/tokens/TokenPrices.feature:38
 Then status 404
-status code was: 200, expected: 404, response time in milliseconds: 1766, url: https://full-api.cloud-service-app.com/token/prices/9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM, response: 
+status code was: 200, expected: 404, response time in milliseconds: 1302, url: https://full-api.cloud-service-app.com/token/prices/9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM, response: 
 {&quot;status&quot;:&quot;success&quot;}
 classpath:features/tokens/TokenPrices.feature:38
 </div>   
@@ -1098,12 +1089,12 @@ classpath:features/tokens/TokenPrices.feature:38
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[6:41]</span>
-                <span class="scenario-name">Get price variations with very long address</span>
+                <span class="scenario-name">Validate token prices edge cases</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1143</span>
+              <span>ms:</span>&nbsp;<span>3560</span>
             </div>
           </div>
           <div class="step-row">
@@ -1151,7 +1142,70 @@ classpath:features/tokens/TokenPrices.feature:38
       <div class="step-ref passed">42</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_prices&#39;) + &#39;a&#39;.repeat(1000)</span>
+        <span>*</span>&nbsp;<span>call read(&#39;classpath:features/common/EdgeCases.feature&#39;) { endpoint: &#39;token/prices&#39;, baseUrl: &#39;https://full-api.cloud-service-app.com&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3560</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  <div>
+        
+    <div class="step-row">
+      <div class="step-container" id="0.42.0.call">
+        <div class="step-ref passed">&gt;&gt;</div>
+        <div class="step-indent"></div>
+        <div class="step-cell passed">features.common.EdgeCases</div>
+      </div>
+      <div class="time-cell passed">3555</div>
+    </div>
+    <div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.4">
+      <div class="step-ref passed">4</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def edgeCases = read(&#39;classpath:data/tokens/token-addresses.json&#39;).edgeCases</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.7">
+      <div class="step-ref passed">7</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def endpoint = __arg ? __arg.endpoint : &#39;token/data&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -1169,20 +1223,20 @@ classpath:features/tokens/TokenPrices.feature:38
 
 </div>
 </div>
-          <div><div>
+      <div><div>
   
 
   
 
-  <div class="step-row">
-    <div class="step-container" id="0.43">
-      <div class="step-ref passed">43</div>
-      
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.8">
+      <div class="step-ref passed">8</div>
+      <div class="step-indent"></div>
       <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method get</span>
+        <span>*</span>&nbsp;<span>def baseUrl = __arg ? __arg.baseUrl : &#39;https://full-api.cloud-service-app.com&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1143</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -1191,19 +1245,189 @@ classpath:features/tokens/TokenPrices.feature:38
 
   
 
-  <div class="preformatted" data-parent="0.43">12:51:45.871 request:
-1 &gt; GET https://full-api.cloud-service-app.com/token/prices/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.10">
+      <div class="step-ref passed">10</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print &#39;Debug - endpoint:&#39;, endpoint</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.42.0.call.0.10">17:41:21.304 [print] Debug - endpoint: token/prices 
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.11">
+      <div class="step-ref passed">11</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>print &#39;Debug - baseUrl:&#39;, baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.42.0.call.0.11">17:41:21.305 [print] Debug - baseUrl: https://full-api.cloud-service-app.com 
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.13">
+      <div class="step-ref passed">13</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def case1 = edgeCases[0]</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.14">
+      <div class="step-ref passed">14</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def encodedAddress1 = encodeURIComponent(case1.address)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.15">
+      <div class="step-ref passed">15</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + &#39;/&#39; + endpoint + &#39;/&#39; + encodedAddress1</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.16">
+      <div class="step-ref passed">16</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">819</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.42.0.call.0.16">17:41:21.307 request:
+1 &gt; GET https://full-api.cloud-service-app.com/token/prices/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 1 &gt; Host: full-api.cloud-service-app.com
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
 1 &gt; Accept-Encoding: gzip,deflate
 
 
-12:51:47.013 response time in milliseconds: 1141
+17:41:22.124 response time in milliseconds: 817
 1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 16:51:47 GMT
+1 &lt; Date: Fri, 25 Jul 2025 21:41:25 GMT
 1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Transfer-Encoding: chunked
+1 &lt; Content-Length: 614
 1 &lt; Connection: keep-alive
 1 &lt; Server: cloudflare
 1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
@@ -1217,8 +1441,7 @@ classpath:features/tokens/TokenPrices.feature:38
 1 &lt; X-Dns-Prefetch-Control: off
 1 &lt; X-Frame-Options: SAMEORIGIN
 1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;48c-bPguTO3WPkfeqTwz192+vbI9vqs&quot;
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=uhhLo77OpmutPhvjJYMBiGBfQLyBoKN0JAtvWDaz5sZHiDjFi9jir7hHIFeauwFAz4hf2klyAzfzqtVmC3RPACXyDKZSynihFbDZgQld57Cr2WqKqTwH0VkqtU3ulA%3D%3D&quot;}]}
+1 &lt; Etag: W/&quot;266-XnY5ZR8GUJlbqiBZHaeoRu5/dOc&quot;
 1 &lt; Origin-Agent-Cluster: ?1
 1 &lt; X-Download-Options: noopen
 1 &lt; X-Permitted-Cross-Domain-Policies: none
@@ -1227,9 +1450,10 @@ classpath:features/tokens/TokenPrices.feature:38
 1 &lt; X-Ratelimit-Reset: 1
 1 &lt; X-Cache: MISS
 1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; CF-RAY: 963471db2c5c5c78-MIA
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=6I2V3G%2Bnrjmt9oUN7IJBvR9j6To4bq5NhNQshQE8UEjq4WPfeJGzYo%2FGZ2f9Rz0ukPCiaaa%2BOETtVMDq3ySZKf43wOlQE0jCYLYV%2FPscOLjW7EIbS4xA3cjk6rQ%3D&quot;}]}
+1 &lt; CF-RAY: 964ed2408d39fba6-AMS
 1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T16:51:47.165Z&quot;,&quot;path&quot;:&quot;/token/prices/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Invalid address length: expected 32 - 44 characters.&quot;}}
+{&quot;time&quot;:&quot;2025-07-25T21:41:25.233Z&quot;,&quot;path&quot;:&quot;/token/prices/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Invalid address length: expected 32 - 44 characters.&quot;}}
 
 </div>   
 
@@ -1237,15 +1461,15 @@ classpath:features/tokens/TokenPrices.feature:38
 
 </div>
 </div>
-          <div><div>
+      <div><div>
   
 
   
 
-  <div class="step-row">
-    <div class="step-container" id="0.44">
-      <div class="step-ref passed">44</div>
-      
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.17">
+      <div class="step-ref passed">17</div>
+      <div class="step-indent"></div>
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
       </div>
@@ -1265,41 +1489,17 @@ classpath:features/tokens/TokenPrices.feature:38
 
 </div>
 </div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[7:47]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">edge</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[7:47]</span>
-                <span class="scenario-name">Get price variations with special characters in address</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>1</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[7:47]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[7:47]bg"><div>
+      <div><div>
   
 
   
 
-  <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
-      
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.19">
+      <div class="step-ref passed">19</div>
+      <div class="step-indent"></div>
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_prices&#39;)</span>
+        <span>*</span>&nbsp;<span>def case2 = edgeCases[1]</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -1317,17 +1517,17 @@ classpath:features/tokens/TokenPrices.feature:38
 
 </div>
 </div>
-          <div><div>
+      <div><div>
   
 
   
 
-  <div class="step-row">
-    <div class="step-container" id="0.48">
-      <div class="step-ref passed">48</div>
-      
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.20">
+      <div class="step-ref passed">20</div>
+      <div class="step-indent"></div>
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_prices&#39;) + &#39;!@#$%^&amp;*()&#39;</span>
+        <span>*</span>&nbsp;<span>def encodedAddress2 = encodeURIComponent(case2.address)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -1345,101 +1545,17 @@ classpath:features/tokens/TokenPrices.feature:38
 
 </div>
 </div>
-          <div><div>
+      <div><div>
   
 
   
 
-  <div class="step-row">
-    <div class="step-container" id="0.49">
-      <div class="step-ref failed">49</div>
-      
-      <div class="step-cell failed">
-        <span>When</span>&nbsp;<span>method get</span>
-      </div>
-    </div>
-    <div class="time-cell failed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-  <div class="preformatted" data-parent="0.49">12:51:47.022 classpath:features/tokens/TokenPrices.feature:49
-When method get
-java.net.URISyntaxException: Malformed escape pair at index 56: https://full-api.cloud-service-app.com/token/prices/!@#$%^&amp;*()
-classpath:features/tokens/TokenPrices.feature:49
-</div>   
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.50">
-      <div class="step-ref skipped">50</div>
-      
-      <div class="step-cell skipped">
-        <span>Then</span>&nbsp;<span>status 400</span>
-      </div>
-    </div>
-    <div class="time-cell skipped">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[8:53]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">edge</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[8:53]</span>
-                <span class="scenario-name">Get price variations with numeric address</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1869</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[8:53]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[8:53]bg"><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
-      
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.21">
+      <div class="step-ref passed">21</div>
+      <div class="step-indent"></div>
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_prices&#39;)</span>
+        <span>*</span>&nbsp;<span>url baseUrl + &#39;/&#39; + endpoint + &#39;/&#39; + encodedAddress2</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -1457,48 +1573,20 @@ classpath:features/tokens/TokenPrices.feature:49
 
 </div>
 </div>
-          <div><div>
+      <div><div>
   
 
   
 
-  <div class="step-row">
-    <div class="step-container" id="0.54">
-      <div class="step-ref passed">54</div>
-      
-      <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_prices&#39;) + &#39;1234567890123456789012345678901234567890&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">0</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.55">
-      <div class="step-ref passed">55</div>
-      
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.22">
+      <div class="step-ref passed">22</div>
+      <div class="step-indent"></div>
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">1869</div>
+    <div class="time-cell passed">980</div>
   </div>
 
    
@@ -1507,45 +1595,45 @@ classpath:features/tokens/TokenPrices.feature:49
 
   
 
-  <div class="preformatted" data-parent="0.55">12:51:47.032 request:
-1 &gt; GET https://full-api.cloud-service-app.com/token/prices/1234567890123456789012345678901234567890
-1 &gt; Host: full-api.cloud-service-app.com
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
-1 &gt; Accept-Encoding: gzip,deflate
+  <div class="preformatted" data-parent="0.42.0.call.0.22">17:41:22.125 request:
+2 &gt; GET https://full-api.cloud-service-app.com/token/prices/!%40%23%24%25%5E%26*()
+2 &gt; Host: full-api.cloud-service-app.com
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+2 &gt; Accept-Encoding: gzip,deflate
 
 
-12:51:48.900 response time in milliseconds: 1868
-1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 16:51:48 GMT
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 181
-1 &lt; Connection: keep-alive
-1 &lt; Server: cloudflare
-1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
-1 &lt; Vary: Origin, Accept-Encoding
-1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
-1 &lt; Cross-Origin-Opener-Policy: same-origin
-1 &lt; Cross-Origin-Resource-Policy: same-origin
-1 &lt; Referrer-Policy: no-referrer
-1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
-1 &lt; X-Content-Type-Options: nosniff
-1 &lt; X-Dns-Prefetch-Control: off
-1 &lt; X-Frame-Options: SAMEORIGIN
-1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;b5-pUgWgBUzOXPhopzEdTMXxrDuCLY&quot;
-1 &lt; Origin-Agent-Cluster: ?1
-1 &lt; X-Download-Options: noopen
-1 &lt; X-Permitted-Cross-Domain-Policies: none
-1 &lt; X-Ratelimit-Limit: 120
-1 &lt; X-Ratelimit-Remaining: 119
-1 &lt; X-Ratelimit-Reset: 1
-1 &lt; X-Cache: MISS
-1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=S2MyAr7e7VrmRZW9tIQXrEJcDJE3%2FiuZ4WB5MZTp3nWITrw9Qkq6mc4CeJCHP1LYCWksSCj9JkrVnW2idfgVOC9LpovfBwsSG42KmwgAXm1%2FhK1CLhZGRemkzHU%3D&quot;}]}
-1 &lt; CF-RAY: 963471e0f80ad9a1-MIA
-1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T16:51:48.245Z&quot;,&quot;path&quot;:&quot;/token/prices/1234567890123456789012345678901234567890&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Address must be valid Base58.&quot;}}
+17:41:23.105 response time in milliseconds: 980
+2 &lt; 400
+2 &lt; Date: Fri, 25 Jul 2025 21:41:26 GMT
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Content-Length: 163
+2 &lt; Connection: keep-alive
+2 &lt; Server: cloudflare
+2 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+2 &lt; Vary: Origin, Accept-Encoding
+2 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+2 &lt; Cross-Origin-Opener-Policy: same-origin
+2 &lt; Cross-Origin-Resource-Policy: same-origin
+2 &lt; Referrer-Policy: no-referrer
+2 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+2 &lt; X-Content-Type-Options: nosniff
+2 &lt; X-Dns-Prefetch-Control: off
+2 &lt; X-Frame-Options: SAMEORIGIN
+2 &lt; X-Xss-Protection: 0
+2 &lt; Etag: W/&quot;a3-4utVUGY5hXTwlNez7Tj8Rh8cirw&quot;
+2 &lt; Origin-Agent-Cluster: ?1
+2 &lt; X-Download-Options: noopen
+2 &lt; X-Permitted-Cross-Domain-Policies: none
+2 &lt; X-Ratelimit-Limit: 120
+2 &lt; X-Ratelimit-Remaining: 119
+2 &lt; X-Ratelimit-Reset: 1
+2 &lt; X-Cache: MISS
+2 &lt; Cf-Cache-Status: DYNAMIC
+2 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=a396HLr%2BSHDxKPxsQQj1uRXrKMzD2Vn3TE3Q0ghaZ%2FfV24wfDAEm42LxuTNm8IM95eqegfojTaljDqL%2BwAwVMQWPaQiTodSP2TqJKzk9zupZ0jXCfTVV%2FEKVcTpViw%3D%3D&quot;}]}
+2 &lt; CF-RAY: 964ed2457cee66d9-AMS
+2 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;time&quot;:&quot;2025-07-25T21:41:26.047Z&quot;,&quot;path&quot;:&quot;/token/prices/!%40%23%24%25%5E%26*()&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Address must be valid Base58.&quot;}}
 
 </div>   
 
@@ -1553,15 +1641,15 @@ classpath:features/tokens/TokenPrices.feature:49
 
 </div>
 </div>
-          <div><div>
+      <div><div>
   
 
   
 
-  <div class="step-row">
-    <div class="step-container" id="0.56">
-      <div class="step-ref passed">56</div>
-      
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.23">
+      <div class="step-ref passed">23</div>
+      <div class="step-indent"></div>
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
       </div>
@@ -1581,41 +1669,17 @@ classpath:features/tokens/TokenPrices.feature:49
 
 </div>
 </div>
-        </div>
-        <div class="scenario">
-          <div class="scenario-heading" id="[9:59]">
-            <div class="heading-container">
-              <div class="scenario-tags">
-                <a class="badge badge-primary" href="karate-tags.html">edge</a>
-              </div>
-              <div class="scenario-keyword">
-                Scenario: <span>[9:59]</span>
-                <span class="scenario-name">Get price variations with mixed case address</span>
-                <span></span>
-              </div>
-            </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1351</span>
-            </div>
-          </div>
-          <div class="step-row">
-            <div class="step-container" id="[9:59]bg">
-              <div class="step-ref bg-step">&gt;&gt;</div>
-              <div class="step-cell passed">Background:</div>
-            </div>
-            <div class="time-cell passed"></div>
-          </div>
-          <div data-parent="[9:59]bg"><div>
+      <div><div>
   
 
   
 
-  <div class="step-row">
-    <div class="step-container" id="0.4">
-      <div class="step-ref bg-step">4</div>
-      
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.25">
+      <div class="step-ref passed">25</div>
+      <div class="step-indent"></div>
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_prices&#39;)</span>
+        <span>*</span>&nbsp;<span>def case3 = edgeCases[2]</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -1633,17 +1697,17 @@ classpath:features/tokens/TokenPrices.feature:49
 
 </div>
 </div>
-          <div><div>
+      <div><div>
   
 
   
 
-  <div class="step-row">
-    <div class="step-container" id="0.60">
-      <div class="step-ref passed">60</div>
-      
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.26">
+      <div class="step-ref passed">26</div>
+      <div class="step-indent"></div>
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url baseUrl + getEndpoint(&#39;token_prices&#39;) + &#39;AbCdEfGhIjKlMnOpQrStUvWxYz1234567890&#39;</span>
+        <span>*</span>&nbsp;<span>def encodedAddress3 = encodeURIComponent(case3.address)</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -1661,20 +1725,48 @@ classpath:features/tokens/TokenPrices.feature:49
 
 </div>
 </div>
-          <div><div>
+      <div><div>
   
 
   
 
-  <div class="step-row">
-    <div class="step-container" id="0.61">
-      <div class="step-ref passed">61</div>
-      
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.27">
+      <div class="step-ref passed">27</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + &#39;/&#39; + endpoint + &#39;/&#39; + encodedAddress3</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.28">
+      <div class="step-ref passed">28</div>
+      <div class="step-indent"></div>
       <div class="step-cell passed">
         <span>When</span>&nbsp;<span>method get</span>
       </div>
     </div>
-    <div class="time-cell passed">1350</div>
+    <div class="time-cell passed">1032</div>
   </div>
 
    
@@ -1683,45 +1775,45 @@ classpath:features/tokens/TokenPrices.feature:49
 
   
 
-  <div class="preformatted" data-parent="0.61">12:51:48.910 request:
-1 &gt; GET https://full-api.cloud-service-app.com/token/prices/AbCdEfGhIjKlMnOpQrStUvWxYz1234567890
-1 &gt; Host: full-api.cloud-service-app.com
-1 &gt; Connection: Keep-Alive
-1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
-1 &gt; Accept-Encoding: gzip,deflate
+  <div class="preformatted" data-parent="0.42.0.call.0.28">17:41:23.106 request:
+3 &gt; GET https://full-api.cloud-service-app.com/token/prices/1234567890123456789012345678901234567890
+3 &gt; Host: full-api.cloud-service-app.com
+3 &gt; Connection: Keep-Alive
+3 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+3 &gt; Accept-Encoding: gzip,deflate
 
 
-12:51:50.260 response time in milliseconds: 1348
-1 &lt; 400
-1 &lt; Date: Tue, 22 Jul 2025 16:51:50 GMT
-1 &lt; Content-Type: application/json; charset=utf-8
-1 &lt; Content-Length: 177
-1 &lt; Connection: keep-alive
-1 &lt; Server: cloudflare
-1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
-1 &lt; Vary: Origin, Accept-Encoding
-1 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
-1 &lt; Cross-Origin-Opener-Policy: same-origin
-1 &lt; Cross-Origin-Resource-Policy: same-origin
-1 &lt; Referrer-Policy: no-referrer
-1 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
-1 &lt; X-Content-Type-Options: nosniff
-1 &lt; X-Dns-Prefetch-Control: off
-1 &lt; X-Frame-Options: SAMEORIGIN
-1 &lt; X-Xss-Protection: 0
-1 &lt; Etag: W/&quot;b1-PKB6YITiyaiAJ6FIbNdLvj+5V7w&quot;
-1 &lt; Origin-Agent-Cluster: ?1
-1 &lt; X-Download-Options: noopen
-1 &lt; X-Permitted-Cross-Domain-Policies: none
-1 &lt; X-Ratelimit-Limit: 120
-1 &lt; X-Ratelimit-Remaining: 119
-1 &lt; X-Ratelimit-Reset: 1
-1 &lt; X-Cache: MISS
-1 &lt; Cf-Cache-Status: DYNAMIC
-1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=IOx8lbWIo9vuQwBynrmWDRg3ScFI023X9SRW2U7%2B237Os6FgC%2BkFbhAdTh6t5M54Pgl6OgRUMhTDogekzx29yTWecgpvnb%2BUdyVQaQS%2B11rTkZp6b4GqVcv5JtlkIw%3D%3D&quot;}]}
-1 &lt; CF-RAY: 963471ef58e47442-MIA
-1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
-{&quot;time&quot;:&quot;2025-07-22T16:51:50.398Z&quot;,&quot;path&quot;:&quot;/token/prices/AbCdEfGhIjKlMnOpQrStUvWxYz1234567890&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Address must be valid Base58.&quot;}}
+17:41:24.137 response time in milliseconds: 1031
+3 &lt; 400
+3 &lt; Date: Fri, 25 Jul 2025 21:41:26 GMT
+3 &lt; Content-Type: application/json; charset=utf-8
+3 &lt; Content-Length: 181
+3 &lt; Connection: keep-alive
+3 &lt; Server: cloudflare
+3 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+3 &lt; Vary: Origin, Accept-Encoding
+3 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+3 &lt; Cross-Origin-Opener-Policy: same-origin
+3 &lt; Cross-Origin-Resource-Policy: same-origin
+3 &lt; Referrer-Policy: no-referrer
+3 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+3 &lt; X-Content-Type-Options: nosniff
+3 &lt; X-Dns-Prefetch-Control: off
+3 &lt; X-Frame-Options: SAMEORIGIN
+3 &lt; X-Xss-Protection: 0
+3 &lt; Etag: W/&quot;b5-cVG3s3G5s0xVijoxVprRn12rYEw&quot;
+3 &lt; Origin-Agent-Cluster: ?1
+3 &lt; X-Download-Options: noopen
+3 &lt; X-Permitted-Cross-Domain-Policies: none
+3 &lt; X-Ratelimit-Limit: 120
+3 &lt; X-Ratelimit-Remaining: 119
+3 &lt; X-Ratelimit-Reset: 1
+3 &lt; X-Cache: MISS
+3 &lt; Cf-Cache-Status: DYNAMIC
+3 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=X0VMRy2WV0JSkBHSgwypSg9qlaPSC8ohoi1ioiPfhT7epW5V5vCdyEpM7G8wIWZ30hVYnbT7M9F52Sa6z0s7jRAfqSHrquzFw0Z%2FRfoyTE%2FjHuhIHbTAlXNnTqCWvQ%3D%3D&quot;}]}
+3 &lt; CF-RAY: 964ed24b5cc7f4d1-AMS
+3 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;time&quot;:&quot;2025-07-25T21:41:26.956Z&quot;,&quot;path&quot;:&quot;/token/prices/1234567890123456789012345678901234567890&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Address must be valid Base58.&quot;}}
 
 </div>   
 
@@ -1729,15 +1821,15 @@ classpath:features/tokens/TokenPrices.feature:49
 
 </div>
 </div>
-          <div><div>
+      <div><div>
   
 
   
 
-  <div class="step-row">
-    <div class="step-container" id="0.62">
-      <div class="step-ref passed">62</div>
-      
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.29">
+      <div class="step-ref passed">29</div>
+      <div class="step-indent"></div>
       <div class="step-cell passed">
         <span>Then</span>&nbsp;<span>status 400</span>
       </div>
@@ -1754,6 +1846,191 @@ classpath:features/tokens/TokenPrices.feature:49
      
 
   
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.31">
+      <div class="step-ref passed">31</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def case4 = edgeCases[3]</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.32">
+      <div class="step-ref passed">32</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def encodedAddress4 = encodeURIComponent(case4.address)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.33">
+      <div class="step-ref passed">33</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl + &#39;/&#39; + endpoint + &#39;/&#39; + encodedAddress4</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.34">
+      <div class="step-ref passed">34</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">721</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.42.0.call.0.34">17:41:24.138 request:
+4 &gt; GET https://full-api.cloud-service-app.com/token/prices/AbCdEfGhIjKlMnOpQrStUvWxYz1234567890
+4 &gt; Host: full-api.cloud-service-app.com
+4 &gt; Connection: Keep-Alive
+4 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/21.0.2)
+4 &gt; Accept-Encoding: gzip,deflate
+
+
+17:41:24.859 response time in milliseconds: 721
+4 &lt; 400
+4 &lt; Date: Fri, 25 Jul 2025 21:41:28 GMT
+4 &lt; Content-Type: application/json; charset=utf-8
+4 &lt; Content-Length: 177
+4 &lt; Connection: keep-alive
+4 &lt; Server: cloudflare
+4 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+4 &lt; Vary: Origin, Accept-Encoding
+4 &lt; Content-Security-Policy: default-src &#39;self&#39;;base-uri &#39;self&#39;;font-src &#39;self&#39; https: data:;form-action &#39;self&#39;;frame-ancestors &#39;self&#39;;img-src &#39;self&#39; data:;object-src &#39;none&#39;;script-src &#39;self&#39;;script-src-attr &#39;none&#39;;style-src &#39;self&#39; https: &#39;unsafe-inline&#39;;upgrade-insecure-requests
+4 &lt; Cross-Origin-Opener-Policy: same-origin
+4 &lt; Cross-Origin-Resource-Policy: same-origin
+4 &lt; Referrer-Policy: no-referrer
+4 &lt; Strict-Transport-Security: max-age=31536000; includeSubDomains
+4 &lt; X-Content-Type-Options: nosniff
+4 &lt; X-Dns-Prefetch-Control: off
+4 &lt; X-Frame-Options: SAMEORIGIN
+4 &lt; X-Xss-Protection: 0
+4 &lt; Etag: W/&quot;b1-PzRfG58pdlrJZ7OlqUX6y19FJDY&quot;
+4 &lt; Origin-Agent-Cluster: ?1
+4 &lt; X-Download-Options: noopen
+4 &lt; X-Permitted-Cross-Domain-Policies: none
+4 &lt; X-Ratelimit-Limit: 120
+4 &lt; X-Ratelimit-Remaining: 119
+4 &lt; X-Ratelimit-Reset: 1
+4 &lt; X-Cache: MISS
+4 &lt; Cf-Cache-Status: DYNAMIC
+4 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=13ZetdvbboUJMYknksWw54Koiq8Xe7Tx7XQCfpqDK1OkpVkPT0sK382wg23z5UsgCzQfqRK5At%2F7Us2QyjRBZjONPdWtCIgfEeZqauol7F6wG5oICxi0hcv1Eh%2BGeA%3D%3D&quot;}]}
+4 &lt; CF-RAY: 964ed2519ed43ee4-AMS
+4 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;time&quot;:&quot;2025-07-25T21:41:27.989Z&quot;,&quot;path&quot;:&quot;/token/prices/AbCdEfGhIjKlMnOpQrStUvWxYz1234567890&quot;,&quot;error&quot;:{&quot;status&quot;:&quot;error&quot;,&quot;code&quot;:&quot;400&quot;,&quot;message&quot;:&quot;Address must be valid Base58.&quot;}}
+
+</div>   
+
+  
+
+</div>
+</div>
+      <div><div>
+  
+
+  
+
+  <div class="step-row" data-parent="0.42.0.call">
+    <div class="step-container" id="0.42.0.call.0.35">
+      <div class="step-ref passed">35</div>
+      <div class="step-indent"></div>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+    </div>    
+  </div>
 
 </div>
 </div>

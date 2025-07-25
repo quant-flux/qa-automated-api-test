@@ -136,6 +136,39 @@
       "address": "9WzDXwBbmkg8ZTbNMqUxvQRAyrZzDsGYdLVL9zYtAWWM",
       "type": "non_existent",
       "expected_error": "Token not found"
+    },
+    {
+      "address": "!@#$%^&*()",
+      "type": "special_characters",
+      "expected_error": "Token not found"
+    },
+    {
+      "address": "1234567890123456789012345678901234567890",
+      "type": "numeric_address",
+      "expected_error": "Token not found"
+    },
+    {
+      "address": "AbCdEfGhIjKlMnOpQrStUvWxYz1234567890",
+      "type": "mixed_case",
+      "expected_error": "Token not found"
     }
-  ]
+  ],
+  "edgeCases": [
+      { 
+        "desc": "very long address", 
+        "address": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      { 
+        "desc": "special characters", 
+        "address": "!@#$%^&*()" 
+      },
+      { 
+        "desc": "numeric address", 
+        "address": "1234567890123456789012345678901234567890" 
+      },
+      { 
+        "desc": "mixed case", 
+        "address": "AbCdEfGhIjKlMnOpQrStUvWxYz1234567890" 
+      }
+    ]
 } 

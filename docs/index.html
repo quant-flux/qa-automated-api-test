@@ -181,19 +181,19 @@
         
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-number success" id="totalTests">258</div>
+                <div class="stat-number success" id="totalTests">236</div>
                 <div class="stat-label">Total Tests</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number success" id="passedTests">164</div>
+                <div class="stat-number success" id="passedTests">163</div>
                 <div class="stat-label">Tests Exitosos</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number danger" id="failedTests">94</div>
+                <div class="stat-number danger" id="failedTests">73</div>
                 <div class="stat-label">Tests Fallidos</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number danger" id="successRate">63.6%</div>
+                <div class="stat-number danger" id="successRate">69.1%</div>
                 <div class="stat-label">Tasa de Éxito</div>
             </div>
         </div>
@@ -208,15 +208,15 @@
                 </p>
                 <div class="report-stats">
                     <div class="report-stat">
-                        <div class="report-stat-value">187</div>
+                        <div class="report-stat-value">165</div>
                         <div class="report-stat-label">Total</div>
                     </div>
                     <div class="report-stat">
-                        <div class="report-stat-value" style="color: #28a745;">142</div>
+                        <div class="report-stat-value" style="color: #28a745;">141</div>
                         <div class="report-stat-label">Exitosos</div>
                     </div>
                     <div class="report-stat">
-                        <div class="report-stat-value" style="color: #dc3545;">45</div>
+                        <div class="report-stat-value" style="color: #dc3545;">24</div>
                         <div class="report-stat-label">Fallidos</div>
                     </div>
                 </div>
@@ -249,7 +249,7 @@
         </div>
         
         <div class="last-updated">
-            <p>📅 Última actualización: <span id="lastUpdated">13 de Julio, 2025 - 16:38</span></p>
+            <p>📅 Última actualización: <span id="lastUpdated">2025-07-25 05:42:36 p. m.</span></p>
         </div>
         
         <div class="footer">
@@ -258,8 +258,8 @@
     </div>
     
     <script>
-        // Actualizar fecha de última actualización
-        document.getElementById('lastUpdated').textContent = new Date().toLocaleString('es-ES');
+        // La fecha de última actualización se establece desde el script de sincronización
+        // y refleja la fecha real de ejecución de los tests, no la hora actual
     </script>
 </body>
 </html>

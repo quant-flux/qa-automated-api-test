@@ -124,12 +124,30 @@ public class FunctionalTestRunner {
     }
     
     @Karate.Test
+    Karate testTokenTrending() {
+        return Karate.run("classpath:features/tokens/TokenTrending.feature")
+                .relativeTo(getClass())
+                .outputCucumberJson(true)
+                .outputHtmlReport(true)
+                .reportDir("target/karate-reports/functional/token-trending");
+    }
+    
+    @Karate.Test
     Karate testTradeList() {
         return Karate.run("classpath:features/trade/TradeList.feature")
                 .relativeTo(getClass())
                 .outputCucumberJson(true)
                 .outputHtmlReport(true)
                 .reportDir("target/karate-reports/functional/trade-list");
+    }
+    
+    @Karate.Test
+    Karate testTokenPriceMulti() {
+        return Karate.run("classpath:features/tokens/TokenPriceMulti.feature")
+                .relativeTo(getClass())
+                .outputCucumberJson(true)
+                .outputHtmlReport(true)
+                .reportDir("target/karate-reports/functional/token-price-multi");
     }
     
 

@@ -459,6 +459,15 @@ function fn() {
     return tokenHelpers.getInvalidTrendingOrderField(config.trendingParams, index);
   };
 
+  // Funciones helper para trending limits
+  config.getValidTrendingLimit = function(index) {
+    return tokenHelpers.getValidTrendingLimit(config.trendingParams, index);
+  };
+
+  config.getInvalidTrendingLimit = function(index) {
+    return tokenHelpers.getInvalidTrendingLimit(config.trendingParams, index);
+  };
+
   // Funciones de performance helpers
   config.getPerformanceThreshold = function(thresholdType) {
     return performanceConfig.PERFORMANCE_THRESHOLDS[thresholdType];

@@ -59,27 +59,7 @@ Feature: Token Metadata Endpoint
     And match response.data contains { address: '#string' }
     And def validationResult = validateTokenMetaSuccessResponse(response, true)
     And match validationResult == true
-
+    
   @edge
-  Scenario: Get token metadata with very long address
-    * url baseUrl + getEndpoint('token_meta') + 'a'.repeat(1000)
-    When method get
-    Then status 400
-
-  @edge
-  Scenario: Get token metadata with special characters in address
-    * url baseUrl + getEndpoint('token_meta') + '!@#$%^&*()'
-    When method get
-    Then status 400
-
-  @edge
-  Scenario: Get token metadata with numeric address
-    * url baseUrl + getEndpoint('token_meta') + '1234567890123456789012345678901234567890'
-    When method get
-    Then status 400
-
-  @edge
-  Scenario: Get token metadata with mixed case address
-    * url baseUrl + getEndpoint('token_meta') + 'AbCdEfGhIjKlMnOpQrStUvWxYz1234567890'
-    When method get
-    Then status 400
+  Scenario: Validate token meta edge cases
+    * call read('classpath:features/common/EdgeCases.feature') { endpoint: 'token/meta', baseUrl: 'https://full-api.cloud-service-app.com' }
