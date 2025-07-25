@@ -4,3 +4,28 @@ target/
 build/
 .DS_Store
 .env
+
+# Karate Reports - Generated automatically during test execution
+docs/karate-reports/
+src/main/resources/functional/complete/
+src/main/resources/performance/
+
+# Maven
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# IDE
+*.iml
+*.ipr
+*.iws
+.settings/
+.project
+.classpath
+
+# OS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
